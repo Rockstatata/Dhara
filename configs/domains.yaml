@@ -1,0 +1,215 @@
+# Authoritative domain list for Dhara.
+#
+# Every doc that used to enumerate domains inline now points here instead.
+# Adding a domain is an edit to this file plus an entry in DECISIONS.md.
+#
+# Selection rule: frequency in ordinary civilian life, not legal taxonomy.
+# Cover the law people actually collide with.
+#
+# risk_tier — how much damage a wrong retrieval does, NOT how hard retrieval is.
+#   high   : someone may act on this in a police station, a hospital, or a
+#            situation where they are unsafe. The interface leads with a legal-aid
+#            referral above the results, and the abstention threshold is raised.
+#   medium : money or a deadline is at stake; a wrong provision is costly but
+#            recoverable.
+#   low    : procedural or entitlement questions; a wrong provision wastes time.
+#
+# evaluation — headline domains carry gold questions and appear in the per-domain
+# results table. Coverage domains are retrievable and reported only in aggregate.
+# See DECISIONS.md, "Coverage is wide, evaluation is deep".
+#
+# act_ids are bdlaws portal ids and are filled in by scripts/01_survey_acts.py,
+# which also records whether Bangla text exists per Act. Do not hand-fill them.
+
+domains:
+  - id: family
+    name_bn: পারিবারিক আইন ও উত্তরাধিকার
+    name_en: Family and inheritance
+    risk_tier: high
+    evaluation: headline
+    acts:                                   # verified against BLAD titles
+      - The Muslim Family Laws Ordinance       # act-305,  14 sec, EN only
+      - The Muslim Marriages and Divorces      # act-476,  18 sec, EN only
+      - The Dissolution of Muslim Marriages    # act-180,   5 sec, EN only
+      - The Succession Act                     # act-138, 395 sec, EN only
+      - পারিবারিক আদালত আইন                    # act-1444, 31 sec, BN
+      - হিন্দু বিবাহ নিবন্ধন আইন                 # act-1105, 15 sec, BN
+      - পারিবারিক সহিংসতা                       # act-1063, 37 sec, BN
+      - গ্রাম আদালত আইন                         # act-938,  26 sec, BN
+    notes: >
+      High risk because custody, maintenance and divorce answers get acted on
+      immediately and often under duress. Prothom Alo reports family law as the
+      single largest category of reader legal questions.
+
+  - id: land
+    name_bn: ভূমি ও সম্পত্তি
+    name_en: Land and property
+    risk_tier: medium
+    evaluation: headline
+    acts:                                   # verified against BLAD titles
+      - The Registration Act                   # act-90,  116 sec, EN only
+      - The State Acquisition and Tenancy Act  # act-241, 207 sec, EN only
+      - The Non-Agricultural Tenancy Act       # act-232,  60 sec, EN only
+      - ভূমি অপরাধ প্রতিরোধ ও প্রতিকার আইন      # act-1454, 27 sec, BN
+      - ভূমি উন্নয়ন কর আইন                     # act-1449, 23 sec, BN
+      - ভূমি সংস্কার আইন                        # act-1455, 23 sec, BN
+      - স্থাবর সম্পত্তি অধিগ্রহণ ও হুকুমদখল আইন  # act-1220, 51 sec, BN
+      - অর্পিত সম্পত্তি প্রত্যর্পণ আইন           # act-856,  40 sec, BN
+      - ওয়াক্‌ফ (সম্পত্তি হস্তান্তর ও উন্নয়ন)    # act-1109, 26 sec, BN
+      - রেলওয়ে সম্পত্তি (অবৈধ দখল উদ্ধার) আইন   # act-1193, 13 sec, BN
+    notes: Mutation (নামজারি) is the highest-volume citizen land procedure.
+
+  - id: labour
+    name_bn: শ্রম ও কর্মসংস্থান
+    name_en: Labour and employment
+    risk_tier: medium
+    evaluation: headline
+    acts:
+      - বাংলাদেশ শ্রম আইন, ২০০৬          # bdlaws act-952
+      - বাংলাদেশ ইপিজেড শ্রম আইন, ২০১৯   # bdlaws act-1285
+    notes: >
+      act-952 has 369 provision pages. Its 2026 amendment (act-1672) is excluded
+      per the amendment-exclusion rule; the consolidated text on act-952 is used.
+
+  - id: consumer
+    name_bn: ভোক্তা ও তথ্য অধিকার
+    name_en: Consumer and information rights
+    risk_tier: low
+    evaluation: headline
+    acts:
+      - ভোক্তা-অধিকার সংরক্ষণ আইন               # act-1014,  82 sec, BN
+      - তথ্য অধিকার আইন                        # act-1011,  37 sec, BN
+      - নিরাপদ খাদ্য আইন                       # act-1127,  90 sec, BN
+      - ঔষধ ও কসমেটিকস্ আইন                    # act-1447,  83 sec, BN
+      - কপিরাইট আইন                           # act-1452, 128 sec, BN
+      - ট্রেডমার্ক আইন                          # act-1010, 128 sec, BN
+      - ওজন ও পরিমাপ মানদণ্ড আইন                # act-1270,  74 sec, BN
+
+  - id: cybercrime
+    name_bn: সাইবার অপরাধ ও ডিজিটাল অধিকার
+    name_en: Cybercrime and digital rights
+    risk_tier: high
+    evaluation: headline
+    acts:                                   # act-1457 is in BLAD but has ZERO
+      - সাইবার নিরাপত্তা আইন                   # provisions — needs the bdlaws pass
+      - সাইবার সুরক্ষা অধ্যাদেশ                 # act-1538,  51 sec, BN
+      - তথ্য ও যোগাযোগ প্রযুক্তি আইন            # act-950,   90 sec, BN
+    notes: >
+      Second-largest category of reader legal questions per Prothom Alo's 2023
+      round-up. High risk in both directions: this is the law people seek
+      protection under AND the law people are prosecuted under.
+
+  - id: constitutional
+    name_bn: সাংবিধানিক ও মৌলিক অধিকার
+    name_en: Constitutional and fundamental rights
+    risk_tier: high
+    evaluation: headline
+    acts:
+      - গণপ্রজাতন্ত্রী বাংলাদেশের সংবিধান
+    notes: >
+      Cross-cutting; ~153 articles. Uses অনুচ্ছেদ (article), not ধারা — the
+      section splitter needs a per-Act override.
+
+  - id: criminal_procedure
+    name_bn: ফৌজদারি কার্যবিধি
+    name_en: Criminal procedure
+    risk_tier: high
+    evaluation: coverage
+    acts:                                   # verified against BLAD titles
+      - The Code of Criminal Procedure         # act-75,  586 sec, EN only
+      - The Penal Code                         # act-11,  583 sec, EN only
+      - ঢাকা মহানগরী পুলিশ অধ্যাদেশ              # BN
+      - সিলেট মহানগরী পুলিশ আইন                 # act-1012, 116 sec, BN
+      - বরিশাল মহানগরী পুলিশ আইন                # act-1013, 116 sec, BN
+      - গাজীপুর মহানগরী পুলিশ আইন               # act-1238, 114 sec, BN
+      - রংপুর মহানগরী পুলিশ আইন                 # act-1239, 113 sec, BN
+      - রাজশাহী মহানগরী পুলিশ আইন               # act-765,  116 sec, BN
+      - মাদকদ্রব্য নিয়ন্ত্রণ আইন                 # act-1276,  70 sec, BN
+    notes: >
+      FIR, GD, arrest without warrant, bail. Highest everyday frequency and
+      highest harm. Selected provisions only, never the full Penal Code — the
+      original guide excluded it for corpus-balance and risk reasons and that
+      judgement still holds for the bulk of it.
+
+  - id: women_children
+    name_bn: নারী ও শিশু সুরক্ষা
+    name_en: Women and children protection
+    risk_tier: high
+    evaluation: coverage
+    acts:
+      - নারী ও শিশু নির্যাতন দমন আইন, ২০০০
+      - যৌতুক নিরোধ আইন, ২০১৮
+      - পারিবারিক সহিংসতা (প্রতিরোধ ও সুরক্ষা) আইন, ২০১০
+      - বাল্যবিবাহ নিরোধ আইন, ২০১৭
+      - শিশু আইন                              # act-1119, 101 sec, BN
+      - এসিড অপরাধ দমন আইন                     # act-883,   30 sec, BN
+    notes: >
+      Victim-safety decisions ride on these answers. Referral-first presentation
+      is mandatory, not optional.
+
+  - id: tenancy
+    name_bn: বাড়িভাড়া ও ভাড়াটিয়া
+    name_en: Urban tenancy
+    risk_tier: low
+    evaluation: coverage
+    acts:
+      - বাড়ী ভাড়া নিয়ন্ত্রণ আইন, ১৯৯১
+
+  - id: civil_registration
+    name_bn: জন্ম-মৃত্যু নিবন্ধন ও পরিচয়পত্র
+    name_en: Civil registration and identity
+    risk_tier: low
+    evaluation: coverage
+    acts:                                   # verified against BLAD titles
+      - জন্ম ও মৃত্যু নিবন্ধন আইন               # act-921,  26 sec, BN
+      - জাতীয় পরিচয় নিবন্ধন আইন                 # act-1458, 30 sec, BN
+
+  - id: road_transport
+    name_bn: সড়ক পরিবহন
+    name_en: Road transport
+    risk_tier: medium
+    evaluation: coverage
+    acts:                                   # note: BLAD spells it পরিবহণ, not পরিবহন
+      - সড়ক পরিবহণ আইন                        # act-1262, 126 sec, BN
+
+  - id: money_recovery
+    name_bn: অর্থ আদায় ও চেক ডিজঅনার
+    name_en: Money recovery and dishonoured cheques
+    risk_tier: medium
+    evaluation: coverage
+    acts:                                   # verified against BLAD titles
+      - The Negotiable Instruments Act         # act-46,  181 sec, EN only
+      - অর্থ ঋণ আদালত আইন
+      - সমবায় সমিতি আইন                        # act-876,  95 sec, BN
+      - সুরক্ষিত লেনদেন (অস্থাবর সম্পত্তি) আইন    # act-1468, 33 sec, BN
+
+  - id: local_government
+    name_bn: স্থানীয় সরকার ও নাগরিক সেবা
+    name_en: Local government and civic services
+    risk_tier: low
+    evaluation: coverage
+    acts:                                   # all Bangla. Note: the fragment
+      # "স্থানীয় সরকার" also catches জাতীয় স্থানীয় সরকার ইনষ্টিটিউট আইন, an
+      # institute-establishment act that is not citizen-facing; it is excluded
+      # by name below rather than by narrowing the fragment.
+      - স্থানীয় সরকার (পৌরসভা) আইন             # act-1024, 134 sec, BN
+      - স্থানীয় সরকার (সিটি কর্পোরেশন) আইন      # act-1026, 130 sec, BN
+      - স্থানীয় সরকার (ইউনিয়ন পরিষদ) আইন        # act-1027, 109 sec, BN
+      - উপজেলা পরিষদ আইন                       # act-827,   84 sec, BN
+    notes: >
+      Trade licences, holding tax, birth-certificate issuance and local dispute
+      resolution are where most citizens actually touch the state. Added partly
+      because it is genuinely everyday law and partly because it is published in
+      Bangla, which the family/land/criminal core is not.
+
+# Acts excluded by rule, not by oversight. See DECISIONS.md.
+exclusions:
+  title_contains:
+    - সংশোধন          # standalone amendment Acts
+    - ইনষ্টিটিউট       # institute-establishment acts, not citizen-facing
+    - (Amendment)
+    - "[রহিত]"        # repealed
+    - "[Repealed]"
+  provision_marked:
+    - "[বিলুপ্ত]"      # omitted provisions inside a retained Act
+  record_counts_to: results/tables/corpus_stats.csv

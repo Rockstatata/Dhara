@@ -331,7 +331,9 @@ class Chunk:
     section_title_bn: Optional[str]
     text_bn: str             # normalized body (light normalization)
     text_raw: str            # pre-normalization, for display
-    domain: str              # family|land|labour|consumer|constitutional
+    domain: str              # value from configs/domains.yaml; confirmed set is
+                             # family|land|labour|consumer|cybercrime|constitutional
+                             # and is open to further everyday-life domains
     sub_idx: int             # 0 if not split
     n_sub: int               # 1 if not split
     source_url: str
@@ -416,7 +418,7 @@ This takes an afternoon and it is the highest-value afternoon in the project. A 
 
 **Freeze criteria:**
 - [ ] ≥ 800 chunks (or the reduced target set by §3.1)
-- [ ] All four domains represented, none below 10% of the corpus
+- [ ] Every domain in `configs/domains.yaml` represented, none below 10% of the corpus (or the floor relaxed and the actual distribution reported — a thin domain honestly reported beats a padded one)
 - [ ] Zero chunks with empty text or missing citation fields
 - [ ] Zero chunks above 400 words
 - [ ] 50-chunk manual audit passed with ≤ 2 errors
@@ -1299,7 +1301,7 @@ This one practice is worth more than any other coordination technique on a four-
 
 ### 13.1 Phase checklists
 
-**Corpus (A)** — ≥ 800 chunks · four domains, none under 10% · zero empty or uncited chunks · zero chunks over 400 words · 50-chunk manual audit ≤ 2 errors · `corpus_stats.csv` committed · normalization unit tests pass · tagged `corpus-v1`
+**Corpus (A)** — ≥ 800 chunks · every domain in `configs/domains.yaml` present, distribution reported · zero empty or uncited chunks · zero chunks over 400 words · 50-chunk manual audit ≤ 2 errors · `corpus_stats.csv` committed · normalization unit tests pass · tagged `corpus-v1`
 
 **Dataset (B)** — ≥ 2,000 training pairs · 200 gold questions (10–15% unanswerable) · κ reported on a 50-question overlap · overlap audit figure produced · leakage assertion passes · split by chunk not question · tagged `dataset-v1`
 

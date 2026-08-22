@@ -57,16 +57,23 @@ Three properties make this a good NLP research problem rather than a search-engi
 
 ## 4. Scope and Delimitations
 
-**In scope — four domains:**
+**The scope rule: frequency in ordinary civilian life.** Coverage is chosen by how often an ordinary person actually collides with a body of law, not by legal taxonomy. A tidy four-domain split that omits the questions people actually ask is worse than an untidy wider one that catches them.
+
+**In scope — confirmed domains:**
 
 | Domain | Representative sources |
 |---|---|
-| Family & inheritance | Muslim Family Laws Ordinance, Hindu/Christian personal law provisions, succession rules |
+| Family & inheritance | Muslim Family Laws Ordinance 1961, Muslim Marriage & Divorce Registration Act 2012, Hindu/Christian personal law provisions, succession rules |
 | Land & property | Registration Act, State Acquisition & Tenancy Act, নামজারি (mutation) procedure |
 | Labour & employment | Bangladesh Labour Act 2006 (selected chapters), wage board notifications |
 | Consumer & information rights | Consumer Rights Protection Act 2009, Right to Information Act 2009 |
+| **Cybercrime & digital rights** | Cyber Security Act 2023, online harassment, defamation, account takeover, mobile financial-service fraud |
 
-Plus the **Constitution of Bangladesh** (~153 articles) as a cross-cutting fifth source, since fundamental-rights queries appear across all domains.
+Plus the **Constitution of Bangladesh** (~153 articles) as a cross-cutting source, since fundamental-rights queries appear across all domains.
+
+Cybercrime is included on evidence rather than intuition: Prothom Alo's own round-up of the legal questions its readers sent in 2023 reports that family law and **cybercrime** were the two largest categories. A corpus that omits the second-largest thing citizens ask about is not a corpus of citizen-facing law.
+
+**Under expansion.** The domain set is deliberately open. Further candidates, ranked by everyday frequency, are criminal procedure (FIR, GD, arrest, bail), women & children protection (নারী ও শিশু নির্যাতন দমন আইন 2000, dowry, domestic violence), urban tenancy (Premises Rent Control Act 1991), road transport (Road Transport Act 2018), civil registration (birth/death registration, NID correction), and money recovery (cheque dishonour). The authoritative list is `configs/domains.yaml`; each addition is recorded in `DECISIONS.md` with its reason and its risk assessment, because the higher-frequency domains are also the higher-harm ones.
 
 **Explicitly out of scope**
 - Complete coverage of all ~1,300+ Acts on the portal.
@@ -331,7 +338,7 @@ Design commitments that back that claim up:
 - **No personal data.** Questions mined from public discussion are stripped of names, phone numbers, and identifying details, and are not republished verbatim with attribution.
 - **Scraping conduct:** respect terms of use and robots.txt, rate-limit politely, identify the crawler.
 
-**Stated limitations:** snapshot-in-time coverage; four domains only; no case law or precedent; no multi-turn reasoning; retrieval quality degrades on queries outside the covered domains — and the system should say "I don't have a confident match" rather than return a bad one. Add a score threshold below which the system explicitly declines.
+**Stated limitations:** snapshot-in-time coverage; a bounded set of domains, listed explicitly, with everything outside them uncovered; standalone amendment Acts and repealed provisions excluded, so a provision amended after `crawl_date` is served in its pre-amendment consolidated form; no case law or precedent; no multi-turn reasoning; retrieval quality degrades on queries outside the covered domains — and the system should say "I don't have a confident match" rather than return a bad one. Add a score threshold below which the system explicitly declines.
 
 Examiners consistently reward teams that draw these lines clearly and unprompted.
 

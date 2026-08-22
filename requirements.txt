@@ -1,0 +1,28 @@
+# data
+requests==2.34.*
+beautifulsoup4==4.12.*
+lxml
+pyyaml
+pandas
+tqdm
+
+# classical
+rank-bm25
+gensim==4.3.*
+scikit-learn==1.5.*
+
+# neural
+torch>=2.2
+transformers>=4.44
+sentence-transformers>=3.0
+datasets
+accelerate
+
+# viz + app
+matplotlib
+seaborn
+umap-learn
+gradio>=4.44
+
+# dev
+pytest

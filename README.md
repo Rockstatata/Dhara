@@ -36,12 +36,15 @@ The system targets four primary legal domains:
 - land and property
 - labour and employment
 - consumer and information rights
+- cybercrime and digital rights
 
-A fifth cross-cutting source is also included:
+A cross-cutting source is also included:
 
 - the Constitution of Bangladesh
 
-The intended corpus size is approximately 800 to 1,200 section-level chunks, with room to expand. The design deliberately stays smaller and more carefully curated than a complete legal corpus of every Act in the country.
+Domains are selected by how often ordinary people actually collide with them, not by legal taxonomy, and the set is deliberately open — further everyday areas such as criminal procedure, women and children protection, urban tenancy, road transport, and civil registration are under consideration. The authoritative list lives in `configs/domains.yaml`, and every addition is recorded in `DECISIONS.md` with its reason and its risk assessment.
+
+Corpus size scales with the domain count: roughly 800 to 1,200 section-level chunks covered the original four domains. The design still stays smaller and more carefully curated than a complete legal corpus of every Act in the country — a corpus you have hand-verified beats a larger one you have not.
 
 ## Non-goals
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project status
 
-**Greenfield.** The repository currently contains only `docs/` and no commits. The two documents are the authoritative spec:
+**Greenfield.** The repository contains `docs/`, `README.md`, and `AGENTS.md` — no `src/`, `scripts/`, or data yet. The two documents under `docs/` are the authoritative spec:
 
 - [docs/Dhara_Proposal.md](docs/Dhara_Proposal.md) — the *why*: problem framing, scope, evaluation plan, ethics.
 - [docs/Dhara_Implementation_Guide.md](docs/Dhara_Implementation_Guide.md) — the *how*: repo layout, schemas, per-phase owners, model configs, week-by-week gates.
@@ -15,7 +15,9 @@ When building any part of this project, read the corresponding section of the im
 
 A Bangla legal retrieval system: a plain-Bangla citizen question in, the exact law **section (ধারা)** plus its citation out. The research claim is that a *lexical gap* separates colloquial citizen phrasing from formal legal Bangla, and that domain fine-tuning closes it. Everything in the design exists to measure that claim, so evaluation integrity outranks model performance in every tradeoff.
 
-Corpus source: the bdlaws portal (structured HTML, no OCR). Four domains — family, land, labour, consumer — plus the Constitution as a fifth cross-cutting source. Target 800–1,200 section-level chunks.
+Corpus source: the bdlaws portal (structured HTML, no OCR). The scope rule is **frequency in ordinary civilian life**, not tidy legal taxonomy: cover the law people actually collide with. Confirmed domains are family, land, labour, consumer, **cybercrime**, and constitutional; further daily-life domains are under active expansion (see [DECISIONS.md](DECISIONS.md)). Corpus target scales with the domain count — 800–1,200 chunks covered the original four, so a wider scope means a proportionally larger corpus.
+
+There are two audiences for the output. The near one is the course submission in late September / October 2026. The far one is a **conference paper**, which raises the bar on baselines, significance testing, dataset release, and the ethics statement — build for the paper, and the course requirements come free.
 
 ## Architecture
 
@@ -79,6 +81,12 @@ These come from the guide and are the ones most likely to be violated by an agen
 
 **Gold set isolation.** `gold_test_v1.jsonl` is touched exactly once, at the end. Never for debugging, never for "just checking." `scripts/09_run_eval.py` calls `assert_no_leakage(gold, train, dev)` on every run and must fail loudly.
 
+**The gold set is human-adjudicated, and the candidate list is lexical on purpose.** 200 questions. An agent may propose candidates but never decides the answer — otherwise the evaluation measures agreement with the same model family that wrote the training questions, and the headline claim becomes circular. Candidates come from **BM25**, not from a dense model: that biases the gold set toward provisions a lexical retriever can find, which makes the project's own thesis *harder* to prove. 15 questions are annotated with no candidate list at all, to measure how often the BM25 list missed the true answer; that miss rate is reported. Every gold question records `annotation_mode` ∈ {`assisted`, `unaided`} and `source` ∈ {`mined`, `authored`} — an authored question honestly labelled is fine, an authored question passed off as mined is not.
+
+**Agreement is measured, not skipped.** With one annotator, inter-annotator κ does not exist; 30 questions are re-annotated blind after a gap and reported as intra-annotator (test–retest) reliability. When a second annotator joins, they double-annotate 50 and both numbers are reported. "We did not measure agreement" is the answer that costs marks and reviewers.
+
+**Differences are claimed only with a confidence interval.** At 200 gold questions the 95% CI on Recall@5 is roughly ±7 points, so adjacent rungs will sometimes be indistinguishable. `metrics.py` provides a **paired bootstrap over `per_query`** and every rung-to-rung comparison reports the CI on the difference. A rung pair honestly reported as within noise reads as more credible, not less. Never narrate a bar chart as if the gaps were all real.
+
 **Split by chunk, not by question.** All synthetic questions generated from chunk X go to the same split, or near-duplicates leak across train/dev.
 
 **Freeze then version.** `corpus_v1.jsonl` never changes after Week 3. A needed fix becomes `corpus_v2.jsonl` and every affected result is re-run or explicitly labelled.
@@ -92,6 +100,10 @@ These come from the guide and are the ones most likely to be violated by an agen
 **Hard negatives come from ranks 5–30**, not 1–4. The top few are often relevant-but-unlabelled; training against them teaches the model that correct answers are wrong.
 
 **No hand-typed numbers.** Every number in the report comes from a `results/runs/*.json` emitted by a script. Notebooks are for looking at things only. Every run JSON includes `per_query` — error analysis and significance testing need it and regenerating it later means re-running everything.
+
+**Risk tier drives presentation, never retrieval.** Every domain in `configs/domains.yaml` carries `risk_tier` ∈ {high, medium, low}. For high-tier domains — family, cybercrime, constitutional, criminal procedure, women & children — the UI leads with a legal-aid referral **above** the retrieved provisions, and the abstention threshold is raised. Ranking logic is identical across tiers; only framing and the threshold change. Do not let risk tier filter or reorder candidates.
+
+**Mined questions: verbatim stays local, paraphrase ships.** Newspaper legal-advice columns are copyrighted. Every mined question stores `source_url`, `text_verbatim` (git-ignored, never released), and `text_bn` — a paraphrase preserving register while changing wording — plus a `paraphrased` boolean. The public dataset carries the paraphrase, the URL, and the provision label only.
 
 **Every output carries a citation, and the system must be able to abstain.** A score threshold, calibrated on the deliberately-included unanswerable gold questions, below which it says it has no confident match. Prefer false abstentions over false confidence.
 
@@ -130,3 +142,17 @@ Honest negative results are explicitly worth more here than fudged positive ones
 ## Ethics constraints in code
 
 This is an information-retrieval tool, **not legal advice** — stated in the UI, the abstract, and the limitations section. Repealed/omitted sections are dropped from the corpus (retrieving one would be actual harm) and the dropped count is recorded. Crawl date is displayed. Mined real questions are stripped of names, phone numbers, NID numbers, and addresses before they enter the dataset.
+
+## Agent skills
+
+### Issue tracker
+
+Issues and specs live as markdown files under `.scratch/<feature-slug>/` in this repo — not GitHub Issues. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five canonical roles, each label string equal to its name (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), recorded as a `Status:` line in each issue file. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: `CONTEXT.md` and `docs/adr/` at the repo root, created lazily. See `docs/agents/domain.md`.

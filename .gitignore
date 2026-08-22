@@ -1,0 +1,30 @@
+# Raw and external data — never committed
+data/raw/
+data/interim/
+data/external/
+data/processed/*_verbatim*
+models/
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Scratch
+.scratch/tmp/
+
+data/processed/corpus_full_v1.jsonl
