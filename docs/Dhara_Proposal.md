@@ -5,7 +5,7 @@
 > *ধারা* — in law, a **section** of an Act; in ordinary Bangla, a **stream** or **current**. The system's unit of retrieval is the ধারা, and its purpose is to carry a citizen's question to it.
 
 *Course: Natural Language Processing Lab · Supervisor: Shawon Sir*
-*Team size: 2–3 · Duration: 8 weeks*
+*Team size: 4 · Submission: late September / October 2026 · Also targeting a resource paper (NLLP / BLP)*
 
 ---
 
@@ -40,7 +40,7 @@ Three properties make this a good NLP research problem rather than a search-engi
 ## 3. Objectives
 
 **Primary**
-1. Construct a clean, section-level, citation-preserving Bangla legal corpus covering 4 citizen-facing domains.
+1. Construct a clean, provision-level, citation-preserving Bangladeshi legal corpus covering the domains people meet in everyday life (`configs/domains.yaml`), built on the published BLAD dataset and completed from the bdlaws portal where BLAD is empty.
 2. Construct a question–section dataset: ~2,500–3,000 training pairs and a 200-question hand-annotated gold evaluation set.
 3. Implement and rigorously compare five retrieval configurations spanning the full course syllabus.
 4. Fine-tune a transformer bi-encoder on the domain and quantify its improvement over both classical and zero-shot dense baselines.
@@ -50,8 +50,19 @@ Three properties make this a good NLP research problem rather than a search-engi
 6. Train an intent classifier that routes a query to its legal domain (supervised core), compared across all four representation types.
 7. Cluster section embeddings without supervision and assess whether the discovered structure recovers the actual organisation of the law.
 
-**Stretch (only if Weeks 1–7 finish on schedule)**
-8. A grounded generation layer producing a plain-Bangla explanation strictly derived from retrieved text.
+**Explicitly out of scope — no generation layer**
+
+Dhara retrieves and cites; it never generates. An earlier draft listed a stretch
+objective 8, "a grounded generation layer producing a plain-Bangla explanation".
+That is retrieval-augmented generation, it has been **cut permanently**, and the
+decision is recorded in `DECISIONS.md`.
+
+The system's output is the provision as printed, with its citation. This is a
+deliberate methodological position, not only a scoping one: the two closest
+published systems, MINA (Findings of ACL 2026) and LegalRAG, are both RAG
+pipelines evaluated on Bar Council examination questions. Not generating is part
+of what distinguishes this work from them, and a retrieval system can be measured
+where a generated answer cannot.
 
 ---
 
@@ -80,9 +91,26 @@ Cybercrime is included on evidence rather than intuition: Prothom Alo's own roun
 - Case law, judgments, and precedent.
 - Multi-turn conversation or dialogue state.
 - Any claim to give legal advice (see §12).
-- English-language legal text, except as a documented fallback (§11, Risk 1).
+- Any generated or paraphrased answer (see §3).
 
-**Target corpus size:** 800–1,200 sections for the working system, expandable toward ~2,000 if Weeks 1–3 run ahead of schedule. This is deliberately smaller than the theoretical maximum — a smaller corpus you have hand-verified beats a larger one you have not.
+**On language — this changed once the corpus was measured.** English legal text
+was originally listed as out of scope with a fallback caveat. It is not a
+fallback: 39% of the corpus is English because Bangladeshi law enacted before
+about 1987 was written in English and has never been translated. Verified on the
+portal in both directions, `?lang=` switches the interface chrome only and never
+the text of an Act, so no bilingual version exists for any Act. Criminal
+procedure is 100% English, family 14% Bangla, land 29% — and family and land are
+two of the domains citizens ask about most. The corpus therefore carries
+`language` as a field and every result is reported split by it. This makes the
+project measure **two** gaps: the colloquial/formal register gap, and a
+Bangla-query/English-provision language gap.
+
+**Corpus size, as built.** Two artifacts are kept. The everyday-life corpus is
+~6,100 chunks over the domains in `configs/domains.yaml`, and it is the default
+for evaluation. The full corpus is ~37,700 chunks over 1,400 Acts, and it is the
+released resource. Evaluation stays on the smaller one deliberately: a 35k-
+provision index adds confusable near-duplicate provisions and makes retrieval
+harder without making the measurement better.
 
 ---
 
@@ -309,7 +337,7 @@ Roles assume 3 members. **With 2 members, merge B and C and drop Rung 3 (BiLSTM 
 - End of Week 4: gold set complete. **If this slips, cut corpus scope, not evaluation quality.**
 - End of Week 6: fine-tuned bi-encoder beats the zero-shot control. If it does not, you have a debuggable problem with two weeks left rather than a crisis with two days left.
 
-**The stretch generation layer is Week 8 only, and only if Week 7 finished clean.** Cut it without regret; it carries no marks that retrieval does not already carry.
+**There is no generation layer.** It was cut permanently rather than deferred; see §3.
 
 ---
 
@@ -323,7 +351,7 @@ Roles assume 3 members. **With 2 members, merge B and C and drop Rung 3 (BiLSTM 
 | 4 | Compute limits (Colab timeouts, VRAM) | Medium | Base-size models only; max_len 256; gradient accumulation; checkpoint to Drive every epoch; precompute and cache corpus embeddings |
 | 5 | Section splitter fails on irregular Acts | Medium | Keep raw HTML archive; hand-verify a 50-section random sample in Week 2; per-Act splitter overrides |
 | 6 | Word2Vec underperforms on a small corpus | High | **Expected, not a failure.** Report as a corpus-size finding with analysis. |
-| 7 | Scope creep via the generation layer | Medium | It is Week 8, stretch-only, cuttable by default |
+| 7 | Scope creep via a generation layer | Low | Removed from scope entirely (§3). Retrieval and citation only. |
 
 ---
 
@@ -333,7 +361,7 @@ Roles assume 3 members. **With 2 members, merge B and C and drop Rung 3 (BiLSTM 
 
 Design commitments that back that claim up:
 - **Every output carries its citation.** No uncited output, ever.
-- **The retrieved legal text is always displayed**, even when the stretch generation layer is enabled. The paraphrase never replaces the source; it sits beside it.
+- **The retrieved legal text is the output**, always shown as printed (`text_raw`). Nothing paraphrases or summarises a provision for the user; there is no generated text anywhere in the system.
 - **Crawl date is recorded and displayed.** Laws are amended; a stale snapshot presented as current is the actual harm risk here.
 - **No personal data.** Questions mined from public discussion are stripped of names, phone numbers, and identifying details, and are not republished verbatim with attribution.
 - **Scraping conduct:** respect terms of use and robots.txt, rate-limit politely, identify the crawler.

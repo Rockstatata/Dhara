@@ -1,0 +1,191 @@
+\documentclass[11pt]{article}
+
+% ---------- Page geometry ----------
+\usepackage[a4paper,left=1.3cm,right=1.3cm,top=1.1cm,bottom=1.1cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Colors ----------
+\definecolor{kuetgreen}{RGB}{0,102,51}
+\definecolor{kuetblue}{RGB}{16,74,120}
+
+% ---------- Rigid paragraph spacing (no stretch => no multicol inflation) ----------
+\setlength{\parskip}{3.2pt}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{0.7cm}
+
+% ---------- Section formatting (rigid spacing) ----------
+\titleformat{\section}{\normalfont\bfseries\color{kuetblue}\normalsize}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+
+\setlist[itemize]{leftmargin=1.0em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+% ---------- Table defaults ----------
+\renewcommand{\arraystretch}{1.15}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% =====================================================
+% PAGE 1 -- COVER PAGE
+% =====================================================
+\begin{titlepage}
+\centering
+\vspace*{0.9cm}
+
+\includegraphics[width=3.1cm]{KUET-LOGO.png}
+
+\vspace{0.8cm}
+
+{\LARGE\bfseries\color{kuetgreen} KHULNA UNIVERSITY OF ENGINEERING\\[2pt] \& TECHNOLOGY}
+
+\vspace{0.35cm}
+{\large Department of Computer Science and Engineering}
+
+\vspace{1.3cm}
+
+{\LARGE\bfseries Natural Language Processing Laboratory}
+
+\vspace{0.25cm}
+{\large\bfseries Course Code: CSE 4122}
+
+\vspace{1.3cm}
+
+{\Large\bfseries Project Proposal}
+
+\vspace{0.6cm}
+
+{\LARGE\bfseries\color{kuetblue} Implicit Crisis Language Detection\\[4pt] Using Transformer-Based NLP}
+
+\vspace{0.5cm}
+
+{\large\bfseries Distinguishing Explicit, Implicit and Hard-Negative\\[2pt] Crisis Language with a Fine-Tuned BERT Classifier}
+
+\vspace{1.5cm}
+
+\begin{minipage}[t]{0.35	\textwidth}
+\raggedright
+\textbf{\large Submitted to,}
+
+\vspace{0.45cm}
+\textbf{Dr. K. M. Azharul Hasan}\\
+Professor\\
+Department of Computer Science and\\ Engineering
+
+\vspace{0.4cm}
+\textbf{Md Nazirulhasan Shawon}\\
+Assistant Professor\\
+Department of Computer Science and\\ Engineering
+\end{minipage}%
+\hspace{0.06\textwidth}%
+\begin{minipage}[t]{0.32\textwidth}
+\raggedright
+\textbf{\large Submitted by,}
+
+\vspace{0.45cm}
+\textbf{Adiba Tahsin}\\
+Roll: 2107031
+
+\vspace{0.35cm}
+\textbf{Megha Tania}\\
+Roll: 2107057
+
+\vspace{0.4cm}
+Section: A\\
+Year: 4th\\
+Semester: 1st
+\end{minipage}
+
+\vfill
+
+{\large\bfseries Date of Submission: 19 August, 2026}
+
+\vspace*{0.5cm}
+\end{titlepage}
+
+% =====================================================
+% PAGE 2 -- CONTENT
+% =====================================================
+\begin{multicols}{2}
+\fontsize{10}{11.8}\selectfont
+\raggedcolumns
+
+\section{Introduction}
+Computational work on social-media distress is largely organised around \emph{explicit} disclosure. Models trained on such data inherit a lexical shortcut: they learn that terms like ``suicide'' or ``kill myself'' predict the positive class, and this shortcut fails in two directions. Distress is frequently expressed \emph{implicitly} --- through hopelessness, perceived burdensomeness or farewell-like phrasing --- with no crisis vocabulary at all; and crisis vocabulary appears abundantly in text expressing no personal crisis, such as news commentary, third-party concern and hyperbole.
+
+Compare ``I want to kill myself'' (explicit) with ``Everyone would be better off without me'' (implicit: no crisis term occurs, and meaning depends on composition in context). A bag-of-words representation can only encode the first; contextual transformer representations should, in principle, encode the second.
+
+\textbf{Research question.} Can transformer-based NLP models identify crisis-related language expressed implicitly, when explicit suicide-related terminology is absent?
+
+\textbf{Scope.} A text-classification research prototype, not a clinical diagnostic system; outputs classify language, not people.
+
+\section{Research Gap}
+The gap addressed is an evaluation and annotation gap, not a claim of novel subject matter.
+\begin{itemize}
+\item \textbf{Labelling provenance.} Widely used corpora derive labels from subreddit membership rather than post content, introducing label noise invisible in aggregate accuracy.
+\item \textbf{Explicit dominance.} Where positives come from disclosure-norm communities, explicit phrasing is over-represented, so a model can score highly while learning little beyond a keyword list.
+\item \textbf{Absence of hard negatives.} Negatives are usually topically unrelated, so the boundary is never tested against crisis vocabulary lacking personal crisis.
+\item \textbf{No four-way organisation.} No surveyed dataset separates Explicit / Implicit / Hard Negative / Non-Crisis, so these slices cannot be reported independently.
+\end{itemize}
+
+Our own corpora confirm this. In the IRF splits (3,522 posts), 73.2\% of risk-labelled posts contain none of the markers \textit{suicid*, kill myself, end my life}; in SDCNL (1,895 posts), 62.8\% of positives contain no such marker while 18.4\% of negatives do. Implicit and hard-negative material is already latent here, but is neither separately labelled nor evaluable.
+
+\section{Proposed Contribution}
+\begin{itemize}
+\item A manually annotated evaluation layer over existing public corpora distinguishing \textbf{Explicit Crisis}, \textbf{Implicit Crisis}, \textbf{Hard Negative} and \textbf{Non-Crisis} --- the primary contribution.
+\item A controlled comparison of TF-IDF + Logistic Regression against a fine-tuned BERT classifier on identical data and an identical unseen test set.
+\item Disaggregated evaluation reporting explicit, implicit and hard-negative cases separately rather than as one pooled score.
+\item A qualitative error analysis of where contextual representation helps and which hard negatives induce false positives.
+\end{itemize}
+
+\section{Dataset Sources}
+Only the manually annotated gold dataset provides labels for our four target categories; the corpora below supply candidate text and conceptual grounding.
+
+\vspace{2pt}
+{\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{1.8cm}|p{1.7cm}|p{0.8cm}|p{2.5cm}|}
+\hline
+\textbf{Dataset} & \textbf{Role} & \textbf{Size} & \textbf{Labels} \\
+\hline
+Komati (Reddit) & Candidate text; bulk data & $\sim$232k & Binary suicide / non-suicide, subreddit-derived \\
+\hline
+IRF (ACL '23) & Implicit-risk candidates & 3,522 & Thwarted Belongingness, Perceived Burdensomeness \\
+\hline
+SDCNL (ICANN '21) & Hard-negative candidates & 1,895 & Binary is\_suicide (980 / 915) \\
+\hline
+CAMS (LREC '22) & Implicit distress via cause & 5,052 & Six causal categories + spans \\
+\hline
+GoEmotions (ACL '20) & Non-crisis bulk text & 58,009 & 27 emotion labels + Neutral \\
+\hline
+\end{tabular}
+}
+
+\vspace{3pt}
+\textbf{Note on IRF.} Its constructs frequently surface as implicit crisis language, so it calibrates our guidelines and locates candidates; it is not itself treated as a crisis dataset.
+
+\section{Proposed Methodology}
+\begin{enumerate}[leftmargin=1.3em, itemsep=1pt, topsep=1.5pt, parsep=0pt]
+\item \textbf{Collect candidates.} Sample the corpora above, over-sampling posts with risk or causal annotations but no explicit vocabulary, and posts with crisis vocabulary but a negative label.
+\item \textbf{Human annotation.} Each post receives exactly one of the four labels under written guidelines; a portion is double-annotated so inter-annotator agreement can be reported.
+\item \textbf{Gold dataset.} Annotated items form the gold set; a target of $\sim$2,000 posts is indicative, not finalised.
+\item \textbf{Split.} Partition into train/validation and a held-out test set, untouched during tuning and stratified so all three slices are represented.
+\item \textbf{Models.} A baseline of TF-IDF features (word and character n-grams) with Logistic Regression, and a pre-trained BERT fine-tuned on the same data --- both tuned on the same validation split.
+\item \textbf{Evaluation.} Both models on the identical test set: accuracy, precision, recall, F1 and confusion matrices overall, and --- as the primary result --- computed separately over explicit, implicit and hard-negative cases.
+\item \textbf{Error analysis.} Examine items where TF-IDF succeeds and BERT fails, the reverse, where both fail, and hard negatives causing false positives.
+\end{enumerate}
+
+\section{Ethical Considerations}
+All data is drawn from existing publicly released research corpora with author identifiers removed; no user is identified, profiled or contacted, no clinical diagnosis is performed, and the system is never deployed on live user data.
+
+\section{Limitations}
+Subreddit-derived labels are noisy candidate signals rather than ground truth; the gold dataset is small relative to corpora typically used for fine-tuning; the implicit / non-crisis boundary is subjective, so annotator disagreement is expected and will be reported rather than concealed; and findings are limited to English social-media text, where classification performance is not clinical validity.
+
+\end{multicols}
+\end{document}

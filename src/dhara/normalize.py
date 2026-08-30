@@ -54,6 +54,65 @@ def aggressive(text: str) -> str:
     return text.strip().lower()
 
 
+# --------------------------------------------------------------------------
+# Stopwords, for lexical models only
+# --------------------------------------------------------------------------
+#
+# Without these, BM25 scores a citizen question mostly on আমি / কি / ও / দিতে and
+# ranks long documents first: a question about যৌতুক ও দেনমোহর returned
+# ভূমি উন্নয়ন কর আইন as its top hit while the Dowry Prohibition Act sat at rank 3.
+#
+# Two deliberate omissions:
+#
+#   - **Negation stays.** না, নেই, নয় are frequent enough to look like stopwords,
+#     but "করা যাইবে না" (shall not) and "করা যাইবে" (shall) are opposite legal
+#     rules. A bag of words cannot exploit the difference, yet discarding it
+#     guarantees the loss. Keeping them costs a little precision and no
+#     correctness.
+#   - **Nothing domain-specific.** ধারা, আইন and আদালত are common but they are
+#     what a citizen searching for a provision actually types.
+#
+# Transformers never see this list — their tokenizers were trained on natural
+# text that contains these words.
+STOPWORDS: frozenset[str] = frozenset(
+    """
+    আমি আমার আমাকে আমরা আমাদের তুমি তোমার তোমাকে আপনি আপনার আপনাকে
+    সে তার তাকে তারা তাদের তিনি তাঁর তাঁকে এটি এটা ইহা উহা
+    এই ঐ ওই সেই কোন কোনো যে যা যাহা যাহার তাহা তাহার
+    কি কী কে কাকে কার কেন কোথায় কখন কিভাবে কীভাবে
+    এবং ও বা কিংবা অথবা কিন্তু তবে তবু যদি তাহলে তাই সুতরাং
+    করে করা করতে করিতে করিয়া হবে হয় হয়েছে হইবে হইয়া ছিল আছে থাকে থাকিবে
+    এর ের থেকে হতে হইতে জন্য সাথে সঙ্গে দিয়া দিয়ে নিয়ে লইয়া দ্বারা মাধ্যমে
+    পর আগে পূর্বে মধ্যে ভিতরে উপর উপরে নিচে নিম্নে প্রতি বিষয়ে সম্পর্কে
+    মত মতো ন্যায় অনুযায়ী অনুসারে
+    খুব অনেক বেশি কম সব সকল সমস্ত প্রত্যেক একটি একটা টি টা টির
+    এখন তখন যখন এখনও আবার আরও ইত্যাদি
+    """.split()
+)
+
+
+# `aggressive()` pads the danda into its own token on purpose: it is a sentence
+# boundary and Word2Vec's context window needs to see it. A bag-of-words ranker
+# must not. The danda occurs in 3,980 of 6,359 corpus chunks, so leaving it in
+# gave every long provision a free term match and let document length, rather
+# than topic, drive the BM25 ranking. Dropped here rather than in `aggressive()`
+# so the Word2Vec contract is unchanged.
+_PUNCT_TOKENS: frozenset[str] = frozenset({DANDA, ",", ".", ";", ":", "-", "—"})
+
+
+def content_tokens(text: str) -> list[str]:
+    """Aggressively normalize, then drop stopwords and punctuation.
+
+    For BM25/TF-IDF/Word2Vec ranking. Not for Word2Vec *training*, which wants
+    the danda as a boundary marker.
+    """
+    return [
+        t
+        for t in aggressive(text).split()
+        if t not in STOPWORDS and t not in _PUNCT_TOKENS
+    ]
+
+
 # ZWJ is stripped only at the aggressive level because it is load-bearing in some
 # conjuncts — র‍্য is the usual example. Stripping it for BM25 costs nothing,
 # because both spellings then collapse to the same token; stripping it before a

@@ -1,0 +1,58 @@
+# Model checkpoints. One entry per rung; scripts read from here, never hard-code.
+#
+# Two checkpoints, two jobs (CLAUDE.md): a Bangla-specific ELECTRA for
+# classification, and a *multilingual* encoder for retrieval, because 60% of the
+# gold answers live in English-only Acts that a Bangla-only model cannot
+# represent at all.
+
+retrieval:
+  # Dense bi-encoder. Switched from multilingual-e5-base on 2026-08-28: e5-base
+  # reached only 8% recall@10 on English-gold questions, which falsified the
+  # load-bearing assumption that a multilingual encoder crosses the language
+  # wall. BGE-m3 quadruples that. See DECISIONS.md 2026-08-28.
+  biencoder:
+    checkpoint: BAAI/bge-m3
+    max_seq_length: 512
+    batch_size: 128          # T4, fp16
+    use_title: true
+    # BGE-m3 dense retrieval takes no instruction prefix. bge-v1.5 (non-m3)
+    # does; prefixes_for() in retrievers/biencoder.py picks from the name so the
+    # zero-shot and fine-tuned runs can never drift apart.
+    query_prefix: ""
+    passage_prefix: ""
+    dim: 1024
+
+  # Zero-shot control index — frozen artifact, the denominator of the headline
+  # claim. Never rebuild in place; a rebuild becomes a new directory.
+  zeroshot_index: models/index_bge_m3_zeroshot_v1
+
+  # Retired. Kept because its numbers are a reported row, not a deleted mistake.
+  biencoder_retired:
+    checkpoint: intfloat/multilingual-e5-base
+    max_seq_length: 400
+    query_prefix: "query: "
+    passage_prefix: "passage: "
+    dim: 768
+
+  reranker:
+    checkpoint: BAAI/bge-reranker-v2-m3   # planned, not yet run
+    max_length: 512
+
+  bm25:
+    # Defaults are rank_bm25's, tuned on the old ~6k-chunk corpus. Re-tune on
+    # dev against the 39,484-chunk corpus before any BM25 number ships.
+    k1: 1.5
+    b: 0.75
+    tuned_on_corpus_v1: false
+
+classification:
+  checkpoint: csebuetnlp/banglabert      # needs csebuetnlp/normalizer, not on PyPI
+
+fusion:
+  rrf_k: 60
+  depth: 200
+  # Equal-weight RRF *lost* to dense alone on the full corpus (R@10 0.216 vs
+  # 0.322) because BM25 is near-random on the 60% English-gold slice and half
+  # the fused score is therefore noise. Weighted fusion is the open question;
+  # equal-weight RRF is not the default path.
+  weights: {dense: 1.0, bm25: 1.0}

@@ -231,3 +231,65 @@ def write_jsonl(questions: list[Question], dest: pathlib.Path) -> int:
         for q in questions:
             fh.write(json.dumps(asdict(q), ensure_ascii=False) + "\n")
     return len(questions)
+
+
+# --------------------------------------------------------------------------
+# The lawyer's reply
+# --------------------------------------------------------------------------
+#
+# Every mined question was answered in print by a practising advocate, and that
+# reply is already sitting in `mined_articles.jsonl` — the splitter discarded it
+# because it selects segments containing a question mark and a reply rarely has
+# one.
+#
+# The reply is worth recovering for one specific reason: it is written in the
+# register the statute uses. A reader writes "কো-অপারেটিভের কাছে টাকা আটকে আছে"
+# and the advocate answers "দেওয়ানি আইনের আওতায় মানি মোকদ্দমা করতে পারেন". The
+# second phrasing is the bridge across the register gap that this whole project
+# is about, and for labelling purposes it is a far stronger retrieval query than
+# the question alone.
+#
+# It is NOT a provision label. Advocates name a remedy or an Act, rarely a
+# section, and sometimes — as with the affidavit question — they give practical
+# advice citing no law at all. Treat it as strong evidence for a human, never as
+# the answer itself.
+#
+# Copyright: the reply is the newspaper's text, exactly like the question. It
+# lives in `data/interim/`, which is git-ignored, and never enters the released
+# dataset.
+
+
+def _replies_by_boundaries(text: str) -> list[str]:
+    """The reply following each segment `_by_boundaries` would have kept.
+
+    Deliberately mirrors `_by_boundaries` so the nth reply belongs to the nth
+    question and the `qid` numbering in `split_article` lines up. Returns an
+    empty string where no reply followed, rather than shifting the list.
+    """
+    segments = BOUNDARY.sub(SENTINEL, text).split(SENTINEL)
+    if len(segments) < 3:
+        return []
+    body = segments[1:]
+    replies = []
+    for i, segment in enumerate(body):
+        if not _looks_like_question(segment):
+            continue
+        nxt = body[i + 1] if i + 1 < len(body) else ""
+        replies.append("" if _looks_like_question(nxt) else nxt.strip())
+    return replies
+
+
+def replies_for_article(article: dict, index: int) -> dict[str, str]:
+    """`{qid: reply}` for one article, keyed to match `split_article`."""
+    source = article["source"]
+    if source.startswith("lawyersclub"):
+        return {}
+    replies = _replies_by_boundaries(article.get("text", ""))
+    prefix = source.split("_")[0][:4]
+    out = {}
+    for n, reply in enumerate(replies, start=1):
+        cleaned = strip_pii(BOILERPLATE.sub(" ", reply))
+        cleaned = re.sub(r"\s+", " ", cleaned).strip(" *।")
+        if cleaned:
+            out[f"{prefix}_{index:04d}_{n:02d}"] = cleaned
+    return out

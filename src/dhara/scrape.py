@@ -103,24 +103,60 @@ def provision(act_id: str, section_id: str) -> ScrapedProvision | None:
     )
 
 
-def act(act_id: str) -> Iterator[ScrapedProvision]:
-    for section_id in section_ids(act_id):
+RETRIES = 3
+BACKOFF = 5.0
+
+
+def _provision_with_retry(act_id: str, section_id: str) -> ScrapedProvision | None:
+    """Fetch one provision, retrying the transient network failures.
+
+    bdlaws drops connections under sustained crawling — `ConnectionResetError`
+    and a refused connect are both routine over a run of a few thousand pages.
+    Neither is a `requests.HTTPError`, so catching only that let them escape and
+    kill the whole act (see the note in `acts`). Both are also transient: the
+    same URL succeeds seconds later.
+    """
+    for attempt in range(1, RETRIES + 1):
         try:
-            found = provision(act_id, section_id)
+            return provision(act_id, section_id)
         except requests.HTTPError as exc:
             print(f"  !! act-{act_id}/section-{section_id}: {exc}")
-            continue
+            return None                      # a 404 will not become a 200
+        except requests.RequestException as exc:
+            if attempt == RETRIES:
+                print(
+                    f"  !! act-{act_id}/section-{section_id}: giving up after "
+                    f"{RETRIES} attempts: {type(exc).__name__}"
+                )
+                return None
+            time.sleep(BACKOFF * attempt)
+    return None
+
+
+def act(act_id: str) -> Iterator[ScrapedProvision]:
+    for section_id in section_ids(act_id):
+        found = _provision_with_retry(act_id, section_id)
         if found is not None:
             yield found
 
 
 def acts(act_ids: list[str]) -> Iterator[ScrapedProvision]:
     for i, act_id in enumerate(act_ids, start=1):
+        found: list[ScrapedProvision] = []
         try:
-            found = list(act(act_id))
+            # Accumulate as we go rather than binding `list(act(...))` inside the
+            # try: on 2026-08-25 a single dropped connection part-way through an
+            # act discarded every provision already fetched for it, and six acts
+            # — including শিশু আইন and কপিরাইট আইন — silently produced zero rows
+            # despite having their pages on disk. Partial output beats none, and
+            # the archive means the next run completes it for free.
+            for item in act(act_id):
+                found.append(item)
         except Exception as exc:  # noqa: BLE001 — one bad act must not stop a long crawl
-            print(f"  !! act-{act_id} failed: {type(exc).__name__}: {exc}")
-            continue
+            print(
+                f"  !! act-{act_id} interrupted after {len(found)} provisions: "
+                f"{type(exc).__name__}: {exc}"
+            )
         print(f"  [{i}/{len(act_ids)}] act-{act_id}: {len(found)} provisions")
         yield from found
 

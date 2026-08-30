@@ -1,0 +1,175 @@
+% Compile with LuaLaTeX (Bangla text needs HarfBuzz shaping):
+%   lualatex proposal.tex
+\documentclass[11pt]{article}
+
+% ---------- Page geometry ----------
+\usepackage[a4paper,left=1.3cm,right=1.3cm,top=1.0cm,bottom=0.9cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Fonts (Bangla) ----------
+\usepackage{fontspec}
+\newfontfamily\bn{Kalpurush}[Script=Bengali,Renderer=HarfBuzz]
+\newcommand{\bng}[1]{{\bn #1}}
+
+% ---------- Colors ----------
+\definecolor{kuetgreen}{RGB}{0,102,51}
+\definecolor{kuetblue}{RGB}{16,74,120}
+
+% ---------- Rigid paragraph spacing (no stretch => no multicol inflation) ----------
+\setlength{\parskip}{3.2pt}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{0.7cm}
+
+% ---------- Section formatting (rigid spacing) ----------
+\titleformat{\section}{\normalfont\bfseries\color{kuetblue}\normalsize}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+
+\setlist[itemize]{leftmargin=1.0em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+% ---------- Table defaults ----------
+\renewcommand{\arraystretch}{1.15}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% =====================================================
+% PAGE 1 -- COVER PAGE
+% =====================================================
+\begin{titlepage}
+\centering
+\vspace*{0.9cm}
+
+\includegraphics[width=3.1cm]{KUET-LOGO.png}
+
+\vspace{0.8cm}
+
+{\LARGE\bfseries\color{kuetgreen} KHULNA UNIVERSITY OF ENGINEERING\\[2pt] \& TECHNOLOGY}
+
+\vspace{0.35cm}
+{\large Department of Computer Science and Engineering}
+
+\vspace{1.3cm}
+
+{\LARGE\bfseries Natural Language Processing Laboratory}
+
+\vspace{0.25cm}
+{\large\bfseries Course Code: CSE 4122}
+
+\vspace{1.3cm}
+
+{\Large\bfseries Project Proposal}
+
+\vspace{0.6cm}
+
+{\LARGE\bfseries\color{kuetblue} \bng{ধারা} (Dhara): Retrieving Bangladeshi Law\\[4pt] from Plain-Bangla Citizen Questions}
+
+\vspace{0.5cm}
+
+{\large\bfseries Closing the Colloquial--Legal Register Gap with a\\[2pt] Fine-Tuned Multilingual Bi-Encoder}
+
+\vspace{1.5cm}
+
+\begin{minipage}[t]{0.35	\textwidth}
+\raggedright
+\textbf{\large Submitted to,}
+
+\vspace{0.45cm}
+\textbf{Dr. K. M. Azharul Hasan}\\
+Professor\\
+Department of Computer Science and\\ Engineering
+
+\vspace{0.4cm}
+\textbf{Md Nazirulhasan Shawon}\\
+Assistant Professor\\
+Department of Computer Science and\\ Engineering
+\end{minipage}%
+\hspace{0.06\textwidth}%
+\begin{minipage}[t]{0.32\textwidth}
+\raggedright
+\textbf{\large Submitted by,}
+
+\vspace{0.45cm}
+\textbf{Sarwad Hasan Siddiqui}\\
+Roll: 2107006
+
+\vspace{0.35cm}
+\textbf{Iftiaq Hossen}\\
+Roll: 2107003
+
+\vspace{0.4cm}
+Section: A\\
+Year: 4th\\
+Semester: 1st
+\end{minipage}
+
+\vfill
+
+{\large\bfseries Date of Submission: 31 August, 2026}
+
+\vspace*{0.5cm}
+\end{titlepage}
+
+% =====================================================
+% PAGE 2 -- CONTENT
+% =====================================================
+\begin{multicols}{2}
+\fontsize{9.3}{10.6}\selectfont
+\raggedcolumns
+
+\section{Introduction}
+A citizen who wants to know what the law says about her maintenance, her land mutation or her stolen Facebook account has everything she needs in principle: the Acts are published in full on the government's Laws of Bangladesh portal. In practice she cannot use them. The law is written in formal, often archaic legal Bangla --- and, for the older Acts, in English --- while she asks in the Bangla she actually speaks. A person asks ``\bng{পুলিশ আমার ভাইকে ধরে নিয়ে গেছে, এখন কী করব?}'' and the provision that answers it is headed \bng{গ্রেপ্তার ও আটক}, speaking of \bng{তদন্তকারী কর্মকর্তা}. Not one content word is shared. That is the ordinary case, and stemming or fuzzy matching will not repair it, because the distance is semantic rather than orthographic.
+
+\textbf{Research question.} Can a retrieval model be trained to map colloquial Bangla citizen questions onto the exact statutory provision that answers them, when question and provision share almost no vocabulary and are often not even in the same language?
+
+\textbf{Scope, and why this is not a RAG project.} The system will retrieve and cite; it will never generate, paraphrase or advise, so there is no generation layer to wrap around an off-the-shelf LLM. Everything that learns will be built by us --- the corpus and its normalisation, the Word2Vec embeddings, the LSTM language model, the BiLSTM encoder, the tagger and the sequence-to-sequence register translator. Only the sentence encoder will be pretrained, and its zero-shot score will be locked as a control so that our fine-tuning has to beat it. A generated paragraph built on the wrong section still reads convincingly; a retrieved section is either right or wrong and can be scored exactly, which in a legal setting is the difference that matters.
+
+\section{Research Gap}
+Bangla legal NLP exists but points elsewhere. The closest published systems, MINA (Findings of ACL 2026) and LegalRAG, are retrieval-augmented generation pipelines evaluated largely on Bar Council examination questions --- written by lawyers, in legal register, for lawyers.
+\begin{itemize}
+\item \textbf{Register is never isolated.} No existing evaluation tags a query colloquial or formal, so nobody reports how much of a score comes from handling ordinary citizen phrasing.
+\item \textbf{Language is never isolated.} About 39\% of the statutory text we need is English and untranslated --- criminal procedure entirely, family law 86\%. A Bangla question against an English provision is a cross-lingual problem nobody measures.
+\item \textbf{Benchmarks are model-shaped.} Questions generated by an LLM from a provision reuse that provision's vocabulary, so the benchmark quietly measures lexical overlap.
+\end{itemize}
+
+\section{Data Sources}
+\vspace{2pt}
+{\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{1.55cm}|p{1.55cm}|p{0.85cm}|p{2.3cm}|}
+\hline
+\textbf{Source} & \textbf{Role} & \textbf{Size} & \textbf{Notes} \\
+\hline
+bdlaws portal & Primary corpus & 1,227 Acts & Structured HTML, no OCR \\
+\hline
+BLAD dataset & Corpus seed & --- & Gaps filled from the portal \\
+\hline
+Newspaper legal columns & Real citizen questions & 794 & Gold set; paraphrased before release \\
+\hline
+Synthetic questions & Training pairs & $\sim$2.5k & One per provision; never evaluated on \\
+\hline
+\end{tabular}
+}
+
+\vspace{3pt}
+A pilot scrape has already produced \textbf{39,484 chunks} over \textbf{35,938 provisions} from \textbf{1,227 Acts}, fixing the schema for the rest of the work. Each record will carry Act title, section number in both numeral systems, chapter, source URL, crawl date, language and domain --- the metadata \emph{is} the citation. Median provision length is 73 words; longer provisions will be split into overlapping sub-chunks sharing one citation. About 6,200 chunks fall in the everyday-life domains (family, land, labour, consumer, cybercrime, criminal procedure, women and children, tenancy, transport, civil registration, money recovery, and the Constitution) and will form the evaluation corpus. Raw HTML is archived before parsing, requests are rate-limited, the crawler identifies itself, and repealed provisions will be dropped with the count reported.
+
+The gold set will be \textbf{human-adjudicated}: BM25 proposes candidates --- deliberately a lexical retriever, which biases the set toward what keyword search can already find and so makes our own claim harder to prove --- and a human decides. One block will be annotated with no candidates at all, so the miss rate of the pool is itself measured; overlap blocks will give inter-annotator agreement.
+
+\section{Method}
+Normalisation will run at two levels that are not interchangeable: NFC, ZWNJ stripping and danda unification for the transformers, plus ZWJ removal, Bangla-to-ASCII digits and lowercasing for BM25 and Word2Vec (\bng{১০৩} and 103 name the same section). We will then climb a ladder on identical data --- BM25 tuned on dev, mean-pooled Word2Vec, a contrastively trained BiLSTM, a zero-shot multilingual encoder, and that encoder fine-tuned with \texttt{MultipleNegativesRankingLoss} on hard negatives mined from ranks 5--30. Sparse and dense results will fuse by reciprocal rank fusion into a top-50 list, a cross-encoder will rerank, and the top three will be returned with citations or the system will abstain. A seq2seq model trained on human-written colloquial/formal pairs will rewrite the query into legal register before retrieval. Alongside: domain classification across four representations for the generative-versus-discriminative comparison, a tagger for explicit section numbers, and K-Means over provision embeddings scored by ARI and NMI. An LSTM language model trained on legal Bangla will give a second, retriever-free measurement of the register gap through perplexity on colloquial versus formal questions.
+
+\section{Evaluation}
+Recall@1/5/10, MRR@10 and nDCG@10 on the gold set; macro-F1 for classification; perplexity for the language model. The gold set will be touched once, at the end, with a leakage assertion on every run. Splits will be made by provision, not by question, so near-duplicate synthetic questions cannot straddle train and dev. No rung-to-rung difference will be claimed without a paired bootstrap confidence interval, and every number will be emitted by a script into JSON with per-query results rather than typed by hand. The headline table is the ladder split by register with the language split beside it: we expect BM25 to hold on formal queries, collapse on colloquial ones, and score near zero when a Bangla question must reach an English provision. If fine-tuning closes those gaps the table will show it; if it does not, the table will show that too.
+
+\section{Ethics and Limitations}
+The system is an information-retrieval tool and not legal advice, and this will be stated in the interface, the abstract and the limitations. Every output will carry its citation and crawl date, since a stale provision presented as current is the realistic harm. Mined questions will be stripped of names, phone numbers, NID numbers and addresses, and since the columns are copyrighted only a register-preserving paraphrase will be released. High-risk domains will lead with a legal-aid referral and a raised abstention threshold, but ranking will stay identical across domains. Coverage is a dated snapshot; case law is out of scope; a few hundred thousand words is small for Word2Vec, and uneven neighbourhoods will be reported as a corpus-size finding rather than hidden; Bangla stemmers are weak on inflected legal vocabulary; and a gold set of this size will leave some comparisons inconclusive. We would rather report an honest null result than a fudged positive one.
+
+\end{multicols}
+\end{document}

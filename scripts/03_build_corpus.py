@@ -76,6 +76,17 @@ def main() -> int:
         return 0
 
     chunks, stats = blad.build(all_acts=args.all)
+    # Fold in the acts BLAD leaves empty, fetched from bdlaws.
+    extra, extra_stats = blad.build_from_bdlaws(all_acts=args.all)
+    chunks += extra
+    stats.update({f"bdlaws_{k}": v for k, v in extra_stats.items()})
+    # BLAD has no provision titles; bdlaws does. Join them on.
+    chunks, title_stats = blad.enrich_titles(chunks)
+    stats.update({f"title_{k}": v for k, v in title_stats.items()})
+    # Last, because it must see every chunk from every source: chunk_id is the
+    # answer key the gold set points at and a duplicate makes an answer ambiguous.
+    chunks, dedupe_stats = blad.dedupe_chunk_ids(chunks)
+    stats.update(dedupe_stats)
     schema.write_jsonl(chunks, args.out)
 
     print(f"{len(chunks)} chunks -> {args.out}\n")

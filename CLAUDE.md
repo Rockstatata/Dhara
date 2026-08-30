@@ -21,17 +21,26 @@ There are two audiences for the output. The near one is the course submission in
 
 ## Architecture
 
-Query → normalize → **BM25 (sparse)** and **fine-tuned bi-encoder (dense)** in parallel → RRF fusion → top-50 → cross-encoder rerank → top-3 sections with citations. An intent classifier runs alongside, reported separately; intent-based candidate filtering stays an ablation, never the default path (a wrong intent prediction silently destroys retrieval).
+Query → normalize → **fine-tuned bi-encoder (dense)** → top-50 → cross-encoder rerank → top-3 sections with citations. **BM25 runs alongside as the reported lexical floor, not as a fused input:** equal-weight RRF measured *worse* than dense alone on the full corpus (R@10 0.216 vs 0.324) because BM25 returns 0% relevant candidates on the 60% of questions whose gold answer is an English-only Act, so half of every fused score is noise. Weighted, dense-dominant fusion is an open ablation, not the default (DECISIONS.md 2026-08-31). An intent classifier runs alongside, reported separately; intent-based candidate filtering stays an ablation, never the default path (a wrong intent prediction silently destroys retrieval).
 
-The five retrieval configurations form an "experimental ladder" (§7), and each rung is a separate report result, not a discarded prototype:
+**The build is organised by course syllabus topic, not by a retrieval ladder.** Read [docs/PIPELINE.md](docs/PIPELINE.md) before building anything — it maps every topic to the artifact in this system that needs it, and explains why each stage exists.
 
-1. BM25 — tune `k1`/`b` on dev; an untuned baseline invalidates the comparison
-2. Self-trained Word2Vec (gensim skip-gram, `vector_size=200, min_count=3, sg=1, epochs=30`)
-3. BiLSTM dual-encoder over frozen W2V, InfoNCE with in-batch negatives
-4. a) zero-shot multilingual dense **control**, b) fine-tuned bi-encoder (`MultipleNegativesRankingLoss`, max_len 256, lr 2e-5, 2–4 epochs, fp16)
-5. Cross-encoder reranker over the fused top-50
+| Topic | Artifact | Job in the system |
+|---|---|---|
+| 0 | `build_pretrained_embedding_matrix()`, Word2Vec vs general vectors | embedding matrix every RNN below starts from; NN-table is a result |
+| 1 | NB + LogReg on TF-IDF, `VanillaRNNClassifier`, `StackedBiLSTMClassifier` | predict `domain`; generative vs discriminative on identical features |
+| 2 | `BiRNNSequenceLabeler` | tag ACT / SECTION_NO / LEGAL_TERM / PARTY — extracts "১০৩ ধারা" to boost that provision |
+| 3 | `StackedLSTMLanguageModel` | **measuring instrument**: perplexity on colloquial vs formal quantifies the register gap without a retriever |
+| 4 | `Seq2SeqTranslation` | **register** translation, colloquial→formal Bangla, trained on the `PAIR` annotations; used as query reformulation |
+| 5 | fine-tuned pretrained transformers only | no transformer is written from scratch — Topic 0 answers "explain your embeddings" |
 
-Rung 4a must be locked *before* 4b runs — it is what separates "transformers work" from "our fine-tuning works."
+**What the supervisor actually requires** (written guidance, recorded in DECISIONS.md): classification is **not** mandatory — "you are not bound to do classification works, it's an open ended project." The supervised core is the retrieval fine-tuning itself (contrastive learning on labelled question→provision pairs). Topics 1–4 are syllabus demonstrations that earn their place, not requirements. One of generative/discriminative is enough (we keep both; NB is ~20 lines). No GUI required beyond a clear input→output box. Unsupervised clustering "can add value". Data collection **must** be documented.
+
+Build order is Topic 0 → Topic 5 → 3 → 4 → 1 → 2. Topic 5 comes early on purpose: if the central claim fails, find out now.
+
+Two checkpoints, two jobs: `csebuetnlp/banglabert` for classification (ELECTRA, strongest Bangla-specific, needs its own normalizer); a **multilingual** sentence encoder for retrieval, because retrieval must reach the English-only Acts that a Bangla-only model cannot represent.
+
+**BM25 stays but is one row in one table.** It is a TF-IDF-family ranking function, not a language model. It exists because a neural result with no non-neural floor is unpublishable, and because its specific failure — it cannot match a Bangla question to an English provision at all — is one of the things this project measures. Tune `k1`/`b` on dev; an untuned baseline invalidates the comparison. The zero-shot dense control must be locked *before* fine-tuning runs — it is what separates "transformers work" from "our fine-tuning works."
 
 ## Planned layout (§2.1)
 

@@ -32,6 +32,7 @@ domains:
       - The Muslim Marriages and Divorces      # act-476,  18 sec, EN only
       - The Dissolution of Muslim Marriages    # act-180,   5 sec, EN only
       - The Succession Act                     # act-138, 395 sec, EN only
+      - The Guardians and Wards Act            # act-64,   55 sec, EN only
       - পারিবারিক আদালত আইন                    # act-1444, 31 sec, BN
       - হিন্দু বিবাহ নিবন্ধন আইন                 # act-1105, 15 sec, BN
       - পারিবারিক সহিংসতা                       # act-1063, 37 sec, BN
@@ -84,20 +85,33 @@ domains:
       - কপিরাইট আইন                           # act-1452, 128 sec, BN
       - ট্রেডমার্ক আইন                          # act-1010, 128 sec, BN
       - ওজন ও পরিমাপ মানদণ্ড আইন                # act-1270,  74 sec, BN
+      - ধূমপান ও তামাকজাত দ্রব্য ব্যবহার        # act-927,   21 sec, BN
 
   - id: cybercrime
     name_bn: সাইবার অপরাধ ও ডিজিটাল অধিকার
     name_en: Cybercrime and digital rights
     risk_tier: high
     evaluation: headline
-    acts:                                   # act-1457 is in BLAD but has ZERO
-      - সাইবার নিরাপত্তা আইন                   # provisions — needs the bdlaws pass
-      - সাইবার সুরক্ষা অধ্যাদেশ                 # act-1538,  51 sec, BN
-      - তথ্য ও যোগাযোগ প্রযুক্তি আইন            # act-950,   90 sec, BN
+    acts:
+      - সাইবার সুরক্ষা আইন, ২০২৬               # act-1710 — THE LIVE ONE
+      - তথ্য ও যোগাযোগ প্রযুক্তি আইন            # act-950,   90 sec, BN, live
+    # Deliberately NOT listed, and each is repealed on the portal:
+    #   act-1261  ডিজিটাল নিরাপত্তা আইন, ২০১৮   [রহিত]
+    #   act-1457  সাইবার নিরাপত্তা আইন, ২০২৩    [রহিত]
+    #   act-1538  সাইবার সুরক্ষা অধ্যাদেশ, ২০২৫  [রহিত]
+    # act-1457 and act-1538 were both in the corpus until 2026-08-25 — 129 of the
+    # domain's 220 chunks — because the repeal marker lives in the portal title
+    # and the exclusion was reading BLAD's. See DECISIONS.md.
     notes: >
       Second-largest category of reader legal questions per Prothom Alo's 2023
       round-up. High risk in both directions: this is the law people seek
       protection under AND the law people are prosecuted under.
+
+      This domain has been legislated four times in eight years — DSA 2018,
+      CSA 2023, the 2025 ordinance, and now সাইবার সুরক্ষা আইন, ২০২৬. Every
+      predecessor is repealed. Answering a cybercrime question from a repealed
+      act is the single most likely way this system causes real harm, so the
+      currency of this list matters more here than anywhere else in the file.
 
   - id: constitutional
     name_bn: সাংবিধানিক ও মৌলিক অধিকার
