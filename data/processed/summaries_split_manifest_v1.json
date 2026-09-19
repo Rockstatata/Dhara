@@ -1,0 +1,44 @@
+{
+  "total_rows": 213,
+  "total_acts": 17,
+  "target_ratios": {
+    "train": 0.8,
+    "val": 0.1,
+    "test": 0.1
+  },
+  "actual_row_counts": {
+    "train": 168,
+    "val": 26,
+    "test": 19
+  },
+  "actual_row_ratios": {
+    "train": 0.7887,
+    "val": 0.1221,
+    "test": 0.0892
+  },
+  "acts_per_split": {
+    "train": [
+      "civil_registration_921",
+      "consumer_1014",
+      "criminal_procedure_11",
+      "criminal_procedure_75",
+      "family_138",
+      "family_64",
+      "labour_952",
+      "land_90",
+      "local_government_1024",
+      "tenancy_748",
+      "women_children_1063"
+    ],
+    "val": [
+      "constitutional_957",
+      "cybercrime_950",
+      "money_recovery_46"
+    ],
+    "test": [
+      "land_241",
+      "other_1315",
+      "road_transport_1262"
+    ]
+  }
+}
