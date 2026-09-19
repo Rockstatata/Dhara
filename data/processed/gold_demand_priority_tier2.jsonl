@@ -1,0 +1,14 @@
+{"provision_id": "civil_registration_1458_s9", "chunk_id": "civil_registration_1458_s9", "gold_question_count": 2, "train_examples": 2, "domain": "civil_registration"}
+{"provision_id": "criminal_procedure_11_s500", "chunk_id": "criminal_procedure_11_s500", "gold_question_count": 2, "train_examples": 2, "domain": "criminal_procedure"}
+{"provision_id": "criminal_procedure_75_s548", "chunk_id": "criminal_procedure_75_s548", "gold_question_count": 2, "train_examples": 2, "domain": "criminal_procedure"}
+{"provision_id": "cybercrime_1710_s40", "chunk_id": "cybercrime_1710_s40", "gold_question_count": 2, "train_examples": 2, "domain": "cybercrime"}
+{"provision_id": "labour_952_s30", "chunk_id": "labour_952_s30", "gold_question_count": 2, "train_examples": 2, "domain": "labour"}
+{"provision_id": "land_90_s49", "chunk_id": "land_90_s49", "gold_question_count": 2, "train_examples": 2, "domain": "land"}
+{"provision_id": "land_856_s2", "chunk_id": "land_856_s2_p2", "gold_question_count": 2, "train_examples": 2, "domain": "land"}
+{"provision_id": "money_recovery_46_s140", "chunk_id": "money_recovery_46_s140", "gold_question_count": 2, "train_examples": 2, "domain": "money_recovery"}
+{"provision_id": "other_36_s54", "chunk_id": "other_36_s54_p0", "gold_question_count": 2, "train_examples": 2, "domain": "other"}
+{"provision_id": "other_48_s48", "chunk_id": "other_48_s48", "gold_question_count": 2, "train_examples": 2, "domain": "other"}
+{"provision_id": "other_857_s70", "chunk_id": "other_857_s70", "gold_question_count": 2, "train_examples": 2, "domain": "other"}
+{"provision_id": "other_1682_s19", "chunk_id": "other_1682_s19", "gold_question_count": 2, "train_examples": 2, "domain": "other"}
+{"provision_id": "labour_952_s232", "chunk_id": "labour_952_s232", "gold_question_count": 1, "train_examples": 1, "domain": "labour"}
+{"provision_id": "labour_952_s1", "chunk_id": "labour_952_s1", "gold_question_count": 1, "train_examples": 1, "domain": "labour"}

@@ -1,0 +1,11 @@
+metric,value
+gold_rows,794
+distinct_questions,584
+pass1_auto_rows,794
+answer_source_filled,35
+verified_filled,0
+human_written_notes,0
+double_annotated_qids,170
+pairs_with_differing_answers,0
+lawyer_checked,17
+lawyer_agreement_rate,0.7647

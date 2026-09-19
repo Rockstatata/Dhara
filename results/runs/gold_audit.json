@@ -1,0 +1,181 @@
+{
+  "run_id": "gold_audit",
+  "gold_file": "data\\processed\\gold_test_v1.jsonl",
+  "gold_rows": 794,
+  "distinct_questions": 584,
+  "annotators": {
+    "Iftiaq": 197,
+    "Sarwad": 199,
+    "Sifat": 198,
+    "Sorup": 200
+  },
+  "verdicts": {
+    "answered": 773,
+    "unanswerable": 10,
+    "not_found": 11
+  },
+  "annotation_modes": {
+    "assisted": 774,
+    "unaided": 20
+  },
+  "edit_evidence": {
+    "rows": 794,
+    "pass1_auto": 794,
+    "answer_source_filled": 35,
+    "answer_source_values": {
+      "(empty)": 759,
+      "own_search": 20,
+      "candidate": 15
+    },
+    "verified_filled": 0,
+    "human_written_notes": 0,
+    "paraphrase_filled": 0,
+    "formal_version_filled": 0,
+    "empty_answers": 0
+  },
+  "overlap": {
+    "double_annotated_qids": 170,
+    "annotator_pairs_compared": 270,
+    "pairs_with_differing_answers": 0,
+    "blocks": {
+      "CALIBRATION": 20,
+      "OVERLAP": 129,
+      "OVERLAP+PAIR": 16,
+      "OVERLAP+UNAIDED": 5
+    },
+    "examples": [],
+    "kappa_computable": false,
+    "note": "Zero differing pairs means the sheets were returned exactly as the machine pass filled them. Agreement is then 1.0 by construction and kappa measures nothing; it must not be reported."
+  },
+  "lawyer_cross_check": {
+    "gold_rows_with_lawyer_answer": 491,
+    "lawyer_answer_names_a_corpus_act": 17,
+    "no_recognisable_act_title": 474,
+    "label_act_matches_lawyer": 13,
+    "label_act_differs": 4,
+    "agreement_rate": 0.7647,
+    "examples_of_mismatch": [
+      {
+        "qid": "prot_0089_01",
+        "lawyer_named_acts": [
+          "women_children_1207"
+        ],
+        "labelled_acts": [
+          "other_173",
+          "women_children_835"
+        ]
+      },
+      {
+        "qid": "ajke_0166_01",
+        "lawyer_named_acts": [
+          "women_children_835"
+        ],
+        "labelled_acts": [
+          "family_305"
+        ]
+      },
+      {
+        "qid": "ajke_0166_01",
+        "lawyer_named_acts": [
+          "women_children_835"
+        ],
+        "labelled_acts": [
+          "family_305"
+        ]
+      },
+      {
+        "qid": "ajke_0198_01",
+        "lawyer_named_acts": [
+          "women_children_835"
+        ],
+        "labelled_acts": [
+          "family_180",
+          "family_305",
+          "women_children_1063"
+        ]
+      }
+    ],
+    "note": "Title-substring matching over a corpus of 1,227 Acts, so coverage is partial and a miss is not necessarily a wrong label — the lawyer may name no law, or name it in words that are not its printed title. Read the agreement rate as a floor on label quality, not a verdict."
+  },
+  "agreement": {
+    "double_annotated_qids": 170,
+    "pairs": {
+      "Iftiaq+Sarwad": {
+        "n": 57,
+        "verdict_raw_agreement": 1.0,
+        "verdict_kappa": null,
+        "register_raw_agreement": 1.0,
+        "register_kappa": 1.0,
+        "domain_raw_agreement": 1.0,
+        "domain_kappa": 1.0,
+        "provision_exact_match": 1.0,
+        "provision_any_overlap": 1.0,
+        "provision_mean_jaccard": 1.0
+      },
+      "Iftiaq+Sifat": {
+        "n": 57,
+        "verdict_raw_agreement": 1.0,
+        "verdict_kappa": null,
+        "register_raw_agreement": 1.0,
+        "register_kappa": 1.0,
+        "domain_raw_agreement": 1.0,
+        "domain_kappa": 1.0,
+        "provision_exact_match": 1.0,
+        "provision_any_overlap": 1.0,
+        "provision_mean_jaccard": 1.0
+      },
+      "Iftiaq+Sorup": {
+        "n": 20,
+        "verdict_raw_agreement": 1.0,
+        "verdict_kappa": null,
+        "register_raw_agreement": 1.0,
+        "register_kappa": 1.0,
+        "domain_raw_agreement": 1.0,
+        "domain_kappa": 1.0,
+        "provision_exact_match": 1.0,
+        "provision_any_overlap": 1.0,
+        "provision_mean_jaccard": 1.0
+      },
+      "Sarwad+Sifat": {
+        "n": 20,
+        "verdict_raw_agreement": 1.0,
+        "verdict_kappa": null,
+        "register_raw_agreement": 1.0,
+        "register_kappa": 1.0,
+        "domain_raw_agreement": 1.0,
+        "domain_kappa": 1.0,
+        "provision_exact_match": 1.0,
+        "provision_any_overlap": 1.0,
+        "provision_mean_jaccard": 1.0
+      },
+      "Sarwad+Sorup": {
+        "n": 58,
+        "verdict_raw_agreement": 1.0,
+        "verdict_kappa": null,
+        "register_raw_agreement": 1.0,
+        "register_kappa": 1.0,
+        "domain_raw_agreement": 1.0,
+        "domain_kappa": 1.0,
+        "provision_exact_match": 1.0,
+        "provision_any_overlap": 1.0,
+        "provision_mean_jaccard": 1.0
+      },
+      "Sifat+Sorup": {
+        "n": 58,
+        "verdict_raw_agreement": 1.0,
+        "verdict_kappa": null,
+        "register_raw_agreement": 1.0,
+        "register_kappa": 1.0,
+        "domain_raw_agreement": 1.0,
+        "domain_kappa": 1.0,
+        "provision_exact_match": 1.0,
+        "provision_any_overlap": 1.0,
+        "provision_mean_jaccard": 1.0
+      }
+    }
+  },
+  "act_titles_indexed": 1075,
+  "findings": [
+    "Inter-annotator agreement is NOT measurable from these files: no double-annotated pair differs, which is what identical pre-filled answers produce."
+  ]
+}

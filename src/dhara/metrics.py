@@ -28,7 +28,13 @@ CUTOFFS = (1, 5, 10, 20, 50, 100)
 
 def first_hit(ranked_provision_ids: Iterable[str], gold: set[str]) -> Optional[int]:
     """1-based rank of the first ranked item whose provision is gold, else None."""
-    for rank, provision_id in enumerate(ranked_provision_ids, 1):
+    seen: set[str] = set()
+    rank = 0
+    for provision_id in ranked_provision_ids:
+        if provision_id in seen:
+            continue
+        seen.add(provision_id)
+        rank += 1
         if provision_id in gold:
             return rank
     return None
