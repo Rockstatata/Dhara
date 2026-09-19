@@ -26,5 +26,22 @@ Thumbs.db
 
 # Scratch
 .scratch/tmp/
+scratch/
+domains_dump.txt
+sample_human_row.txt
+.scratch_allfiles.txt
 
 data/processed/corpus_full_v1.jsonl
+
+# Large binary artifacts — over GitHub's 100MB hard limit or just too big to host here.
+# Kept on local disk / Drive / Colab only. See DECISIONS.md for the call.
+dhara_outputs_results/
+dhara_outputs_results.tar.gz
+data/finetune-results/
+notebooks/*.npy
+*.zip
+data/processed/corpus_v1.jsonl
+data/processed/synthetic_coverage_candidates_v2.jsonl
+data/processed/pretrain_retrieval_coverage_v1.jsonl
+data/processed/synth_coverage_questions_v3.jsonl
+data/processed/diverse_augmentation_prompt_ledger_v2.jsonl

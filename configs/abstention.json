@@ -1,0 +1,32 @@
+{
+  "thresholds": {
+    "default": 0.48,
+    "high": 0.55
+  },
+  "provisional_recalibration_2026_09_19": {
+    "reason": "The previous thresholds (default 0.53, high 0.65) were calibrated by scripts/46_calibrate_abstention.py against models/index_bge_m3_acttitle_v1 -- a different checkpoint AND a different document template (title+text_bn only, no Act/Section prefix) than the v6 fine-tuned model actually being served (models/index_bge_m3_finetuned_v6, Act/Section-prefixed template). That mismatch was silently abstaining on good matches: verified live against 25 real dev/test questions with a KNOWN-correct answer (frozen human-adjudicated qids, not cherry-picked), correct top-1 hits scored as low as 0.517 and as high as 0.732 -- the old high=0.65 threshold alone abstained on 5 of these otherwise-correct answers.",
+    "method": "Not the formal scripts/46_calibrate_abstention.py sweep (attempted three times against the full 552-row gold set; each run stalled under CPU contention from a concurrently-running Gradio server + classifier training job on this machine and was killed before finishing -- a resource problem, not a script bug). These thresholds are instead read directly off the 25-question live-verification sample above: default sits just below its lowest confirmed-correct score (0.517), high sits a little above that to keep the extra caution CLAUDE.md asks for on high-risk domains, without recreating the old gap that discarded correct high-risk answers outright.",
+    "todo": "Re-run scripts/46_calibrate_abstention.py --run results/runs/bge_m3_finetuned_v6.json --index models/index_bge_m3_finetuned_v6 in isolation (nothing else competing for CPU, or on the GPU box) for a real sweep-selected threshold with a false_abstain/false_confidence tradeoff curve, and replace this provisional entry. Note the script also expects a `top_score` field per query in the --run file's per_query list, which the notebook's write_run() does not currently emit (only qid/rank/lang_tag) -- add that before running, or the abstain_calibration_v2.jsonl (unanswerable) side will work but the answerable side will have nothing to compare against."
+  },
+  "calibration": {
+    "run": "results\\runs\\bge_m3_acttitle_v2.json",
+    "index": "models\\index_bge_m3_acttitle_v1",
+    "note": "STALE -- for the retired acttitle_v1 checkpoint, kept only as a historical record of the old sweep's methodology. Not used to select the thresholds above.",
+    "tiers": {
+      "high": {
+        "selected": {
+          "tau": 0.65,
+          "false_abstain": 65,
+          "false_confidence": 0,
+          "cost": 65,
+          "overridden_for_small_sample": true
+        }
+      },
+      "default": {
+        "selected": {
+          "tau": 0.53
+        }
+      }
+    }
+  }
+}

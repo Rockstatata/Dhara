@@ -33,6 +33,7 @@ domains:
       - The Dissolution of Muslim Marriages    # act-180,   5 sec, EN only
       - The Succession Act                     # act-138, 395 sec, EN only
       - The Guardians and Wards Act            # act-64,   55 sec, EN only
+      - The Muslim Personal Law (Shariat) Application Act  # 2026-09-19: 41 gold rows cited this and fell into 'other'
       - পারিবারিক আদালত আইন                    # act-1444, 31 sec, BN
       - হিন্দু বিবাহ নিবন্ধন আইন                 # act-1105, 15 sec, BN
       - পারিবারিক সহিংসতা                       # act-1063, 37 sec, BN
@@ -49,6 +50,7 @@ domains:
     evaluation: headline
     acts:                                   # verified against BLAD titles
       - The Registration Act                   # act-90,  116 sec, EN only
+      - The Transfer of Property Act            # 2026-09-19: 25 gold rows cited this and fell into 'other'
       - The State Acquisition and Tenancy Act  # act-241, 207 sec, EN only
       - The Non-Agricultural Tenancy Act       # act-232,  60 sec, EN only
       - ভূমি অপরাধ প্রতিরোধ ও প্রতিকার আইন      # act-1454, 27 sec, BN
