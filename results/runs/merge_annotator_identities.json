@@ -1,0 +1,41 @@
+{
+  "verify_merges": [
+    {
+      "kind": "verify",
+      "primary": "Sarwad",
+      "secondary": "Sorup",
+      "merged_in": 142,
+      "archived_conflicts": 6
+    },
+    {
+      "kind": "verify",
+      "primary": "Iftiaq",
+      "secondary": "Sifat",
+      "merged_in": 142,
+      "archived_conflicts": 6
+    }
+  ],
+  "paraphrase_merges": [
+    {
+      "kind": "paraphrase",
+      "primary": "Sarwad",
+      "secondary": "Sorup",
+      "merged_in": 138,
+      "archived_conflicts": 0
+    },
+    {
+      "kind": "paraphrase",
+      "primary": "Iftiaq",
+      "secondary": "Sifat",
+      "merged_in": 138,
+      "archived_conflicts": 0
+    }
+  ],
+  "round2": {
+    "total": 18,
+    "excluded_as_self_pair": 6,
+    "valid_for_agreement": 12
+  },
+  "gold_v2_rows_changed": 289,
+  "gold_v3_rows_changed": 289
+}

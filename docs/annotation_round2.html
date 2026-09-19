@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<style>
+  /* Same reset the Artifact host applies, so the local file renders identically. */
+  body { margin: 0; font: 14px system-ui, sans-serif; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Dhara Annotation Round 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Noto+Sans+Bengali:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+</head>
+<body>
+<style>
+  /* ---- Light palette (also the un-stamped default) ---------------------- */
+  :root {
+    --paper:        #F4F5F3;   /* cool paper, green-grey bias */
+    --card:         #FFFFFF;
+    --ink:          #16191B;
+    --ink-soft:     #4B5257;
+    --ink-faint:    #767E84;
+    --rule:         #D8DCD8;
+    --rule-strong:  #B9BFBA;
+    --accent:       #1F4B4A;   /* deep petrol — the corpus/legal ground */
+    --accent-soft:  #E4EDEB;
+    --stamp:        #9B3227;   /* registrar's-ink red, for the hard rule only */
+    --stamp-soft:   #F6E6E3;
+    --amber:        #7A5410;
+    --amber-soft:   #F6EEDC;
+    --code-bg:      #EDEFEC;
+
+    --measure: 68ch;
+    --step--1: clamp(0.82rem, 0.80rem + 0.10vw, 0.88rem);
+    --step-0:  clamp(1.00rem, 0.97rem + 0.14vw, 1.09rem);
+    --step-1:  clamp(1.18rem, 1.12rem + 0.28vw, 1.36rem);
+    --step-2:  clamp(1.45rem, 1.34rem + 0.55vw, 1.85rem);
+    --step-3:  clamp(1.95rem, 1.70rem + 1.20vw, 2.85rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:        #14171A;
+      --card:         #1B1F22;
+      --ink:          #E8EBE8;
+      --ink-soft:     #AEB6B6;
+      --ink-faint:    #838B8C;
+      --rule:         #2C3235;
+      --rule-strong:  #414A4C;
+      --accent:       #7FBDB4;
+      --accent-soft:  #1D2C2C;
+      --stamp:        #E2887C;
+      --stamp-soft:   #2E1F1D;
+      --amber:        #D9B268;
+      --amber-soft:   #2B2415;
+      --code-bg:      #21262A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:        #14171A;
+    --card:         #1B1F22;
+    --ink:          #E8EBE8;
+    --ink-soft:     #AEB6B6;
+    --ink-faint:    #838B8C;
+    --rule:         #2C3235;
+    --rule-strong:  #414A4C;
+    --accent:       #7FBDB4;
+    --accent-soft:  #1D2C2C;
+    --stamp:        #E2887C;
+    --stamp-soft:   #2E1F1D;
+    --amber:        #D9B268;
+    --amber-soft:   #2B2415;
+    --code-bg:      #21262A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", "Noto Sans Bengali", system-ui, sans-serif;
+    font-size: var(--step-0);
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 78rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 1rem + 3vw, 4rem) clamp(1.1rem, 0.6rem + 2.4vw, 3rem) 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  @media (min-width: 62rem) {
+    .page { grid-template-columns: 15rem minmax(0, 1fr); align-items: start; gap: 3.5rem; }
+    .rail { position: sticky; top: 2rem; }
+  }
+
+  /* ---- masthead --------------------------------------------------------- */
+  .masthead { grid-column: 1 / -1; border-bottom: 2px solid var(--ink); padding-bottom: 1.4rem; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.6rem;
+  }
+  h1 {
+    font-family: Literata, Georgia, serif;
+    font-size: var(--step-3);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0 0 0.5rem;
+  }
+  .standfirst {
+    max-width: var(--measure);
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    margin: 0;
+  }
+
+  /* ---- rail ------------------------------------------------------------- */
+  .rail { font-size: var(--step--1); }
+  .rail h2 {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: var(--step--1);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    font-weight: 500;
+    margin: 0 0 0.8rem;
+  }
+  .rail ol { list-style: none; margin: 0 0 2rem; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+  .rail a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.15rem 0;
+    border-bottom: 1px solid transparent;
+  }
+  .rail a:hover, .rail a:focus-visible { color: var(--accent); border-bottom-color: var(--rule-strong); }
+  .rail .num { font-family: "IBM Plex Mono", monospace; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+
+  .vitals { display: flex; flex-direction: column; gap: 0.9rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+  .vital dt {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+  }
+  .vital dd { margin: 0.15rem 0 0; font-weight: 500; }
+
+  /* ---- body ------------------------------------------------------------- */
+  main { min-width: 0; }
+  section { margin-bottom: 3.2rem; scroll-margin-top: 1.5rem; }
+  section > * { max-width: var(--measure); }
+  section > .wide, section > figure, section > .grid2 { max-width: none; }
+
+  h2.head {
+    font-family: Literata, Georgia, serif;
+    font-size: var(--step-2);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    margin: 0 0 0.4rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    text-wrap: balance;
+  }
+  h2.head .num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: var(--step--1);
+    color: var(--accent);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  h3 {
+    font-family: Literata, Georgia, serif;
+    font-size: var(--step-1);
+    font-weight: 600;
+    margin: 2rem 0 0.5rem;
+  }
+  p { margin: 0 0 1rem; }
+  .lede { color: var(--ink-soft); margin-bottom: 1.6rem; }
+  strong { font-weight: 600; }
+  code, .id {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.88em;
+    background: var(--code-bg);
+    padding: 0.1em 0.36em;
+    border-radius: 3px;
+  }
+  pre {
+    background: var(--code-bg);
+    border-left: 2px solid var(--rule-strong);
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: var(--step--1);
+    line-height: 1.65;
+    margin: 0 0 1.2rem;
+  }
+  pre code { background: none; padding: 0; }
+
+  /* ---- rules callouts --------------------------------------------------- */
+  .rules { list-style: none; margin: 0 0 1.4rem; padding: 0; display: flex; flex-direction: column; gap: 1rem; max-width: var(--measure); }
+  .rule-item {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--rule-strong);
+    padding: 1rem 1.2rem;
+  }
+  .rule-item.critical { border-left-color: var(--stamp); background: var(--stamp-soft); }
+  .rule-item h3 { margin: 0 0 0.35rem; font-size: var(--step-0); font-family: "IBM Plex Sans", sans-serif; font-weight: 600; }
+  .rule-item.critical h3 { color: var(--stamp); }
+  .rule-item p { margin: 0; color: var(--ink-soft); font-size: 0.96em; }
+
+  /* ---- tables ----------------------------------------------------------- */
+  .tablewrap { overflow-x: auto; margin: 0 0 1.4rem; border: 1px solid var(--rule); background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: 0.95em; }
+  th, td { text-align: left; padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead th {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 500;
+    background: var(--paper);
+    white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  td.you { color: var(--accent); font-weight: 600; }
+
+  /* ---- value list ------------------------------------------------------- */
+  .values { display: flex; flex-direction: column; gap: 0.5rem; margin: 0 0 1.3rem; padding: 0; list-style: none; max-width: var(--measure); }
+  .values li { display: grid; grid-template-columns: minmax(7.5rem, auto) 1fr; gap: 0.9rem; align-items: baseline; }
+  .values .k { font-family: "IBM Plex Mono", monospace; font-size: 0.85em; color: var(--ink); background: var(--code-bg); padding: 0.15em 0.45em; border-radius: 3px; justify-self: start; }
+  .values .v { color: var(--ink-soft); }
+
+  /* ---- anatomy figure --------------------------------------------------- */
+  figure { margin: 0 0 1.4rem; }
+  .anatomy {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    padding: 1.1rem 1.2rem;
+    overflow-x: auto;
+    font-family: "IBM Plex Mono", "Noto Sans Bengali", monospace;
+    font-size: var(--step--1);
+    line-height: 1.9;
+    white-space: pre;
+  }
+  .anatomy .tag { color: var(--accent); }
+  .anatomy .marker { color: var(--stamp); }
+  figcaption { font-size: var(--step--1); color: var(--ink-faint); margin-top: 0.5rem; }
+
+  .note {
+    border-left: 3px solid var(--amber);
+    background: var(--amber-soft);
+    padding: 0.9rem 1.1rem;
+    margin: 0 0 1.3rem;
+    max-width: var(--measure);
+  }
+  .note p { margin: 0; font-size: 0.96em; }
+  .note strong { color: var(--amber); }
+
+  ol.steps { margin: 0 0 1.2rem; padding-left: 1.3rem; }
+  ol.steps li { margin-bottom: 0.6rem; }
+  ul.plain { margin: 0 0 1.2rem; padding-left: 1.2rem; }
+  ul.plain li { margin-bottom: 0.45rem; }
+
+  .bn { font-family: "Noto Sans Bengali", "IBM Plex Sans", sans-serif; }
+
+  footer {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.2rem;
+    color: var(--ink-faint);
+    font-size: var(--step--1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+  }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">Dhara · Bangla legal retrieval</p>
+    <h1>Round 2 annotation</h1>
+    <p class="standfirst">60 questions each. You read the question, pick the section of law that answers it, and record how sure you are. This round is what turns our evaluation set from an unknown into a measured one.</p>
+  </header>
+
+  <aside class="rail">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#why"><span class="num">01</span> Why again</a></li>
+      <li><a href="#rules"><span class="num">02</span> Three rules</a></li>
+      <li><a href="#file"><span class="num">03</span> Your file</a></li>
+      <li><a href="#answer"><span class="num">04</span> The answer column</a></li>
+      <li><a href="#search"><span class="num">05</span> When candidates fail</a></li>
+      <li><a href="#edges"><span class="num">06</span> Edge cases</a></li>
+      <li><a href="#done"><span class="num">07</span> Sending it back</a></li>
+    </ol>
+    <dl class="vitals">
+      <div class="vital"><dt>Your file</dt><dd class="id">verify_&lt;name&gt;.csv</dd></div>
+      <div class="vital"><dt>Rows</dt><dd>60</dd></div>
+      <div class="vital"><dt>Pace</dt><dd>2–4 min per row</dd></div>
+      <div class="vital"><dt>Total</dt><dd>about 2.5 hours</dd></div>
+    </dl>
+  </aside>
+
+  <main>
+    <section id="why">
+      <h2 class="head"><span class="num">01</span> Why we are doing this again</h2>
+      <p class="lede">Not because the first round was careless — because of how the sheets were built.</p>
+      <p>Round one handed you sheets with the <code>answer</code> column already filled in by a machine pass. They came back unchanged. Across 170 questions that two people both annotated, <strong>not one answer differed</strong> — which is what happens when a pre-filled sheet is returned as-is. So we cannot say what those labels are worth, and we cannot measure agreement between annotators at all.</p>
+      <p>We did check the machine's answers against the advocate's published reply for the 330 questions that have one: roughly 48% look right, 24% look wrong, and the rest are unclear. So this is not a claim that the old labels are bad. It is that nobody knows, and every number in the project is measured against them.</p>
+      <p>This time the <code>answer</code> column starts empty. What you write is the label.</p>
+    </section>
+
+    <section id="rules">
+      <h2 class="head"><span class="num">02</span> Three rules</h2>
+      <ul class="rules">
+        <li class="rule-item critical">
+          <h3>Do not use ChatGPT, Claude, Gemini or any AI to choose the answer</h3>
+          <p>This is the one rule that cannot be bent. Our central claim is that our retrieval system finds the right law. If an AI picked the labels, we would only be measuring how well our system agrees with another AI — and the whole result becomes worthless. Use the candidate list, the search tool, and your own reading.</p>
+        </li>
+        <li class="rule-item">
+          <h3>Do not compare sheets with each other</h3>
+          <p>Some questions deliberately appear in two people's files. If you discuss them, the agreement figure we compute from them measures your conversation instead of your judgement.</p>
+        </li>
+        <li class="rule-item">
+          <h3>Do not look at the round-one sheets</h3>
+          <p>Ignore <code>annotate_*.csv</code> entirely. If you happen to remember a question, judge it fresh anyway.</p>
+        </li>
+      </ul>
+      <div class="note"><p><strong>Unsure is a valid answer.</strong> Record low confidence and write a note. An honest “not sure” is far more useful to us than a confident guess — the confidence column is data, not a grade.</p></div>
+    </section>
+
+    <section id="file">
+      <h2 class="head"><span class="num">03</span> What is in your file</h2>
+      <div class="tablewrap wide">
+        <table>
+          <thead><tr><th>Column</th><th>Filled by</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td><code>qid</code></td><td>already filled</td><td>Question id — do not edit</td></tr>
+            <tr><td><code>annotator</code></td><td>already filled</td><td>Your name</td></tr>
+            <tr><td><code>block</code></td><td>—</td><td>Intentionally blank; ignore it</td></tr>
+            <tr><td><code>question_bn</code></td><td>already filled</td><td>The citizen's question — do not edit</td></tr>
+            <tr><td><code>candidates</code></td><td>already filled</td><td>Ten provisions found by keyword search — do not edit</td></tr>
+            <tr><td><code>answer</code></td><td class="you">you</td><td>The section(s) that answer the question</td></tr>
+            <tr><td><code>answer_source</code></td><td class="you">you</td><td>Where you found it</td></tr>
+            <tr><td><code>verdict</code></td><td class="you">you</td><td><code>answered</code> / <code>not_found</code> / <code>unanswerable</code></td></tr>
+            <tr><td><code>confidence</code></td><td class="you">you</td><td><code>3</code> sure · <code>2</code> fairly sure · <code>1</code> guessing · <code>?</code></td></tr>
+            <tr><td><code>notes</code></td><td class="you">you</td><td>Anything worth recording</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Reading a candidate line</h3>
+      <figure>
+        <div class="anatomy"><span class="marker">3.</span> <span class="tag">&lt;labour_952_s340&gt;</span> [<span class="bn">বাংলাদেশ শ্রম আইন, ২০০৬</span>, <span class="bn">ধারা ৩৪০</span>] <span class="bn">নিয়োগ সম্পর্ক অনুমান</span> — <span class="bn">কোন ব্যক্তিকে কোন কারখানায় …</span>
+<span class="marker">▲</span>  <span class="tag">▲</span>                    ▲                          ▲              ▲
+rank  chunk id             act and section number     section title  opening words</div>
+        <figcaption>Ten lines per question, each a different provision. You can answer with the rank number or the chunk id.</figcaption>
+      </figure>
+    </section>
+
+    <section id="answer">
+      <h2 class="head"><span class="num">04</span> The answer column</h2>
+      <p class="lede">Write either the candidate numbers or the chunk ids — both work.</p>
+      <ul class="values">
+        <li><span class="k">3</span><span class="v">Candidate 3 answers the question</span></li>
+        <li><span class="k">3, 7</span><span class="v">Two sections together answer it</span></li>
+        <li><span class="k">labour_952_s340</span><span class="v">A chunk id you found yourself</span></li>
+        <li><span class="k">none</span><span class="v">You could not find the answer, in the list or by searching</span></li>
+        <li><span class="k">unanswerable</span><span class="v">No law answers this question</span></li>
+      </ul>
+
+      <div class="note"><p><strong><code>none</code> and <code>unanswerable</code> are not the same.</strong> <code>none</code> means the answer probably exists in Bangladeshi law but you could not find it. <code>unanswerable</code> means there is nothing to find — the person wants a lawyer's opinion, asks a factual question, asks about something outside our corpus, or the text is not really a question. Only <code>unanswerable</code> teaches the system when to stay silent, so mixing the two corrupts a separate measurement.</p></div>
+
+      <p><strong>At most three sections.</strong> If more seem relevant, pick the three that most directly answer the question.</p>
+
+      <h3>What counts as “the answer”</h3>
+      <p>The section a lawyer would cite when answering <em>this specific question</em>.</p>
+      <ul class="plain">
+        <li>Prefer the <strong>operative</strong> section over a definition. For “what is the punishment for taking dowry”, the answer is the penalty section, not the section defining dowry.</li>
+        <li>Prefer the section that answers <strong>what was asked</strong>. If someone asks what punishment their parents face for marrying them off young, the answer is the parents' punishment section — not the general prohibition, and not the registrar's duty, even though both are about child marriage.</li>
+        <li>If the question genuinely has two parts (“can I do this, and what if I don't”), two sections are right.</li>
+        <li>Do not add a section only because it is about the same topic. A near-miss recorded as correct hurts us more than a <code>none</code>.</li>
+      </ul>
+
+      <h3>Where you found it</h3>
+      <ul class="values">
+        <li><span class="k">candidate</span><span class="v">You picked from the ten shown</span></li>
+        <li><span class="k">own_search</span><span class="v">You found it yourself with the search tool</span></li>
+        <li><span class="k">none</span><span class="v">You did not find an answer</span></li>
+      </ul>
+      <p>This column becomes a real number in the paper: how often the candidate list simply did not contain the answer. Please keep it accurate.</p>
+    </section>
+
+    <section id="search">
+      <h2 class="head"><span class="num">05</span> When the candidates do not contain the answer</h2>
+      <p class="lede">This happens often, and it is not your fault — it is one of the things the project set out to measure.</p>
+      <p>About a third of our corpus is English-only: the Succession Act, the Registration Act, the Code of Criminal Procedure and others. A Bangla keyword search cannot reach them at all, so for many questions the ten candidates <em>cannot</em> contain the right answer.</p>
+      <pre><code>python scripts/07_search_corpus.py --query "ভরণপোষণ" --k 10      # search by words
+python scripts/07_search_corpus.py --query "maintenance of wife"  # English works too
+python scripts/07_search_corpus.py --act "Succession"             # list an Act's sections
+python scripts/07_search_corpus.py --cite family_305_s10          # look up one section</code></pre>
+      <ul class="plain">
+        <li>If you know which Act applies, use <code>--act</code> and read down its section titles. Usually faster than guessing keywords.</li>
+        <li>For English Acts, search <strong>in English</strong> — the text is English, so Bangla words will not match.</li>
+        <li>Copy the chunk id (e.g. <code>family_305_s10</code>) into <code>answer</code> and set <code>answer_source</code> to <code>own_search</code>.</li>
+      </ul>
+      <p>If you search and still cannot find it, <code>none</code> is the correct answer. Do not stretch to fit a candidate.</p>
+    </section>
+
+    <section id="edges">
+      <h2 class="head"><span class="num">06</span> Edge cases</h2>
+      <div class="tablewrap wide">
+        <table>
+          <thead><tr><th>Situation</th><th>What to do</th></tr></thead>
+          <tbody>
+            <tr><td>Question text is cut off, or newspaper boilerplate is glued on</td><td>Answer it if the ask is still clear; otherwise <code>unanswerable</code> with a note that the text is broken</td></tr>
+            <tr><td>The question asks for advice, not law (“should I forgive him?”)</td><td><code>unanswerable</code></td></tr>
+            <tr><td>The answer is a whole Act, not a section</td><td>Pick the section that most directly applies; add a note if nothing fits</td></tr>
+            <tr><td>The section looks repealed or says “omitted”</td><td>Do not use it — find the replacement, or <code>none</code> with a note</td></tr>
+            <tr><td>Two sections in different Acts say almost the same thing</td><td>List both, most specific first</td></tr>
+            <tr><td>You recognise the question from round one</td><td>Ignore what you remember it was labelled; judge it fresh</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="done">
+      <h2 class="head"><span class="num">07</span> When you are done</h2>
+      <ol class="steps">
+        <li>Save as <strong>CSV, UTF-8</strong> with the same filename. In Excel: <em>File → Save As → CSV UTF-8 (Comma delimited)</em>. In Google Sheets: <em>File → Download → Comma-separated values</em>.</li>
+        <li>Do not add, remove or reorder columns or rows.</li>
+        <li>Put the file in <code>data/annotation/verified_round2/</code>, or send it to Sarwad.</li>
+      </ol>
+
+      <h3>What your work produces</h3>
+      <ul class="plain">
+        <li>These 200 questions are the project's <strong>frozen test set</strong> — every result in the paper is measured on them. After this round every one of those labels is human-checked rather than machine-guessed.</li>
+        <li>Comparing your answers against what the machine proposed in round one gives us the <strong>accuracy of the old labels</strong>.</li>
+        <li>The questions two people annotated give us a real <strong>inter-annotator agreement (κ)</strong> — the number reviewers ask for first, and the one we currently cannot report at all.</li>
+        <li>Wrong labels get corrected, and the evaluation set stops being an unknown.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>Dhara — Bangla legal section retrieval</span>
+      <span>Round 2 · 200 questions · 4 annotators</span>
+      <span>Questions about a row? Ask Sarwad rather than guessing.</span>
+    </footer>
+  </main>
+</div>
+
+</body>
+</html>

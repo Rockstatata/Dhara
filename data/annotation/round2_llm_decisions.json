@@ -1,0 +1,241 @@
+{
+  "reviewer": "Codex (LLM)",
+  "iftiaq_corrections": {
+    "prot_0108_04": {
+      "answer": "land_241_s96_p0",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "State Acquisition and Tenancy Act section 96 directly governs a co-sharer's pre-emption claim; the registration date also makes the statutory time limit material."
+    },
+    "prot_0047_05": {
+      "answer": "other_48_s123, land_90_s17_p0",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "Transfer of Property Act section 123 states how a gift of immovable property is effected; Registration Act section 17 makes registration of an immovable-property gift/heba compulsory."
+    },
+    "prot_0122_01": {
+      "answer": "family_1444_s5, women_children_1063_s16",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "Family Courts Act section 5 gives jurisdiction over maintenance, while Domestic Violence Act section 16 expressly permits maintenance for the affected person and child."
+    },
+    "prot_0002_03": {
+      "answer": "family_305_s7, women_children_835_s17",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "MFLO section 7 supplies the husband's talaq-notice procedure; Women and Children Repression Prevention Act section 17 addresses knowingly false complaints under that Act."
+    },
+    "ajke_0192_01": {
+      "answer": "other_36_s42_p0, other_68_s2",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "Specific Relief Act section 42 supports declaration of the heirs' property right; Partition Act section 2 supplies the court's partition-sale remedy where physical division is not reasonably convenient. Section 54 injunction text does not answer the requested partition/document question."
+    }
+  },
+  "shortened_reviews": {
+    "prot_0039_04": {
+      "facts_preserved": "yes",
+      "needs_rewrite": "no",
+      "corrected_paraphrase": "",
+      "notes": "The removed material is the newspaper's answer, contact boilerplate, and identifying details; the marriage date, child's birth timing, partially paid dower, divorce questions, and custody question remain."
+    },
+    "prot_0106_03": {
+      "facts_preserved": "no",
+      "needs_rewrite": "yes",
+      "corrected_paraphrase": "আমার বোন স্বামীর নির্যাতনের শিকার। স্বামীর এই নির্যাতন থেকে তাকে বাঁচাতে আমরা কী আইনি ব্যবস্থা নিতে পারি?",
+      "notes": "The current version adds unsupported frequency and severity claims. The source itself is a short question preceded by unrelated newspaper-answer text."
+    },
+    "prot_0109_03": {
+      "facts_preserved": "no",
+      "needs_rewrite": "yes",
+      "corrected_paraphrase": "আমার যে পাওনা বা প্রাপ্য দাবি আছে, সেটা আদায় করতে আমি কী পদক্ষেপ নিতে পারি?",
+      "notes": "The current version adds a court process and characterization as a legal right that the short source question does not state. The preceding text is unrelated answer material."
+    },
+    "prot_0114_04": {
+      "facts_preserved": "no",
+      "needs_rewrite": "yes",
+      "corrected_paraphrase": "অকারণে আমার মামলার কাজ পিছিয়ে দেওয়া হচ্ছে। এই বিলম্ব বন্ধ করে দ্রুত নিষ্পত্তি চাইতে আমি কী আইনি প্রতিকার নিতে পারি?",
+      "notes": "The current version invents an opposing party, repeated time petitions, and a years-long delay. The preceding organ-sale discussion is unrelated answer material."
+    },
+    "ajke_0205_01": {
+      "facts_preserved": "yes",
+      "needs_rewrite": "no",
+      "corrected_paraphrase": "",
+      "notes": "The five-year marriage, husband's one-year behavior change and departure, lack of contact, one-year-old son living with his grandmother, safety concern, and custody request all remain; only the appended legal answer and identifying location were removed."
+    },
+    "prot_0102_02": {
+      "facts_preserved": "yes",
+      "needs_rewrite": "no",
+      "corrected_paraphrase": "",
+      "notes": "The source's actual question is the final sentence; the preceding text is an unrelated legal answer plus identifying details."
+    },
+    "prot_0122_02": {
+      "facts_preserved": "no",
+      "needs_rewrite": "yes",
+      "corrected_paraphrase": "আমার বাবার যে প্রাপ্য পাওনা আছে, আমরা সেটা কীভাবে বুঝে পেতে পারি?",
+      "notes": "The current version invents ancestral property, the father's death, and the asker's status as an heir. The source only asks how to obtain the father's entitlement; preceding maintenance text is unrelated answer material."
+    }
+  },
+  "sarwad_paraphrases": {
+    "ajke_0139_01": "আমি ছয় বছর ধরে নিজের নকশায় রেজিনের জিনিস বানিয়ে বিক্রি করছি। আমার তৈরি ডিজাইনগুলো কপিরাইটের আওতায় আনতে কী করতে হবে?",
+    "ajke_0147_01": "জমিজমার স্বার্থে আত্মীয়েরা জোর করে আমাদের ওই পরিবারের সঙ্গে যুক্ত করতে চাইছেন। আমি আপত্তি করায় দুর্ব্যবহার করছেন এবং আমার ছেলেকে নিজেদের পক্ষে টানছেন। এর বিরুদ্ধে আইনি ব্যবস্থা নিতে পারি কি?",
+    "ajke_0168_01": "আগের মামলা তুলে নেওয়ার পর আমরা অনেক দিন সংসার করেছি। হঠাৎ স্বামী তালাকের নোটিশ পাঠিয়ে যোগাযোগ বন্ধ করেছে, কিন্তু আমি সংসার রাখতে চাই। আমি কি আইনি পদক্ষেপ নিতে পারি?",
+    "ajke_0174_01": "ভুয়া ফেসবুক আইডি থেকে আমার ডিপফেক আপত্তিকর ছবি স্বামীর সহকর্মীদের পাঠানো হয়েছে। বিদেশি লোকেশন দেখানো ওই আইডি দিয়ে ভাই ও বাবাকে নিয়েও কুরুচিকর পোস্ট হচ্ছে। সাইবার আইনে সর্বোচ্চ সহায়তা পেতে কীভাবে মামলা করব?",
+    "ajke_0184_01": "আমার এক আত্মীয়ের দ্বাদশ শ্রেণিপড়ুয়া মেয়েকে কলেজ থেকে ফেরার পথে ভয় দেখিয়ে বাসায় নিয়ে যৌন হেনস্তা করা হয় এবং টাকা চাওয়া হয়। সে ভেঙে পড়েছে, কলেজে যেতে ভয় পাচ্ছে; মা লোকলজ্জায় চুপ। এখন কী করা উচিত?",
+    "ajke_0202_01": "আমার বিয়ে ২০১৬ সালে, চার বছরের একটি মেয়ে আছে। ছয় মাস ধরে বাবার বাড়িতে আছি এবং স্বামীকে তালাক দিতে চাই। তিনি সন্তান কেড়ে নেওয়ার ভয় দেখান। তালাকের পর মেয়েকে নিজের কাছে রাখতে কী করতে হবে?",
+    "lawy_0218_01": "বারবার আমিন এনে জমি মাপিয়ে আমাকে হয়রানি করা হচ্ছে। এটা বন্ধ করতে কী ব্যবস্থা নিতে পারি?",
+    "lawy_0242_01": "গোপনে তোলা ছবি বা ভিডিও ব্যবহার করে কেউ প্রতারণা করলে ভুক্তভোগীর কী আইনি করণীয় আছে?",
+    "lawy_0314_01": "দানপত্রের দলিল একবার রেজিস্ট্রি হয়ে গেলে পরে কি সেটি বাতিল করার সুযোগ আছে?",
+    "lawy_0533_01": "কোনো বিজ্ঞাপনে মিথ্যা তথ্য ও বর্ণবাদী বক্তব্য থাকলে তার বিরুদ্ধে কী আইনি প্রতিকার পাওয়া যায়?",
+    "prot_0000_04": "আমার মা-খালারা চার বোন ও এক ভাই। নানা মারা গেছেন, নানি জীবিত। নানার জমিতে ছোট খালা এখনো অংশ পাননি। নানির দুই আনা অংশসহ নিজের ৯৯ শতাংশ জমি পাঁচ সন্তানের পাওয়ার কথা ছিল, কিন্তু গত ১০ জুলাই মামা পরিবারকে চাপ দিয়ে সব নিজের নামে রেজিস্ট্রি করিয়েছেন। আমার মা কি তাঁর অংশ ফেরত পেতে পারেন?",
+    "prot_0003_03": "আমার বোনের বিয়ে ২০১৩ সালে কাজি অফিসে নিবন্ধিত হয়। তিনি এখন কানাডার স্থায়ী বাসিন্দা, স্বামী অন্য জেলায় থাকেন। বাংলাদেশে থাকা আমরা কি ঢাকা থেকে তালাকের প্রক্রিয়া করতে পারব, নাকি স্বামীর জেলায় বা কাজি অফিসে যেতে হবে? আবার আমাদের মায়ের সাতটি ফ্ল্যাটের একটি তিনি তিন ছেলে ও তিন মেয়েকে উইল করতে চান। মুসলিম আইনে তা সম্ভব হলে সবাই কি সমান ভাগ পাব?",
+    "prot_0004_04": "প্রকাশ্য স্থানে ধূমপান করলে জেল বা অন্য কী শাস্তি হয়? কাউকে এ অপরাধে শাস্তি দিতে পুলিশের সহায়তা চাইলে কীভাবে এগোতে হবে?",
+    "prot_0006_04": "আমরা দুই বোন ও এক ভাই। বাবা মারা যাওয়ার পর শুনছি তাঁর বসতবাড়িতে মেয়েদের কোনো অধিকার নেই। কথাটা কি আইনে সত্য?",
+    "prot_0010_01": "আমার বয়স ১৯, আর চার বছর ধরে ১৬ বছরের এক মেয়ের সঙ্গে সম্পর্ক। আমরা তার ১৮ বছর হওয়া পর্যন্ত অপেক্ষা করে বিয়ে করতে চাই, কিন্তু ধর্ম আলাদা বলে পরিবার মানছে না। বয়স হলে পালিয়ে গিয়ে আইনিভাবে কীভাবে বিয়ে করতে পারি?",
+    "prot_0011_05": "আমি বাবার দ্বিতীয় স্ত্রীর মেয়ে; আমরা দুই বোন ও এক ভাই, দুজন এখনো পড়ি। বাবা আমাদের খরচ বা ভরণপোষণ দেন না এবং ২ একর ৬৭ শতকসহ বসতবাড়ি প্রথম পক্ষের দুই ছেলেকে গোপনে লিখে দিয়ে আমাদের বের করেছেন। শুধু ব্যাংকে বন্ধক থাকা ৬৯ শতক বাকি। এই হস্তান্তরের বিরুদ্ধে কী করতে পারি, এবং বাবার সম্পত্তিতে উত্তরাধিকার কীভাবে পাব?",
+    "prot_0012_04": "আমার বয়স ২২। বাবা ১৯৯০ সালে প্রথম স্ত্রীকে গর্ভাবস্থায় তালাক দেন; তাঁদের সঙ্গে আর যোগাযোগ নেই। আমি দ্বিতীয় স্ত্রীর সন্তান, আমাদের শুধু ভিটাবাড়ি আছে এবং এখন আমিই সংসার চালাই। প্রথম পক্ষের সন্তান কি বাবার সম্পত্তি পাবে? বাবা আমার নামে দলিল করলে তা বৈধ হবে?",
+    "prot_0018_03": "বাবা দাদার আগেই মারা যাওয়ায় দাদা-চাচারা বলেছিলেন আমরা কোনো সম্পত্তি পাব না। পরে দাদাও কোনো দলিল না করে মারা গেছেন। বাবার সন্তান হিসেবে আমরা কি দাদার সম্পত্তিতে অংশ পাব?",
+    "prot_0026_02": "আমার ছোট বোন আট মাস আগে স্বামীকে তালাক দিয়েছে এবং তিনবার নোটিশ গেছে। এখন দুজন ভুল বুঝে আবার সংসার করতে চায়। তারা কি পুনরায় বিয়ে করতে পারবে, নাকি হিল্লা বিয়ে লাগবে? বাংলাদেশে এমন বিয়ে আইনসম্মত কি?",
+    "prot_0032_03": "বাবা জমি-বাড়ি মায়ের নামে দানপত্রে রেজিস্ট্রি করে গেছেন। বিবাহিত হিন্দু মেয়ে বলে আমি উত্তরাধিকার পাব না শুনেছি। মা বিয়ের খরচ হিসেবে আমাকে কিছু সম্পত্তি দিতে চান। কোন দলিলে দিলে তা টিকবে এবং ভাই মামলা করলে আইন কি আমার পক্ষে থাকবে?",
+    "prot_0035_04": "আমরা দুই ভাই ও এক বোন; বাবা মারা গেছেন। একমাত্র চাচা বাবার পৈতৃক জমির অংশ দখল করে আছেন এবং চাইলে হুমকি দেন, স্থানীয়রাও তাঁকে সমর্থন করে। নিজেদের অংশ কীভাবে উদ্ধার করব?",
+    "prot_0037_06": "আমরা বিয়ে করতে চাই, কিন্তু জন্মনিবন্ধনে মেয়েটির বয়স এখন ১৭ বছর ৮ মাস। সে ১৮ হলে কি আমরা আইনিভাবে বিয়ে করতে পারব? পরে তার পরিবার আমাদের বিরুদ্ধে কিছু করতে পারবে?",
+    "prot_0040_03": "প্রবাসী মামার স্ত্রী বেড়ানোর কথা বলে বাবার বাড়ি গিয়ে ইউনিয়ন পরিষদের মাধ্যমে তালাক দিয়েছেন বলে শুনেছি, কিন্তু ১৩-১৪ মাসেও মামা কোনো কাগজ পাননি। স্ত্রী কি ইসলামি আইনে এভাবে তালাক দিতে পারেন? দুজন চাইলে মামা দেশে ফিরে কীভাবে আবার সংসার করবেন?",
+    "prot_0044_03": "বাবার অমতে ২০০৯ সালে বিয়ে করায় চার বছর ধরে তিনি যোগাযোগ রাখেন না। এখন মাকে জোর করে রাজি করিয়ে একটি মেয়েকে দত্তক নিতে চান এবং আপত্তি করলে তালাকের হুমকি দেন। তিনি কি পরিবারের অনুমতি ছাড়া দত্তক নিতে পারেন, আর আমরা কী ব্যবস্থা নিতে পারি? বাবা আমাকে ত্যাজ্য করলে বা আমি সম্পর্ক ছাড়লে তাঁর সম্পত্তির ভাগ পাব কি?",
+    "prot_0046_01": "চার বছরের সম্পর্কের পর পারিবারিকভাবে আমাদের কাবিন হয়। কথা ছিল, বিদেশে থাকা দুই ভাই দুই বছর পর একসঙ্গে ফিরলে স্ত্রীকে অনুষ্ঠান করে বাড়ি আনব; আমি নিয়মিত শ্বশুরবাড়ি যাই। এখন ভাইরা আগামী মাসে ফিরবে এবং অক্টোবরে তাকে আনব বললেও স্ত্রী হতাশ হয়ে এখনই যেতে চাপ দিচ্ছে। এ অবস্থায় কী করব?",
+    "prot_0047_04": "১৬ বছরের সংসারের পর পাঁচ মাস আগে খোলা তালাক হয়েছে। পঞ্চম ও তৃতীয় শ্রেণিপড়ুয়া দুই মেয়ে আমার কাছে থাকে; বেকার হওয়ায় বাবা সংসার চালান, আর সাবেক স্বামী মাসে ১৫ হাজার টাকা দেন। আমি আবার বিয়ে করলে কি মেয়েদের রাখতে পারব? তাদের বাবা নিতে চান, কিন্তু তিনি নেশাগ্রস্ত বলে সন্তানদের নিরাপত্তা নিয়ে ভয় পাচ্ছি।",
+    "prot_0049_01": "পড়ার সময় পরিচিত এক ছেলেকে ২০১১ সালে গোপনে প্রথমে মৌলভির সামনে বিয়ে করি, পরে নোটারি দিয়ে এফিডেভিট করি। এখন সে সন্দেহ করে এবং তালাক চায়; আমিও সম্পর্ক শেষ করতে চাই। স্ত্রী হিসেবে কীভাবে তালাক দেব, দেনমোহর পাব কি, আর সব কাগজ তার কাছে থাকলে কী করব?",
+    "prot_0051_02": "আমি তিন বছর বয়সে মাকে হারাই। বাবার দ্বিতীয় সংসারে পাঁচ মেয়ে ও তিন ছেলে ছিল; বাবা মারা যাওয়ার পর সেই পক্ষের ছোট ছেলে মারা গেছে। সে অবিবাহিত ও নিঃসন্তান ছিল। তার সম্পত্তিতে আমি অংশ পাব কি, আর অন্য উত্তরাধিকারী কারা?",
+    "prot_0056_04": "এক বছর আগে এক আত্মীয়ের মেয়েকে বিয়ে করি। কয়েক সপ্তাহ পর শুনি, বিয়ের আগে তার অন্য কারও সঙ্গে সম্পর্ক ছিল; সে অস্বীকার করলেও আত্মীয়-বন্ধুরা বলেছে। এ নিয়ে প্রায়ই ঝগড়া হয়। সে রাজি না হলেও আমি আর সংসার করতে চাই না—কীভাবে তালাক দেব?",
+    "prot_0059_02": "আমার বয়স এখন ৪১। ১৯৯৩ সালে পরিবারের অজান্তে সমবয়সী একজনকে কাজি অফিসে বিয়ে করেছিলাম। সে বিদেশে গিয়ে প্রথম দেড় বছর যোগাযোগ রাখে, পরে পাঁচ মাস চুপ থাকায় ১৯৯৫ সালে আদালত থেকে তালাকনামা পাঠাই। তিন সপ্তাহ পর পরিবারের পছন্দে আবার বিয়ে করি। প্রথম ব্যক্তি একবার ফোন করলেও ১৬ বছরে আর যোগাযোগ করেনি। বর্তমান স্বামী ও তিন সন্তান কিছু জানে না। ইসলামি আইনে ভুল হয়ে থাকলে এখন কীভাবে ঠিক করব?",
+    "prot_0066_03": "স্নাতকে পড়ার সময় ২০১০ সালের ঝগড়ার পর একজন আমার বিরুদ্ধে ৩২৬ ধারায় মিথ্যা মামলা করে, আমাকে প্রধান আসামি বানায়। হুলিয়া জারি হয়ে ২১ দিন জেল খেটেছি; এখন জামিনে থেকে প্রতি মাসে অন্য জেলায় হাজিরা দিতে গিয়ে পড়াশোনা ও মানসিক অবস্থা ক্ষতিগ্রস্ত হচ্ছে। বাদী মামলা না তুললে দ্রুত খালাসের উপায় কী, আর সরকারি চাকরিতে সমস্যা হবে কি?",
+    "prot_0069_03": "দাদারা দুই ভাই ও চার বোন; দাদার সম্পত্তি ৩০ বিঘা। তাঁর ছেলে নেই, এক মেয়ে আছে। শরিয়ত অনুযায়ী জীবদ্দশায় বণ্টন করলে মেয়ে ও জীবিত ভাইবোনেরা কতটা পাবেন? মারা যাওয়া দুই বোনের সন্তানেরা কি কোনো অংশ পাবে?",
+    "prot_0070_04": "২০০৬ সালে ব্যবসার জন্য এক আত্মীয়কে তিন লাখ টাকা দিয়েছিলাম, লাভ দেওয়ার কথা ছিল। লাভ তো দেয়ইনি, মূল টাকাও ফেরত দিচ্ছে না; কোনো লিখিত প্রমাণ নেই, শুধু ঘোরাচ্ছে। টাকা উদ্ধারের উপায় কী?",
+    "prot_0072_03": "২০০৮ সালের জুনে বাসার ভাড়াটিয়ার মেয়ে বাইরে থেকে ঘরে তালা দিয়ে আমার বিরুদ্ধে নির্যাতনের মিথ্যা অভিযোগ তোলে। পুলিশ উদ্ধার করলেও আমাকে ৩৪ দিন জেলে থাকতে হয়। পরে তদন্তে অভিযোগ মিথ্যা পাওয়া যায় এবং ১৭ ধারায় বাদিনীর বিরুদ্ধে ব্যবস্থার কথা আসে। এখন চাকরিতে বাধা হবে কি, মামলা কত দিন চলবে, আর সাক্ষ্য শুরুর আগে তার বিরুদ্ধে কী ব্যবস্থা নিতে পারি?",
+    "prot_0073_03": "আমার বয়স ২৫, মেয়েটির ২১; তাকে ১৯ বছর বয়সে জোর করে প্রবাসী একজনের সঙ্গে বিয়ে দেওয়া হয়। এখন আমরা নতুন জীবন চাই, কিন্তু পরিবার মানবে না। স্বামী কাবিননামা বা নিবন্ধনের তথ্য দিচ্ছে না—কাগজ ছাড়া এবং স্বামী বিদেশে থাকতেই কি তালাক সম্ভব? কাবিনে স্ত্রীর তালাকের ক্ষমতা না থাকলে কী করতে হবে? কার্যকর হওয়ার ৯০ দিন নিরাপত্তার জন্য একসঙ্গে থাকলে আইনি সমস্যা হবে কি?",
+    "prot_0077_04": "১৫ বছর আগে একটি মার্কেটের দোকান নিজের নামে কিনে আত্মীয়কে দেখাশোনায় দিই। ছয় বছর আগে সে চেয়ারম্যানকে বলে নতুন চুক্তিতে আমাদের দুজনের নাম ঢোকায়; দুই কাগজই আমার কাছে। শুধু আমার নামে ফেরাতে দুইবার আইনি নোটিশ দিলেও চেয়ারম্যান জবাব দেননি, আর আত্মীয় টাকা দেওয়া বন্ধ করেছে। দোকান বন্ধ বা তাকে সরাতেও পারছি না। তাদের বিরুদ্ধে কী করে দোকান উদ্ধার করব?",
+    "prot_0079_01": "পারিবারিক বিবাদের পর বাবা আমাকে ও মাকে ছেড়ে আরেকটি বিয়ে করেন। মামার কাছে বড় হলেও ১৪ বছরে বাবার কাছে গিয়ে তাঁর ও সৎমায়ের মানসিক-শারীরিক নির্যাতনে আবার মায়ের কাছে ফিরি। এখন দশম শ্রেণিতে পড়ি; বাবা কোনো খরচ দেন না, বরং মাকে তালাক, আমাকে ত্যাজ্য এবং সব সম্পত্তি বর্তমান স্ত্রী-ছেলেকে দেওয়ার হুমকি দেন। তিনি কি আমাকে উত্তরাধিকার থেকে বাদ দিতে পারেন, আর আমি কী ব্যবস্থা নিতে পারি?",
+    "prot_0080_03": "বাবা-চাচারা চার ভাই ও তিন বোন। আমি সাত বছরের সময় বাবা মারা যান, দাদা এখনো জীবিত। শুনছি দাদার আগে ছেলে মারা গেলে তার সন্তানরা সম্পত্তি পায় না, আর দাদা বলেন শুধু জীবিত ছেলেদের সমান ভাগ দেবেন। তিনি আমার নামে দলিল না করলে আমি কি কোনো অংশ পাব?",
+    "prot_0084_06": "দাদার বাবা ও চাচারা তিন ভাই ছিলেন। দাদা তাঁর নিঃসহোদর ছোট চাচাতো বোনকে বিয়ে করেন। বন্ধক ছাড়ানোর বিনিময়ে দাদির বাবা জমির এক-তৃতীয়াংশ পান এবং দাদির নামে দানপত্র করেন; দাদি নিজের আগের অংশ বিক্রি করেছিলেন। আরএস ও বিএস রেকর্ডে এখন আমরা মালিক, কিন্তু বড় দুই চাচার ওয়ারিশেরা আপত্তি করছে। মালিকানা রক্ষায় কী করতে পারি?",
+    "prot_0087_04": "আমার বয়স ২৫; তিন বছর ধরে বড় ভাইয়ের স্ত্রীকে ভালোবাসি। তাঁর এক বছর তিন মাসের ছেলে আছে এবং সম্প্রতি পারস্পরিক সম্মতিতে কাজির মাধ্যমে তালাক হয়ে দেনমোহর, খোরপোশ ও সন্তানের খরচ মিটেছে। আমরা বিয়ে করতে চাই, শিশুটিকেও কাছে রাখতে চাই, কিন্তু পরিবার রাজি নয় এবং আমার সামর্থ্য কম। এই বিয়ে ও শিশুকে লালন করতে আইনি বাধা আছে কি, আর ন্যূনতম দেনমোহর কত?",
+    "prot_0094_01": "ফেসবুকে বিকাশ গ্রাহকদের করোনাকালীন প্রণোদনার ভুয়া ঘোষণা দেখে একটি ওয়েবসাইটে অ্যাকাউন্টের সব তথ্য দিয়েছিলাম। প্রতারকেরা পুরো টাকা নিয়ে গেছে; সেখানে মেয়েদের বৃত্তি, পুরস্কার ও উপহারের সঞ্চয় ছিল। প্রতারকের বিকাশ নম্বর আমার কাছে আছে। অনলাইন প্রতারণার আইনে কি টাকা ফেরত পেতে পারি?",
+    "prot_0100_03": "অর্পিত সম্পত্তির তালিকার গেজেট হওয়ার পর দাবির পক্ষে আবেদন করতে মালিক বা উত্তরাধিকারীদের ৩০০ দিন সময় থাকে। এই সময় পেরিয়ে গেলে কি ট্রাইব্যুনালে আবেদন করা যাবে?",
+    "prot_0103_04": "বর্তমান পরিস্থিতিতে আমি চাইলে কি আইন মেনে আরেকটি বিয়ে করতে পারব?",
+    "prot_0107_04": "কোনো মামলার এক নম্বর আসামি পলাতক থাকলে কি শুধু পালিয়ে থাকার কারণে তার ওপর অপরাধের দায় বা দোষ বেশি পড়ে?",
+    "prot_0110_01": "বাবার বিরুদ্ধে প্রতিটি মামলা মিথ্যা প্রমাণিত হয়ে তিনি অব্যাহতি পান। ২০০৮ সালের রায় ও সরকারি তদন্তে নির্দোষ প্রমাণিত হয়ে চাকরির চার্জও ফিরে পেয়েছেন; এমপিও বন্ধ হয়নি। তবু পরিচালনা পর্ষদ সাড়ে চার বছর বা ৪৮ মাসের খোরপোশ ও বেতন-ভাতা তুলতে দেয়নি। এই বকেয়া কীভাবে পাওয়া যাবে?",
+    "prot_0112_01": "দালাল গ্রেপ্তার, হাসপাতালের চিকিৎসক-কর্মকর্তাদের জিজ্ঞাসাবাদ, হাইকোর্টের নির্দেশ ও জড়িত চিকিৎসকদের লাইসেন্স বাতিলের খবর দেখেছি। অবৈধভাবে কিডনি বিক্রি করলে আইনে কী শাস্তি হয়?",
+    "prot_0113_03": "এই ঘটনার জন্য বিচার বা আইনি প্রতিকার চাওয়ার কোনো পথ কি এখনো খোলা আছে?",
+    "prot_0114_07": "সংশ্লিষ্ট আদালতকে দ্রুত সাক্ষ্য শেষ করে নির্দিষ্ট সময়ের মধ্যে মামলা নিষ্পত্তির নির্দেশ চাইতে আমি কি উচ্চ আদালতে যেতে পারি?",
+    "prot_0122_01": "নিষেধ করলেও সে আসে, দায়িত্ব নেয় না, বরং বিরক্ত করে। ঋণসহ নানা কারণে আমি সব খরচ চালাতে পারছি না। মেয়ের ভরণপোষণের টাকা চাইলে সে বলে তার সামর্থ্য নেই। আমি ও আমার মেয়ে কীভাবে তার কাছ থেকে ভরণপোষণ আদায় করব?",
+    "prot_0130_02": "আমার বয়স ২৮, মেয়েটির ১৪। দেখা করতে গেলে তার মা, বোন ও এক আত্মীয় জোর করে কাবিনে সই করিয়ে বিয়ে দেন; রেজিস্ট্রি হয়নি। কাবিন তিন লাখ, উসুল ১০ হাজার। আমার কাগজ না নিয়ে নতুন জন্মনিবন্ধনে বয়স ২৬ দেখানো হয়েছে, যদিও ভোটার আইডিতে বেশি। সব জেনে এখন মেয়েকে নিতে চাই না। শিগগির কাজের জন্য বিদেশে যাব; তাদের কাছে আমার ডায়েরি ও ছবি আছে। কী আইনি ব্যবস্থা নেব?"
+  },
+  "adjudications": {
+    "prot_0112_04": {
+      "answer": "unanswerable",
+      "verdict": "unanswerable",
+      "answer_source": "none",
+      "notes": "The row is exhortative commentary about avoiding kidney sale and contains no legal information request."
+    },
+    "prot_0043_01": {
+      "answer": "none",
+      "verdict": "not_found",
+      "answer_source": "none",
+      "notes": "MFLO section 7 concerns divorce and is unrelated. The question combines future inter-community marriage and later name/certificate changes, but neither displayed selection directly answers it."
+    },
+    "prot_0135_02": {
+      "answer": "other_173_s2",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The Shariat Application Act provision is the governing corpus provision for a Muslim woman's intestate succession; the dowry provision is unrelated."
+    },
+    "prot_0004_04": {
+      "answer": "consumer_927_s4, consumer_927_s14",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "Section 4 gives the fine and escalating repeat penalty; section 14 states cognizability, magistrate jurisdiction, and that a court requires an authorized officer's written complaint."
+    },
+    "prot_0108_05": {
+      "answer": "none",
+      "verdict": "not_found",
+      "answer_source": "none",
+      "notes": "The Evidence Act legitimacy provision is unrelated, while this fragment omits the property and transaction facts needed to identify an applicable pre-emption provision."
+    },
+    "prot_0058_01": {
+      "answer": "family_476_s3",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "Section 3 is the closest corpus provision: it requires registration of a marriage that was actually solemnized. The Specific Relief Act property remedies are unrelated to a sham kabinnama."
+    },
+    "prot_0115_02": {
+      "answer": "women_children_1063_s11, women_children_1063_s14, family_180_s2_p1",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The actual question is the final sentence about physical and mental abuse. Sections 11 and 14 provide access to court and a protection order; Dissolution of Muslim Marriages Act section 2 includes habitual assault and cruelty as dissolution grounds."
+    },
+    "prot_0085_05": {
+      "answer": "other_173_s2, other_48_s123",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The Shariat Application Act governs intestate succession, while Transfer of Property Act section 123 directly covers the registered gift/heba the father could make during life."
+    },
+    "prot_0045_04": {
+      "answer": "family_305_s7",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The asked remedy is how the husband can end the marriage; MFLO section 7 directly states his talaq notice and effective-date procedure. Guardianship is unrelated."
+    },
+    "prot_0069_04": {
+      "answer": "criminal_procedure_11_s420",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "Penal Code section 420 directly covers cheating that dishonestly induces delivery of the laptop, phone, jewellery, and other property."
+    },
+    "prot_0109_03": {
+      "answer": "unanswerable",
+      "verdict": "unanswerable",
+      "answer_source": "none",
+      "notes": "The legal discussion preceding the final sentence is pasted answer text from another item. 'How can I recover my entitlement?' supplies no entitlement, parties, or event from which a provision can be selected."
+    },
+    "prot_0046_04": {
+      "answer": "family_180_s5, family_305_s8, family_1444_s5",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "Section 5 expressly preserves dower rights after dissolution, MFLO section 8 governs wife-initiated/delegated dissolution, and Family Courts Act section 5 supplies jurisdiction over dissolution and dower."
+    },
+    "prot_0065_06": {
+      "answer": "other_173_s2, family_1444_s5",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The first provision governs Muslim intestate succession to the husband's estate; the second gives the Family Court jurisdiction over the unpaid dower claim."
+    },
+    "prot_0009_01": {
+      "answer": "other_173_s2",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The question lacks enough surviving-family detail to calculate shares, but the Shariat Application Act is the selected corpus provision governing a Muslim decedent's intestate succession."
+    },
+    "prot_0048_03": {
+      "answer": "women_children_1063_s16, women_children_1063_s15_p1, family_64_s17",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The three provisions map to the three concrete requests: maintenance, return/protection of marital property, and the child's welfare-based custody decision."
+    },
+    "prot_0055_01": {
+      "answer": "other_173_s2",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The selected provision makes Muslim personal law the governing rule for the marriage question; the corpus has no more specific codified prohibited-degree provision."
+    },
+    "prot_0014_02": {
+      "answer": "criminal_procedure_75_s417",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "CrPC section 417(3) directly sets sixty days for a complainant's appeal from an acquittal, matching the lawyer's two-month answer."
+    },
+    "prot_0111_06": {
+      "answer": "other_1696_s54",
+      "verdict": "answered",
+      "answer_source": "own_search",
+      "notes": "The Capital Development Authority Act provision directly criminalizes construction outside an approved plan and states the penalty."
+    }
+  }
+}
