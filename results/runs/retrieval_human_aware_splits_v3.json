@@ -1,0 +1,22 @@
+{
+  "version": "v3",
+  "split_policy": "normalized-question-grouped, stratified 50/25/25 human split",
+  "approved_title_pairs_in_train": 3000,
+  "human_adjudicated": {
+    "train": 251,
+    "dev": 117,
+    "test": 112
+  },
+  "training_rows": 3251,
+  "train_source_counts": {
+    "human_approved_title_pair": 3000,
+    "human_adjudicated_v2": 251
+  },
+  "exact_normalized_question_overlap": {
+    "train_dev": 0,
+    "train_test": 0,
+    "dev_test": 0
+  },
+  "provision_overlap_policy": "allowed for human formulation generalization; never use dev/test questions to tune",
+  "frozen_test": "data\\processed\\test_retrieval_v3.jsonl"
+}

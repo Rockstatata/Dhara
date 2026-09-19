@@ -1,0 +1,13 @@
+metric,value
+corpus_chunks,39484
+excluded_repealed_omitted,561
+excluded_pct,1.421
+gold_collisions,0
+domain_other,467
+domain_criminal_procedure,49
+domain_land,33
+domain_family,8
+domain_money_recovery,3
+domain_constitutional,1
+language_english,548
+language_bengali,13

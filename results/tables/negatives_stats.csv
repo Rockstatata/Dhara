@@ -1,0 +1,7 @@
+variant,pairs,negatives,mean_per_pair,skipped_relevant_unlabelled,pairs_with_zero,rank_window
+strict,11395,90679,7.958,41574,0,5-30
+full,16183,128597,7.946,73567,0,5-30
+strict,7586,60633,7.993,22511,0,5-30
+anchor,5332,42635,7.996,7880,0,5-30
+full,10790,86148,7.984,40602,0,5-30
+anchor,4408,35243,7.995,6551,0,5-30

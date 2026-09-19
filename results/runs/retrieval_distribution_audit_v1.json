@@ -1,0 +1,59 @@
+{
+  "purpose": "compare every training source against the natural human query distribution",
+  "sources": {
+    "natural_human": {
+      "rows": 251,
+      "word_count": {
+        "minimum": 9,
+        "p05": 13,
+        "median": 68,
+        "p90": 139,
+        "p95": 164,
+        "maximum": 214
+      },
+      "content_overlap": {
+        "median": 0.0,
+        "p90": 0.0909
+      }
+    },
+    "approved_title_pairs": {
+      "rows": 3000,
+      "word_count": {
+        "minimum": 4,
+        "p05": 7,
+        "median": 11,
+        "p90": 15,
+        "p95": 17,
+        "maximum": 28
+      },
+      "content_overlap": {
+        "median": 0.375,
+        "p90": 0.5
+      }
+    },
+    "synthetic_coverage_pretrain": {
+      "rows": 189854,
+      "word_count": {
+        "minimum": 13,
+        "p05": 34,
+        "median": 58,
+        "p90": 67,
+        "p95": 67,
+        "maximum": 69
+      },
+      "content_overlap": {
+        "median": 0.6061,
+        "p90": 0.7273
+      }
+    }
+  },
+  "coverage_title_overlap_gate": {
+    "maximum": 0.0,
+    "passed": true
+  },
+  "decision": {
+    "coverage_pretrain_allowed": true,
+    "coverage_final_finetune_allowed": false,
+    "reason": "The coverage layer is structurally broad but must not become final supervision until a diverse LLM-generated layer passes human-profile gates."
+  }
+}

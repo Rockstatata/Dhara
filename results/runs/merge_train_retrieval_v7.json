@@ -1,0 +1,19 @@
+{
+  "input_human_rows": 408,
+  "input_approved_pool": 3000,
+  "approved_selected": 600,
+  "input_authored_pool": 655,
+  "authored_selected": 600,
+  "pool_before_filters": 1608,
+  "kept": 1466,
+  "dropped_leak_vs_dev_test": 28,
+  "dropped_cross_provision_duplicate": 114,
+  "human_share_pct": 27.8,
+  "distinct_provisions": 1056,
+  "by_source": {
+    "authored_v1": 572,
+    "human_approved_title_pair": 486,
+    "human_adjudicated_v2": 408
+  },
+  "next_step": "mine hard negatives with scripts/74_mine_negatives_v7.py"
+}

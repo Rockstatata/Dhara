@@ -1,0 +1,14 @@
+{
+  "version": "v4",
+  "split_policy": "provision-connected-component, best-fit-decreasing, 80/10/10 by row count",
+  "human_adjudicated": {
+    "train": 408,
+    "dev": 36,
+    "test": 36
+  },
+  "components": 60,
+  "largest_component_rows": 386,
+  "note": "dev/test shrunk from v3's 117/112 to grow real human train signal; CI at this n is wide, report it",
+  "human_train_out": "data\\processed\\human_train_v4.jsonl",
+  "frozen_test": "data\\processed\\test_retrieval_v4.jsonl"
+}

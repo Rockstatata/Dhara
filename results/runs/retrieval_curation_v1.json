@@ -1,0 +1,52 @@
+{
+  "artifact_version": "v1",
+  "purpose": "silver pretraining candidates and human-review queue; not reviewed training data",
+  "inputs": {
+    "synthetic": "data\\processed\\synth_questions_v1.jsonl",
+    "corpus": "data\\processed\\corpus_v1.jsonl",
+    "frozen_gold": "data\\processed\\gold_verified_v2.jsonl"
+  },
+  "selection": {
+    "accepted_source": "tier_b + provision_title only",
+    "excluded_source": [
+      "topic_signature",
+      "tier_c",
+      "anchor"
+    ],
+    "frozen_gold_provisions_excluded": true,
+    "repealed_excluded": true,
+    "selection_policy": "round-robin by provision, then lowest lexical overlap"
+  },
+  "counts": {
+    "synthetic_rows": 29716,
+    "excluded_non_tier_b_title": 25425,
+    "excluded_frozen_gold_provision": 38,
+    "excluded_duplicate_question_provision": 84,
+    "silver_pairs": 4169,
+    "silver_provisions": 2356,
+    "silver_acts": 477,
+    "review_queue_pairs": 3000,
+    "review_queue_provisions": 2356,
+    "review_queue_acts": 477,
+    "review_queue_languages": {
+      "bengali": 1498,
+      "english": 1502
+    },
+    "review_queue_domains": {
+      "civil_registration": 15,
+      "consumer": 138,
+      "criminal_procedure": 372,
+      "cybercrime": 19,
+      "family": 112,
+      "labour": 28,
+      "land": 117,
+      "local_government": 43,
+      "money_recovery": 40,
+      "other": 2077,
+      "road_transport": 20,
+      "tenancy": 1,
+      "women_children": 18
+    }
+  },
+  "review_gate": "Every queue row is pending. Only approved rows may be promoted to a reviewed training artifact."
+}

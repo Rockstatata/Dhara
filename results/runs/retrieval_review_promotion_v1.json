@@ -1,0 +1,16 @@
+{
+  "artifact_version": "v1",
+  "approval_mode": "all_v1_queue_rows_confirmed_by_project_team",
+  "approved_pairs": 3000,
+  "approved_provisions": 2356,
+  "approved_acts": 477,
+  "languages": {
+    "bengali": 1498,
+    "english": 1502
+  },
+  "outputs": {
+    "reviewed": "data\\processed\\retrieval_reviewed_v1.jsonl",
+    "training": "data\\processed\\train_retrieval_v3.jsonl"
+  },
+  "training_recipe": "silver pretraining (v2) followed by human-approved supervised fine-tuning (v3)"
+}

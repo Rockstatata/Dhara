@@ -1,0 +1,9 @@
+{
+  "pairs": 3709,
+  "pairs_with_full_8_negatives": 3707,
+  "pairs_with_no_negatives": 0,
+  "mean_negatives_per_pair": 7.999460771097331,
+  "skipped_relevant_unlabelled": 9030,
+  "distinct_questions_encoded": 3709,
+  "output": "data\\processed\\train_retrieval_v5_negatives.jsonl"
+}

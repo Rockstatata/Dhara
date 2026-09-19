@@ -1,0 +1,2353 @@
+{
+  "run_id": "overlap_audit",
+  "corpus": "data\\processed\\corpus_v1.jsonl",
+  "synth": "data\\processed\\synth_questions_v1.jsonl",
+  "probes": "data\\processed\\probe_questions.jsonl",
+  "tolerance": 0.5,
+  "real": {
+    "content_overlap": {
+      "n": 552,
+      "mean": 0.0406,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0513,
+      "p90": 0.1216,
+      "frac_over_0.3": 0.0254,
+      "frac_over_0.5": 0.0054
+    },
+    "jaccard": {
+      "n": 552,
+      "mean": 0.0147,
+      "p10": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0273,
+      "p90": 0.0464,
+      "frac_over_0.3": 0.0,
+      "frac_over_0.5": 0.0
+    }
+  },
+  "pass_threshold_median": 0.1824,
+  "tiers": {
+    "tier_a": {
+      "content_overlap": {
+        "n": 8132,
+        "mean": 0.0348,
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.0208,
+        "p75": 0.0556,
+        "p90": 0.0946,
+        "frac_over_0.3": 0.002,
+        "frac_over_0.5": 0.0
+      },
+      "jaccard": {
+        "n": 8132,
+        "mean": 0.0129,
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.0108,
+        "p75": 0.0231,
+        "p90": 0.0327,
+        "frac_over_0.3": 0.0,
+        "frac_over_0.5": 0.0
+      },
+      "median_vs_real": 0.0208,
+      "verdict": "pass"
+    },
+    "tier_a_expansion": {
+      "content_overlap": {
+        "n": 5440,
+        "mean": 0.0307,
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.0,
+        "p75": 0.0488,
+        "p90": 0.0882,
+        "frac_over_0.3": 0.0028,
+        "frac_over_0.5": 0.0
+      },
+      "jaccard": {
+        "n": 5440,
+        "mean": 0.0098,
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.0,
+        "p75": 0.0177,
+        "p90": 0.0278,
+        "frac_over_0.3": 0.0,
+        "frac_over_0.5": 0.0
+      },
+      "median_vs_real": 0.0,
+      "verdict": "pass"
+    },
+    "tier_b": {
+      "content_overlap": {
+        "n": 4291,
+        "mean": 0.3484,
+        "p10": 0.1667,
+        "p25": 0.25,
+        "median": 0.375,
+        "p75": 0.4667,
+        "p90": 0.5,
+        "frac_over_0.3": 0.6553,
+        "frac_over_0.5": 0.0023
+      },
+      "jaccard": {
+        "n": 4291,
+        "mean": 0.0617,
+        "p10": 0.0145,
+        "p25": 0.0282,
+        "median": 0.0513,
+        "p75": 0.0833,
+        "p90": 0.125,
+        "frac_over_0.3": 0.0009,
+        "frac_over_0.5": 0.0
+      },
+      "median_vs_real": 0.375,
+      "verdict": "fail"
+    },
+    "tier_c": {
+      "content_overlap": {
+        "n": 11853,
+        "mean": 0.4319,
+        "p10": 0.3333,
+        "p25": 0.3333,
+        "median": 0.5,
+        "p75": 0.5,
+        "p90": 0.5,
+        "frac_over_0.3": 0.952,
+        "frac_over_0.5": 0.007
+      },
+      "jaccard": {
+        "n": 11853,
+        "mean": 0.0426,
+        "p10": 0.0128,
+        "p25": 0.0204,
+        "median": 0.0333,
+        "p75": 0.0566,
+        "p90": 0.0833,
+        "frac_over_0.3": 0.0001,
+        "frac_over_0.5": 0.0
+      },
+      "median_vs_real": 0.5,
+      "verdict": "fail"
+    }
+  },
+  "recommended_tiers": [
+    "tier_a",
+    "tier_a_expansion"
+  ],
+  "recommended_pairs": 13572,
+  "per_query": [
+    {
+      "qid": "prot_0000_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0000_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0000_03",
+      "content_overlap": 0.0909
+    },
+    {
+      "qid": "prot_0000_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0000_05",
+      "content_overlap": 0.02
+    },
+    {
+      "qid": "prot_0001_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0001_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0001_03",
+      "content_overlap": 0.0476
+    },
+    {
+      "qid": "prot_0002_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0002_02",
+      "content_overlap": 0.25
+    },
+    {
+      "qid": "prot_0002_03",
+      "content_overlap": 0.1633
+    },
+    {
+      "qid": "prot_0003_01",
+      "content_overlap": 0.0143
+    },
+    {
+      "qid": "prot_0003_02",
+      "content_overlap": 0.0357
+    },
+    {
+      "qid": "prot_0003_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0003_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0003_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0004_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0004_02",
+      "content_overlap": 0.02
+    },
+    {
+      "qid": "prot_0004_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0004_04",
+      "content_overlap": 0.0556
+    },
+    {
+      "qid": "prot_0043_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0085_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0135_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0056_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0170_01",
+      "content_overlap": 0.0909
+    },
+    {
+      "qid": "prot_0012_02",
+      "content_overlap": 0.1205
+    },
+    {
+      "qid": "prot_0135_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0299_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0073_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0008_02",
+      "content_overlap": 0.125
+    },
+    {
+      "qid": "prot_0062_03",
+      "content_overlap": 0.0938
+    },
+    {
+      "qid": "prot_0073_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0160_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0067_03",
+      "content_overlap": 0.0426
+    },
+    {
+      "qid": "prot_0032_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0169_01",
+      "content_overlap": 0.0588
+    },
+    {
+      "qid": "prot_0069_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0258_01",
+      "content_overlap": 0.25
+    },
+    {
+      "qid": "prot_0095_01",
+      "content_overlap": 0.1316
+    },
+    {
+      "qid": "prot_0014_02",
+      "content_overlap": 0.0612
+    },
+    {
+      "qid": "prot_0061_03",
+      "content_overlap": 0.061
+    },
+    {
+      "qid": "prot_0091_03",
+      "content_overlap": 0.1071
+    },
+    {
+      "qid": "prot_0113_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0084_05",
+      "content_overlap": 0.0476
+    },
+    {
+      "qid": "prot_0058_04",
+      "content_overlap": 0.0118
+    },
+    {
+      "qid": "lawy_0477_01",
+      "content_overlap": 0.2857
+    },
+    {
+      "qid": "prot_0107_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0066_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0017_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0019_01",
+      "content_overlap": 0.0588
+    },
+    {
+      "qid": "prot_0047_02",
+      "content_overlap": 0.0625
+    },
+    {
+      "qid": "prot_0063_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0200_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0107_06",
+      "content_overlap": 0.0323
+    },
+    {
+      "qid": "ajke_0205_01",
+      "content_overlap": 0.0952
+    },
+    {
+      "qid": "prot_0010_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0210_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0016_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0049_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0121_01",
+      "content_overlap": 0.125
+    },
+    {
+      "qid": "prot_0058_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0179_01",
+      "content_overlap": 0.0769
+    },
+    {
+      "qid": "lawy_0221_01",
+      "content_overlap": 0.3333
+    },
+    {
+      "qid": "prot_0066_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0126_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0048_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0033_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0568_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0085_03",
+      "content_overlap": 0.0256
+    },
+    {
+      "qid": "prot_0106_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0193_01",
+      "content_overlap": 0.0357
+    },
+    {
+      "qid": "prot_0067_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0199_01",
+      "content_overlap": 0.0417
+    },
+    {
+      "qid": "prot_0084_01",
+      "content_overlap": 0.0833
+    },
+    {
+      "qid": "prot_0008_03",
+      "content_overlap": 0.375
+    },
+    {
+      "qid": "prot_0063_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0062_08",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0037_06",
+      "content_overlap": 0.1176
+    },
+    {
+      "qid": "prot_0091_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0017_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0050_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0028_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0105_04",
+      "content_overlap": 0.25
+    },
+    {
+      "qid": "prot_0013_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0208_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0110_02",
+      "content_overlap": 0.1
+    },
+    {
+      "qid": "ajke_0180_01",
+      "content_overlap": 0.4
+    },
+    {
+      "qid": "prot_0069_01",
+      "content_overlap": 0.0319
+    },
+    {
+      "qid": "prot_0015_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0037_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0036_03",
+      "content_overlap": 0.0385
+    },
+    {
+      "qid": "prot_0030_01",
+      "content_overlap": 0.0455
+    },
+    {
+      "qid": "prot_0083_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0025_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0081_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0066_06",
+      "content_overlap": 0.0649
+    },
+    {
+      "qid": "prot_0042_02",
+      "content_overlap": 0.0606
+    },
+    {
+      "qid": "lawy_0456_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0025_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0013_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0043_04",
+      "content_overlap": 0.0179
+    },
+    {
+      "qid": "prot_0119_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0067_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0083_02",
+      "content_overlap": 0.025
+    },
+    {
+      "qid": "prot_0064_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0059_02",
+      "content_overlap": 0.0115
+    },
+    {
+      "qid": "prot_0038_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0361_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0014_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0085_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0108_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0420_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0051_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0082_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0110_03",
+      "content_overlap": 0.0222
+    },
+    {
+      "qid": "prot_0081_02",
+      "content_overlap": 0.0375
+    },
+    {
+      "qid": "ajke_0139_01",
+      "content_overlap": 0.1176
+    },
+    {
+      "qid": "dail_0629_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0029_01",
+      "content_overlap": 0.06
+    },
+    {
+      "qid": "prot_0047_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0100_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0036_05",
+      "content_overlap": 0.0938
+    },
+    {
+      "qid": "prot_0035_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0192_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0035_02",
+      "content_overlap": 0.0408
+    },
+    {
+      "qid": "prot_0054_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0065_01",
+      "content_overlap": 0.0122
+    },
+    {
+      "qid": "ajke_0201_01",
+      "content_overlap": 0.0312
+    },
+    {
+      "qid": "prot_0018_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0104_03",
+      "content_overlap": 0.2267
+    },
+    {
+      "qid": "prot_0052_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0085_01",
+      "content_overlap": 0.027
+    },
+    {
+      "qid": "prot_0111_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0317_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0107_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0080_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0086_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0030_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0053_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0011_01",
+      "content_overlap": 0.0645
+    },
+    {
+      "qid": "prot_0006_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0069_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0371_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0036_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0083_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0006_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0060_02",
+      "content_overlap": 0.0769
+    },
+    {
+      "qid": "prot_0103_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0110_01",
+      "content_overlap": 0.0385
+    },
+    {
+      "qid": "prot_0010_01",
+      "content_overlap": 0.0213
+    },
+    {
+      "qid": "prot_0079_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0203_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0432_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0036_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0083_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0068_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0104_01",
+      "content_overlap": 0.1481
+    },
+    {
+      "qid": "prot_0091_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0056_05",
+      "content_overlap": 0.0112
+    },
+    {
+      "qid": "prot_0032_01",
+      "content_overlap": 0.0714
+    },
+    {
+      "qid": "prot_0100_01",
+      "content_overlap": 0.1379
+    },
+    {
+      "qid": "prot_0091_07",
+      "content_overlap": 0.012
+    },
+    {
+      "qid": "prot_0072_03",
+      "content_overlap": 0.1129
+    },
+    {
+      "qid": "prot_0005_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0363_01",
+      "content_overlap": 0.1429
+    },
+    {
+      "qid": "prot_0051_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0101_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0111_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0046_01",
+      "content_overlap": 0.0169
+    },
+    {
+      "qid": "ajke_0151_01",
+      "content_overlap": 0.0127
+    },
+    {
+      "qid": "prot_0056_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0068_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0142_01",
+      "content_overlap": 0.0227
+    },
+    {
+      "qid": "prot_0049_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0078_01",
+      "content_overlap": 0.0099
+    },
+    {
+      "qid": "lawy_0220_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0055_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0189_01",
+      "content_overlap": 0.0946
+    },
+    {
+      "qid": "prot_0047_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0062_07",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0063_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0077_01",
+      "content_overlap": 0.0625
+    },
+    {
+      "qid": "prot_0114_04",
+      "content_overlap": 0.1379
+    },
+    {
+      "qid": "prot_0026_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0049_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0088_03",
+      "content_overlap": 0.013
+    },
+    {
+      "qid": "prot_0084_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0085_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0066_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0104_05",
+      "content_overlap": 0.1429
+    },
+    {
+      "qid": "prot_0130_01",
+      "content_overlap": 0.1538
+    },
+    {
+      "qid": "prot_0068_04",
+      "content_overlap": 0.0455
+    },
+    {
+      "qid": "prot_0045_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0068_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0046_02",
+      "content_overlap": 0.0909
+    },
+    {
+      "qid": "dail_0631_02",
+      "content_overlap": 0.5
+    },
+    {
+      "qid": "prot_0084_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0147_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0032_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0143_01",
+      "content_overlap": 0.0492
+    },
+    {
+      "qid": "prot_0088_01",
+      "content_overlap": 0.0345
+    },
+    {
+      "qid": "prot_0047_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0097_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0049_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0173_01",
+      "content_overlap": 0.0526
+    },
+    {
+      "qid": "prot_0091_05",
+      "content_overlap": 0.019
+    },
+    {
+      "qid": "prot_0046_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0563_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0007_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0052_05",
+      "content_overlap": 0.0685
+    },
+    {
+      "qid": "prot_0130_02",
+      "content_overlap": 0.033
+    },
+    {
+      "qid": "lawy_0464_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0015_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0386_01",
+      "content_overlap": 0.6667
+    },
+    {
+      "qid": "prot_0017_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0092_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0077_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0376_01",
+      "content_overlap": 0.4
+    },
+    {
+      "qid": "ajke_0168_01",
+      "content_overlap": 0.0526
+    },
+    {
+      "qid": "prot_0112_01",
+      "content_overlap": 0.0222
+    },
+    {
+      "qid": "prot_0102_02",
+      "content_overlap": 0.1111
+    },
+    {
+      "qid": "prot_0051_03",
+      "content_overlap": 0.022
+    },
+    {
+      "qid": "prot_0088_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0011_05",
+      "content_overlap": 0.0204
+    },
+    {
+      "qid": "prot_0062_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0443_01",
+      "content_overlap": 0.375
+    },
+    {
+      "qid": "lawy_0380_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0058_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0064_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0057_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0126_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0037_08",
+      "content_overlap": 0.0769
+    },
+    {
+      "qid": "prot_0100_03",
+      "content_overlap": 0.5238
+    },
+    {
+      "qid": "ajke_0188_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0069_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0290_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0135_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0065_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0056_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0111_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0078_05",
+      "content_overlap": 0.0294
+    },
+    {
+      "qid": "prot_0115_03",
+      "content_overlap": 0.1216
+    },
+    {
+      "qid": "prot_0012_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0055_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0075_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0181_01",
+      "content_overlap": 0.0244
+    },
+    {
+      "qid": "prot_0061_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0114_08",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0071_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0032_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0362_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0035_01",
+      "content_overlap": 0.069
+    },
+    {
+      "qid": "ajke_0156_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0114_03",
+      "content_overlap": 0.0667
+    },
+    {
+      "qid": "ajke_0194_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0165_01",
+      "content_overlap": 0.0196
+    },
+    {
+      "qid": "ajke_0174_01",
+      "content_overlap": 0.05
+    },
+    {
+      "qid": "prot_0111_04",
+      "content_overlap": 0.119
+    },
+    {
+      "qid": "prot_0048_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0080_02",
+      "content_overlap": 0.0208
+    },
+    {
+      "qid": "ajke_0190_01",
+      "content_overlap": 0.0238
+    },
+    {
+      "qid": "prot_0053_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0100_07",
+      "content_overlap": 0.6
+    },
+    {
+      "qid": "ajke_0140_01",
+      "content_overlap": 0.0154
+    },
+    {
+      "qid": "ajke_0202_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0011_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0031_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0076_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0018_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0037_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0032_02",
+      "content_overlap": 0.04
+    },
+    {
+      "qid": "ajke_0162_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0027_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0093_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0062_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "dail_0621_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0086_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0144_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0106_03",
+      "content_overlap": 0.0789
+    },
+    {
+      "qid": "prot_0084_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0025_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0112_04",
+      "content_overlap": 0.0256
+    },
+    {
+      "qid": "prot_0036_07",
+      "content_overlap": 0.069
+    },
+    {
+      "qid": "prot_0111_01",
+      "content_overlap": 0.1053
+    },
+    {
+      "qid": "prot_0038_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0089_01",
+      "content_overlap": 0.023
+    },
+    {
+      "qid": "prot_0008_05",
+      "content_overlap": 0.1471
+    },
+    {
+      "qid": "prot_0115_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0114_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0015_03",
+      "content_overlap": 0.0923
+    },
+    {
+      "qid": "prot_0084_04",
+      "content_overlap": 0.0481
+    },
+    {
+      "qid": "prot_0072_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0314_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0303_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0043_01",
+      "content_overlap": 0.05
+    },
+    {
+      "qid": "prot_0071_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0120_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0050_02",
+      "content_overlap": 0.0294
+    },
+    {
+      "qid": "prot_0063_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0052_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0009_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0091_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0054_03",
+      "content_overlap": 0.0179
+    },
+    {
+      "qid": "prot_0112_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0186_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0172_01",
+      "content_overlap": 0.0154
+    },
+    {
+      "qid": "prot_0045_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0077_08",
+      "content_overlap": 0.1444
+    },
+    {
+      "qid": "ajke_0179_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0034_03",
+      "content_overlap": 0.0185
+    },
+    {
+      "qid": "prot_0104_02",
+      "content_overlap": 0.2368
+    },
+    {
+      "qid": "prot_0100_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0212_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "dail_0613_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0164_01",
+      "content_overlap": 0.2
+    },
+    {
+      "qid": "prot_0010_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0009_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0079_01",
+      "content_overlap": 0.0225
+    },
+    {
+      "qid": "prot_0026_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0058_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0020_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0073_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0241_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0053_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "dail_0613_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0588_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0085_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0072_05",
+      "content_overlap": 0.0167
+    },
+    {
+      "qid": "prot_0009_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0128_01",
+      "content_overlap": 0.0299
+    },
+    {
+      "qid": "lawy_0387_01",
+      "content_overlap": 0.25
+    },
+    {
+      "qid": "prot_0038_02",
+      "content_overlap": 0.06
+    },
+    {
+      "qid": "prot_0082_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0108_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0088_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0087_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0059_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0040_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0052_03",
+      "content_overlap": 0.0571
+    },
+    {
+      "qid": "prot_0036_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0076_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0114_07",
+      "content_overlap": 0.0769
+    },
+    {
+      "qid": "prot_0128_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0066_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0424_01",
+      "content_overlap": 0.1429
+    },
+    {
+      "qid": "prot_0113_01",
+      "content_overlap": 0.05
+    },
+    {
+      "qid": "ajke_0178_01",
+      "content_overlap": 0.0333
+    },
+    {
+      "qid": "prot_0127_01",
+      "content_overlap": 0.0833
+    },
+    {
+      "qid": "prot_0071_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0122_02",
+      "content_overlap": 0.2581
+    },
+    {
+      "qid": "ajke_0164_02",
+      "content_overlap": 0.3333
+    },
+    {
+      "qid": "prot_0056_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0166_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0262_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0066_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0030_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0031_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0191_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0108_04",
+      "content_overlap": 0.0294
+    },
+    {
+      "qid": "prot_0041_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0102_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0108_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0071_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0043_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0080_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0025_06",
+      "content_overlap": 0.087
+    },
+    {
+      "qid": "prot_0055_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0159_01",
+      "content_overlap": 0.0968
+    },
+    {
+      "qid": "prot_0006_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0445_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0100_02",
+      "content_overlap": 0.4444
+    },
+    {
+      "qid": "prot_0079_03",
+      "content_overlap": 0.0704
+    },
+    {
+      "qid": "prot_0040_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0287_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0062_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0039_01",
+      "content_overlap": 0.0423
+    },
+    {
+      "qid": "prot_0113_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0114_01",
+      "content_overlap": 0.0345
+    },
+    {
+      "qid": "lawy_0403_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0012_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0223_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0044_02",
+      "content_overlap": 0.0417
+    },
+    {
+      "qid": "lawy_0413_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0107_04",
+      "content_overlap": 0.0833
+    },
+    {
+      "qid": "prot_0137_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0045_04",
+      "content_overlap": 0.0417
+    },
+    {
+      "qid": "prot_0137_01",
+      "content_overlap": 0.0732
+    },
+    {
+      "qid": "prot_0077_02",
+      "content_overlap": 0.0303
+    },
+    {
+      "qid": "prot_0103_03",
+      "content_overlap": 0.1667
+    },
+    {
+      "qid": "prot_0077_05",
+      "content_overlap": 0.0164
+    },
+    {
+      "qid": "prot_0119_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0026_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0073_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0035_03",
+      "content_overlap": 0.0769
+    },
+    {
+      "qid": "prot_0094_01",
+      "content_overlap": 0.0784
+    },
+    {
+      "qid": "prot_0037_07",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0109_04",
+      "content_overlap": 0.0909
+    },
+    {
+      "qid": "prot_0037_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0006_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0005_01",
+      "content_overlap": 0.0741
+    },
+    {
+      "qid": "prot_0008_04",
+      "content_overlap": 0.0588
+    },
+    {
+      "qid": "prot_0077_07",
+      "content_overlap": 0.0704
+    },
+    {
+      "qid": "ajke_0153_01",
+      "content_overlap": 0.0857
+    },
+    {
+      "qid": "prot_0048_06",
+      "content_overlap": 0.0571
+    },
+    {
+      "qid": "prot_0128_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "dail_0628_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0039_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0024_01",
+      "content_overlap": 0.0538
+    },
+    {
+      "qid": "lawy_0437_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0115_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0045_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0109_02",
+      "content_overlap": 0.0732
+    },
+    {
+      "qid": "prot_0138_01",
+      "content_overlap": 0.1765
+    },
+    {
+      "qid": "lawy_0354_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0567_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0076_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0146_01",
+      "content_overlap": 0.0714
+    },
+    {
+      "qid": "prot_0087_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0008_07",
+      "content_overlap": 0.1304
+    },
+    {
+      "qid": "prot_0121_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0070_05",
+      "content_overlap": 0.0494
+    },
+    {
+      "qid": "ajke_0144_01",
+      "content_overlap": 0.0588
+    },
+    {
+      "qid": "prot_0044_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0105_03",
+      "content_overlap": 0.1765
+    },
+    {
+      "qid": "prot_0075_03",
+      "content_overlap": 0.0741
+    },
+    {
+      "qid": "prot_0087_02",
+      "content_overlap": 0.0746
+    },
+    {
+      "qid": "prot_0114_06",
+      "content_overlap": 0.0513
+    },
+    {
+      "qid": "ajke_0149_01",
+      "content_overlap": 0.011
+    },
+    {
+      "qid": "ajke_0157_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0025_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0012_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0382_01",
+      "content_overlap": 0.25
+    },
+    {
+      "qid": "ajke_0187_01",
+      "content_overlap": 0.0492
+    },
+    {
+      "qid": "ajke_0145_01",
+      "content_overlap": 0.0625
+    },
+    {
+      "qid": "prot_0078_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0086_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0028_01",
+      "content_overlap": 0.0172
+    },
+    {
+      "qid": "ajke_0197_01",
+      "content_overlap": 0.0132
+    },
+    {
+      "qid": "prot_0066_07",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0008_06",
+      "content_overlap": 0.2
+    },
+    {
+      "qid": "prot_0096_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0070_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0326_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0086_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0350_01",
+      "content_overlap": 0.25
+    },
+    {
+      "qid": "prot_0076_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "dail_0594_01",
+      "content_overlap": 0.122
+    },
+    {
+      "qid": "prot_0037_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0021_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0047_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0046_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0082_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0018_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0207_01",
+      "content_overlap": 0.0192
+    },
+    {
+      "qid": "prot_0074_01",
+      "content_overlap": 0.0488
+    },
+    {
+      "qid": "lawy_0242_01",
+      "content_overlap": 0.25
+    },
+    {
+      "qid": "prot_0104_04",
+      "content_overlap": 0.1321
+    },
+    {
+      "qid": "prot_0021_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0065_02",
+      "content_overlap": 0.1463
+    },
+    {
+      "qid": "prot_0062_04",
+      "content_overlap": 0.1139
+    },
+    {
+      "qid": "ajke_0155_01",
+      "content_overlap": 0.08
+    },
+    {
+      "qid": "prot_0038_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0104_06",
+      "content_overlap": 0.3939
+    },
+    {
+      "qid": "prot_0071_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0105_02",
+      "content_overlap": 0.129
+    },
+    {
+      "qid": "prot_0073_07",
+      "content_overlap": 0.1321
+    },
+    {
+      "qid": "lawy_0533_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0036_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0059_01",
+      "content_overlap": 0.069
+    },
+    {
+      "qid": "prot_0080_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0059_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0195_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0065_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0087_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0017_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0078_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0011_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0114_09",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0096_01",
+      "content_overlap": 0.0789
+    },
+    {
+      "qid": "prot_0059_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0409_01",
+      "content_overlap": 0.2857
+    },
+    {
+      "qid": "prot_0100_04",
+      "content_overlap": 0.125
+    },
+    {
+      "qid": "lawy_0335_01",
+      "content_overlap": 0.1667
+    },
+    {
+      "qid": "prot_0010_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0198_01",
+      "content_overlap": 0.0833
+    },
+    {
+      "qid": "prot_0107_05",
+      "content_overlap": 0.0625
+    },
+    {
+      "qid": "prot_0037_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0048_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0072_04",
+      "content_overlap": 0.1087
+    },
+    {
+      "qid": "prot_0005_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0136_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0073_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0096_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0050_03",
+      "content_overlap": 0.0274
+    },
+    {
+      "qid": "prot_0084_07",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0026_05",
+      "content_overlap": 0.0597
+    },
+    {
+      "qid": "prot_0109_03",
+      "content_overlap": 0.0526
+    },
+    {
+      "qid": "prot_0101_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0065_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0322_01",
+      "content_overlap": 0.1667
+    },
+    {
+      "qid": "prot_0136_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0112_02",
+      "content_overlap": 0.1154
+    },
+    {
+      "qid": "prot_0045_03",
+      "content_overlap": 0.125
+    },
+    {
+      "qid": "prot_0039_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0082_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0054_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0018_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0064_01",
+      "content_overlap": 0.0381
+    },
+    {
+      "qid": "prot_0087_03",
+      "content_overlap": 0.0533
+    },
+    {
+      "qid": "prot_0048_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0061_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0047_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0218_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0114_10",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0065_06",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0321_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0219_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0055_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0070_03",
+      "content_overlap": 0.0568
+    },
+    {
+      "qid": "prot_0074_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0138_02",
+      "content_overlap": 0.5
+    },
+    {
+      "qid": "lawy_0323_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0041_02",
+      "content_overlap": 0.0263
+    },
+    {
+      "qid": "prot_0098_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0056_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0054_04",
+      "content_overlap": 0.0299
+    },
+    {
+      "qid": "prot_0078_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0083_04",
+      "content_overlap": 0.0101
+    },
+    {
+      "qid": "prot_0122_01",
+      "content_overlap": 0.0741
+    },
+    {
+      "qid": "prot_0026_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0500_01",
+      "content_overlap": 0.375
+    },
+    {
+      "qid": "prot_0023_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0064_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0121_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0070_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "lawy_0224_01",
+      "content_overlap": 0.1429
+    },
+    {
+      "qid": "prot_0128_05",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0103_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0050_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0068_02",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0136_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0044_04",
+      "content_overlap": 0.0345
+    },
+    {
+      "qid": "prot_0042_01",
+      "content_overlap": 0.1039
+    },
+    {
+      "qid": "prot_0044_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0048_03",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0175_01",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "ajke_0184_01",
+      "content_overlap": 0.0698
+    },
+    {
+      "qid": "prot_0090_04",
+      "content_overlap": 0.0513
+    },
+    {
+      "qid": "prot_0076_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0009_04",
+      "content_overlap": 0.0909
+    },
+    {
+      "qid": "prot_0077_04",
+      "content_overlap": 0.0
+    },
+    {
+      "qid": "prot_0052_01",
+      "content_overlap": 0.0
+    }
+  ]
+}
