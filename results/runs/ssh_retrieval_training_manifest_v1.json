@@ -1,0 +1,48 @@
+{
+  "version": "v1",
+  "purpose": "private SSH retrieval experiment transfer",
+  "files": {
+    "corpus": {
+      "path": "data\\processed\\corpus_v1.jsonl",
+      "bytes": 137900310,
+      "sha256": "e314ab99f861a6bbec01b22071e8c376c3eefeb1d5ff544fd5a8037243a3d144"
+    },
+    "supervised_train": {
+      "path": "data\\processed\\train_retrieval_v4.jsonl",
+      "bytes": 2856663,
+      "sha256": "ba8b4292f3c3023c078ae4b3105545e2262821f3a4019ecfc953861ec8571eac"
+    },
+    "development": {
+      "path": "data\\processed\\dev_retrieval_v3.jsonl",
+      "bytes": 166056,
+      "sha256": "c4eac8e93026af7e12bd31bb9c061987b0850655df1a6a005eef137e1a322496"
+    },
+    "frozen_test": {
+      "path": "data\\processed\\test_retrieval_v3.jsonl",
+      "bytes": 143337,
+      "sha256": "0bbaf663ff89c0cec4c858ccc5e1040811d56d6bda8212739905c08295ab329d"
+    },
+    "optional_coverage_pretrain": {
+      "path": "data\\processed\\pretrain_retrieval_coverage_v1.jsonl",
+      "bytes": 293763242,
+      "sha256": "da28d78965b4951e50cf9c3de414f90874da49bc6f8db5e9b0e949a82b3c3c3e"
+    },
+    "diverse_augmentation_prompt_ledger_not_training": {
+      "path": "data\\processed\\diverse_augmentation_prompt_ledger_v1.jsonl",
+      "bytes": 18972964,
+      "sha256": "ee076295a1b19f6efc1ef2a21d4477f8adfabd124ab8e9ee64615d1f7766376d"
+    },
+    "ssh_notebook": {
+      "path": "notebooks\\ssh-retrieval-finetune",
+      "bytes": 35911,
+      "sha256": "b25eafbc14bca8c6d6f0cba4bcf569382a3c94ea0e027a30e55275cbb22efe0e"
+    }
+  },
+  "training_contract": {
+    "default_supervision": "supervised_train only: 3,000 approved pairs + 251 natural human questions",
+    "coverage": "optional ablation only; do not use as final fine-tuning supervision",
+    "prompt_ledger": "not training data; must pass generation and validation before promotion",
+    "selection_metric": "provision-level development R@10",
+    "report": "paired provision-level test R@1/5/10/100, P@k lower bounds, MRR@10, nDCG@10"
+  }
+}

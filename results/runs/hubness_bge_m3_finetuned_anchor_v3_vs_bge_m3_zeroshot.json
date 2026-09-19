@@ -1,0 +1,240 @@
+{
+  "run_id": "hubness_bge_m3_finetuned_anchor_v3_vs_bge_m3_zeroshot",
+  "a": "bge_m3_finetuned_anchor_v3",
+  "b": "bge_m3_zeroshot",
+  "a_index": "models\\index_bge_m3_finetuned_v3",
+  "b_index": "models\\index_bge_m3_zeroshot_v1",
+  "a_fine_tuned": true,
+  "b_fine_tuned": false,
+  "n_probes": 552,
+  "groups": {
+    "all": {
+      "n": 552,
+      "query_concentration": {
+        "a": 0.71,
+        "b": 0.699,
+        "delta": 0.0111
+      },
+      "distinct_top1": {
+        "a": 273,
+        "b": 279,
+        "delta": -6
+      },
+      "max_top1_share": {
+        "a": 18,
+        "b": 19
+      },
+      "top1_gini": {
+        "a": 0.4309,
+        "b": 0.4264
+      }
+    },
+    "english": {
+      "n": 333,
+      "query_concentration": {
+        "a": 0.7227,
+        "b": 0.7105,
+        "delta": 0.0122
+      },
+      "distinct_top1": {
+        "a": 167,
+        "b": 168,
+        "delta": -1
+      },
+      "max_top1_share": {
+        "a": 16,
+        "b": 12
+      },
+      "top1_gini": {
+        "a": 0.4248,
+        "b": 0.4067
+      }
+    },
+    "bengali": {
+      "n": 108,
+      "query_concentration": {
+        "a": 0.6842,
+        "b": 0.6725,
+        "delta": 0.0117
+      },
+      "distinct_top1": {
+        "a": 90,
+        "b": 80,
+        "delta": 10
+      },
+      "max_top1_share": {
+        "a": 6,
+        "b": 7
+      },
+      "top1_gini": {
+        "a": 0.1551,
+        "b": 0.2375
+      }
+    },
+    "mixed": {
+      "n": 111,
+      "query_concentration": {
+        "a": 0.7304,
+        "b": 0.723,
+        "delta": 0.0075
+      },
+      "distinct_top1": {
+        "a": 78,
+        "b": 85,
+        "delta": -7
+      },
+      "max_top1_share": {
+        "a": 6,
+        "b": 5
+      },
+      "top1_gini": {
+        "a": 0.2531,
+        "b": 0.2056
+      }
+    }
+  },
+  "hubs": [
+    {
+      "chunk_id": "family_305_s7",
+      "top1_a": 18,
+      "top1_b": 11,
+      "top1_gain": 7,
+      "cosine_to_query_centroid_a": 0.6767,
+      "cosine_to_query_centroid_b": 0.6392,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "women_children_1256_s3",
+      "top1_a": 11,
+      "top1_b": 6,
+      "top1_gain": 5,
+      "cosine_to_query_centroid_a": 0.6909,
+      "cosine_to_query_centroid_b": 0.6392,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "other_1132_s5",
+      "top1_a": 7,
+      "top1_b": 2,
+      "top1_gain": 5,
+      "cosine_to_query_centroid_a": 0.6996,
+      "cosine_to_query_centroid_b": 0.6604,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "family_305_s8",
+      "top1_a": 9,
+      "top1_b": 4,
+      "top1_gain": 5,
+      "cosine_to_query_centroid_a": 0.6841,
+      "cosine_to_query_centroid_b": 0.6402,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "family_138_s47",
+      "top1_a": 18,
+      "top1_b": 13,
+      "top1_gain": 5,
+      "cosine_to_query_centroid_a": 0.6978,
+      "cosine_to_query_centroid_b": 0.6435,
+      "train_pairs_as_positive": 1
+    },
+    {
+      "chunk_id": "other_86_s53",
+      "top1_a": 7,
+      "top1_b": 3,
+      "top1_gain": 4,
+      "cosine_to_query_centroid_a": 0.7012,
+      "cosine_to_query_centroid_b": 0.6426,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "land_1449_s6",
+      "top1_a": 14,
+      "top1_b": 10,
+      "top1_gain": 4,
+      "cosine_to_query_centroid_a": 0.6917,
+      "cosine_to_query_centroid_b": 0.656,
+      "train_pairs_as_positive": 3
+    },
+    {
+      "chunk_id": "criminal_procedure_11_s494",
+      "top1_a": 11,
+      "top1_b": 7,
+      "top1_gain": 4,
+      "cosine_to_query_centroid_a": 0.6885,
+      "cosine_to_query_centroid_b": 0.6391,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "family_138_s48",
+      "top1_a": 5,
+      "top1_b": 2,
+      "top1_gain": 3,
+      "cosine_to_query_centroid_a": 0.693,
+      "cosine_to_query_centroid_b": 0.6428,
+      "train_pairs_as_positive": 1
+    },
+    {
+      "chunk_id": "family_138_s178",
+      "top1_a": 6,
+      "top1_b": 3,
+      "top1_gain": 3,
+      "cosine_to_query_centroid_a": 0.7077,
+      "cosine_to_query_centroid_b": 0.662,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "criminal_procedure_75_s199",
+      "top1_a": 3,
+      "top1_b": 0,
+      "top1_gain": 3,
+      "cosine_to_query_centroid_a": 0.684,
+      "cosine_to_query_centroid_b": 0.6373,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "women_children_1256_s4",
+      "top1_a": 3,
+      "top1_b": 1,
+      "top1_gain": 2,
+      "cosine_to_query_centroid_a": 0.6795,
+      "cosine_to_query_centroid_b": 0.6283,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "other_20_s34",
+      "top1_a": 4,
+      "top1_b": 2,
+      "top1_gain": 2,
+      "cosine_to_query_centroid_a": 0.6987,
+      "cosine_to_query_centroid_b": 0.6612,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "land_856_s7",
+      "top1_a": 2,
+      "top1_b": 0,
+      "top1_gain": 2,
+      "cosine_to_query_centroid_a": 0.7095,
+      "cosine_to_query_centroid_b": 0.678,
+      "train_pairs_as_positive": 0
+    },
+    {
+      "chunk_id": "land_241_s91",
+      "top1_a": 3,
+      "top1_b": 1,
+      "top1_gain": 2,
+      "cosine_to_query_centroid_a": 0.6705,
+      "cosine_to_query_centroid_b": 0.6169,
+      "train_pairs_as_positive": 0
+    }
+  ],
+  "hub_training_membership": {
+    "mean_gain_in_training": 4.0,
+    "n_in_training": 3,
+    "mean_gain_not_in_training": 3.667,
+    "n_not_in_training": 12,
+    "note": "If these are comparable, hubness is NOT explained by memorising training positives."
+  }
+}

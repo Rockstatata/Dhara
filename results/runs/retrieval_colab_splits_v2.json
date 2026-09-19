@@ -1,0 +1,20 @@
+{
+  "train": {
+    "rows": 4169,
+    "provisions": 2356,
+    "source": "silver_auto_curated"
+  },
+  "dev": {
+    "rows": 246,
+    "source": "human_adjudicated_v2"
+  },
+  "test": {
+    "rows": 234,
+    "source": "human_adjudicated_v2"
+  },
+  "invariants": {
+    "question_qid_disjoint": true,
+    "held_out_gold_provision_excluded_from_train": true
+  },
+  "interpretation": "Use this for a silver-supervision experiment. It does not convert generated labels into reviewed labels."
+}

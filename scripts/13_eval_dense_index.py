@@ -58,13 +58,17 @@ def main() -> None:
     ap.add_argument("--run-id", required=True)
     ap.add_argument("--corpus", type=pathlib.Path, default=CORPUS)
     ap.add_argument("--probes", type=pathlib.Path, default=PROBES)
+    ap.add_argument("--query-cache", default="probe_query.npy",
+                    help="filename within --index to read cached query vectors from, "
+                         "e.g. probe_query_v2.npy for a rescore that must not touch "
+                         "the v1 cache")
     ap.add_argument("--out", type=pathlib.Path, default=pathlib.Path("results/runs"))
     args = ap.parse_args()
 
     manifest = json.loads((args.index / "manifest.json").read_text(encoding="utf-8"))
     corpus_emb = np.load(args.index / "embeddings.npy").astype(np.float32)
     chunk_ids = json.loads((args.index / "chunk_ids.json").read_text(encoding="utf-8"))
-    query_emb = np.load(args.index / "probe_query.npy").astype(np.float32)
+    query_emb = np.load(args.index / args.query_cache).astype(np.float32)
     probes = read_jsonl(args.probes)
 
     assert len(chunk_ids) == corpus_emb.shape[0], "chunk_ids and embeddings disagree"

@@ -1,0 +1,7 @@
+run,other,other_n,labour,labour_n,women_children,women_children_n,land,land_n,criminal_procedure,criminal_procedure_n,consumer,consumer_n,family,family_n,money_recovery,money_recovery_n
+bm25_default_v2,0.0289,311,0.0682,44,0.1136,44,0.3333,21,0.0,15,0.1333,15,0.0,7,0.0,6
+word2vec_v2,0.0257,311,0.0455,44,0.0227,44,0.0952,21,0.0,15,0.0667,15,0.0,7,0.0,6
+bilstm_v2,0.0129,311,0.0,44,0.0,44,0.0,21,0.0,15,0.0,15,0.0,7,0.0,6
+bge_m3_zeroshot_v2,0.2862,311,0.4773,44,0.4773,44,0.3333,21,0.2,15,0.4667,15,0.7143,7,0.3333,6
+bge_m3_acttitle_v2,0.283,311,0.5227,44,0.5455,44,0.4286,21,0.3333,15,0.4667,15,0.7143,7,0.3333,6
+bge_m3_attempt4_v2,0.2444,311,0.4318,44,0.6364,44,0.381,21,0.4667,15,0.4,15,0.5714,7,0.3333,6

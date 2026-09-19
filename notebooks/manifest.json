@@ -1,0 +1,40 @@
+{
+  "checkpoint": "BAAI/bge-m3",
+  "max_seq_length": 512,
+  "use_title": true,
+  "query_prefix": "",
+  "passage_prefix": "",
+  "dim": 1024,
+  "dtype": "float16",
+  "normalized": true,
+  "n_chunks": 39484,
+  "corpus_file": "data/processed/corpus_v1.jsonl",
+  "fine_tuned": true,
+  "train_file": "data/processed/train_anchor_v1_negatives.jsonl",
+  "train_variant": "anchor",
+  "train_pairs": 4408,
+  "train_rows": 4408,
+  "train_label_source": "anchor",
+  "train_positive_provisions": 168,
+  "n_neg_per_row": 3,
+  "batch_sampler": "NO_DUPLICATES",
+  "steps_per_epoch": 275,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "query",
+      "value"
+    ]
+  },
+  "epochs": 1,
+  "batch_size": 16,
+  "lr": 1e-05,
+  "canary_cosine_vs_base": 1.0,
+  "query_concentration_base": 0.699,
+  "query_concentration_finetuned": 0.699,
+  "built_by": "notebooks/colab_bge_m3_finetune.ipynb",
+  "document_template": "provision_title_bn + space + text_bn, stripped",
+  "notes": "Fine-tuned arm, attempt 3. Compare against models/index_bge_m3_zeroshot_v1 via scripts/13. Guards against three measured failure modes: embedding collapse (attempt 1) and query-space hubness (attempt 2), both in DECISIONS.md 2026-09-03; and, new here, wrong labels plus in-batch contradictions -- the keyword-matched positives were ~80% wrong at section level and are dropped, and NO_DUPLICATES batching removes the same-anchor and same-positive collisions that plain batching leaves in."
+}

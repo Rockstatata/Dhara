@@ -1,0 +1,5 @@
+group,n,concentration_b,concentration_a,distinct_top1_b,distinct_top1_a,max_top1_b,max_top1_a,gini_b,gini_a
+all,552,0.699,0.71,279,273,19,18,0.4264,0.4309
+english,333,0.7105,0.7227,168,167,12,16,0.4067,0.4248
+bengali,108,0.6725,0.6842,80,90,7,6,0.2375,0.1551
+mixed,111,0.723,0.7304,85,78,5,6,0.2056,0.2531
