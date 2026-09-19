@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="system-ui, sans-serif" font-size="11">
+<rect width="720" height="340" fill="white"/>
+<text x="48" y="22" font-size="13" font-weight="600">Content-word overlap: question vs its provision</text>
+<line x1="48" y1="292" x2="672" y2="292" stroke="#333"/>
+<line x1="48" y1="48" x2="48" y2="292" stroke="#333"/>
+<line x1="48.0" y1="292" x2="48.0" y2="296" stroke="#333"/>
+<text x="48.0" y="309" text-anchor="middle" fill="#444">0.0</text>
+<line x1="172.8" y1="292" x2="172.8" y2="296" stroke="#333"/>
+<text x="172.8" y="309" text-anchor="middle" fill="#444">0.2</text>
+<line x1="297.6" y1="292" x2="297.6" y2="296" stroke="#333"/>
+<text x="297.6" y="309" text-anchor="middle" fill="#444">0.4</text>
+<line x1="422.4" y1="292" x2="422.4" y2="296" stroke="#333"/>
+<text x="422.4" y="309" text-anchor="middle" fill="#444">0.6</text>
+<line x1="547.2" y1="292" x2="547.2" y2="296" stroke="#333"/>
+<text x="547.2" y="309" text-anchor="middle" fill="#444">0.8</text>
+<line x1="672.0" y1="292" x2="672.0" y2="296" stroke="#333"/>
+<text x="672.0" y="309" text-anchor="middle" fill="#444">1.0</text>
+<text x="360" y="334" text-anchor="middle" fill="#444">content overlap (fraction of question content words present in the provision)</text>
+<polyline fill="none" stroke="#1b6ac9" stroke-width="2" points="63.6,50.3 94.8,249.7 126.0,272.0 157.2,287.9 188.4,289.6 219.6,286.1 250.8,290.8 282.0,289.6 313.2,290.2 344.4,292.0 375.6,290.2 406.8,292.0 438.0,291.4 469.2,291.4 500.4,292.0 531.6,292.0 562.8,292.0 594.0,292.0 625.2,292.0 656.4,292.0"/>
+<line x1="482" y1="58" x2="502" y2="58" stroke="#1b6ac9" stroke-width="2"/>
+<text x="508" y="62" fill="#222">real mined (gold)</text>
+<polyline fill="none" stroke="#c9541b" stroke-width="2" points="63.6,57.6 94.8,232.0 126.0,271.6 157.2,286.7 188.4,289.4 219.6,291.0 250.8,291.3 282.0,291.9 313.2,292.0 344.4,292.0 375.6,292.0 406.8,292.0 438.0,292.0 469.2,292.0 500.4,292.0 531.6,292.0 562.8,292.0 594.0,292.0 625.2,292.0 656.4,292.0"/>
+<line x1="482" y1="74" x2="502" y2="74" stroke="#c9541b" stroke-width="2"/>
+<text x="508" y="78" fill="#222">tier_a</text>
+<polyline fill="none" stroke="#2c8a4b" stroke-width="2" points="63.6,48.0 94.8,237.6 126.0,274.3 157.2,286.7 188.4,290.3 219.6,291.4 250.8,291.3 282.0,291.8 313.2,291.9 344.4,292.0 375.6,292.0 406.8,292.0 438.0,292.0 469.2,292.0 500.4,292.0 531.6,292.0 562.8,292.0 594.0,292.0 625.2,292.0 656.4,292.0"/>
+<line x1="482" y1="90" x2="502" y2="90" stroke="#2c8a4b" stroke-width="2"/>
+<text x="508" y="94" fill="#222">tier_a_expansion</text>
+<polyline fill="none" stroke="#7a4bc9" stroke-width="2" points="63.6,271.6 94.8,292.0 126.0,283.9 157.2,275.7 188.4,280.3 219.6,239.3 250.8,259.5 282.0,267.0 313.2,219.4 344.4,287.6 375.6,211.9 406.8,291.8 438.0,291.5 469.2,291.9 500.4,292.0 531.6,292.0 562.8,292.0 594.0,292.0 625.2,292.0 656.4,292.0"/>
+<line x1="482" y1="106" x2="502" y2="106" stroke="#7a4bc9" stroke-width="2"/>
+<text x="508" y="110" fill="#222">tier_b</text>
+<polyline fill="none" stroke="#a01b52" stroke-width="2" points="63.6,292.0 94.8,292.0 126.0,292.0 157.2,292.0 188.4,276.4 219.6,292.0 250.8,202.1 282.0,292.0 313.2,252.9 344.4,292.0 375.6,114.3 406.8,291.5 438.0,291.4 469.2,291.8 500.4,292.0 531.6,291.1 562.8,292.0 594.0,292.0 625.2,292.0 656.4,291.9"/>
+<line x1="482" y1="122" x2="502" y2="122" stroke="#a01b52" stroke-width="2"/>
+<text x="508" y="126" fill="#222">tier_c</text>
+</svg>

@@ -60,21 +60,52 @@ results/     tables/ figures/ runs/ (one JSON per experiment run)
 
 ## Commands
 
-Nothing is implemented yet; these are the contracts the scripts must satisfy.
+Corpus, annotation, the zero-shot control, and the synthetic training set are
+built. Fine-tuning is the next thing to run.
 
 ```bash
-python scripts/01_survey_acts.py                                    # feasibility gate → results/tables/act_survey.csv
+# corpus (done — corpus_v1.jsonl is frozen: 39,484 chunks, 1,227 acts)
 python scripts/02_scrape.py --acts 3 --out data/raw/
 python scripts/03_build_corpus.py --in data/raw/ --out data/processed/corpus_v1.jsonl
-python scripts/03_build_corpus.py --qa                              # → results/tables/corpus_stats.csv
-python scripts/04_generate_questions.py
-python scripts/05_mine_negatives.py
-python scripts/06_train_biencoder.py
-python scripts/07_train_crossencoder.py
-python scripts/08_build_index.py                                    # → models/index_v1/
-python scripts/09_run_eval.py --corpus corpus_v1.jsonl --gold gold_test_v1.jsonl --retriever bm25
-python -m src.app.app                                               # Gradio demo
+
+# annotation (done — 794 rows, 552 clean probe questions)
+python scripts/06_make_annotation_sheets.py
+python scripts/08_merge_gold.py
+
+# evaluation — every citable number comes out of here, with per_query
+python scripts/13_eval_dense_index.py --index models/index_bge_m3_zeroshot_v1 \
+    --run-id bge_m3_zeroshot
+python scripts/18_compare_runs.py --a results/runs/<new>.json \
+    --b results/runs/bge_m3_zeroshot.json      # paired bootstrap CI on the difference
+
+# synthetic training data — replay the whole chain in four commands
+python scripts/14_generate_questions.py         # → synth_questions_v1.jsonl
+python scripts/15_overlap_audit.py              # §5.3 — decides which tiers are usable
+python scripts/16_split_training.py             # topic-disjoint split + leakage assertions
+python scripts/17_mine_negatives.py --variant strict   # ranks 5-30 from the dense index
+
+python scripts/19_build_exclusions.py           # repealed provisions, for index + serving
+
+# diagnosis — these exist because aggregate recall could not see the failures
+python scripts/20_hubness_audit.py --a <index> --a-id <id>     --b models/index_bge_m3_zeroshot_v1 --b-id bge_m3_zeroshot   # query-space hubness
+python scripts/21_eval_rerank.py --rerank <file> --run-id <id>   # score a reranked list
+python scripts/22_question_diversity.py --structural-only        # question-set shape, CPU
+
+python -m src.app.app                           # Gradio demo (not built yet)
 ```
+
+Two Colab notebooks: `colab_bge_m3_finetune.ipynb` (the fine-tuning arm) and
+`colab_acttitle_and_rerank.ipynb` (Act-title documents + cross-encoder rerank,
+neither of which needs training). Both write artifacts in the exact layout the
+in-repo scoring scripts read, so every rung is scored by identical code.
+
+Fine-tuning runs on a T4 via `notebooks/colab_bge_m3_finetune.ipynb`; it writes
+an index in the exact layout `13_eval_dense_index.py` reads, so both arms of the
+headline comparison are scored by identical code.
+
+**Script numbering has drifted from the guide.** `04`/`05` in the guide's plan
+are `14`/`17` here, and the guide's `09_run_eval` is `13` + `18`. The guide's §
+references are still the authority on *what* each stage must do.
 
 Install: `pip install -r requirements.txt`, then separately (not on PyPI, required if using BanglaBERT):
 
