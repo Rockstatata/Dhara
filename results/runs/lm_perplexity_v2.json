@@ -1,0 +1,3337 @@
+{
+  "run_id": "lm_perplexity_v2",
+  "gold": "data\\processed\\gold_verified_v2.jsonl",
+  "checkpoint": "models\\language_model.pt",
+  "n_scored": 552,
+  "n_total": 552,
+  "by_register": {
+    "colloquial": {
+      "n": 511,
+      "mean": 138.89,
+      "median": 89.45,
+      "min": 12.99,
+      "max": 1574.88
+    },
+    "formal": {
+      "n": 41,
+      "mean": 113.83,
+      "median": 100.27,
+      "min": 25.47,
+      "max": 357.61
+    }
+  },
+  "per_query": [
+    {
+      "qid": "ajke_0139_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 125.91
+    },
+    {
+      "qid": "ajke_0140_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 64.23
+    },
+    {
+      "qid": "ajke_0142_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 69.26
+    },
+    {
+      "qid": "ajke_0143_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 74.89
+    },
+    {
+      "qid": "ajke_0144_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 53.57
+    },
+    {
+      "qid": "ajke_0144_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 34.49
+    },
+    {
+      "qid": "ajke_0145_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 125.19
+    },
+    {
+      "qid": "ajke_0146_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 29.23
+    },
+    {
+      "qid": "ajke_0147_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 61.05
+    },
+    {
+      "qid": "ajke_0149_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 126.49
+    },
+    {
+      "qid": "ajke_0151_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 97.71
+    },
+    {
+      "qid": "ajke_0153_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 28.02
+    },
+    {
+      "qid": "ajke_0155_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 59.41
+    },
+    {
+      "qid": "ajke_0156_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 68.21
+    },
+    {
+      "qid": "ajke_0157_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 61.98
+    },
+    {
+      "qid": "ajke_0159_01",
+      "register": "colloquial",
+      "domain": "money_recovery",
+      "perplexity": 89.83
+    },
+    {
+      "qid": "ajke_0160_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 48.73
+    },
+    {
+      "qid": "ajke_0162_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 47.25
+    },
+    {
+      "qid": "ajke_0164_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 115.93
+    },
+    {
+      "qid": "ajke_0164_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 28.45
+    },
+    {
+      "qid": "ajke_0165_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 33.9
+    },
+    {
+      "qid": "ajke_0166_01",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 59.53
+    },
+    {
+      "qid": "ajke_0168_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 57.58
+    },
+    {
+      "qid": "ajke_0169_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 65.21
+    },
+    {
+      "qid": "ajke_0170_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 122.9
+    },
+    {
+      "qid": "ajke_0172_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 54.27
+    },
+    {
+      "qid": "ajke_0173_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 63.03
+    },
+    {
+      "qid": "ajke_0174_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 81.61
+    },
+    {
+      "qid": "ajke_0175_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 143.94
+    },
+    {
+      "qid": "ajke_0178_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 148.83
+    },
+    {
+      "qid": "ajke_0179_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 57.34
+    },
+    {
+      "qid": "ajke_0179_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 56.88
+    },
+    {
+      "qid": "ajke_0180_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 189.87
+    },
+    {
+      "qid": "ajke_0181_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 59.24
+    },
+    {
+      "qid": "ajke_0184_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 48.32
+    },
+    {
+      "qid": "ajke_0186_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 44.93
+    },
+    {
+      "qid": "ajke_0187_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 144.1
+    },
+    {
+      "qid": "ajke_0188_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 116.34
+    },
+    {
+      "qid": "ajke_0189_01",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 83.11
+    },
+    {
+      "qid": "ajke_0190_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 59.5
+    },
+    {
+      "qid": "ajke_0191_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 86.45
+    },
+    {
+      "qid": "ajke_0192_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 188.19
+    },
+    {
+      "qid": "ajke_0193_01",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 47.02
+    },
+    {
+      "qid": "ajke_0194_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 110.52
+    },
+    {
+      "qid": "ajke_0195_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 54.43
+    },
+    {
+      "qid": "ajke_0197_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 56.83
+    },
+    {
+      "qid": "ajke_0198_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 99.91
+    },
+    {
+      "qid": "ajke_0199_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 118.31
+    },
+    {
+      "qid": "ajke_0200_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 62.05
+    },
+    {
+      "qid": "ajke_0201_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 36.75
+    },
+    {
+      "qid": "ajke_0202_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 83.43
+    },
+    {
+      "qid": "ajke_0203_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 83.96
+    },
+    {
+      "qid": "ajke_0205_01",
+      "register": "formal",
+      "domain": "women_children",
+      "perplexity": 77.9
+    },
+    {
+      "qid": "ajke_0207_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 86.05
+    },
+    {
+      "qid": "ajke_0208_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 176.3
+    },
+    {
+      "qid": "dail_0594_01",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 371.36
+    },
+    {
+      "qid": "dail_0613_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 444.77
+    },
+    {
+      "qid": "dail_0613_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 278.2
+    },
+    {
+      "qid": "dail_0621_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 198.46
+    },
+    {
+      "qid": "dail_0628_02",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 278.67
+    },
+    {
+      "qid": "dail_0629_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 384.77
+    },
+    {
+      "qid": "dail_0631_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 324.6
+    },
+    {
+      "qid": "lawy_0210_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 38.92
+    },
+    {
+      "qid": "lawy_0212_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 480.8
+    },
+    {
+      "qid": "lawy_0218_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 35.46
+    },
+    {
+      "qid": "lawy_0219_01",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 195.08
+    },
+    {
+      "qid": "lawy_0220_01",
+      "register": "colloquial",
+      "domain": "constitutional",
+      "perplexity": 62.56
+    },
+    {
+      "qid": "lawy_0221_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 251.48
+    },
+    {
+      "qid": "lawy_0223_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 120.95
+    },
+    {
+      "qid": "lawy_0224_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 426.77
+    },
+    {
+      "qid": "lawy_0241_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 304.65
+    },
+    {
+      "qid": "lawy_0242_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 305.57
+    },
+    {
+      "qid": "lawy_0258_01",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 205.7
+    },
+    {
+      "qid": "lawy_0262_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 94.5
+    },
+    {
+      "qid": "lawy_0287_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 215.72
+    },
+    {
+      "qid": "lawy_0290_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 38.94
+    },
+    {
+      "qid": "lawy_0299_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 99.42
+    },
+    {
+      "qid": "lawy_0303_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 786.66
+    },
+    {
+      "qid": "lawy_0314_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 481.21
+    },
+    {
+      "qid": "lawy_0317_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 679.08
+    },
+    {
+      "qid": "lawy_0321_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 246.27
+    },
+    {
+      "qid": "lawy_0322_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 231.17
+    },
+    {
+      "qid": "lawy_0323_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 936.27
+    },
+    {
+      "qid": "lawy_0326_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 234.95
+    },
+    {
+      "qid": "lawy_0335_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 1574.88
+    },
+    {
+      "qid": "lawy_0350_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 142.43
+    },
+    {
+      "qid": "lawy_0354_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 104.49
+    },
+    {
+      "qid": "lawy_0361_01",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 168.16
+    },
+    {
+      "qid": "lawy_0362_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 394.55
+    },
+    {
+      "qid": "lawy_0363_01",
+      "register": "colloquial",
+      "domain": "money_recovery",
+      "perplexity": 194.94
+    },
+    {
+      "qid": "lawy_0371_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 516.32
+    },
+    {
+      "qid": "lawy_0376_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 55.94
+    },
+    {
+      "qid": "lawy_0380_01",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 638.4
+    },
+    {
+      "qid": "lawy_0382_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 191.32
+    },
+    {
+      "qid": "lawy_0386_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 151.27
+    },
+    {
+      "qid": "lawy_0387_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 140.99
+    },
+    {
+      "qid": "lawy_0403_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 553.0
+    },
+    {
+      "qid": "lawy_0409_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 563.56
+    },
+    {
+      "qid": "lawy_0413_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 142.74
+    },
+    {
+      "qid": "lawy_0420_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 51.12
+    },
+    {
+      "qid": "lawy_0424_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 107.01
+    },
+    {
+      "qid": "lawy_0432_01",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 129.12
+    },
+    {
+      "qid": "lawy_0437_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 47.64
+    },
+    {
+      "qid": "lawy_0443_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 423.39
+    },
+    {
+      "qid": "lawy_0445_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 90.29
+    },
+    {
+      "qid": "lawy_0456_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 123.82
+    },
+    {
+      "qid": "lawy_0464_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 1112.37
+    },
+    {
+      "qid": "lawy_0477_01",
+      "register": "colloquial",
+      "domain": "money_recovery",
+      "perplexity": 228.46
+    },
+    {
+      "qid": "lawy_0500_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 190.44
+    },
+    {
+      "qid": "lawy_0533_01",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 233.6
+    },
+    {
+      "qid": "lawy_0563_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 677.75
+    },
+    {
+      "qid": "lawy_0567_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 51.8
+    },
+    {
+      "qid": "lawy_0568_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 218.82
+    },
+    {
+      "qid": "lawy_0588_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 381.41
+    },
+    {
+      "qid": "prot_0000_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 59.38
+    },
+    {
+      "qid": "prot_0000_02",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 56.2
+    },
+    {
+      "qid": "prot_0000_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 173.0
+    },
+    {
+      "qid": "prot_0000_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 322.16
+    },
+    {
+      "qid": "prot_0000_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 140.25
+    },
+    {
+      "qid": "prot_0001_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 57.78
+    },
+    {
+      "qid": "prot_0001_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 14.76
+    },
+    {
+      "qid": "prot_0001_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 150.63
+    },
+    {
+      "qid": "prot_0002_01",
+      "register": "colloquial",
+      "domain": "constitutional",
+      "perplexity": 71.87
+    },
+    {
+      "qid": "prot_0002_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 76.35
+    },
+    {
+      "qid": "prot_0002_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 129.14
+    },
+    {
+      "qid": "prot_0003_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 79.89
+    },
+    {
+      "qid": "prot_0003_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 65.58
+    },
+    {
+      "qid": "prot_0003_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 156.58
+    },
+    {
+      "qid": "prot_0003_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 97.19
+    },
+    {
+      "qid": "prot_0003_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 83.2
+    },
+    {
+      "qid": "prot_0004_01",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 158.22
+    },
+    {
+      "qid": "prot_0004_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 132.4
+    },
+    {
+      "qid": "prot_0004_03",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 55.36
+    },
+    {
+      "qid": "prot_0004_04",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 265.96
+    },
+    {
+      "qid": "prot_0005_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 40.49
+    },
+    {
+      "qid": "prot_0005_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 117.07
+    },
+    {
+      "qid": "prot_0005_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 32.95
+    },
+    {
+      "qid": "prot_0006_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 53.74
+    },
+    {
+      "qid": "prot_0006_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 57.34
+    },
+    {
+      "qid": "prot_0006_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 148.71
+    },
+    {
+      "qid": "prot_0006_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 205.62
+    },
+    {
+      "qid": "prot_0007_02",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 72.36
+    },
+    {
+      "qid": "prot_0008_02",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 316.16
+    },
+    {
+      "qid": "prot_0008_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 194.25
+    },
+    {
+      "qid": "prot_0008_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 106.68
+    },
+    {
+      "qid": "prot_0008_05",
+      "register": "colloquial",
+      "domain": "civil_registration",
+      "perplexity": 75.98
+    },
+    {
+      "qid": "prot_0008_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 162.22
+    },
+    {
+      "qid": "prot_0008_07",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 48.45
+    },
+    {
+      "qid": "prot_0009_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 136.54
+    },
+    {
+      "qid": "prot_0009_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 91.68
+    },
+    {
+      "qid": "prot_0009_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 66.66
+    },
+    {
+      "qid": "prot_0009_05",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 69.61
+    },
+    {
+      "qid": "prot_0010_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 189.24
+    },
+    {
+      "qid": "prot_0010_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 174.22
+    },
+    {
+      "qid": "prot_0010_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 529.12
+    },
+    {
+      "qid": "prot_0010_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 240.43
+    },
+    {
+      "qid": "prot_0011_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 132.24
+    },
+    {
+      "qid": "prot_0011_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 78.69
+    },
+    {
+      "qid": "prot_0011_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 38.13
+    },
+    {
+      "qid": "prot_0011_05",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 201.22
+    },
+    {
+      "qid": "prot_0012_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 64.55
+    },
+    {
+      "qid": "prot_0012_02",
+      "register": "formal",
+      "domain": "women_children",
+      "perplexity": 121.96
+    },
+    {
+      "qid": "prot_0012_03",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 55.38
+    },
+    {
+      "qid": "prot_0012_04",
+      "register": "colloquial",
+      "domain": "money_recovery",
+      "perplexity": 112.48
+    },
+    {
+      "qid": "prot_0013_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 41.13
+    },
+    {
+      "qid": "prot_0013_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 102.46
+    },
+    {
+      "qid": "prot_0014_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 71.7
+    },
+    {
+      "qid": "prot_0014_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 107.54
+    },
+    {
+      "qid": "prot_0015_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 40.06
+    },
+    {
+      "qid": "prot_0015_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 270.64
+    },
+    {
+      "qid": "prot_0015_03",
+      "register": "colloquial",
+      "domain": "cybercrime",
+      "perplexity": 59.08
+    },
+    {
+      "qid": "prot_0016_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 26.54
+    },
+    {
+      "qid": "prot_0017_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 81.07
+    },
+    {
+      "qid": "prot_0017_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 82.49
+    },
+    {
+      "qid": "prot_0017_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 71.27
+    },
+    {
+      "qid": "prot_0017_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 78.51
+    },
+    {
+      "qid": "prot_0018_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 118.34
+    },
+    {
+      "qid": "prot_0018_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 24.82
+    },
+    {
+      "qid": "prot_0018_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 93.06
+    },
+    {
+      "qid": "prot_0018_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 222.61
+    },
+    {
+      "qid": "prot_0019_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 68.87
+    },
+    {
+      "qid": "prot_0020_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 50.9
+    },
+    {
+      "qid": "prot_0021_01",
+      "register": "colloquial",
+      "domain": "family",
+      "perplexity": 102.46
+    },
+    {
+      "qid": "prot_0021_02",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 118.49
+    },
+    {
+      "qid": "prot_0023_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 123.56
+    },
+    {
+      "qid": "prot_0024_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 105.31
+    },
+    {
+      "qid": "prot_0025_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 111.65
+    },
+    {
+      "qid": "prot_0025_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 65.06
+    },
+    {
+      "qid": "prot_0025_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 167.3
+    },
+    {
+      "qid": "prot_0025_05",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 316.74
+    },
+    {
+      "qid": "prot_0025_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 74.06
+    },
+    {
+      "qid": "prot_0026_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 85.63
+    },
+    {
+      "qid": "prot_0026_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 37.09
+    },
+    {
+      "qid": "prot_0026_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 31.16
+    },
+    {
+      "qid": "prot_0026_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 77.58
+    },
+    {
+      "qid": "prot_0026_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 111.15
+    },
+    {
+      "qid": "prot_0027_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 140.82
+    },
+    {
+      "qid": "prot_0028_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 65.15
+    },
+    {
+      "qid": "prot_0028_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 123.18
+    },
+    {
+      "qid": "prot_0029_01",
+      "register": "formal",
+      "domain": "labour",
+      "perplexity": 81.97
+    },
+    {
+      "qid": "prot_0030_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 39.56
+    },
+    {
+      "qid": "prot_0030_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 55.14
+    },
+    {
+      "qid": "prot_0030_03",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 137.78
+    },
+    {
+      "qid": "prot_0031_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 224.37
+    },
+    {
+      "qid": "prot_0031_02",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 61.28
+    },
+    {
+      "qid": "prot_0032_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 47.54
+    },
+    {
+      "qid": "prot_0032_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 40.47
+    },
+    {
+      "qid": "prot_0032_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 255.36
+    },
+    {
+      "qid": "prot_0032_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 31.19
+    },
+    {
+      "qid": "prot_0032_05",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 79.91
+    },
+    {
+      "qid": "prot_0033_01",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 218.16
+    },
+    {
+      "qid": "prot_0034_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 70.24
+    },
+    {
+      "qid": "prot_0035_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 51.77
+    },
+    {
+      "qid": "prot_0035_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 102.32
+    },
+    {
+      "qid": "prot_0035_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 81.95
+    },
+    {
+      "qid": "prot_0035_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 222.09
+    },
+    {
+      "qid": "prot_0036_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 40.22
+    },
+    {
+      "qid": "prot_0036_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 40.31
+    },
+    {
+      "qid": "prot_0036_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 59.33
+    },
+    {
+      "qid": "prot_0036_04",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 96.46
+    },
+    {
+      "qid": "prot_0036_05",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 40.51
+    },
+    {
+      "qid": "prot_0036_06",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 15.42
+    },
+    {
+      "qid": "prot_0036_07",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 186.25
+    },
+    {
+      "qid": "prot_0037_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 57.15
+    },
+    {
+      "qid": "prot_0037_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 41.36
+    },
+    {
+      "qid": "prot_0037_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 48.22
+    },
+    {
+      "qid": "prot_0037_04",
+      "register": "colloquial",
+      "domain": "cybercrime",
+      "perplexity": 96.36
+    },
+    {
+      "qid": "prot_0037_05",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 139.18
+    },
+    {
+      "qid": "prot_0037_06",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 61.82
+    },
+    {
+      "qid": "prot_0037_07",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 20.26
+    },
+    {
+      "qid": "prot_0037_08",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 51.88
+    },
+    {
+      "qid": "prot_0038_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 106.87
+    },
+    {
+      "qid": "prot_0038_02",
+      "register": "formal",
+      "domain": "labour",
+      "perplexity": 160.55
+    },
+    {
+      "qid": "prot_0038_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 76.52
+    },
+    {
+      "qid": "prot_0038_05",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 59.48
+    },
+    {
+      "qid": "prot_0039_01",
+      "register": "formal",
+      "domain": "labour",
+      "perplexity": 217.06
+    },
+    {
+      "qid": "prot_0039_03",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 101.58
+    },
+    {
+      "qid": "prot_0039_04",
+      "register": "formal",
+      "domain": "criminal_procedure",
+      "perplexity": 36.47
+    },
+    {
+      "qid": "prot_0040_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 98.46
+    },
+    {
+      "qid": "prot_0040_03",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 78.58
+    },
+    {
+      "qid": "prot_0041_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 54.77
+    },
+    {
+      "qid": "prot_0041_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 95.48
+    },
+    {
+      "qid": "prot_0042_01",
+      "register": "colloquial",
+      "domain": "family",
+      "perplexity": 41.93
+    },
+    {
+      "qid": "prot_0042_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 82.25
+    },
+    {
+      "qid": "prot_0043_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 43.54
+    },
+    {
+      "qid": "prot_0043_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 49.47
+    },
+    {
+      "qid": "prot_0043_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 26.59
+    },
+    {
+      "qid": "prot_0043_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 55.27
+    },
+    {
+      "qid": "prot_0044_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 67.64
+    },
+    {
+      "qid": "prot_0044_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 39.69
+    },
+    {
+      "qid": "prot_0044_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 52.44
+    },
+    {
+      "qid": "prot_0044_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 59.14
+    },
+    {
+      "qid": "prot_0045_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 206.82
+    },
+    {
+      "qid": "prot_0045_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 85.4
+    },
+    {
+      "qid": "prot_0045_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 34.11
+    },
+    {
+      "qid": "prot_0045_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 85.25
+    },
+    {
+      "qid": "prot_0045_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 163.06
+    },
+    {
+      "qid": "prot_0046_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 105.7
+    },
+    {
+      "qid": "prot_0046_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 76.86
+    },
+    {
+      "qid": "prot_0046_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 12.99
+    },
+    {
+      "qid": "prot_0046_04",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 41.0
+    },
+    {
+      "qid": "prot_0047_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 79.98
+    },
+    {
+      "qid": "prot_0047_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 60.96
+    },
+    {
+      "qid": "prot_0047_03",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 45.48
+    },
+    {
+      "qid": "prot_0047_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 138.77
+    },
+    {
+      "qid": "prot_0047_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 126.07
+    },
+    {
+      "qid": "prot_0047_06",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 100.27
+    },
+    {
+      "qid": "prot_0048_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 48.04
+    },
+    {
+      "qid": "prot_0048_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 50.13
+    },
+    {
+      "qid": "prot_0048_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 58.7
+    },
+    {
+      "qid": "prot_0048_04",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 64.7
+    },
+    {
+      "qid": "prot_0048_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 284.52
+    },
+    {
+      "qid": "prot_0048_06",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 144.41
+    },
+    {
+      "qid": "prot_0049_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 142.78
+    },
+    {
+      "qid": "prot_0049_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 44.51
+    },
+    {
+      "qid": "prot_0049_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 63.7
+    },
+    {
+      "qid": "prot_0049_05",
+      "register": "colloquial",
+      "domain": "cybercrime",
+      "perplexity": 61.55
+    },
+    {
+      "qid": "prot_0050_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 44.23
+    },
+    {
+      "qid": "prot_0050_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 50.04
+    },
+    {
+      "qid": "prot_0050_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 190.0
+    },
+    {
+      "qid": "prot_0050_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 245.9
+    },
+    {
+      "qid": "prot_0051_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 33.98
+    },
+    {
+      "qid": "prot_0051_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 208.95
+    },
+    {
+      "qid": "prot_0051_03",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 67.25
+    },
+    {
+      "qid": "prot_0052_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 55.34
+    },
+    {
+      "qid": "prot_0052_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 121.26
+    },
+    {
+      "qid": "prot_0052_03",
+      "register": "colloquial",
+      "domain": "local_government",
+      "perplexity": 59.04
+    },
+    {
+      "qid": "prot_0052_04",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 46.41
+    },
+    {
+      "qid": "prot_0052_05",
+      "register": "colloquial",
+      "domain": "cybercrime",
+      "perplexity": 41.74
+    },
+    {
+      "qid": "prot_0053_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 121.63
+    },
+    {
+      "qid": "prot_0053_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 110.78
+    },
+    {
+      "qid": "prot_0053_04",
+      "register": "formal",
+      "domain": "women_children",
+      "perplexity": 212.41
+    },
+    {
+      "qid": "prot_0054_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 123.3
+    },
+    {
+      "qid": "prot_0054_02",
+      "register": "colloquial",
+      "domain": "local_government",
+      "perplexity": 117.53
+    },
+    {
+      "qid": "prot_0054_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 62.76
+    },
+    {
+      "qid": "prot_0054_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 88.72
+    },
+    {
+      "qid": "prot_0055_01",
+      "register": "colloquial",
+      "domain": "constitutional",
+      "perplexity": 24.82
+    },
+    {
+      "qid": "prot_0055_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 75.19
+    },
+    {
+      "qid": "prot_0055_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 22.51
+    },
+    {
+      "qid": "prot_0055_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 178.92
+    },
+    {
+      "qid": "prot_0056_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 95.27
+    },
+    {
+      "qid": "prot_0056_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 198.92
+    },
+    {
+      "qid": "prot_0056_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 312.04
+    },
+    {
+      "qid": "prot_0056_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 34.89
+    },
+    {
+      "qid": "prot_0056_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 50.19
+    },
+    {
+      "qid": "prot_0056_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 252.59
+    },
+    {
+      "qid": "prot_0057_03",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 49.42
+    },
+    {
+      "qid": "prot_0058_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 39.43
+    },
+    {
+      "qid": "prot_0058_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 90.33
+    },
+    {
+      "qid": "prot_0058_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 43.36
+    },
+    {
+      "qid": "prot_0058_04",
+      "register": "colloquial",
+      "domain": "family",
+      "perplexity": 66.51
+    },
+    {
+      "qid": "prot_0059_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 87.72
+    },
+    {
+      "qid": "prot_0059_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 298.07
+    },
+    {
+      "qid": "prot_0059_03",
+      "register": "formal",
+      "domain": "labour",
+      "perplexity": 145.46
+    },
+    {
+      "qid": "prot_0059_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 125.58
+    },
+    {
+      "qid": "prot_0059_05",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 85.37
+    },
+    {
+      "qid": "prot_0060_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 43.68
+    },
+    {
+      "qid": "prot_0061_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 319.21
+    },
+    {
+      "qid": "prot_0061_02",
+      "register": "formal",
+      "domain": "land",
+      "perplexity": 52.9
+    },
+    {
+      "qid": "prot_0061_03",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 112.98
+    },
+    {
+      "qid": "prot_0062_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 84.7
+    },
+    {
+      "qid": "prot_0062_03",
+      "register": "formal",
+      "domain": "women_children",
+      "perplexity": 114.68
+    },
+    {
+      "qid": "prot_0062_04",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 109.9
+    },
+    {
+      "qid": "prot_0062_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 49.65
+    },
+    {
+      "qid": "prot_0062_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 100.72
+    },
+    {
+      "qid": "prot_0062_07",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 201.16
+    },
+    {
+      "qid": "prot_0062_08",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 45.21
+    },
+    {
+      "qid": "prot_0063_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 47.25
+    },
+    {
+      "qid": "prot_0063_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 101.31
+    },
+    {
+      "qid": "prot_0063_04",
+      "register": "colloquial",
+      "domain": "family",
+      "perplexity": 45.28
+    },
+    {
+      "qid": "prot_0063_05",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 39.09
+    },
+    {
+      "qid": "prot_0064_01",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 57.27
+    },
+    {
+      "qid": "prot_0064_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 82.37
+    },
+    {
+      "qid": "prot_0064_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 52.19
+    },
+    {
+      "qid": "prot_0064_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 81.59
+    },
+    {
+      "qid": "prot_0065_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 86.88
+    },
+    {
+      "qid": "prot_0065_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 182.1
+    },
+    {
+      "qid": "prot_0065_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 62.99
+    },
+    {
+      "qid": "prot_0065_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 59.45
+    },
+    {
+      "qid": "prot_0065_05",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 102.32
+    },
+    {
+      "qid": "prot_0065_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 166.55
+    },
+    {
+      "qid": "prot_0066_01",
+      "register": "colloquial",
+      "domain": "tenancy",
+      "perplexity": 103.11
+    },
+    {
+      "qid": "prot_0066_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 162.07
+    },
+    {
+      "qid": "prot_0066_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 395.7
+    },
+    {
+      "qid": "prot_0066_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 58.53
+    },
+    {
+      "qid": "prot_0066_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 44.27
+    },
+    {
+      "qid": "prot_0066_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 147.7
+    },
+    {
+      "qid": "prot_0066_07",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 170.6
+    },
+    {
+      "qid": "prot_0067_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 76.29
+    },
+    {
+      "qid": "prot_0067_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 80.91
+    },
+    {
+      "qid": "prot_0067_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 156.35
+    },
+    {
+      "qid": "prot_0068_01",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 94.91
+    },
+    {
+      "qid": "prot_0068_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 212.88
+    },
+    {
+      "qid": "prot_0068_04",
+      "register": "formal",
+      "domain": "family",
+      "perplexity": 51.42
+    },
+    {
+      "qid": "prot_0068_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 30.49
+    },
+    {
+      "qid": "prot_0068_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 91.25
+    },
+    {
+      "qid": "prot_0069_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 54.23
+    },
+    {
+      "qid": "prot_0069_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 302.88
+    },
+    {
+      "qid": "prot_0069_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 82.78
+    },
+    {
+      "qid": "prot_0069_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 48.83
+    },
+    {
+      "qid": "prot_0070_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 57.21
+    },
+    {
+      "qid": "prot_0070_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 36.14
+    },
+    {
+      "qid": "prot_0070_04",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 330.09
+    },
+    {
+      "qid": "prot_0070_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 63.55
+    },
+    {
+      "qid": "prot_0071_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 75.6
+    },
+    {
+      "qid": "prot_0071_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 148.53
+    },
+    {
+      "qid": "prot_0071_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 71.06
+    },
+    {
+      "qid": "prot_0071_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 113.52
+    },
+    {
+      "qid": "prot_0071_05",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 43.95
+    },
+    {
+      "qid": "prot_0072_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 82.1
+    },
+    {
+      "qid": "prot_0072_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 284.97
+    },
+    {
+      "qid": "prot_0072_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 64.97
+    },
+    {
+      "qid": "prot_0072_05",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 37.72
+    },
+    {
+      "qid": "prot_0073_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 38.31
+    },
+    {
+      "qid": "prot_0073_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 43.03
+    },
+    {
+      "qid": "prot_0073_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 101.84
+    },
+    {
+      "qid": "prot_0073_04",
+      "register": "colloquial",
+      "domain": "money_recovery",
+      "perplexity": 200.91
+    },
+    {
+      "qid": "prot_0073_06",
+      "register": "formal",
+      "domain": "women_children",
+      "perplexity": 54.17
+    },
+    {
+      "qid": "prot_0073_07",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 195.17
+    },
+    {
+      "qid": "prot_0074_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 53.64
+    },
+    {
+      "qid": "prot_0074_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 108.56
+    },
+    {
+      "qid": "prot_0075_02",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 93.49
+    },
+    {
+      "qid": "prot_0075_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 80.32
+    },
+    {
+      "qid": "prot_0076_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 132.39
+    },
+    {
+      "qid": "prot_0076_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 59.04
+    },
+    {
+      "qid": "prot_0076_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 87.7
+    },
+    {
+      "qid": "prot_0076_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 66.18
+    },
+    {
+      "qid": "prot_0076_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 160.0
+    },
+    {
+      "qid": "prot_0077_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 35.36
+    },
+    {
+      "qid": "prot_0077_02",
+      "register": "colloquial",
+      "domain": "local_government",
+      "perplexity": 90.77
+    },
+    {
+      "qid": "prot_0077_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 277.17
+    },
+    {
+      "qid": "prot_0077_05",
+      "register": "colloquial",
+      "domain": "cybercrime",
+      "perplexity": 107.87
+    },
+    {
+      "qid": "prot_0077_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 157.07
+    },
+    {
+      "qid": "prot_0077_07",
+      "register": "colloquial",
+      "domain": "civil_registration",
+      "perplexity": 69.02
+    },
+    {
+      "qid": "prot_0077_08",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 105.23
+    },
+    {
+      "qid": "prot_0078_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 54.59
+    },
+    {
+      "qid": "prot_0078_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 53.47
+    },
+    {
+      "qid": "prot_0078_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 64.77
+    },
+    {
+      "qid": "prot_0078_04",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 65.57
+    },
+    {
+      "qid": "prot_0078_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 70.02
+    },
+    {
+      "qid": "prot_0079_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 96.85
+    },
+    {
+      "qid": "prot_0079_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 132.7
+    },
+    {
+      "qid": "prot_0079_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 43.56
+    },
+    {
+      "qid": "prot_0080_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 167.73
+    },
+    {
+      "qid": "prot_0080_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 48.34
+    },
+    {
+      "qid": "prot_0080_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 358.77
+    },
+    {
+      "qid": "prot_0080_04",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 38.55
+    },
+    {
+      "qid": "prot_0081_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 77.66
+    },
+    {
+      "qid": "prot_0081_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 81.18
+    },
+    {
+      "qid": "prot_0082_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 102.3
+    },
+    {
+      "qid": "prot_0082_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 128.83
+    },
+    {
+      "qid": "prot_0082_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 42.16
+    },
+    {
+      "qid": "prot_0082_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 48.15
+    },
+    {
+      "qid": "prot_0083_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 106.24
+    },
+    {
+      "qid": "prot_0083_02",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 64.68
+    },
+    {
+      "qid": "prot_0083_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 194.3
+    },
+    {
+      "qid": "prot_0083_04",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 41.76
+    },
+    {
+      "qid": "prot_0083_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 56.91
+    },
+    {
+      "qid": "prot_0084_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 90.2
+    },
+    {
+      "qid": "prot_0084_02",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 158.52
+    },
+    {
+      "qid": "prot_0084_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 89.86
+    },
+    {
+      "qid": "prot_0084_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 89.45
+    },
+    {
+      "qid": "prot_0084_05",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 236.5
+    },
+    {
+      "qid": "prot_0084_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 114.75
+    },
+    {
+      "qid": "prot_0084_07",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 284.97
+    },
+    {
+      "qid": "prot_0085_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 91.9
+    },
+    {
+      "qid": "prot_0085_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 52.66
+    },
+    {
+      "qid": "prot_0085_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 325.29
+    },
+    {
+      "qid": "prot_0085_04",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 73.32
+    },
+    {
+      "qid": "prot_0085_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 69.76
+    },
+    {
+      "qid": "prot_0085_06",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 155.67
+    },
+    {
+      "qid": "prot_0086_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 89.56
+    },
+    {
+      "qid": "prot_0086_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 97.12
+    },
+    {
+      "qid": "prot_0086_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 148.88
+    },
+    {
+      "qid": "prot_0086_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 74.92
+    },
+    {
+      "qid": "prot_0087_01",
+      "register": "colloquial",
+      "domain": "family",
+      "perplexity": 58.34
+    },
+    {
+      "qid": "prot_0087_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 110.8
+    },
+    {
+      "qid": "prot_0087_03",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 50.23
+    },
+    {
+      "qid": "prot_0087_04",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 121.13
+    },
+    {
+      "qid": "prot_0087_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 326.9
+    },
+    {
+      "qid": "prot_0088_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 87.64
+    },
+    {
+      "qid": "prot_0088_02",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 106.13
+    },
+    {
+      "qid": "prot_0088_03",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 59.4
+    },
+    {
+      "qid": "prot_0088_04",
+      "register": "formal",
+      "domain": "road_transport",
+      "perplexity": 232.4
+    },
+    {
+      "qid": "prot_0089_01",
+      "register": "colloquial",
+      "domain": "local_government",
+      "perplexity": 87.49
+    },
+    {
+      "qid": "prot_0090_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 34.87
+    },
+    {
+      "qid": "prot_0091_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 52.51
+    },
+    {
+      "qid": "prot_0091_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 116.0
+    },
+    {
+      "qid": "prot_0091_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 62.29
+    },
+    {
+      "qid": "prot_0091_05",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 28.29
+    },
+    {
+      "qid": "prot_0091_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 119.08
+    },
+    {
+      "qid": "prot_0091_07",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 190.84
+    },
+    {
+      "qid": "prot_0092_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 72.37
+    },
+    {
+      "qid": "prot_0093_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 49.57
+    },
+    {
+      "qid": "prot_0094_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 177.5
+    },
+    {
+      "qid": "prot_0095_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 65.54
+    },
+    {
+      "qid": "prot_0096_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 25.6
+    },
+    {
+      "qid": "prot_0096_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 72.47
+    },
+    {
+      "qid": "prot_0096_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 65.21
+    },
+    {
+      "qid": "prot_0097_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 63.09
+    },
+    {
+      "qid": "prot_0098_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 150.81
+    },
+    {
+      "qid": "prot_0100_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 1181.37
+    },
+    {
+      "qid": "prot_0100_02",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 862.06
+    },
+    {
+      "qid": "prot_0100_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 309.34
+    },
+    {
+      "qid": "prot_0100_04",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 138.13
+    },
+    {
+      "qid": "prot_0100_05",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 50.32
+    },
+    {
+      "qid": "prot_0100_06",
+      "register": "colloquial",
+      "domain": "money_recovery",
+      "perplexity": 318.34
+    },
+    {
+      "qid": "prot_0100_07",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 658.0
+    },
+    {
+      "qid": "prot_0101_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 54.23
+    },
+    {
+      "qid": "prot_0101_03",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 70.19
+    },
+    {
+      "qid": "prot_0102_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 99.43
+    },
+    {
+      "qid": "prot_0102_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 50.79
+    },
+    {
+      "qid": "prot_0103_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 64.62
+    },
+    {
+      "qid": "prot_0103_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 270.18
+    },
+    {
+      "qid": "prot_0103_04",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 141.1
+    },
+    {
+      "qid": "prot_0104_01",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 143.15
+    },
+    {
+      "qid": "prot_0104_02",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 533.25
+    },
+    {
+      "qid": "prot_0104_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 214.0
+    },
+    {
+      "qid": "prot_0104_04",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 158.31
+    },
+    {
+      "qid": "prot_0104_05",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 195.1
+    },
+    {
+      "qid": "prot_0104_06",
+      "register": "formal",
+      "domain": "land",
+      "perplexity": 188.61
+    },
+    {
+      "qid": "prot_0105_02",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 85.81
+    },
+    {
+      "qid": "prot_0105_03",
+      "register": "colloquial",
+      "domain": "consumer",
+      "perplexity": 848.72
+    },
+    {
+      "qid": "prot_0105_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 150.91
+    },
+    {
+      "qid": "prot_0106_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 81.07
+    },
+    {
+      "qid": "prot_0106_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 204.45
+    },
+    {
+      "qid": "prot_0107_02",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 52.29
+    },
+    {
+      "qid": "prot_0107_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 121.06
+    },
+    {
+      "qid": "prot_0107_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 305.87
+    },
+    {
+      "qid": "prot_0107_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 137.46
+    },
+    {
+      "qid": "prot_0107_06",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 160.05
+    },
+    {
+      "qid": "prot_0108_02",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 64.13
+    },
+    {
+      "qid": "prot_0108_03",
+      "register": "formal",
+      "domain": "land",
+      "perplexity": 126.39
+    },
+    {
+      "qid": "prot_0108_04",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 80.81
+    },
+    {
+      "qid": "prot_0108_05",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 29.92
+    },
+    {
+      "qid": "prot_0109_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 241.28
+    },
+    {
+      "qid": "prot_0109_03",
+      "register": "formal",
+      "domain": "labour",
+      "perplexity": 45.89
+    },
+    {
+      "qid": "prot_0109_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 40.94
+    },
+    {
+      "qid": "prot_0110_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 193.09
+    },
+    {
+      "qid": "prot_0110_02",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 55.38
+    },
+    {
+      "qid": "prot_0110_03",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 247.91
+    },
+    {
+      "qid": "prot_0111_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 105.72
+    },
+    {
+      "qid": "prot_0111_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 58.71
+    },
+    {
+      "qid": "prot_0111_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 96.88
+    },
+    {
+      "qid": "prot_0111_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 141.1
+    },
+    {
+      "qid": "prot_0111_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 443.99
+    },
+    {
+      "qid": "prot_0112_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 821.05
+    },
+    {
+      "qid": "prot_0112_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 188.32
+    },
+    {
+      "qid": "prot_0112_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 121.32
+    },
+    {
+      "qid": "prot_0112_04",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 35.08
+    },
+    {
+      "qid": "prot_0113_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 171.26
+    },
+    {
+      "qid": "prot_0113_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 342.79
+    },
+    {
+      "qid": "prot_0113_03",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 122.83
+    },
+    {
+      "qid": "prot_0114_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 53.86
+    },
+    {
+      "qid": "prot_0114_02",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 50.47
+    },
+    {
+      "qid": "prot_0114_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 194.1
+    },
+    {
+      "qid": "prot_0114_04",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 91.14
+    },
+    {
+      "qid": "prot_0114_06",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 217.76
+    },
+    {
+      "qid": "prot_0114_07",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 221.14
+    },
+    {
+      "qid": "prot_0114_08",
+      "register": "formal",
+      "domain": "consumer",
+      "perplexity": 357.61
+    },
+    {
+      "qid": "prot_0114_09",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 175.51
+    },
+    {
+      "qid": "prot_0114_10",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 137.75
+    },
+    {
+      "qid": "prot_0115_01",
+      "register": "colloquial",
+      "domain": "road_transport",
+      "perplexity": 121.15
+    },
+    {
+      "qid": "prot_0115_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 263.89
+    },
+    {
+      "qid": "prot_0115_03",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 49.66
+    },
+    {
+      "qid": "prot_0119_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 80.81
+    },
+    {
+      "qid": "prot_0119_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 63.76
+    },
+    {
+      "qid": "prot_0120_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 170.51
+    },
+    {
+      "qid": "prot_0121_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 175.91
+    },
+    {
+      "qid": "prot_0121_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 53.75
+    },
+    {
+      "qid": "prot_0121_03",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 52.95
+    },
+    {
+      "qid": "prot_0122_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 136.34
+    },
+    {
+      "qid": "prot_0122_02",
+      "register": "formal",
+      "domain": "family",
+      "perplexity": 25.47
+    },
+    {
+      "qid": "prot_0126_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 66.15
+    },
+    {
+      "qid": "prot_0126_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 92.03
+    },
+    {
+      "qid": "prot_0127_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 77.58
+    },
+    {
+      "qid": "prot_0128_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 55.71
+    },
+    {
+      "qid": "prot_0128_02",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 95.58
+    },
+    {
+      "qid": "prot_0128_03",
+      "register": "colloquial",
+      "domain": "criminal_procedure",
+      "perplexity": 222.11
+    },
+    {
+      "qid": "prot_0128_05",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 127.53
+    },
+    {
+      "qid": "prot_0130_01",
+      "register": "colloquial",
+      "domain": "women_children",
+      "perplexity": 37.72
+    },
+    {
+      "qid": "prot_0130_02",
+      "register": "formal",
+      "domain": "other",
+      "perplexity": 128.12
+    },
+    {
+      "qid": "prot_0135_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 148.81
+    },
+    {
+      "qid": "prot_0135_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 178.74
+    },
+    {
+      "qid": "prot_0135_03",
+      "register": "colloquial",
+      "domain": "land",
+      "perplexity": 44.08
+    },
+    {
+      "qid": "prot_0136_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 244.77
+    },
+    {
+      "qid": "prot_0136_02",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 76.27
+    },
+    {
+      "qid": "prot_0136_03",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 71.32
+    },
+    {
+      "qid": "prot_0137_01",
+      "register": "colloquial",
+      "domain": "other",
+      "perplexity": 129.57
+    },
+    {
+      "qid": "prot_0137_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 123.27
+    },
+    {
+      "qid": "prot_0138_01",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 84.97
+    },
+    {
+      "qid": "prot_0138_02",
+      "register": "colloquial",
+      "domain": "labour",
+      "perplexity": 286.02
+    }
+  ]
+}
