@@ -1,0 +1,4472 @@
+{
+  "run_id": "classify_v3",
+  "gold": "data\\processed\\gold_verified_v3.jsonl",
+  "split": "data\\processed\\test_split_v1.json",
+  "vs_v2": "results/runs/classify_v2.json",
+  "fine_grained_rebalanced": {
+    "labels": [
+      "civil_registration",
+      "constitutional",
+      "consumer",
+      "criminal_procedure",
+      "cybercrime",
+      "family",
+      "labour",
+      "land",
+      "money_recovery",
+      "other",
+      "road_transport",
+      "women_children"
+    ],
+    "n_train": 352,
+    "n_test": 200,
+    "models": {
+      "naive_bayes": {
+        "representation": "tfidf",
+        "accuracy": 0.45,
+        "macro_f1": 0.1045,
+        "per_class_f1": {
+          "civil_registration": 0.0,
+          "constitutional": 0.0,
+          "consumer": 0.0,
+          "criminal_procedure": 0.0,
+          "cybercrime": 0.0,
+          "family": 0.6159,
+          "labour": 0.0,
+          "land": 0.2,
+          "money_recovery": 0.0,
+          "other": 0.125,
+          "road_transport": 0.0,
+          "women_children": 0.0
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            85,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            13,
+            0,
+            2,
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            38,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "logistic_regression": {
+        "representation": "tfidf",
+        "accuracy": 0.475,
+        "macro_f1": 0.3428,
+        "per_class_f1": {
+          "civil_registration": 0.0,
+          "constitutional": 0.0,
+          "consumer": 0.2222,
+          "criminal_procedure": 0.2941,
+          "cybercrime": 0.0,
+          "family": 0.659,
+          "labour": 0.2222,
+          "land": 0.3636,
+          "money_recovery": 0.6667,
+          "other": 0.3721,
+          "road_transport": 0.0,
+          "women_children": 0.2857
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            5,
+            0,
+            7,
+            0,
+            2,
+            0,
+            5,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            57,
+            0,
+            13,
+            0,
+            11,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            2,
+            0,
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            10,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            0,
+            11,
+            0,
+            9,
+            1,
+            16,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            7,
+            0,
+            1,
+            0,
+            2,
+            0,
+            4
+          ]
+        ]
+      },
+      "vanilla_rnn": {
+        "representation": "topic0_embedding_matrix",
+        "accuracy": 0.265,
+        "macro_f1": 0.1099,
+        "per_class_f1": {
+          "civil_registration": 0.0,
+          "constitutional": 0.0,
+          "consumer": 0.0,
+          "criminal_procedure": 0.186,
+          "cybercrime": 0.0,
+          "family": 0.4218,
+          "labour": 0.0,
+          "land": 0.0769,
+          "money_recovery": 0.0,
+          "other": 0.2857,
+          "road_transport": 0.0,
+          "women_children": 0.2381
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            0,
+            6,
+            0,
+            2,
+            0,
+            4,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            3,
+            10,
+            1,
+            31,
+            2,
+            16,
+            2,
+            12,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            3,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            2,
+            0,
+            4,
+            1,
+            2,
+            2,
+            5,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            4,
+            0,
+            10,
+            2,
+            7,
+            0,
+            11,
+            0,
+            6
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            4,
+            1,
+            3,
+            0,
+            1,
+            0,
+            5
+          ]
+        ]
+      },
+      "stacked_bilstm": {
+        "representation": "topic0_embedding_matrix",
+        "accuracy": 0.36,
+        "macro_f1": 0.1906,
+        "per_class_f1": {
+          "civil_registration": 0.0,
+          "constitutional": 0.0,
+          "consumer": 0.1667,
+          "criminal_procedure": 0.1714,
+          "cybercrime": 0.0,
+          "family": 0.5714,
+          "labour": 0.1053,
+          "land": 0.32,
+          "money_recovery": 0.0,
+          "other": 0.1587,
+          "road_transport": 0.0,
+          "women_children": 0.2222
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            0,
+            1,
+            0,
+            2,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            3,
+            0,
+            9,
+            0,
+            1,
+            1,
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            5,
+            1,
+            50,
+            2,
+            13,
+            1,
+            6,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            0,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            2,
+            1,
+            0,
+            2,
+            1,
+            8,
+            0,
+            3,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            3,
+            1,
+            15,
+            6,
+            6,
+            1,
+            5,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            9,
+            0,
+            1,
+            0,
+            0,
+            0,
+            4
+          ]
+        ]
+      }
+    },
+    "per_query": [
+      {
+        "qid": "prot_0043_01",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0137_02",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0011_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0071_05",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "consumer",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0016_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0047_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0073_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0002_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0094_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0074_02",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0105_02",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "consumer",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0113_03",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "ajke_0180_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0077_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0071_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0080_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0001_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0258_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0012_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0109_03",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0051_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "ajke_0207_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0068_02",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0029_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0044_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0102_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0058_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0048_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0113_02",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0069_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0018_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0073_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0079_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0037_07",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "cybercrime",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0128_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0113_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0000_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0070_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0114_07",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0115_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0006_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0456_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "money_recovery",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "money_recovery"
+      },
+      {
+        "qid": "ajke_0184_01",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0200_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0006_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0043_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0092_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "lawy_0242_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "ajke_0195_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "cybercrime"
+      },
+      {
+        "qid": "prot_0064_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0106_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0040_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0046_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0047_05",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "lawy_0218_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0006_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0045_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0036_04",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "dail_0594_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "consumer",
+        "domain_pred_logistic_regression": "consumer",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0128_05",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0001_03",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0077_04",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0096_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0194_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0051_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "consumer",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0179_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0056_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0168_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0066_03",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0111_06",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "ajke_0174_01",
+        "domain_true": "cybercrime",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0110_03",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "labour",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0114_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0103_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0055_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0050_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0136_03",
+        "domain_true": "money_recovery",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "money_recovery",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0047_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0085_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0048_06",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0080_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0110_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0114_09",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0012_03",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0018_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0039_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0000_04",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0012_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0100_03",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0071_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0011_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0015_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0100_05",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0108_04",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "money_recovery",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0084_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0050_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0142_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0157_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0070_03",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0119_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0533_01",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0070_01",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0135_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0049_05",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0170_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "dail_0621_02",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0046_02",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "consumer",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "lawy_0380_01",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0067_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0003_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0072_03",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "cybercrime"
+      },
+      {
+        "qid": "prot_0087_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0008_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0031_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0058_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0588_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "money_recovery"
+      },
+      {
+        "qid": "prot_0108_05",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0005_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0063_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0004_03",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0122_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0101_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "money_recovery",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0044_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0009_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0107_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0026_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "constitutional",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0165_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0046_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0000_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "ajke_0169_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0114_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0032_04",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0111_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0007_02",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0057_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "money_recovery",
+        "domain_pred_stacked_bilstm": "cybercrime"
+      },
+      {
+        "qid": "prot_0028_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0073_06",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0077_06",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0080_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0104_05",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0114_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0066_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0055_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0083_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0112_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0080_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0072_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0004_04",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0147_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0112_04",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0077_08",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "civil_registration",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0084_06",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "ajke_0160_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0044_02",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0077_05",
+        "domain_true": "cybercrime",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0035_04",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0037_06",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0004_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0010_01",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0287_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0037_08",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0146_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0045_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "ajke_0181_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0477_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "land",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0003_05",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "lawy_0299_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0065_06",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0033_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0014_02",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "ajke_0144_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "money_recovery"
+      },
+      {
+        "qid": "prot_0025_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "consumer",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0037_05",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0090_04",
+        "domain_true": "cybercrime",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0025_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0012_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0128_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0069_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0085_05",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "lawy_0314_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "land",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0086_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0010_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0049_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0098_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0139_01",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0095_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "money_recovery",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0091_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0036_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0059_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0221_01",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0079_02",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "ajke_0202_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0011_05",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0032_03",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "consumer",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "lawy_0241_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0073_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0130_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0035_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0173_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0219_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      }
+    ]
+  },
+  "merged_rare_domains": {
+    "labels": [
+      "consumer",
+      "criminal_procedure",
+      "cybercrime",
+      "family",
+      "labour",
+      "land",
+      "other",
+      "rare_other",
+      "women_children"
+    ],
+    "n_train": 352,
+    "n_test": 200,
+    "models": {
+      "naive_bayes": {
+        "representation": "tfidf",
+        "accuracy": 0.45,
+        "macro_f1": 0.1045,
+        "per_class_f1": {
+          "consumer": 0.0,
+          "criminal_procedure": 0.0,
+          "cybercrime": 0.0,
+          "family": 0.6159,
+          "labour": 0.0,
+          "land": 0.2,
+          "other": 0.125,
+          "rare_other": 0.0,
+          "women_children": 0.0
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            20,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            85,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            13,
+            0,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            38,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "logistic_regression": {
+        "representation": "tfidf",
+        "accuracy": 0.475,
+        "macro_f1": 0.3401,
+        "per_class_f1": {
+          "consumer": 0.2222,
+          "criminal_procedure": 0.2424,
+          "cybercrime": 0.0,
+          "family": 0.6629,
+          "labour": 0.2222,
+          "land": 0.375,
+          "other": 0.3617,
+          "rare_other": 0.6667,
+          "women_children": 0.3077
+        },
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            5,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            9,
+            0,
+            1,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            58,
+            0,
+            9,
+            14,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            1,
+            1,
+            2,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            0,
+            9,
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            10,
+            0,
+            9,
+            17,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            7,
+            0,
+            1,
+            2,
+            0,
+            4
+          ]
+        ]
+      },
+      "vanilla_rnn": {
+        "representation": "topic0_embedding_matrix",
+        "accuracy": 0.215,
+        "macro_f1": 0.1069,
+        "per_class_f1": {
+          "consumer": 0.0,
+          "criminal_procedure": 0.2051,
+          "cybercrime": 0.0,
+          "family": 0.3733,
+          "labour": 0.0,
+          "land": 0.1333,
+          "other": 0.129,
+          "rare_other": 0.0,
+          "women_children": 0.1212
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            4,
+            0,
+            7,
+            0,
+            1,
+            6,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            7,
+            2,
+            28,
+            1,
+            12,
+            25,
+            4,
+            6
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            2,
+            1,
+            1
+          ],
+          [
+            0,
+            3,
+            2,
+            2,
+            1,
+            3,
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            17,
+            1,
+            6,
+            6,
+            3,
+            5
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            5,
+            0,
+            2,
+            4,
+            1,
+            2
+          ]
+        ]
+      },
+      "stacked_bilstm": {
+        "representation": "topic0_embedding_matrix",
+        "accuracy": 0.365,
+        "macro_f1": 0.2125,
+        "per_class_f1": {
+          "consumer": 0.1538,
+          "criminal_procedure": 0.3043,
+          "cybercrime": 0.0,
+          "family": 0.55,
+          "labour": 0.1176,
+          "land": 0.3043,
+          "other": 0.2597,
+          "rare_other": 0.0,
+          "women_children": 0.2222
+        },
+        "confusion_matrix": [
+          [
+            1,
+            2,
+            0,
+            0,
+            1,
+            0,
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            7,
+            1,
+            6,
+            0,
+            1,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            44,
+            3,
+            12,
+            16,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            1,
+            2,
+            0,
+            0,
+            3
+          ],
+          [
+            1,
+            1,
+            0,
+            2,
+            1,
+            7,
+            3,
+            2,
+            1
+          ],
+          [
+            2,
+            3,
+            1,
+            14,
+            2,
+            5,
+            10,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            5,
+            1,
+            1,
+            2,
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "per_query": [
+      {
+        "qid": "prot_0043_01",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0137_02",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0011_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0071_05",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0016_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0047_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0073_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0002_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0094_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0074_02",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0105_02",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "consumer",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0113_03",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "ajke_0180_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0077_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0071_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0080_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0001_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0258_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0012_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0109_03",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0051_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0207_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "rare_other"
+      },
+      {
+        "qid": "prot_0068_02",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0029_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0044_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0102_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0058_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0048_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0113_02",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0069_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0018_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0073_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0079_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "cybercrime",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0037_07",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "cybercrime",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0128_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0113_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0000_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0070_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0114_07",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0115_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0006_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0456_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "rare_other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "rare_other"
+      },
+      {
+        "qid": "ajke_0184_01",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "ajke_0200_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0006_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0043_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "consumer",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0092_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "lawy_0242_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "rare_other"
+      },
+      {
+        "qid": "ajke_0195_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "cybercrime"
+      },
+      {
+        "qid": "prot_0064_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0106_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0040_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0046_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0047_05",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0218_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0006_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0045_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0036_04",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "dail_0594_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "consumer",
+        "domain_pred_logistic_regression": "consumer",
+        "domain_pred_vanilla_rnn": "cybercrime",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0128_05",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0001_03",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0077_04",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0096_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0194_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0051_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0179_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0056_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0168_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0066_03",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0111_06",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "cybercrime",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "ajke_0174_01",
+        "domain_true": "cybercrime",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0110_03",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "labour",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0114_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "cybercrime"
+      },
+      {
+        "qid": "prot_0103_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0055_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0050_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0136_03",
+        "domain_true": "rare_other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "rare_other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0047_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0085_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0048_06",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0080_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0110_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0114_09",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0012_03",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0018_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0039_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0000_04",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0012_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0100_03",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "consumer"
+      },
+      {
+        "qid": "prot_0071_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0011_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0015_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0100_05",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0108_04",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0084_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0050_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "ajke_0142_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0157_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0070_03",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0119_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0533_01",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0070_01",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0135_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0049_05",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "ajke_0170_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "dail_0621_02",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0046_02",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "lawy_0380_01",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0067_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0003_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0072_03",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0087_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0008_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0031_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0058_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0588_01",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0108_05",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "rare_other"
+      },
+      {
+        "qid": "prot_0005_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0063_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0004_03",
+        "domain_true": "labour",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0122_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0101_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0044_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0009_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0107_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0026_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0165_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0046_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0000_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0169_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "prot_0114_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0032_04",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0111_03",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0007_02",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0057_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0028_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0073_06",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0077_06",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0080_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0104_05",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0114_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0066_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0055_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0083_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0112_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0080_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0072_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0004_04",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "ajke_0147_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0112_04",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0077_08",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0084_06",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "ajke_0160_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0044_02",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0077_05",
+        "domain_true": "cybercrime",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "criminal_procedure",
+        "domain_pred_vanilla_rnn": "rare_other",
+        "domain_pred_stacked_bilstm": "rare_other"
+      },
+      {
+        "qid": "prot_0035_04",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0037_06",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0004_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0010_01",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "lawy_0287_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0037_08",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0146_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0045_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0181_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0477_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "land",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "cybercrime",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0003_05",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "lawy_0299_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0065_06",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0033_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0014_02",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0144_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0025_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0037_05",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0090_04",
+        "domain_true": "cybercrime",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0025_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0012_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "rare_other"
+      },
+      {
+        "qid": "prot_0128_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0069_04",
+        "domain_true": "criminal_procedure",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0085_05",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0314_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "land",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "rare_other"
+      },
+      {
+        "qid": "prot_0086_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0010_04",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0049_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0098_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "ajke_0139_01",
+        "domain_true": "consumer",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "criminal_procedure"
+      },
+      {
+        "qid": "prot_0095_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "rare_other"
+      },
+      {
+        "qid": "prot_0091_03",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "land",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0036_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "labour",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0059_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "lawy_0221_01",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0079_02",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "ajke_0202_01",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "prot_0011_05",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "prot_0032_03",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      },
+      {
+        "qid": "lawy_0241_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "land",
+        "domain_pred_vanilla_rnn": "criminal_procedure",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0073_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "other"
+      },
+      {
+        "qid": "prot_0130_02",
+        "domain_true": "women_children",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "women_children"
+      },
+      {
+        "qid": "prot_0035_02",
+        "domain_true": "family",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "family",
+        "domain_pred_vanilla_rnn": "women_children",
+        "domain_pred_stacked_bilstm": "family"
+      },
+      {
+        "qid": "ajke_0173_01",
+        "domain_true": "other",
+        "domain_pred_naive_bayes": "family",
+        "domain_pred_logistic_regression": "women_children",
+        "domain_pred_vanilla_rnn": "family",
+        "domain_pred_stacked_bilstm": "labour"
+      },
+      {
+        "qid": "lawy_0219_01",
+        "domain_true": "land",
+        "domain_pred_naive_bayes": "other",
+        "domain_pred_logistic_regression": "other",
+        "domain_pred_vanilla_rnn": "other",
+        "domain_pred_stacked_bilstm": "land"
+      }
+    ]
+  },
+  "class_imbalance_note": "'other' is 119/552 (22%) of all questions. 7 domains (civil_registration, constitutional, money_recovery, road_transport) total 13/552 (2%) questions COMBINED across the entire gold pool, not just this split -- 1-6 examples each. v3 vs v2: NB now fits a uniform class prior (was the learned ~66%-other prior) and both RNNs now train with balanced_class_weights cross-entropy (was unweighted) -- LogReg already had class_weight='balanced' in v2. This corrects imbalance the model can act on. The merged_rare_domains variant (7 thinnest domains folded into 'rare_other') isolates what's left: if macro-F1 there is still far below 1.0, the ceiling is data volume, not model capacity, and no further reweighting changes that."
+}

@@ -1,0 +1,71 @@
+{
+  "run_id": "tagger_v3",
+  "tags": [
+    "O",
+    "ACT",
+    "SECTION_NO",
+    "LEGAL_TERM",
+    "PARTY"
+  ],
+  "n_train_questions": 352,
+  "n_train_examples": 294,
+  "n_dev_examples": 58,
+  "weak_label_tag_distribution": {
+    "O": 26557,
+    "ACT": 104,
+    "SECTION_NO": 2,
+    "LEGAL_TERM": 155,
+    "PARTY": 952
+  },
+  "dev_token_accuracy_self_consistency": 0.9756,
+  "dev_entity_macro_f1_self_consistency": 0.3711,
+  "dev_per_tag_prf_self_consistency": {
+    "ACT": {
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571
+    },
+    "SECTION_NO": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "LEGAL_TERM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "PARTY": {
+      "precision": 0.9452,
+      "recall": 0.4694,
+      "f1": 0.6273
+    }
+  },
+  "limitation": "Labels are weak (regex + data/lexicon/register_map.json gazetteer matching against corpus terms), never hand-corrected, per docs/PIPELINE.md's own explicit lowest-priority ranking for this topic. All metrics here measure agreement with the weak-labeling rules, not tagging quality against human-verified ground truth. v3 vs v2: token accuracy alone was misleading (O-dominated -- a model predicting O everywhere still scores high); replaced with per-entity-tag precision/recall/F1 and their macro-F1, the standard way to report a tagger. This changes what is measured, not the self-consistency caveat, which remains and is not resolved by a better metric.",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.5193470026317396
+    },
+    {
+      "epoch": 2,
+      "loss": 0.19279405945225767
+    },
+    {
+      "epoch": 3,
+      "loss": 0.15571139282301852
+    },
+    {
+      "epoch": 4,
+      "loss": 0.13546640543561234
+    },
+    {
+      "epoch": 5,
+      "loss": 0.1235353252605388
+    },
+    {
+      "epoch": 6,
+      "loss": 0.10894127660676052
+    }
+  ]
+}

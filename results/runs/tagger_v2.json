@@ -1,0 +1,55 @@
+{
+  "run_id": "tagger_v2",
+  "tags": [
+    "O",
+    "ACT",
+    "SECTION_NO",
+    "LEGAL_TERM",
+    "PARTY"
+  ],
+  "n_train_questions": 352,
+  "n_train_examples": 294,
+  "n_dev_examples": 58,
+  "weak_label_tag_distribution": {
+    "O": 26591,
+    "ACT": 104,
+    "SECTION_NO": 2,
+    "LEGAL_TERM": 121,
+    "PARTY": 952
+  },
+  "dev_token_accuracy_self_consistency": 0.9752,
+  "dev_per_tag_accuracy_self_consistency": {
+    "O": 0.9998,
+    "ACT": 0.0,
+    "SECTION_NO": null,
+    "LEGAL_TERM": 0.0,
+    "PARTY": 0.4694
+  },
+  "limitation": "Labels are weak (regex + data/lexicon/register_map.json gazetteer matching against corpus terms), never hand-corrected, per docs/PIPELINE.md's own explicit lowest-priority ranking for this topic. Dev accuracy measures agreement with the weak-labeling rules, not tagging quality against human-verified ground truth. Reported honestly rather than hidden or presented as a real held-out evaluation.",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.5493278228922894
+    },
+    {
+      "epoch": 2,
+      "loss": 0.1923996163041968
+    },
+    {
+      "epoch": 3,
+      "loss": 0.1533485588274504
+    },
+    {
+      "epoch": 4,
+      "loss": 0.13322770948472776
+    },
+    {
+      "epoch": 5,
+      "loss": 0.12267770931908958
+    },
+    {
+      "epoch": 6,
+      "loss": 0.10941146274930552
+    }
+  ]
+}
