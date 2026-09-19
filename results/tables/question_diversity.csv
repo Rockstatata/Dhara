@@ -1,0 +1,3 @@
+set,close_trigram_top5_share,distinct_close_trigrams,distinct_open_bigrams,len_median,len_p10,len_p90,len_stdev,n,open_bigram_top5_share,type_token_ratio
+real_mined_probes,0.2047,383,357,74.0,11,167,56.3,552,0.1558,0.1024
+train_strict_narrative,0.1998,229,109,57.0,23,106,30.28,826,0.2385,0.0219

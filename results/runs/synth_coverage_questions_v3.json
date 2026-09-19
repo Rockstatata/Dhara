@@ -1,0 +1,78 @@
+{
+  "rows": 106832,
+  "provisions_covered": 26717,
+  "acts_covered": 1118,
+  "corpus_active_provisions_with_titles": 26725,
+  "per_provision_requested": 4,
+  "tier_counts": {
+    "coverage": 106060,
+    "strict": 772
+  },
+  "strict_provisions_covered": 211,
+  "strict_acts_covered": 155,
+  "lexicon_rewritten_rows": 21437,
+  "body_overlap": {
+    "median": 0.0833,
+    "p90": 0.2692,
+    "human_median": 0.0,
+    "human_p90": 0.091
+  },
+  "word_deciles": [
+    9,
+    22,
+    40,
+    53,
+    63,
+    71,
+    86,
+    103,
+    114,
+    142,
+    223
+  ],
+  "human_word_deciles": [
+    9,
+    18,
+    37,
+    50,
+    59,
+    68,
+    83,
+    99,
+    109,
+    139,
+    214
+  ],
+  "human_length_band": [
+    13,
+    164
+  ],
+  "rows_per_domain": {
+    "other": 87492,
+    "criminal_procedure": 5991,
+    "consumer": 2264,
+    "labour": 2008,
+    "family": 1952,
+    "land": 1738,
+    "local_government": 1588,
+    "money_recovery": 1203,
+    "women_children": 708,
+    "constitutional": 532,
+    "cybercrime": 504,
+    "road_transport": 480,
+    "civil_registration": 240,
+    "tenancy": 132
+  },
+  "skips": {
+    "dropped_cross_provision_duplicate": 22,
+    "generated:coverage": 106082,
+    "generated:strict": 772,
+    "skipped_boilerplate": 6646,
+    "skipped_duplicate": 14,
+    "skipped_empty_after_rewrite": 32,
+    "skipped_held_out": 192,
+    "skipped_no_title": 3375,
+    "skipped_repealed": 561
+  },
+  "use_restriction": "Only quality_tier=strict is eligible for headline training. quality_tier=coverage keeps the provision title's vocabulary and belongs in the coverage-pretraining ablation alongside pretrain_retrieval_coverage_v1.jsonl."
+}

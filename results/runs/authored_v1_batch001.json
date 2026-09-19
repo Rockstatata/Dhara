@@ -1,0 +1,96 @@
+{
+  "batch": 1,
+  "source": "data\\processed\\authored_questions_v1_batch001.py",
+  "rows": 50,
+  "passing_all_gates": 47,
+  "yield": 0.94,
+  "passing_on_standard_gates": 47,
+  "passing_via_overlap_waiver": 0,
+  "overlap_waiver_domains": [
+    "civil_registration",
+    "constitutional",
+    "cybercrime",
+    "road_transport"
+  ],
+  "provisions": 50,
+  "acts": 37,
+  "domains": {
+    "family": 4,
+    "land": 4,
+    "labour": 4,
+    "consumer": 4,
+    "cybercrime": 4,
+    "constitutional": 4,
+    "criminal_procedure": 4,
+    "women_children": 4,
+    "money_recovery": 4,
+    "tenancy": 4,
+    "road_transport": 4,
+    "civil_registration": 3,
+    "local_government": 3
+  },
+  "kills_per_gate": {
+    "body_overlap": 3
+  },
+  "body_overlap": {
+    "median": 0.0556,
+    "p90": 0.1739,
+    "human_median": 0.0,
+    "human_p90": 0.091
+  },
+  "word_deciles": [
+    21,
+    24,
+    27,
+    28,
+    30,
+    32,
+    34,
+    34,
+    39,
+    57,
+    95
+  ],
+  "human_word_deciles": [
+    9,
+    18,
+    37,
+    50,
+    59,
+    68,
+    83,
+    99,
+    109,
+    139,
+    214
+  ],
+  "failing_rows": [
+    {
+      "qid": "authored_v1_b001_0026",
+      "gates": [
+        "body_overlap"
+      ],
+      "content_overlap": 0.3077,
+      "title_content_overlap": 0.0,
+      "question_word_count": 22
+    },
+    {
+      "qid": "authored_v1_b001_0041",
+      "gates": [
+        "body_overlap"
+      ],
+      "content_overlap": 0.2692,
+      "title_content_overlap": 0.0,
+      "question_word_count": 39
+    },
+    {
+      "qid": "authored_v1_b001_0042",
+      "gates": [
+        "body_overlap"
+      ],
+      "content_overlap": 0.2353,
+      "title_content_overlap": 0.0,
+      "question_word_count": 21
+    }
+  ]
+}

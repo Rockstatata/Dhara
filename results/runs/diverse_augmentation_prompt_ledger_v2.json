@@ -1,0 +1,35 @@
+{
+  "approved_provisions_prompted": 2356,
+  "prompts": 9424,
+  "variants_per_provision": 4,
+  "target_word_deciles": [
+    9,
+    17,
+    37,
+    50,
+    59,
+    68,
+    83,
+    102,
+    109,
+    139,
+    214
+  ],
+  "human_word_deciles": [
+    9,
+    18,
+    37,
+    50,
+    59,
+    68,
+    83,
+    99,
+    109,
+    139,
+    214
+  ],
+  "max_banned_body_words": 60,
+  "median_banned_words": 34,
+  "held_out_provisions_excluded": 151,
+  "promotion_requirement": "Run lexical, duplicate, length-shape and human review gates before training."
+}

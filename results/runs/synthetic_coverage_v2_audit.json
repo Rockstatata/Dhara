@@ -1,0 +1,62 @@
+{
+  "version": "v2",
+  "purpose": "exhaustive project-approved synthetic coverage pretraining; not human-authored data",
+  "corpus_parent_provisions": 35938,
+  "active_provisions_covered": 35377,
+  "repealed_provisions_excluded": 561,
+  "examples_per_active_provision": 6,
+  "all_active_acts_covered": 1226,
+  "candidate_rows": 212262,
+  "trainable_rows": 189854,
+  "natural_human_training_word_count": {
+    "p05": 13,
+    "median": 68,
+    "p95": 164
+  },
+  "training_gates": {
+    "held_out_provision_excluded": 906,
+    "cross_provision_duplicate_excluded": 21507,
+    "outside_human_length_profile_excluded": 1
+  },
+  "held_out_provisions_excluded_from_train": 151,
+  "language_counts": {
+    "bengali": 131040,
+    "english": 81222
+  },
+  "domain_counts": {
+    "civil_registration": 504,
+    "constitutional": 996,
+    "consumer": 3858,
+    "criminal_procedure": 9942,
+    "cybercrime": 816,
+    "family": 3294,
+    "labour": 3372,
+    "land": 3240,
+    "local_government": 2742,
+    "money_recovery": 2118,
+    "other": 178956,
+    "road_transport": 756,
+    "tenancy": 216,
+    "women_children": 1452
+  },
+  "content_overlap": {
+    "median": 0.6042,
+    "p90": 0.7273
+  },
+  "title_content_overlap": {
+    "maximum": 0.0,
+    "gate": "all rows must be zero; title terms are removed from factual anchors"
+  },
+  "question_word_count": {
+    "minimum": 12,
+    "median": 58,
+    "p90": 67,
+    "maximum": 69
+  },
+  "limitations": [
+    "Rows are deterministic synthetic templates grounded in a provision title or source text.",
+    "They are project-approved for training but remain synthetic, not independently written citizen narratives.",
+    "Only rows that pass duplicate and natural-human length gates enter the coverage-pretraining export.",
+    "Use as a separate pretraining ablation, then fine-tune on approved title pairs and natural human questions."
+  ]
+}

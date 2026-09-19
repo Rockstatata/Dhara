@@ -1,0 +1,227 @@
+{
+  "batch": 7,
+  "source": "data\\processed\\authored_questions_v1_batch007.py",
+  "rows": 62,
+  "passing_all_gates": 44,
+  "yield": 0.7097,
+  "passing_on_standard_gates": 19,
+  "passing_via_overlap_waiver": 25,
+  "overlap_waiver_domains": [
+    "civil_registration",
+    "constitutional",
+    "cybercrime",
+    "road_transport"
+  ],
+  "provisions": 62,
+  "acts": 4,
+  "domains": {
+    "civil_registration": 40,
+    "tenancy": 22
+  },
+  "kills_per_gate": {
+    "title_overlap": 38,
+    "body_overlap": 15,
+    "length_outside_human_band": 2
+  },
+  "body_overlap": {
+    "median": 0.1429,
+    "p90": 0.2727,
+    "human_median": 0.0,
+    "human_p90": 0.091
+  },
+  "word_deciles": [
+    10,
+    19,
+    21,
+    22,
+    24,
+    25,
+    26,
+    28,
+    29,
+    30,
+    38
+  ],
+  "human_word_deciles": [
+    9,
+    18,
+    37,
+    50,
+    59,
+    68,
+    83,
+    99,
+    109,
+    139,
+    214
+  ],
+  "failing_rows": [
+    {
+      "qid": "authored_v1_b007_0001",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1818,
+      "title_content_overlap": 0.6667,
+      "question_word_count": 32
+    },
+    {
+      "qid": "authored_v1_b007_0002",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.16,
+      "title_content_overlap": 0.2,
+      "question_word_count": 35
+    },
+    {
+      "qid": "authored_v1_b007_0003",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1333,
+      "title_content_overlap": 0.1667,
+      "question_word_count": 26
+    },
+    {
+      "qid": "authored_v1_b007_0005",
+      "gates": [
+        "body_overlap",
+        "title_overlap"
+      ],
+      "content_overlap": 0.35,
+      "title_content_overlap": 0.5714,
+      "question_word_count": 29
+    },
+    {
+      "qid": "authored_v1_b007_0006",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1304,
+      "title_content_overlap": 0.25,
+      "question_word_count": 29
+    },
+    {
+      "qid": "authored_v1_b007_0007",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1667,
+      "title_content_overlap": 0.25,
+      "question_word_count": 29
+    },
+    {
+      "qid": "authored_v1_b007_0008",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1429,
+      "title_content_overlap": 0.5,
+      "question_word_count": 21
+    },
+    {
+      "qid": "authored_v1_b007_0009",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.0625,
+      "title_content_overlap": 0.5,
+      "question_word_count": 28
+    },
+    {
+      "qid": "authored_v1_b007_0012",
+      "gates": [
+        "body_overlap",
+        "title_overlap"
+      ],
+      "content_overlap": 0.25,
+      "title_content_overlap": 0.2,
+      "question_word_count": 23
+    },
+    {
+      "qid": "authored_v1_b007_0013",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1176,
+      "title_content_overlap": 0.1111,
+      "question_word_count": 29
+    },
+    {
+      "qid": "authored_v1_b007_0015",
+      "gates": [
+        "body_overlap",
+        "title_overlap"
+      ],
+      "content_overlap": 0.2105,
+      "title_content_overlap": 0.3333,
+      "question_word_count": 26
+    },
+    {
+      "qid": "authored_v1_b007_0016",
+      "gates": [
+        "body_overlap",
+        "title_overlap"
+      ],
+      "content_overlap": 0.2353,
+      "title_content_overlap": 0.5,
+      "question_word_count": 25
+    },
+    {
+      "qid": "authored_v1_b007_0019",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1111,
+      "title_content_overlap": 0.3333,
+      "question_word_count": 32
+    },
+    {
+      "qid": "authored_v1_b007_0020",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1333,
+      "title_content_overlap": 0.125,
+      "question_word_count": 24
+    },
+    {
+      "qid": "authored_v1_b007_0021",
+      "gates": [
+        "title_overlap"
+      ],
+      "content_overlap": 0.1875,
+      "title_content_overlap": 0.4,
+      "question_word_count": 26
+    },
+    {
+      "qid": "authored_v1_b007_0022",
+      "gates": [
+        "body_overlap"
+      ],
+      "content_overlap": 0.2353,
+      "title_content_overlap": 0.0,
+      "question_word_count": 25
+    },
+    {
+      "qid": "authored_v1_b007_0053",
+      "gates": [
+        "length_outside_human_band"
+      ],
+      "content_overlap": 0.0,
+      "title_content_overlap": 0.0,
+      "question_word_count": 12
+    },
+    {
+      "qid": "authored_v1_b007_0061",
+      "gates": [
+        "length_outside_human_band",
+        "body_overlap"
+      ],
+      "content_overlap": 0.3333,
+      "title_content_overlap": 0.0,
+      "question_word_count": 10
+    }
+  ]
+}

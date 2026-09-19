@@ -1,0 +1,111 @@
+{
+  "batch": 13,
+  "source": "data\\processed\\authored_questions_v1_batch013.py",
+  "rows": 58,
+  "passing_all_gates": 53,
+  "yield": 0.9138,
+  "passing_on_standard_gates": 8,
+  "passing_via_overlap_waiver": 45,
+  "overlap_waiver_domains": [
+    "civil_registration",
+    "constitutional",
+    "cybercrime",
+    "road_transport"
+  ],
+  "provisions": 58,
+  "acts": 1,
+  "domains": {
+    "road_transport": 58
+  },
+  "kills_per_gate": {
+    "body_overlap": 29,
+    "title_overlap": 49,
+    "length_outside_human_band": 5
+  },
+  "body_overlap": {
+    "median": 0.2143,
+    "p90": 0.4,
+    "human_median": 0.0,
+    "human_p90": 0.091
+  },
+  "word_deciles": [
+    9,
+    13,
+    14,
+    15,
+    16,
+    16,
+    17,
+    18,
+    19,
+    20,
+    23
+  ],
+  "human_word_deciles": [
+    9,
+    18,
+    37,
+    50,
+    59,
+    68,
+    83,
+    99,
+    109,
+    139,
+    214
+  ],
+  "failing_rows": [
+    {
+      "qid": "authored_v1_b013_0004",
+      "gates": [
+        "length_outside_human_band",
+        "body_overlap",
+        "title_overlap"
+      ],
+      "content_overlap": 0.4286,
+      "title_content_overlap": 0.5,
+      "question_word_count": 10
+    },
+    {
+      "qid": "authored_v1_b013_0006",
+      "gates": [
+        "length_outside_human_band"
+      ],
+      "content_overlap": 0.0,
+      "title_content_overlap": 0.0,
+      "question_word_count": 10
+    },
+    {
+      "qid": "authored_v1_b013_0015",
+      "gates": [
+        "length_outside_human_band",
+        "body_overlap",
+        "title_overlap"
+      ],
+      "content_overlap": 0.2857,
+      "title_content_overlap": 0.6667,
+      "question_word_count": 11
+    },
+    {
+      "qid": "authored_v1_b013_0020",
+      "gates": [
+        "length_outside_human_band",
+        "body_overlap",
+        "title_overlap"
+      ],
+      "content_overlap": 0.375,
+      "title_content_overlap": 0.75,
+      "question_word_count": 12
+    },
+    {
+      "qid": "authored_v1_b013_0041",
+      "gates": [
+        "length_outside_human_band",
+        "title_overlap"
+      ],
+      "content_overlap": 0.1667,
+      "title_content_overlap": 0.125,
+      "question_word_count": 9
+    }
+  ]
+}

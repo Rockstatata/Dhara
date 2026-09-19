@@ -1,0 +1,332 @@
+# Narrative scaffolding for synthetic questions.
+#
+# ## Why this file exists
+#
+# Fine-tune attempt 2 failed by query-space concentration (DECISIONS.md
+# 2026-09-03): the encoder learned a narrow "citizen legal question" direction
+# and every probe question collapsed onto it. Measuring the training questions
+# against the real ones found the collapsed axis, and it was not the sentence
+# frames — it was LENGTH:
+#
+# | | real mined questions | templates (attempt 2) |
+# |---|---|---|
+# | median length | 74 words | 11 words |
+# | p10 - p90 | 11 - 167 | 7 - 16 |
+# | std dev | 56.3 | 3.41 |
+#
+# Real citizen questions are newspaper legal-advice letters. People narrate:
+# who they are, when they married, what their brother did, how much they earn,
+# and only then ask the question. Roughly seven times longer than the templates
+# they were trained against, with sixteen times the length variance. Training a
+# retriever on terse one-liners and evaluating it on long narratives is a
+# distribution mismatch severe enough on its own to produce attempt 2's result.
+#
+# So the generator composes:
+#
+#     [opener] + [0-3 background clauses] + [core situation + ask] + [closing]
+#
+# where the core comes from configs/synth_topics.yaml as before — the existing
+# 400+ hand-authored templates are reused as the *ask*, not thrown away — and
+# everything here is the narrative context wrapped around it.
+#
+# ## The rules this scaffolding obeys
+#
+# - **No statute vocabulary.** Every topic's `banned` list still applies to the
+#   composed question, so scaffolding cannot smuggle in legal register.
+# - **No answer-bearing detail.** Background clauses set a scene; they never
+#   state the legal conclusion or name the Act. Otherwise the question would
+#   leak its own answer and the overlap audit would (rightly) fail it.
+# - **Some clauses are deliberately irrelevant.** Real letters are full of
+#   detail that does not bear on the legal question — the writer's salary, how
+#   the marriage was arranged, who disapproved. A retriever that only ever sees
+#   surgically-relevant questions is not being trained on the real task.
+# - **Length varies by design.** The composer samples how many background
+#   clauses to attach, so the output spans one-liners through long letters
+#   rather than clustering at any single length.
+
+# ---------------------------------------------------------------- openers
+# How a letter starts: who the writer is. Deliberately spans genders, ages,
+# occupations, and family positions, because the corpus of real questions does.
+# Grouped by the speaker they imply, because scaffolding and core must agree.
+# A core saying "আমার স্বামী" has a female speaker; pairing it with "আমি একজন
+# কৃষক" produces a persona no real letter would have. The composer reads the
+# core for a gender cue and draws only from a compatible bucket, defaulting to
+# `neutral` when the core gives no cue.
+openers:
+  neutral:
+    - "পেশায় আমি একজন ব্যাংক কর্মচারী।"
+    - "চাকরি করি একটি ছোট বেসরকারি অফিসে।"
+    - "ব্যবসা করে কোনোরকমে সংসার চালাই।"
+    - "গ্রামের বাড়িতে বাবা-মায়ের সঙ্গে থাকি।"
+    - "শহরে এসেছি বছর পাঁচেক হলো।"
+    - "ছোটবেলা থেকেই খুব কষ্ট করে বড় হয়েছি।"
+    - "গত বছরের ঘটনা।"
+    - "সম্প্রতি একটি সমস্যায় পড়েছি।"
+    - "কয়েক মাস আগে একটি ঘটনা ঘটে।"
+    - "বেশ কিছুদিন ধরে একটি বিষয় নিয়ে চিন্তায় আছি।"
+    - "হঠাৎ করেই একটা ঝামেলায় জড়িয়ে পড়েছি।"
+    - "একটি জরুরি বিষয়ে জানার ছিল।"
+    - "নমস্কার, একটি সমস্যার কথা বলছি।"
+    - "সালাম নেবেন, একটি বিষয়ে পরামর্শ দরকার।"
+    - "বিষয়টি খুলে বলি।"
+    - "ঘটনার শুরু বছরখানেক আগে।"
+    - "মা মারা যাওয়ার পর থেকে ঝামেলা শুরু।"
+    - "বাবার মৃত্যুর পর পরিবারে সমস্যা দেখা দেয়।"
+    - "বড় ভাইয়ের সঙ্গে আমার একটি বিরোধ চলছে।"
+    - "প্রতিবেশীর সঙ্গে একটি সমস্যা হয়েছে।"
+    - "কর্মস্থলে একটি অপ্রীতিকর ঘটনা ঘটেছে।"
+    - "দীর্ঘদিন বিদেশে ছিলাম, সম্প্রতি দেশে ফিরেছি।"
+    - "লেখাপড়া বেশি দূর করতে পারিনি।"
+    - "সংসারে আমিই একমাত্র উপার্জনক্ষম।"
+    - "আমি একজন সরকারি চাকরিজীবী।"
+    - "আমি একটি বেসরকারি প্রতিষ্ঠানে চাকরি করি।"
+    - "আমি একজন ছোট ব্যবসায়ী।"
+    - "আমি পেশায় একজন শিক্ষক।"
+    - "আমি গার্মেন্টসে কাজ করি।"
+    - "আমি একজন প্রবাসী, দীর্ঘদিন বিদেশে ছিলাম।"
+    - "আমি বিশ্ববিদ্যালয়ে পড়াশোনা করি।"
+    - "আমি অবসরপ্রাপ্ত একজন মানুষ।"
+    - "আমার বয়স ত্রিশের কাছাকাছি।"
+    - "আমার বয়স প্রায় পঞ্চাশ বছর।"
+    - "আমি গ্রামে থাকি, শহরে তেমন যাতায়াত নেই।"
+    - "আমি ঢাকায় ভাড়া বাসায় থাকি।"
+    - "আমি একটি মফস্বল শহরে থাকি।"
+    - "আমার পরিবার আর্থিকভাবে খুব একটা সচ্ছল নয়।"
+    - "পুরো পরিবার আমার আয়ের ওপর নির্ভরশীল।"
+    - "আমি নিতান্তই সাধারণ একটি পরিবারের সন্তান।"
+    - "আমার বাবা একজন দিনমজুর ছিলেন।"
+    - "আমরা তিন ভাইবোন।"
+    - "আমরা চার ভাইবোন, আমি সবার ছোট।"
+    - "আমি পরিবারের বড় সন্তান।"
+    - "আমি একটি এনজিওতে কাজ করি।"
+    - "আমি একজন ক্ষুদ্র ব্যবসায়ী, দোকান চালাই।"
+    - "আমি সম্প্রতি একটি চাকরিতে যোগ দিয়েছি।"
+    - "আমি লেখাপড়া বেশি দূর করতে পারিনি।"
+    - "আমাদের পরিবারটি মধ্যবিত্ত।"
+    - "আমি একজন সাধারণ নাগরিক।"
+    - "আমি দীর্ঘদিন ধরে এই এলাকায় বসবাস করছি।"
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+  female:
+    - "আমি একজন গৃহিণী।"
+    - "আমি একজন স্কুলশিক্ষিকা।"
+    - "আমি সদ্য বিয়ে হওয়া একজন নারী।"
+    - "আমরা দুই বোন, কোনো ভাই নেই।"
+    - "আমি দুই সন্তানের মা।"
+    - "আমি একটি বেসরকারি অফিসে চাকরি করি।"
+    - "আমি একজন কর্মজীবী নারী।"
+    - "আমি একটি পোশাক কারখানায় কাজ করি।"
+    - "আমার বিয়ে হয়েছে কয়েক বছর হলো।"
+    - "আমি এক সন্তানের মা।"
+    - ""
+    - ""
+    - ""
+    - ""
+  male:
+    - "আমি একজন কৃষক।"
+    - "আমি সদ্য পাস করা একজন বেকার যুবক।"
+    - "আমি দুই সন্তানের বাবা।"
+    - "আমি একজন রিকশাচালক।"
+    - "আমি একটি দোকানে কাজ করি।"
+    - "আমি একজন দিনমজুর।"
+    - "আমি ছোটখাটো একটি ব্যবসা করি।"
+    - "আমি এক সন্তানের বাবা।"
+    - ""
+    - ""
+    - ""
+    - ""
+
+# ------------------------------------------------------------- backgrounds
+# Scene-setting. `generic` attaches to any topic; the domain buckets attach only
+# where they make sense. Several are pure noise by design — real letters carry
+# plenty of it, and a model trained only on tidy questions has not met the task.
+backgrounds:
+  generic:
+    - "বিষয়টি নিয়ে অনেক দিন ধরেই দুশ্চিন্তায় আছি।"
+    - "আশপাশের লোকজন নানা রকম পরামর্শ দিচ্ছে, কোনটা ঠিক বুঝতে পারছি না।"
+    - "একজন পরিচিত মানুষ বলেছিলেন আইনি পথে যেতে, কিন্তু আমি ভয় পাচ্ছি।"
+    - "আমার তেমন কোনো আর্থিক সামর্থ্য নেই।"
+    - "আদালতে যাওয়ার মতো টাকাপয়সা আমার নেই।"
+    - "এর আগে কখনো এ ধরনের সমস্যায় পড়িনি।"
+    - "বিষয়টি স্থানীয়ভাবে মীমাংসার চেষ্টা করেছিলাম, কিন্তু কাজ হয়নি।"
+    - "গ্রামের মুরব্বিরা বসে একবার সালিস করেছিলেন, তাতেও সমাধান হয়নি।"
+    - "আমি খুব দুশ্চিন্তায় দিন কাটাচ্ছি।"
+    - "ঘটনাটি প্রায় ছয় মাস আগের।"
+    - "ঘটনাটি গত বছরের।"
+    - "সমস্যাটি প্রায় দুই বছর ধরে চলছে।"
+    - "কয়েক মাস ধরে বিষয়টি নিয়ে টানাপোড়েন চলছে।"
+    - "ঘটনাটি ঘটেছে গত রমজান মাসে।"
+    - "প্রায় তিন বছর ধরে একই সমস্যা চলে আসছে।"
+    - "শুরুতে বিষয়টিকে তেমন গুরুত্ব দিইনি।"
+    - "এখন পরিস্থিতি আরও খারাপের দিকে যাচ্ছে।"
+    - "আত্মীয়স্বজনরা দুই পক্ষেই ভাগ হয়ে গেছেন।"
+    - "কয়েকজন শুভাকাঙ্ক্ষী বলছেন মামলা না করতে।"
+    - "আমার পরিচিত একজন বলেছেন এতে নাকি অনেক সময় লাগে।"
+    - "আমি জানি না কোথা থেকে শুরু করব।"
+    - "কার কাছে গেলে সঠিক পরামর্শ পাব বুঝতে পারছি না।"
+    - "এলাকার একজন মেম্বারের সঙ্গে কথা বলেছিলাম।"
+    - "আমার পক্ষে বারবার শহরে যাওয়া কঠিন।"
+    - "কাগজপত্র সব ঠিকঠাক আছে কি না তা-ও নিশ্চিত নই।"
+    - "পরিবারের চাপ রয়েছে দ্রুত একটা সিদ্ধান্ত নেওয়ার।"
+    - "আমি চাই বিষয়টির একটা শান্তিপূর্ণ সমাধান হোক।"
+
+  # Emotionally loaded. Gated to the domains where distress is plausible --
+  # "I stayed silent out of shame" attached to a deed-correction question reads
+  # as noise a real letter would not contain. Applied only to the domains in
+  # `sensitive_domains` below.
+  sensitive:
+    - "লোকলজ্জার ভয়ে এতদিন চুপ ছিলাম।"
+    - "পরিবারের কাউকে খুলে বলতে পারছি না।"
+    - "রাতে ঠিকমতো ঘুম হচ্ছে না।"
+    - "মানসিকভাবে খুব ভেঙে পড়েছি।"
+    - "থানা-পুলিশ করতে আমার ভয় লাগে।"
+    - "ঘটনার পর থেকে ঘরে-বাইরে কথা শুনতে হচ্ছে।"
+    - "সন্তানদের ভবিষ্যৎ নিয়ে দুশ্চিন্তা হচ্ছে।"
+    - "কাউকে বিশ্বাস করে বলতে সাহস পাচ্ছি না।"
+
+  family:
+    - "২০১৪ সালে পারিবারিকভাবে আমার বিয়ে হয়।"
+    - "আমাদের বিয়ে হয়েছে প্রায় সাত বছর।"
+    - "বিয়ের সময় দুই পরিবারের সম্মতি ছিল।"
+    - "আমাদের একটি মেয়ে ও একটি ছেলে আছে।"
+    - "আমাদের কোনো সন্তান নেই।"
+    - "বিয়ের পর থেকেই টুকটাক ঝগড়া লেগেই থাকত।"
+    - "শ্বশুরবাড়ির লোকজনের সঙ্গে আমার সম্পর্ক কখনোই ভালো ছিল না।"
+    - "আমার স্ত্রী বর্তমানে তাঁর বাবার বাড়িতে আছেন।"
+    - "আমি এখন সন্তান নিয়ে বাবার বাড়িতে আছি।"
+    - "আমরা প্রায় এক বছর ধরে আলাদা থাকছি।"
+    - "স্বামীর সঙ্গে দীর্ঘদিন কোনো যোগাযোগ নেই।"
+
+  land:
+    - "জমিটি আমার দাদার আমলের।"
+    - "জমিটি আমরা ভাইবোনেরা উত্তরাধিকারসূত্রে পেয়েছি।"
+    - "জমিটি আমি ২০১৮ সালে কিনেছিলাম।"
+    - "জমির পরিমাণ প্রায় দশ শতাংশ।"
+    - "কাগজপত্র কিছু আছে, কিছু হারিয়ে গেছে।"
+    - "দীর্ঘদিন আমি এলাকার বাইরে ছিলাম।"
+    - "প্রতিবেশীর সঙ্গে আগে থেকেই সম্পর্ক ভালো নয়।"
+    - "স্থানীয় একজন প্রভাবশালী ব্যক্তি এতে জড়িত।"
+
+  labour:
+    - "আমি ওই প্রতিষ্ঠানে পাঁচ বছর ধরে কাজ করছিলাম।"
+    - "আমার কোনো নিয়োগপত্র দেওয়া হয়নি।"
+    - "প্রতিষ্ঠানে প্রায় দুইশ শ্রমিক কাজ করেন।"
+    - "আমার মাসিক বেতন খুব সামান্য।"
+    - "কারখানার পরিবেশ বরাবরই খারাপ ছিল।"
+    - "মালিকপক্ষ কোনো কথাই শুনতে চায় না।"
+
+  money_recovery:
+    - "টাকাটা আমি ধারদেনা করে জোগাড় করেছিলাম।"
+    - "লোকটি আমার পূর্বপরিচিত ছিলেন।"
+    - "লিখিত কোনো কাগজপত্র করা হয়নি, বিশ্বাসের ওপর দিয়েছিলাম।"
+    - "সাক্ষী হিসেবে দুজন পরিচিত লোক ছিলেন।"
+    - "বারবার তাগাদা দেওয়ার পরও কোনো কাজ হয়নি।"
+
+  consumer:
+    - "দোকানটি আমাদের এলাকারই।"
+    - "আমি অনলাইনে অর্ডার করেছিলাম।"
+    - "রসিদ আমার কাছে এখনো আছে।"
+    - "কোনো রসিদ দেওয়া হয়নি।"
+
+  cybercrime:
+    - "আমি সামাজিক যোগাযোগমাধ্যম নিয়মিত ব্যবহার করি।"
+    - "স্ক্রিনশট আমার কাছে সংরক্ষিত আছে।"
+    - "আইডিটি কে চালাচ্ছে আমি জানি না।"
+    - "বিষয়টি নিয়ে খুব মানসিক চাপে আছি।"
+
+  women_children:
+    - "ঘটনার সময় আশপাশে কয়েকজন উপস্থিত ছিলেন।"
+    - "ভয়ে এতদিন কাউকে বলিনি।"
+    - "মেয়েটির বয়স খুব কম।"
+    - "পরিবার থেকে চাপ দেওয়া হচ্ছে বিষয়টি ধামাচাপা দিতে।"
+
+  criminal_procedure:
+    - "থানায় একবার গিয়েছিলাম, কিন্তু ভালো ব্যবহার পাইনি।"
+    - "ঘটনার কোনো সাক্ষী নেই।"
+    - "আমার বিরুদ্ধে আগে কোনো অভিযোগ ছিল না।"
+
+  tenancy:
+    - "আমি ওই বাসায় প্রায় চার বছর ধরে আছি।"
+    - "কোনো লিখিত চুক্তি হয়নি।"
+    - "প্রতি মাসেই ভাড়া সময়মতো দিয়ে আসছি।"
+
+# ---------------------------------------------------------------- closings
+# Real letters trail off into a plea or a thank-you before the signature. The
+# signature itself is PII and is stripped upstream (src/dhara/mine.py), so it is
+# deliberately absent here.
+closings:
+  - "দয়া করে পরামর্শ দিলে উপকৃত হব।"
+  - "একটু পরামর্শ দিলে ভালো হয়।"
+  - "আইনি পরামর্শ চাই।"
+  - "কী করা উচিত জানালে কৃতজ্ঞ থাকব।"
+  - "বিষয়টি নিয়ে সঠিক তথ্য জানতে চাই।"
+  - "এ বিষয়ে আইনে কী আছে জানতে চাই।"
+  - "আমাকে একটু পথ বাতলে দিন।"
+  - "সঠিক দিকনির্দেশনা পেলে ভালো হতো।"
+  - "আশা করি একটি সমাধান পাব।"
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+
+# Domains where the `sensitive` background clauses may be used.
+sensitive_domains:
+  - family
+  - women_children
+  - cybercrime
+  - criminal_procedure
+  - tenancy
+
+# --------------------------------------------------------------- structure
+# How many background clauses to attach, as weights. Sampling from a spread
+# rather than a fixed count is what reproduces the real length variance
+# (sd 56.3) instead of a new, differently-shaped spike.
+#
+# 0 clauses keeps some short questions -- the real p10 is 11 words, so terse
+# questions are part of the target distribution, just not all of it.
+background_count_weights:
+  # Deliberately long-tailed, not bell-shaped. The real questions have sd 56.3
+  # across 11-167 words: some are two terse sentences, some are a full page of
+  # family history. A bell curve around the mean reproduces the mean and misses
+  # the shape, which is what the first narrative pass did (sd 11.98). Keeping
+  # real weight on 0-1 clauses AND on 10-14 is what widens the spread.
+  0: 10
+  1: 10
+  2: 10
+  3: 10
+  4: 9
+  5: 8
+  6: 8
+  7: 7
+  8: 6
+  9: 5
+  10: 5
+  11: 4
+  12: 4
+  13: 3
+  14: 3

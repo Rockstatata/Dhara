@@ -1,0 +1,13 @@
+{
+  "approved_provisions_prompted": 2356,
+  "prompts": 9424,
+  "variants_per_provision": 4,
+  "human_length_targets": [
+    18,
+    55,
+    83,
+    120
+  ],
+  "held_out_provisions_excluded": 151,
+  "promotion_requirement": "Run lexical, duplicate, factual-preservation, and human review gates before training."
+}

@@ -1,0 +1,44 @@
+{
+  "run_id": "question_diversity",
+  "index": "models\\index_bge_m3_zeroshot_v1",
+  "sets": {
+    "real_mined_probes": {
+      "n": 552,
+      "len_median": 74.0,
+      "len_p10": 11,
+      "len_p90": 167,
+      "len_stdev": 56.3,
+      "distinct_open_bigrams": 357,
+      "open_bigram_top5_share": 0.1558,
+      "distinct_close_trigrams": 383,
+      "close_trigram_top5_share": 0.2047,
+      "type_token_ratio": 0.1024,
+      "most_common_closes": [
+        "নাম প্রকাশে অনিচ্ছুক (68)",
+        "ঠিকানা প্রকাশে অনিচ্ছুক (18)",
+        "কী করতে পারি (11)",
+        "কী করা উচিত (8)",
+        "ব্যবস্থা নিতে পারি (8)"
+      ]
+    },
+    "train_strict_narrative": {
+      "n": 826,
+      "len_median": 57.0,
+      "len_p10": 23,
+      "len_p90": 106,
+      "len_stdev": 30.28,
+      "distinct_open_bigrams": 109,
+      "open_bigram_top5_share": 0.2385,
+      "distinct_close_trigrams": 229,
+      "close_trigram_top5_share": 0.1998,
+      "type_token_ratio": 0.0219,
+      "most_common_closes": [
+        "জানতে চাই । (44)",
+        "। কী করব (33)",
+        "পরামর্শ চাই । (30)",
+        "সমাধান পাব । (30)",
+        "কৃতজ্ঞ থাকব । (28)"
+      ]
+    }
+  }
+}

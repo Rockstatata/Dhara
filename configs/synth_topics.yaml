@@ -1,0 +1,648 @@
+# Citizen topic inventory for synthetic question generation.
+#
+# Each topic is a thing people in Bangladesh actually collide with, written the
+# way they would describe it — not the way the statute names it. The generator
+# renders `templates` against `slots` to produce questions, then matches those
+# questions to provisions using `signature_bn` / `signature_en`.
+#
+# The direction matters and is the whole point (see src/dhara/synth.py): the
+# question is written WITHOUT seeing the provision, so it cannot inherit the
+# provision's vocabulary. `banned` lists the statute phrasing for the topic; any
+# rendered question containing one is discarded as register leakage.
+#
+# `signature_en` is not optional. 37% of the corpus and 60% of the gold answers
+# live in English-only Acts (Succession 1925, Penal Code 1860, CrPC 1898,
+# Contract 1872, TPA 1882, Evidence 1872, Registration 1908, SAT 1950,
+# Negotiable Instruments 1881, Guardians and Wards 1890). A topic with no English
+# signature is invisible to exactly the slice the model is worst at.
+#
+# `require_*` prevents a topic from matching any section that merely mentions a
+# common word. Without it, a dowry topic matches every provision containing নারী.
+
+topics:
+
+  # ------------------------------------------------------------------
+  # FAMILY — high risk tier
+  # ------------------------------------------------------------------
+
+  - topic_id: divorce_talaq_procedure
+    domain: family
+    risk_tier: high
+    require_bn: [তালাক, বিবাহ বিচ্ছেদ]
+    require_en: [divorce, dissolution of marriage, talaq]
+    signature_bn: [তালাক, তালাকের নোটিশ, বিবাহ বিচ্ছেদ, সালিশি পরিষদ, চেয়ারম্যান, নোটিশ প্রদান, কার্যকর]
+    signature_en: [divorce, talaq, dissolution of marriage, arbitration council, notice, chairman, effective]
+    banned: [সালিশি পরিষদ, বিবাহ বিচ্ছেদ, তালাকের নোটিশ প্রদান, arbitration council, dissolution of marriage]
+    slots:
+      who: ["আমার স্বামী", "আমার বর", "আমার হাজবেন্ড"]
+      how: ["মুখে বলে", "ফোনে বলে", "মেসেজ দিয়ে", "কাগজে লিখে"]
+      dur: ["তিন মাস", "ছয় মাস", "এক বছর", "দুই বছর"]
+    templates:
+      - "{who} {how} আমাকে তালাক দিয়েছে। এখন কি আমাদের ছাড়াছাড়ি হয়ে গেছে, নাকি আরও কিছু করতে হবে?"
+      - "{who} তালাক দিয়েছে কিন্তু কোথাও কোনো কাগজ জমা দেয়নি। এটা কি টিকবে?"
+      - "আমি স্বামীকে ছেড়ে দিতে চাই। আমাকে কী কী করতে হবে, আর কোথায় যেতে হবে?"
+      - "তালাক দেওয়ার কতদিন পর ছাড়াছাড়ি পুরোপুরি হয়ে যায়?"
+      - "{who} {dur} আগে তালাক দিয়েছিল, এখন আবার ফিরিয়ে নিতে চাইছে। এটা কি সম্ভব?"
+      - "তালাকের কাগজ কি চেয়ারম্যানের কাছে দিতে হয়? না দিলে কী হবে?"
+      - "স্ত্রী কি নিজে থেকে স্বামীকে ছেড়ে দিতে পারে?"
+      - "কাবিননামায় লেখা ছিল আমি নিজে ছাড়তে পারব। এখন সেটা কীভাবে কাজে লাগাব?"
+
+  - topic_id: dower_denmohor
+    domain: family
+    risk_tier: high
+    require_bn: [দেনমোহর, মোহরানা, মোহর]
+    require_en: [dower, dowry money, mahr]
+    signature_bn: [দেনমোহর, মোহরানা, মোহর, পরিশোধ, বকেয়া, আদায়, কাবিননামা, বিবাহ নিবন্ধন]
+    signature_en: [dower, mahr, unpaid, recovery, payment, marriage contract, registration]
+    banned: [দেনমোহর, মোহরানা, পরিশোধযোগ্য, dower, mahr]
+    slots:
+      amt: ["পাঁচ লাখ", "তিন লাখ", "এক লাখ", "দশ লাখ"]
+      when: ["বিয়ের সময়", "কাবিনের সময়"]
+    templates:
+      - "{when} আমার কাবিনে {amt} টাকা লেখা হয়েছিল, কিন্তু আজ পর্যন্ত এক টাকাও পাইনি। কীভাবে পাব?"
+      - "স্বামী তালাক দিয়েছে, এখন কাবিনের টাকা দিতে চাইছে না। কী করব?"
+      - "কাবিনের টাকা কি ছাড়াছাড়ির পরেও দাবি করা যায়?"
+      - "বিয়ের সময় যে টাকা ধার্য হয়েছিল সেটা কি বিয়ের পরপরই চাইতে পারি?"
+      - "শ্বশুরবাড়ি বলছে টাকাটা মাফ করে দিতে হবে। আমি না চাইলে কী হবে?"
+
+  - topic_id: maintenance_khorposh
+    domain: family
+    risk_tier: high
+    require_bn: [খোরপোশ, ভরণপোষণ, ভরণ-পোষণ]
+    require_en: [maintenance, alimony]
+    signature_bn: [ভরণপোষণ, খোরপোশ, ভরণ-পোষণ, স্ত্রীর ভরণপোষণ, সন্তানের ভরণপোষণ, মাসিক, আদায়]
+    signature_en: [maintenance, alimony, wife, child, monthly, recovery, order]
+    banned: [ভরণপোষণ, ভরণ-পোষণ, maintenance, alimony]
+    slots:
+      dur: ["ছয় মাস", "এক বছর", "দুই বছর", "তিন বছর"]
+      who: ["আমার স্বামী", "বাচ্চার বাবা"]
+    templates:
+      - "{who} {dur} ধরে আমাকে আর বাচ্চাকে কোনো টাকা দিচ্ছে না। আমি কোথায় যাব?"
+      - "ছাড়াছাড়ির পর বাচ্চার খরচ কে দেবে?"
+      - "{who} আলাদা থাকে, সংসারের খরচ দেয় না। এর কি কোনো প্রতিকার আছে?"
+      - "স্বামী দ্বিতীয় বিয়ে করেছে, এখন আমার খরচ বন্ধ করে দিয়েছে। কী করতে পারি?"
+      - "মাসে মাসে টাকা পাওয়ার জন্য কি আদালতে যেতে হবে, নাকি অন্য উপায় আছে?"
+
+  - topic_id: child_custody
+    domain: family
+    risk_tier: high
+    require_bn: [অভিভাবক, হেফাজত, তত্ত্বাবধান]
+    require_en: [guardian, custody, ward, minor]
+    signature_bn: [অভিভাবক, নাবালক, হেফাজত, তত্ত্বাবধান, সন্তানের কল্যাণ, নিয়োগ, ঘোষণা]
+    signature_en: [guardian, ward, minor, custody, welfare of the minor, appointment, declaration]
+    banned: [অভিভাবক নিয়োগ, তত্ত্বাবধান, guardian, ward, custody]
+    slots:
+      age: ["তিন বছরের", "পাঁচ বছরের", "সাত বছরের", "দশ বছরের"]
+    templates:
+      - "ছাড়াছাড়ির পর আমার {age} বাচ্চা কার কাছে থাকবে?"
+      - "আমার স্বামী জোর করে বাচ্চাকে নিয়ে গেছে। আমি কীভাবে ফেরত পাব?"
+      - "বাচ্চার বাবা মারা গেছে। এখন বাচ্চার দেখাশোনা আর সম্পত্তির দায়িত্ব কে নেবে?"
+      - "আমি বাচ্চাকে নিজের কাছে রাখতে চাই। আদালতে কী দেখাতে হবে?"
+      - "বাচ্চা মায়ের কাছে থাকলে বাবা কি দেখা করতে পারবে?"
+
+  - topic_id: inheritance_share
+    domain: family
+    risk_tier: high
+    require_bn: [উত্তরাধিকার, ওয়ারিশ, মিরাস]
+    require_en: [succession, heir, inheritance, intestate]
+    signature_bn: [উত্তরাধিকার, ওয়ারিশ, অংশ, বণ্টন, মৃত ব্যক্তির সম্পত্তি, দাবি]
+    signature_en: [succession, heir, intestate, share, distribution, deceased, property of the deceased, next of kin]
+    banned: [উত্তরাধিকার, ওয়ারিশ, intestate succession, heir, distribution of the estate]
+    slots:
+      rel: ["বাবা", "মা", "দাদা", "স্বামী", "ভাই"]
+      n: ["দুই", "তিন", "চার", "পাঁচ"]
+    templates:
+      - "আমার {rel} মারা গেছেন, কোনো উইল করে যাননি। সম্পত্তি এখন কীভাবে ভাগ হবে?"
+      - "আমরা {n} ভাইবোন। মেয়েরা কি ছেলেদের সমান ভাগ পাবে?"
+      - "বাবা মারা যাওয়ার আগেই আমার ভাই মারা গেছে। ভাইয়ের ছেলেমেয়ে কি কিছু পাবে?"
+      - "স্বামী মারা গেছে, সন্তান নেই। আমি কতটুকু পাব?"
+      - "ভাইয়েরা আমাকে জমির ভাগ দিচ্ছে না। আমি কী করতে পারি?"
+      - "মৃত মানুষের ঋণ থাকলে সেটা কি আগে শোধ করতে হয়, নাকি সম্পত্তি আগে ভাগ হয়?"
+
+  - topic_id: will_probate
+    domain: family
+    risk_tier: medium
+    require_bn: [উইল, অসিয়ত]
+    require_en: [will, testator, probate, legatee, bequest]
+    signature_bn: [উইল, অসিয়ত, দলিল, স্বাক্ষর, সাক্ষী, বাতিল]
+    signature_en: [will, testator, probate, legatee, bequest, executor, revocation, attestation]
+    banned: [testator, legatee, probate, bequest, অসিয়তনামা]
+    templates:
+      - "আমার বাবা একটা কাগজে লিখে গেছেন কে কী পাবে। এটা কি টিকবে?"
+      - "উইল লিখতে হলে কতজন সাক্ষী লাগে?"
+      - "বাবা উইল করার পর মত বদলেছিলেন। শেষেরটা কি আগেরটা বাতিল করে দেয়?"
+      - "উইলে আমার নাম আছে কিন্তু অন্যরা মানছে না। আদালত থেকে কি অনুমতি নিতে হবে?"
+      - "উইলে যা লেখা আছে তার বাইরে কি ভাগ চাওয়া যায়?"
+
+  - topic_id: marriage_registration
+    domain: family
+    risk_tier: medium
+    require_bn: [বিবাহ নিবন্ধন, নিকাহ, কাবিন]
+    require_en: [marriage registration, nikah registrar, solemnize]
+    signature_bn: [বিবাহ নিবন্ধন, নিকাহ রেজিস্ট্রার, কাবিননামা, নিবন্ধন বই, ফি]
+    signature_en: [marriage, registration, registrar, register, solemnized, licence]
+    banned: [নিকাহ রেজিস্ট্রার, বিবাহ নিবন্ধন, marriage registrar]
+    templates:
+      - "আমাদের বিয়ে হয়েছে কিন্তু কোনো কাগজ করা হয়নি। এখন করা যাবে?"
+      - "কাবিননামা হারিয়ে ফেলেছি। নকল কপি কোথায় পাব?"
+      - "বিয়ের কাগজ না থাকলে কি বিয়ে অস্বীকার করা যায়?"
+      - "কাজি বিয়ের কাগজ করতে টাকা চাইছে। নির্ধারিত টাকা কত?"
+      - "হিন্দু বিয়ের কি কোনো কাগজ করা যায়?"
+
+  # ------------------------------------------------------------------
+  # WOMEN & CHILDREN — high risk tier
+  # ------------------------------------------------------------------
+
+  - topic_id: dowry_demand
+    domain: women_children
+    risk_tier: high
+    require_bn: [যৌতুক]
+    require_en: [dowry]
+    signature_bn: [যৌতুক, যৌতুক দাবি, দণ্ড, কারাদণ্ড, অর্থদণ্ড, নির্যাতন]
+    signature_en: [dowry, demand, punishment, imprisonment, fine]
+    banned: [যৌতুক, dowry]
+    slots:
+      item: ["মোটরসাইকেল", "ফ্রিজ", "নগদ টাকা", "জমি", "সোনার গয়না"]
+      who: ["শ্বশুরবাড়ির লোকজন", "আমার স্বামী", "আমার শাশুড়ি"]
+    templates:
+      - "{who} বিয়ের পর থেকে {item} চাইছে, না দিলে মারধর করে। এটা কি অপরাধ?"
+      - "{who} বারবার টাকা চাইছে বলে বাবার বাড়ি থেকে টাকা আনতে হচ্ছে। এর বিরুদ্ধে কী করা যায়?"
+      - "বিয়ের সময় যা দেওয়া হয়েছিল তার বাইরে আরও চাইছে। এর শাস্তি কী?"
+      - "না দেওয়ায় আমাকে বাড়ি থেকে বের করে দিয়েছে। কোথায় অভিযোগ করব?"
+      - "এই ধরনের দাবির জন্য কত বছর জেল হতে পারে?"
+
+  - topic_id: domestic_violence
+    domain: women_children
+    risk_tier: high
+    require_bn: [পারিবারিক সহিংসতা, নির্যাতন]
+    require_en: [domestic violence, cruelty]
+    signature_bn: [পারিবারিক সহিংসতা, নির্যাতন, সুরক্ষা আদেশ, বসবাসের আদেশ, ক্ষতিপূরণ, প্রতিকার]
+    signature_en: [domestic violence, protection order, residence order, compensation, aggrieved]
+    banned: [পারিবারিক সহিংসতা, সুরক্ষা আদেশ, protection order, domestic violence]
+    slots:
+      who: ["আমার স্বামী", "আমার শ্বশুরবাড়ির লোকজন", "আমার শাশুড়ি"]
+    templates:
+      - "{who} প্রায়ই আমাকে মারধর করে। আমি কার কাছে যাব?"
+      - "{who} আমাকে ঘর থেকে বের করে দিতে চাইছে। আমি কি ওই বাড়িতে থাকার অধিকার পাব?"
+      - "স্বামী গালিগালাজ করে, টাকাপয়সা দেয় না, মানসিকভাবে কষ্ট দেয়। এটাকে কি নির্যাতন ধরা হবে?"
+      - "আমি চাই সে আমার কাছে না আসুক। আদালত থেকে কি এমন কোনো আদেশ পাওয়া যায়?"
+      - "মারধরের কারণে চিকিৎসার খরচ হয়েছে। এই টাকা কি তার কাছ থেকে আদায় করা যাবে?"
+
+  - topic_id: child_marriage
+    domain: women_children
+    risk_tier: high
+    require_bn: [বাল্যবিবাহ]
+    require_en: [child marriage]
+    signature_bn: [বাল্যবিবাহ, অপ্রাপ্তবয়স্ক, বয়স প্রমাণ, জন্ম নিবন্ধন, দণ্ড, নিরোধ]
+    signature_en: [child marriage, minor, age, punishment, restraint]
+    banned: [বাল্যবিবাহ, child marriage]
+    slots:
+      age: ["পনেরো", "ষোলো", "সতেরো", "চৌদ্দ"]
+    templates:
+      - "আমার বোনের বয়স {age}, বাসা থেকে জোর করে বিয়ে দিচ্ছে। আমি কীভাবে থামাতে পারি?"
+      - "কম বয়সে বিয়ে দিলে বাবা-মায়ের কি শাস্তি হয়?"
+      - "মেয়ের বিয়ের জন্য কত বছর বয়স হতে হয়?"
+      - "বয়স প্রমাণের জন্য কোন কাগজ লাগে?"
+      - "কাজি জেনেশুনে কম বয়সের বিয়ে পড়ালে তার কী হবে?"
+
+  - topic_id: sexual_harassment_assault
+    domain: women_children
+    risk_tier: high
+    require_bn: [ধর্ষণ, যৌন পীড়ন, শ্লীলতাহানি]
+    require_en: [rape, outraging the modesty, sexual]
+    signature_bn: [ধর্ষণ, যৌন পীড়ন, শ্লীলতাহানি, নারী নির্যাতন, ট্রাইব্যুনাল, দণ্ড, অপহরণ]
+    signature_en: [rape, assault, modesty, woman, abduction, punishment, tribunal]
+    banned: [শ্লীলতাহানি, যৌন পীড়ন, outraging the modesty]
+    templates:
+      - "এক লোক আমার মেয়ের গায়ে হাত দিয়েছে। আমি কোথায় মামলা করব?"
+      - "কর্মস্থলে একজন বারবার বাজে প্রস্তাব দিচ্ছে। এর বিরুদ্ধে কী ব্যবস্থা নেওয়া যায়?"
+      - "মেয়েকে জোর করে তুলে নিয়ে গিয়েছিল। এই ধরনের ঘটনার বিচার কোন আদালতে হয়?"
+      - "থানায় অভিযোগ নিতে চাইছে না। তখন কী করার আছে?"
+      - "ঘটনার কতদিনের মধ্যে ডাক্তারি পরীক্ষা করাতে হয়?"
+
+  - topic_id: acid_attack
+    domain: women_children
+    risk_tier: high
+    require_bn: [এসিড, অ্যাসিড]
+    require_en: [acid]
+    signature_bn: [এসিড, অ্যাসিড, দগ্ধ, ক্ষতিপূরণ, দণ্ড, ট্রাইব্যুনাল]
+    signature_en: [acid, burn, injury, punishment, tribunal]
+    banned: [এসিড অপরাধ, acid offence]
+    templates:
+      - "একজন আমার আত্মীয়ের মুখে এসিড ছুঁড়ে মেরেছে। এর সর্বোচ্চ শাস্তি কী?"
+      - "এসিডে পুড়ে যাওয়ার পর চিকিৎসার খরচ কে দেবে?"
+      - "এসিড কেনাবেচার জন্য কি অনুমতি লাগে?"
+      - "এই ধরনের মামলা কোন আদালতে চলে আর কতদিনে শেষ হয়?"
+
+  # ------------------------------------------------------------------
+  # CYBERCRIME — high risk tier
+  # ------------------------------------------------------------------
+
+  - topic_id: online_defamation_harassment
+    domain: cybercrime
+    risk_tier: high
+    require_bn: [ওয়েবসাইট, ইলেকট্রনিক, ডিজিটাল, কম্পিউটার]
+    require_en: [electronic, computer, digital, website, online]
+    signature_bn: [মানহানিকর, আপত্তিকর, প্রকাশ, ইলেকট্রনিক মাধ্যম, ওয়েবসাইট, দণ্ড, ভাবমূর্তি]
+    signature_en: [defamatory, publish, electronic form, website, transmit, punishment, obscene]
+    banned: [মানহানিকর, ইলেকট্রনিক মাধ্যম, defamatory, electronic form]
+    slots:
+      place: ["ফেসবুকে", "ইউটিউবে", "একটা গ্রুপে", "টিকটকে"]
+    templates:
+      - "একজন {place} আমার নামে বানানো কথা লিখে পোস্ট দিয়েছে। আমি কী করতে পারি?"
+      - "কেউ {place} আমার ছবি এডিট করে ছড়িয়ে দিয়েছে। এটা কি অপরাধ?"
+      - "আমার ব্যক্তিগত ছবি দিয়ে ব্ল্যাকমেইল করছে। কোথায় অভিযোগ করব?"
+      - "{place} বারবার বাজে মন্তব্য করে হয়রানি করছে। এর কি কোনো শাস্তি আছে?"
+      - "ভুয়া আইডি খুলে আমার নামে চালাচ্ছে। এটা বন্ধ করার উপায় কী?"
+
+  - topic_id: account_hacking_fraud
+    domain: cybercrime
+    risk_tier: high
+    require_bn: [কম্পিউটার, প্রবেশ, উপাত্ত, সিস্টেম]
+    require_en: [computer, access, data, system, unauthorised]
+    signature_bn: [অননুমোদিত প্রবেশ, কম্পিউটার সিস্টেম, উপাত্ত, পাসওয়ার্ড, ক্ষতিসাধন, দণ্ড]
+    signature_en: [unauthorised access, computer system, data, damage, hacking, punishment]
+    banned: [অননুমোদিত প্রবেশ, unauthorised access, computer system]
+    templates:
+      - "আমার ফেসবুক আইডি কেউ দখল করে নিয়েছে। এর বিরুদ্ধে কী করা যায়?"
+      - "কেউ আমার ইমেইলের পাসওয়ার্ড ভেঙে ঢুকে পড়েছে। এটা কোন আইনে পড়ে?"
+      - "বিকাশে ফোন দিয়ে কৌশলে টাকা নিয়ে গেছে। কোথায় অভিযোগ করব?"
+      - "অনলাইনে টাকা দিয়ে পণ্য পাইনি, দোকান উধাও। এটা কি প্রতারণা হিসেবে গণ্য হবে?"
+      - "আমার অফিসের কম্পিউটার থেকে কেউ তথ্য চুরি করেছে। এর শাস্তি কী?"
+
+  # ------------------------------------------------------------------
+  # LAND
+  # ------------------------------------------------------------------
+
+  - topic_id: land_registration_deed
+    domain: land
+    risk_tier: medium
+    require_bn: [দলিল, রেজিস্ট্রি, নিবন্ধন]
+    require_en: [registration, document, deed, sub-registrar, instrument]
+    signature_bn: [দলিল, রেজিস্ট্রি, নিবন্ধন, সাব-রেজিস্ট্রার, স্থাবর সম্পত্তি, হস্তান্তর, ফি]
+    signature_en: [registration, instrument, document, sub-registrar, immovable property, transfer, compulsory]
+    banned: [সাব-রেজিস্ট্রার, স্থাবর সম্পত্তি, sub-registrar, immovable property, instrument]
+    templates:
+      - "জমি কিনেছি কিন্তু দলিল করা হয়নি, শুধু হাতে লেখা কাগজ আছে। এটা কি চলবে?"
+      - "জমির দলিল করতে কোন অফিসে যেতে হয় আর কী কী কাগজ লাগে?"
+      - "দলিল করার কতদিনের মধ্যে রেজিস্ট্রি করতে হয়?"
+      - "বিক্রেতা দলিল করে দিতে গড়িমসি করছে। আমি কী করতে পারি?"
+      - "পুরোনো দলিলের নকল কপি কোথা থেকে তুলব?"
+      - "দলিলে জমির পরিমাণ ভুল লেখা হয়েছে। এখন সংশোধন করা যাবে?"
+
+  - topic_id: land_mutation_khatian
+    domain: land
+    risk_tier: medium
+    require_bn: [খতিয়ান, নামজারি, জরিপ, রেকর্ড]
+    require_en: [khatian, record of rights, mutation, survey, settlement]
+    signature_bn: [খতিয়ান, নামজারি, রেকর্ড, জরিপ, সংশোধন, রাজস্ব কর্মকর্তা, দাখিলা]
+    signature_en: [record of rights, khatian, mutation, revenue officer, survey, correction, rent receipt]
+    banned: [রেকর্ড অব রাইটস, record of rights, revenue officer]
+    templates:
+      - "জমি কিনেছি কিন্তু কাগজে এখনও আগের মালিকের নাম। নিজের নামে করব কীভাবে?"
+      - "খতিয়ানে আমার নামের বানান ভুল এসেছে। সংশোধন করার নিয়ম কী?"
+      - "জরিপের সময় আমার জমি অন্যের নামে উঠে গেছে। এখন কী করব?"
+      - "খাজনা দেওয়ার রসিদ না থাকলে কি সমস্যা হয়?"
+      - "নামজারি করতে কতদিন লাগে আর কোথায় আবেদন করতে হয়?"
+
+  - topic_id: land_dispossession_encroach
+    domain: land
+    risk_tier: high
+    require_bn: [দখল, বেদখল, জবরদখল]
+    require_en: [possession, dispossession, trespass, encroach]
+    signature_bn: [দখল, বেদখল, জবরদখল, উচ্ছেদ, পুনরুদ্ধার, ভূমি অপরাধ, প্রতিকার]
+    signature_en: [possession, dispossession, eviction, recovery of possession, trespass, encroachment]
+    banned: [জবরদখল, পুনরুদ্ধার, dispossession, recovery of possession]
+    slots:
+      who: ["প্রতিবেশী", "চাচাতো ভাই", "স্থানীয় প্রভাবশালী একজন", "আগের মালিক"]
+    templates:
+      - "আমার {who} জোর করে আমার জমিতে ঘর তুলেছে। আমি কীভাবে জমি ফেরত পাব?"
+      - "{who} সীমানার বেড়া সরিয়ে আমার জমির কিছু অংশ নিয়ে নিয়েছে। কী করব?"
+      - "বছরের পর বছর অন্য একজন আমার জমি ভোগ করছে। এখন দাবি করলে টিকবে?"
+      - "জমি দখল হয়ে গেলে থানায় যাব নাকি আদালতে?"
+      - "আমার জমিতে কেউ জোর করে ফসল কেটে নিয়ে গেছে। এর প্রতিকার কী?"
+
+  - topic_id: land_partition_joint
+    domain: land
+    risk_tier: medium
+    require_bn: [বণ্টন, বাটোয়ারা, শরিক]
+    require_en: [partition, co-sharer, joint]
+    signature_bn: [বণ্টন, বাটোয়ারা, শরিক, যৌথ সম্পত্তি, পৃথক, অংশ, আপস]
+    signature_en: [partition, co-sharer, joint property, separate possession, share]
+    banned: [বাটোয়ারা, co-sharer, partition suit]
+    templates:
+      - "আমরা কয়েক ভাই মিলে একসাথে জমি ভোগ করছি। আলাদা করতে চাইলে কী করতে হবে?"
+      - "শরিকরা জমি ভাগ করতে রাজি হচ্ছে না। জোর করার কোনো উপায় আছে?"
+      - "যৌথ জমির একজন তার অংশ বিক্রি করে দিয়েছে। আমরা কি আগে কেনার সুযোগ পাব?"
+      - "ভাগ হওয়ার আগে কি একজন শরিক পুরো জমি বিক্রি করতে পারে?"
+
+  - topic_id: land_acquisition_govt
+    domain: land
+    risk_tier: medium
+    require_bn: [অধিগ্রহণ, হুকুমদখল]
+    require_en: [acquisition, requisition, compensation]
+    signature_bn: [অধিগ্রহণ, হুকুমদখল, ক্ষতিপূরণ, নোটিশ, আপত্তি, প্রাক্কলন]
+    signature_en: [acquisition, requisition, compensation, notice, objection, award]
+    banned: [হুকুমদখল, অধিগ্রহণ, requisition, acquisition proceedings]
+    templates:
+      - "সরকার রাস্তার জন্য আমার জমি নিয়ে নিচ্ছে। টাকা কত পাব আর কীভাবে পাব?"
+      - "জমি নেওয়ার নোটিশ পেয়েছি কিন্তু আমি রাজি না। আপত্তি দেওয়ার সুযোগ আছে?"
+      - "যে টাকা ধরা হয়েছে তা বাজারদরের চেয়ে অনেক কম। বাড়ানোর উপায় কী?"
+      - "সরকার জমি নিয়েছে কিন্তু কাজ করেনি। জমি ফেরত পাওয়া যাবে?"
+
+  # ------------------------------------------------------------------
+  # TENANCY / HOUSE RENT
+  # ------------------------------------------------------------------
+
+  - topic_id: house_rent_tenant
+    domain: tenancy
+    risk_tier: medium
+    require_bn: [ভাড়া, ভাড়াটিয়া, বাড়ী-মালিক, বাড়ি ভাড়া]
+    require_en: [rent, tenant, landlord]
+    signature_bn: [ভাড়া, ভাড়াটিয়া, বাড়ী-মালিক, মানসম্মত ভাড়া, উচ্ছেদ, রসিদ, জমা, মেরামত]
+    signature_en: [rent, tenant, landlord, standard rent, eviction, receipt, deposit, repair]
+    banned: [মানসম্মত ভাড়া, বাড়ী-মালিক, standard rent, landlord]
+    slots:
+      pct: ["দ্বিগুণ", "অনেক বেশি", "হঠাৎ করে অনেকটা"]
+    templates:
+      - "বাড়িওয়ালা প্রতি বছর {pct} ভাড়া বাড়িয়ে দিচ্ছেন। এর কি কোনো সীমা আছে?"
+      - "বাড়িওয়ালা ভাড়ার রসিদ দিতে চান না। এটা কি দিতে বাধ্য?"
+      - "কোনো নোটিশ ছাড়াই বাড়ি ছাড়তে বলছেন। আমার কী করার আছে?"
+      - "অগ্রিম হিসেবে অনেক টাকা নিয়েছিলেন, এখন ফেরত দিচ্ছেন না। কীভাবে আদায় করব?"
+      - "বাড়িওয়ালা ভাড়া নিতে চাইছেন না যাতে আমাকে বের করে দিতে পারেন। টাকাটা কোথায় জমা দেব?"
+      - "ঘরের ছাদ চুইয়ে পানি পড়ে, বাড়িওয়ালা সারাচ্ছেন না। কী করতে পারি?"
+
+  # ------------------------------------------------------------------
+  # LABOUR
+  # ------------------------------------------------------------------
+
+  - topic_id: wrongful_termination
+    domain: labour
+    risk_tier: medium
+    require_bn: [চাকরি, শ্রমিক, বরখাস্ত, ছাঁটাই]
+    require_en: [worker, employment, termination, dismissal, retrenchment]
+    signature_bn: [চাকরির অবসান, বরখাস্ত, ছাঁটাই, নোটিশ, ক্ষতিপূরণ, শ্রমিক, মালিক]
+    signature_en: [termination of employment, dismissal, retrenchment, notice, compensation, worker, employer]
+    banned: [চাকরির অবসান, retrenchment, termination of employment]
+    slots:
+      yrs: ["দুই বছর", "পাঁচ বছর", "সাত বছর", "দশ বছর"]
+    templates:
+      - "{yrs} চাকরি করার পর হঠাৎ আমাকে বের করে দিয়েছে। আমি কী কী টাকা পাব?"
+      - "কোনো নোটিশ না দিয়েই চাকরি থেকে বাদ দিয়েছে। এটা কি নিয়মমতো হলো?"
+      - "কারখানা বন্ধ করে দিয়েছে, শ্রমিকদের কী পাওনা হবে?"
+      - "চাকরি ছেড়ে দিলে কি কোনো টাকা পাওয়া যায়?"
+      - "আমাকে বাদ দেওয়ার আগে কোনো কারণ দেখানো হয়নি। এর প্রতিকার কোথায় চাইব?"
+
+  - topic_id: unpaid_wages_overtime
+    domain: labour
+    risk_tier: medium
+    require_bn: [মজুরি, বেতন, অতিরিক্ত কাজ, ওভারটাইম]
+    require_en: [wages, payment, overtime, deduction]
+    signature_bn: [মজুরি, মজুরি পরিশোধ, বকেয়া, কর্তন, অতিরিক্ত কাজ, ঘণ্টা, দিন]
+    signature_en: [wages, payment of wages, arrears, deduction, overtime, hours of work]
+    banned: [মজুরি পরিশোধ, payment of wages, deduction from wages]
+    slots:
+      dur: ["দুই মাস", "তিন মাস", "ছয় মাস"]
+    templates:
+      - "মালিক {dur} ধরে বেতন দিচ্ছে না। আমি কোথায় নালিশ করব?"
+      - "প্রতিদিন বেশি সময় কাজ করাচ্ছে কিন্তু বাড়তি টাকা দিচ্ছে না। এটা কি ঠিক?"
+      - "বেতন থেকে ইচ্ছেমতো টাকা কেটে রাখছে। এভাবে কাটা যায় কি?"
+      - "মাসের কত তারিখের মধ্যে বেতন দিতে হয়?"
+      - "দিনে সর্বোচ্চ কত ঘণ্টা কাজ করানো যায়?"
+
+  - topic_id: maternity_leave
+    domain: labour
+    risk_tier: medium
+    require_bn: [প্রসূতি, মাতৃত্বকালীন, ছুটি]
+    require_en: [maternity, leave, benefit]
+    signature_bn: [প্রসূতি কল্যাণ, মাতৃত্বকালীন ছুটি, সুবিধা, নারী শ্রমিক, সপ্তাহ]
+    signature_en: [maternity benefit, leave, woman worker, weeks, delivery]
+    banned: [প্রসূতি কল্যাণ সুবিধা, maternity benefit]
+    templates:
+      - "আমি অন্তঃসত্ত্বা। অফিস থেকে কত দিনের ছুটি পাব আর বেতন পাব কি?"
+      - "গর্ভবতী হওয়ার কারণে চাকরি থেকে বাদ দিতে পারে কি?"
+      - "ছুটির টাকা কখন দেওয়ার কথা?"
+      - "এই ছুটি পেতে হলে কতদিন চাকরি করা লাগে?"
+
+  - topic_id: workplace_injury
+    domain: labour
+    risk_tier: high
+    require_bn: [দুর্ঘটনা, আঘাত, ক্ষতিপূরণ]
+    require_en: [injury, accident, compensation, workman]
+    signature_bn: [দুর্ঘটনা, আঘাত, ক্ষতিপূরণ, মৃত্যু, পঙ্গুত্ব, চিকিৎসা]
+    signature_en: [personal injury, accident arising out of, compensation, death, disablement]
+    banned: [ক্ষতিপূরণ প্রদান, personal injury, disablement]
+    templates:
+      - "কাজ করতে গিয়ে আমার হাত ভেঙে গেছে। মালিক কি চিকিৎসার খরচ দেবে?"
+      - "কারখানায় দুর্ঘটনায় একজন শ্রমিক মারা গেছে। তার পরিবার কত টাকা পাবে?"
+      - "দুর্ঘটনায় স্থায়ীভাবে পঙ্গু হয়ে গেলে কী পাওয়া যায়?"
+      - "মালিক বলছে আমার নিজের দোষে দুর্ঘটনা হয়েছে, তাই টাকা দেবে না। এটা কি ঠিক?"
+
+  # ------------------------------------------------------------------
+  # CONSUMER
+  # ------------------------------------------------------------------
+
+  - topic_id: defective_goods_overcharge
+    domain: consumer
+    risk_tier: low
+    require_bn: [ভোক্তা, পণ্য, মূল্য]
+    require_en: [consumer, goods, price, service]
+    signature_bn: [ভোক্তা অধিকার, পণ্য, নির্ধারিত মূল্য, অতিরিক্ত মূল্য, অভিযোগ, ক্ষতিপূরণ, বিক্রয়]
+    signature_en: [consumer, goods, price, complaint, compensation, sale, service]
+    banned: [ভোক্তা অধিকার বিরোধী, ভোক্তা অধিকার সংরক্ষণ, consumer rights]
+    slots:
+      item: ["একটা মোবাইল", "একটা ফ্রিজ", "ওষুধ", "খাবার", "একটা টিভি"]
+    templates:
+      - "দোকান থেকে {item} কিনে দেখি নষ্ট। ফেরত বা বদলে দিতে রাজি হচ্ছে না। কী করব?"
+      - "গায়ের দামের চেয়ে বেশি টাকা রেখেছে। এর বিরুদ্ধে কোথায় অভিযোগ করব?"
+      - "ওজনে কম দিয়েছে। এটার কি কোনো শাস্তি আছে?"
+      - "মেয়াদ শেষ হয়ে যাওয়া জিনিস বিক্রি করেছে। এটা কি অপরাধ?"
+      - "অভিযোগ করলে আমি কি কোনো টাকা পাব?"
+      - "অভিযোগ করার জন্য ঘটনার কতদিনের মধ্যে যেতে হয়?"
+
+  - topic_id: adulterated_food
+    domain: consumer
+    risk_tier: medium
+    require_bn: [খাদ্য, ভেজাল, নিরাপদ খাদ্য]
+    require_en: [food, adulterat, safe food]
+    signature_bn: [নিরাপদ খাদ্য, ভেজাল, খাদ্যদ্রব্য, মেয়াদ, দণ্ড, পরিদর্শক, নমুনা]
+    signature_en: [food, adulterated, sample, inspector, punishment, safety]
+    banned: [নিরাপদ খাদ্য, ভেজাল মিশ্রণ, adulterated food]
+    templates:
+      - "রেস্টুরেন্টের খাবার খেয়ে অসুস্থ হয়ে পড়েছি। কোথায় অভিযোগ করব?"
+      - "দোকানে পচা মাছ-মাংস বিক্রি হচ্ছে। এটা বন্ধ করতে কার কাছে যাব?"
+      - "খাবারে রং বা কেমিক্যাল মেশালে কী শাস্তি হয়?"
+      - "মেয়াদ শেষের তারিখ না লিখে খাবার বিক্রি করলে কী হবে?"
+
+  # ------------------------------------------------------------------
+  # MONEY RECOVERY
+  # ------------------------------------------------------------------
+
+  - topic_id: cheque_dishonour
+    domain: money_recovery
+    risk_tier: medium
+    require_bn: [চেক, প্রত্যাখ্যান, ডিজঅনার]
+    require_en: [cheque, dishonour, drawer, banker, negotiable]
+    signature_bn: [চেক, প্রত্যাখ্যাত, অপর্যাপ্ত তহবিল, নোটিশ, মামলা, দণ্ড]
+    signature_en: [cheque, dishonour, insufficient funds, notice, drawer, punishment, account]
+    banned: [প্রত্যাখ্যাত চেক, অপর্যাপ্ত তহবিল, dishonour of cheque, insufficient funds]
+    slots:
+      amt: ["দুই লাখ", "পাঁচ লাখ", "পঞ্চাশ হাজার", "দশ লাখ"]
+    templates:
+      - "একজন আমাকে {amt} টাকার চেক দিয়েছিল, ব্যাংকে গিয়ে দেখি টাকা নেই। এখন কী করব?"
+      - "চেক বাউন্স হলে কতদিনের মধ্যে নোটিশ পাঠাতে হয়?"
+      - "চেকের টাকা না পেলে কি জেল হতে পারে?"
+      - "নোটিশ পাঠানোর পরেও টাকা দিচ্ছে না। মামলা কোথায় করব?"
+      - "মামলা করার সময়সীমা কতদিন?"
+
+  - topic_id: loan_default_recovery
+    domain: money_recovery
+    risk_tier: high
+    require_bn: [ঋণ, খেলাপি, আদায়]
+    require_en: [loan, default, recovery, decree, borrower]
+    signature_bn: [ঋণ, ঋণগ্রহীতা, আদায়, নিলাম, বন্ধক, ডিক্রি, অর্থঋণ আদালত]
+    signature_en: [loan, borrower, recovery, mortgage, decree, auction, financial institution]
+    banned: [ঋণগ্রহীতা, অর্থঋণ আদালত, financial institution, decree]
+    templates:
+      - "ব্যাংক থেকে ঋণ নিয়েছিলাম, শোধ করতে পারছি না। ব্যাংক কি আমার বাড়ি নিলামে তুলতে পারে?"
+      - "ঋণ শোধ না করলে কি জেলে যেতে হয়?"
+      - "ব্যাংক আমার জামিনদারের কাছ থেকে টাকা চাইছে। এটা কি করতে পারে?"
+      - "সুদ আসলের চেয়ে অনেক বেশি হয়ে গেছে। এর কি কোনো সীমা আছে?"
+      - "নিলামের আগে কি আমাকে জানানোর কথা?"
+
+  - topic_id: private_loan_dispute
+    domain: money_recovery
+    risk_tier: medium
+    require_bn: [চুক্তি, পাওনা, ধার]
+    require_en: [contract, agreement, breach, debt, promise]
+    signature_bn: [চুক্তি, চুক্তিভঙ্গ, ক্ষতিপূরণ, পাওনা, শর্ত, বাতিল]
+    signature_en: [contract, agreement, breach, damages, consideration, void, performance]
+    banned: [চুক্তিভঙ্গ, breach of contract, consideration]
+    slots:
+      amt: ["এক লাখ", "তিন লাখ", "পঞ্চাশ হাজার"]
+    templates:
+      - "বন্ধুকে {amt} টাকা ধার দিয়েছিলাম, এখন ফেরত দিচ্ছে না। কোনো কাগজ নেই। কী করব?"
+      - "কথা দিয়ে কাজ করেনি, আমার টাকা নষ্ট হয়েছে। ক্ষতিপূরণ চাইতে পারি?"
+      - "স্ট্যাম্পে লিখিত চুক্তি আছে কিন্তু শর্ত মানছে না। এখন কী করার আছে?"
+      - "মুখের কথায় করা চুক্তি কি আদালতে টেকে?"
+
+  # ------------------------------------------------------------------
+  # CRIMINAL PROCEDURE
+  # ------------------------------------------------------------------
+
+  - topic_id: fir_police_complaint
+    domain: criminal_procedure
+    risk_tier: high
+    require_bn: [এজাহার, থানা, পুলিশ, অভিযোগ]
+    require_en: [police, information, cognizable, officer in charge, complaint]
+    signature_bn: [এজাহার, থানা, পুলিশ, তদন্ত, আমলযোগ্য, অভিযোগ দায়ের, ম্যাজিস্ট্রেট]
+    signature_en: [information, police station, cognizable offence, investigation, officer in charge, magistrate, complaint]
+    banned: [আমলযোগ্য অপরাধ, cognizable offence, officer in charge]
+    templates:
+      - "থানায় গিয়েছিলাম কিন্তু অভিযোগ নিতে চাইছে না। এখন আমি কোথায় যাব?"
+      - "মামলা করতে হলে প্রথমে কী করতে হয়?"
+      - "পুলিশ তদন্ত করছে না, মাসখানেক পার হয়ে গেছে। এর প্রতিকার কী?"
+      - "থানায় অভিযোগ করার পর কি সরাসরি আদালতেও যাওয়া যায়?"
+      - "মিথ্যা মামলা দিলে যে দিয়েছে তার কিছু হয় কি?"
+
+  - topic_id: arrest_bail
+    domain: criminal_procedure
+    risk_tier: high
+    require_bn: [গ্রেফতার, জামিন, আটক]
+    require_en: [arrest, bail, custody, detention, remand]
+    signature_bn: [গ্রেফতার, জামিন, আটক, হাজির, ম্যাজিস্ট্রেট, ওয়ারেন্ট, রিমান্ড]
+    signature_en: [arrest, bail, custody, warrant, magistrate, detention, produce]
+    banned: [জামিনযোগ্য, জামিন অযোগ্য, bailable, non-bailable, warrant of arrest]
+    templates:
+      - "পুলিশ আমার ভাইকে ওয়ারেন্ট ছাড়াই ধরে নিয়ে গেছে। এটা কি করতে পারে?"
+      - "ধরে নেওয়ার পর কতক্ষণের মধ্যে আদালতে হাজির করতে হয়?"
+      - "জামিন চাইতে হলে কোথায় আবেদন করতে হয়?"
+      - "থানায় আটক থাকলে আমি কি আইনজীবীর সঙ্গে কথা বলতে পারব?"
+      - "কোন ধরনের মামলায় সহজে ছাড়া পাওয়া যায় না?"
+
+  - topic_id: theft_cheating_offence
+    domain: criminal_procedure
+    risk_tier: medium
+    require_bn: [চুরি, প্রতারণা, বিশ্বাসভঙ্গ, আত্মসাৎ]
+    require_en: [theft, cheating, criminal breach of trust, misappropriation, dishonestly]
+    signature_bn: [চুরি, প্রতারণা, আত্মসাৎ, বিশ্বাসভঙ্গ, দণ্ড, কারাদণ্ড]
+    signature_en: [theft, cheating, criminal breach of trust, dishonestly, misappropriation, punishment, imprisonment]
+    banned: [বিশ্বাসভঙ্গ, criminal breach of trust, dishonestly]
+    templates:
+      - "একজন আমার কাছ থেকে টাকা নিয়ে জিনিস দেয়নি, ফোনও বন্ধ। এটা কোন অপরাধ?"
+      - "আমার জিনিস গচ্ছিত রেখেছিলাম, এখন সে সেটা বিক্রি করে দিয়েছে। কী করব?"
+      - "কেউ আমার নামে ভুয়া কাগজ বানিয়েছে। এর শাস্তি কী?"
+      - "দোকান থেকে জিনিস চুরি হলে কত বছর জেল হতে পারে?"
+
+  # ------------------------------------------------------------------
+  # ROAD TRANSPORT
+  # ------------------------------------------------------------------
+
+  - topic_id: road_accident
+    domain: road_transport
+    risk_tier: high
+    require_bn: [দুর্ঘটনা, মোটরযান, চালক]
+    require_en: [motor vehicle, accident, driver, licence]
+    signature_bn: [সড়ক দুর্ঘটনা, মোটরযান, চালক, ক্ষতিপূরণ, লাইসেন্স, দণ্ড, বেপরোয়া]
+    signature_en: [motor vehicle, accident, driver, licence, compensation, rash, negligent]
+    banned: [বেপরোয়া চালনা, rash and negligent driving, motor vehicle]
+    templates:
+      - "বাসের ধাক্কায় আমার আত্মীয় মারা গেছেন। পরিবার কি ক্ষতিপূরণ পাবে?"
+      - "দুর্ঘটনার পর চালক পালিয়ে গেছে। কী করা যায়?"
+      - "লাইসেন্স ছাড়া গাড়ি চালালে কী শাস্তি হয়?"
+      - "দুর্ঘটনায় আহত হলে চিকিৎসার খরচ কে দেবে?"
+
+  # ------------------------------------------------------------------
+  # CIVIL REGISTRATION
+  # ------------------------------------------------------------------
+
+  - topic_id: birth_death_certificate
+    domain: civil_registration
+    risk_tier: low
+    require_bn: [জন্ম নিবন্ধন, মৃত্যু নিবন্ধন]
+    require_en: [birth registration, death registration]
+    signature_bn: [জন্ম নিবন্ধন, মৃত্যু নিবন্ধন, সনদ, সংশোধন, নিবন্ধক, আবেদন]
+    signature_en: [birth, death, registration, certificate, registrar, correction, application]
+    banned: [জন্ম ও মৃত্যু নিবন্ধন, birth and death registration]
+    templates:
+      - "জন্ম নিবন্ধনে আমার নামের বানান ভুল। সংশোধন করব কীভাবে?"
+      - "বাচ্চার জন্মের কতদিনের মধ্যে নিবন্ধন করাতে হয়?"
+      - "মৃত্যু সনদ তুলতে হলে কোথায় যেতে হবে?"
+      - "জন্ম নিবন্ধনে জন্মতারিখ ভুল উঠেছে। ঠিক করা যাবে?"
+
+  # ------------------------------------------------------------------
+  # CONSTITUTIONAL
+  # ------------------------------------------------------------------
+
+  - topic_id: fundamental_rights
+    domain: constitutional
+    risk_tier: high
+    require_bn: [মৌলিক অধিকার, সংবিধান]
+    require_en: [fundamental right, constitution]
+    signature_bn: [মৌলিক অধিকার, সমতা, বৈষম্য, বাক-স্বাধীনতা, চলাফেরার স্বাধীনতা, রিট, হাইকোর্ট]
+    signature_en: [fundamental rights, equality, discrimination, freedom of speech, writ, High Court Division]
+    banned: [মৌলিক অধিকার, fundamental rights, writ petition]
+    templates:
+      - "সরকারি চাকরিতে আমাকে ধর্মের কারণে বাদ দেওয়া হয়েছে। এটা কি করা যায়?"
+      - "সরকারি অফিস আমার আবেদন কোনো কারণ ছাড়াই বাতিল করেছে। আদালতে যাওয়ার উপায় আছে?"
+      - "মত প্রকাশের কারণে কি কাউকে আটক করা যায়?"
+      - "হাইকোর্টে সরাসরি আবেদন করা যায় কোন ক্ষেত্রে?"
+
+  # ------------------------------------------------------------------
+  # VILLAGE / FAMILY COURT PROCEDURE
+  # ------------------------------------------------------------------
+
+  - topic_id: village_family_court
+    domain: family
+    risk_tier: medium
+    require_bn: [গ্রাম আদালত, পারিবারিক আদালত]
+    require_en: [village court, family court]
+    signature_bn: [গ্রাম আদালত, পারিবারিক আদালত, এখতিয়ার, আবেদন, ফি, আপিল, সমন]
+    signature_en: [village court, family court, jurisdiction, application, appeal, summons, fee]
+    banned: [এখতিয়ার, jurisdiction of the court]
+    templates:
+      - "ছোটখাটো ঝগড়ার বিচার কি গ্রামেই করা যায়, নাকি শহরের আদালতে যেতে হবে?"
+      - "গ্রামের আদালতে আবেদন করতে কত টাকা লাগে?"
+      - "সংসারের মামলা কোন আদালতে করতে হয়?"
+      - "গ্রাম আদালতের রায় পছন্দ না হলে কী করা যায়?"
+      - "গ্রাম আদালত কত টাকা পর্যন্ত বিষয় দেখতে পারে?"

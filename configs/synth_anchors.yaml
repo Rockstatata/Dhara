@@ -1,0 +1,233 @@
+# Hand-anchored provisions per citizen topic.
+#
+# Why this file exists. Signature matching alone finds the right *Act* but often
+# the wrong *section*: a talaq-procedure question matched MFLO 1961 s6 (Polygamy)
+# when the answer is s7 (Talaq), and a "landlord won't accept my rent" question
+# matched House Rent Control s26 (tenant's failure to hand over possession) when
+# the answer is s19 (deposit of rent). Around half the tier-A positives were
+# wrong at section level in the first generation run. Training a retriever on
+# those teaches it that the wrong section answers the question, which is worse
+# than not training at all.
+#
+# So the provisions below are named by hand, and every act_id / section number
+# here was read out of corpus_v1 and checked against its printed title before
+# being written down — not recalled from memory. Anchored pairs carry
+# `label_source: anchor`; signature-matched pairs stay in the dataset at a lower
+# tier so coverage does not collapse, but the anchors are what training leans on.
+#
+# This is still weak supervision. "This section is *about* what the question
+# asks" is a weaker claim than the gold set's "this section *is* the answer",
+# and no human adjudicated these pairs the way the 552 gold questions were
+# adjudicated. They are training data and nothing else.
+#
+# Sections are written exactly as `provision_no_ascii` appears in the corpus.
+
+anchors:
+
+  # -------------------------------- family
+  divorce_talaq_procedure:
+    - act_id: family_305          # The Muslim Family Laws Ordinance, 1961
+      sections: ["7", "8"]        # Talaq; Dissolution of marriage otherwise than by talaq
+    - act_id: family_476          # Muslim Marriages and Divorces (Registration) Act, 1974
+      sections: ["6", "7"]        # Registration of divorces; Manner of registration
+    - act_id: family_180          # The Dissolution of Muslim Marriages Act, 1939
+      sections: ["2", "3"]        # Grounds for decree; Notice to heirs of the husband
+
+  dower_denmohor:
+    - act_id: family_305
+      sections: ["10"]            # Dower
+    - act_id: family_180
+      sections: ["5"]             # Rights to dower not to be affected
+    - act_id: family_1444         # পারিবারিক আদালত আইন, ২০২৩
+      sections: ["5"]             # পারিবারিক আদালতের এখতিয়ার — dower is inside it
+
+  maintenance_khorposh:
+    - act_id: family_305
+      sections: ["9"]             # Maintenance
+    - act_id: family_1444
+      sections: ["5", "17"]       # এখতিয়ার; ডিক্রি বলবৎকরণ
+
+  child_custody:
+    - act_id: family_64           # The Guardians and Wards Act, 1890
+      sections: ["7", "8", "17", "25", "26", "41"]
+    - act_id: family_1444
+      sections: ["5"]
+
+  inheritance_share:
+    - act_id: family_138          # The Succession Act, 1925
+      sections: ["29", "30", "32", "33", "37", "42", "50", "51"]
+    - act_id: family_305
+      sections: ["4"]             # Succession — the orphaned-grandchild rule
+
+  will_probate:
+    - act_id: family_138
+      sections: ["59", "63", "70", "213", "218", "222", "232"]
+
+  marriage_registration:
+    - act_id: family_476
+      sections: ["3", "4", "5", "9", "11"]
+    - act_id: family_1105         # হিন্দু বিবাহ নিবন্ধন আইন, ২০১২
+      sections: ["3", "5", "6", "7", "12"]
+    - act_id: family_305
+      sections: ["5"]             # Registration of marriages
+
+  village_family_court:
+    - act_id: family_938          # গ্রাম আদালত আইন, ২০০৬
+      sections: ["3", "5", "6", "7", "8", "14"]
+    - act_id: family_1444
+      sections: ["4", "5", "6", "18", "19", "25"]
+
+  # -------------------------------- women & children
+  dowry_demand:
+    - act_id: women_children_1256 # যৌতুক নিরোধ আইন, ২০১৮
+      sections: ["3", "4", "5", "6", "7", "8"]
+    - act_id: women_children_835  # নারী ও শিশু নির্যাতন দমন আইন, ২০০০
+      sections: ["11"]            # যৌতুকের জন্য মৃত্যু ঘটানো, ইত্যাদির শাস্তি
+
+  domestic_violence:
+    - act_id: women_children_1063 # পারিবারিক সহিংসতা (প্রতিরোধ ও সুরক্ষা) আইন, ২০১০
+      sections: ["3", "4", "10", "11", "12", "14", "15", "16", "30"]
+
+  child_marriage:
+    - act_id: women_children_1207 # বাল্যবিবাহ নিরোধ আইন, ২০১৭
+      sections: ["5", "7", "8", "9", "11", "12", "13"]
+
+  sexual_harassment_assault:
+    - act_id: women_children_835
+      sections: ["9", "10"]
+    - act_id: criminal_procedure_11   # The Penal Code, 1860
+      sections: ["354", "375", "376", "509"]
+
+  acid_attack:
+    - act_id: women_children_883  # এসিড অপরাধ দমন আইন, ২০০২
+      sections: ["4", "5", "6", "7", "9", "10", "15"]
+
+  # -------------------------------- cybercrime
+  online_defamation_harassment:
+    - act_id: cybercrime_1710     # সাইবার সুরক্ষা আইন, ২০২৬
+      sections: ["25", "26", "28"]
+    - act_id: criminal_procedure_11
+      sections: ["499", "500", "506", "509"]
+
+  account_hacking_fraud:
+    - act_id: cybercrime_1710
+      sections: ["17", "18", "19", "21", "22", "24"]
+    - act_id: cybercrime_950      # তথ্য ও যোগাযোগ প্রযুক্তি আইন, ২০০৬
+      sections: ["61", "62", "63"]
+    - act_id: criminal_procedure_11
+      sections: ["415", "420"]
+
+  # -------------------------------- land
+  land_registration_deed:
+    - act_id: land_90             # The Registration Act, 1908
+      sections: ["17", "18", "23", "24", "25", "32", "34", "47", "49", "60", "77"]
+    - act_id: other_48            # The Transfer of Property Act, 1882
+      sections: ["54"]            # "Sale" defined
+
+  land_mutation_khatian:
+    - act_id: land_241            # The State Acquisition and Tenancy Act, 1950
+      sections: ["17", "19", "143", "144", "147", "149", "150"]
+
+  land_dispossession_encroach:
+    - act_id: land_1454           # ভূমি অপরাধ প্রতিরোধ ও প্রতিকার আইন, ২০২৩
+      sections: ["4", "5", "7", "8", "9", "10"]
+    - act_id: other_36            # The Specific Relief Act, 1877
+      sections: ["8", "9", "54"]
+    - act_id: criminal_procedure_11
+      sections: ["441", "447"]
+
+  land_partition_joint:
+    - act_id: other_48
+      sections: ["44", "52"]      # Transfer by one co-owner; lis pendens
+    - act_id: other_36
+      sections: ["42"]            # declaration of status or right
+
+  land_acquisition_govt:
+    - act_id: land_1220           # স্থাবর সম্পত্তি অধিগ্রহণ ও হুকুমদখল আইন, ২০১৭
+      sections: ["4", "5", "6", "7", "8", "9", "11", "13", "14", "20"]
+
+  # -------------------------------- tenancy
+  house_rent_tenant:
+    - act_id: tenancy_748         # বাড়ী ভাড়া নিয়ন্ত্রণ আইন, ১৯৯১
+      sections: ["7", "10", "13", "14", "15", "19", "21", "22"]
+    - act_id: other_48
+      sections: ["105", "106", "108", "111"]   # lease, duration, rights and liabilities
+
+  # -------------------------------- labour
+  wrongful_termination:
+    - act_id: labour_952          # বাংলাদেশ শ্রম আইন, ২০০৬
+      sections: ["16", "20", "21", "26", "27"]
+    - act_id: labour_1285         # বাংলাদেশ ইপিজেড শ্রম আইন, ২০১৯
+      sections: ["22", "23", "24"]
+
+  unpaid_wages_overtime:
+    - act_id: labour_952
+      sections: ["108", "125", "126", "127", "129", "130", "132", "134"]
+
+  maternity_leave:
+    - act_id: labour_952
+      sections: ["45", "46", "47", "48", "50"]
+
+  workplace_injury:
+    - act_id: labour_952
+      sections: ["80", "150", "151", "155", "159"]
+
+  # -------------------------------- consumer
+  defective_goods_overcharge:
+    - act_id: consumer_1014       # ভোক্তা অধিকার সংরক্ষণ আইন, ২০০৯
+      sections: ["37", "38", "40", "44", "45", "46", "47", "48", "51", "60", "66", "76"]
+
+  adulterated_food:
+    - act_id: consumer_1127       # নিরাপদ খাদ্য আইন, ২০১৩
+      sections: ["25", "28", "55", "58", "62", "66"]
+    - act_id: consumer_1014
+      sections: ["41", "42", "43"]
+
+  # -------------------------------- money
+  cheque_dishonour:
+    - act_id: money_recovery_46   # The Negotiable Instruments Act, 1881
+      sections: ["138", "92", "93", "94"]
+
+  loan_default_recovery:
+    - act_id: money_recovery_901  # অর্থ ঋণ আদালত আইন, ২০০৩
+      sections: ["5", "6", "12", "19", "33", "34", "41", "44", "46", "47"]
+    - act_id: other_48
+      sections: ["58"]            # mortgage
+
+  private_loan_dispute:
+    - act_id: other_26            # The Contract Act, 1872
+      sections: ["10", "11", "23", "25", "56", "73", "74", "75"]
+    - act_id: other_36
+      sections: ["12", "21"]
+    - act_id: other_88            # The Limitation Act, 1908
+      sections: ["3", "5"]
+
+  # -------------------------------- criminal procedure
+  fir_police_complaint:
+    - act_id: criminal_procedure_75   # The Code of Criminal Procedure, 1898
+      sections: ["154", "155", "156", "161", "190", "200", "202"]
+
+  arrest_bail:
+    - act_id: criminal_procedure_75
+      sections: ["54", "61", "167", "496", "497", "498"]
+    - act_id: constitutional_957      # গণপ্রজাতন্ত্রী বাংলাদেশের সংবিধান
+      sections: ["33", "35"]
+
+  theft_cheating_offence:
+    - act_id: criminal_procedure_11
+      sections: ["378", "379", "403", "405", "406", "415", "417", "420", "463", "465", "468"]
+
+  # -------------------------------- civil registration
+  birth_death_certificate:
+    - act_id: civil_registration_921  # জন্ম ও মৃত্যু নিবন্ধন আইন, ২০০৪
+      sections: ["5", "8", "10", "11", "12", "13", "18"]
+
+  # -------------------------------- constitutional
+  fundamental_rights:
+    - act_id: constitutional_957
+      sections: ["26", "27", "28", "31", "32", "33", "35", "39", "44", "102"]
+
+  # road_accident has no anchors: the corpus survey found no Road Transport Act
+  # under any of its titles, so that topic is signature-matched only and its
+  # pairs are correspondingly weaker. Recorded rather than quietly dropped —
+  # a missing Act is a corpus-coverage finding for corpus_v2.

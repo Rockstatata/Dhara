@@ -1,0 +1,54 @@
+{
+  "batch": 8,
+  "source": "data\\processed\\authored_questions_v1_batch008.py",
+  "rows": 31,
+  "passing_all_gates": 31,
+  "yield": 1.0,
+  "passing_on_standard_gates": 31,
+  "passing_via_overlap_waiver": 0,
+  "overlap_waiver_domains": [
+    "civil_registration",
+    "constitutional",
+    "cybercrime",
+    "road_transport"
+  ],
+  "provisions": 31,
+  "acts": 2,
+  "domains": {
+    "criminal_procedure": 31
+  },
+  "kills_per_gate": {},
+  "body_overlap": {
+    "median": 0.0,
+    "p90": 0.0,
+    "human_median": 0.0,
+    "human_p90": 0.091
+  },
+  "word_deciles": [
+    23,
+    24,
+    27,
+    27,
+    29,
+    29,
+    30,
+    32,
+    34,
+    36,
+    38
+  ],
+  "human_word_deciles": [
+    9,
+    18,
+    37,
+    50,
+    59,
+    68,
+    83,
+    99,
+    109,
+    139,
+    214
+  ],
+  "failing_rows": []
+}
