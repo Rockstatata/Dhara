@@ -1,0 +1,216 @@
+{
+  "run_id": "bge_m3_finetuned_v7",
+  "checkpoint": "BAAI/bge-m3",
+  "fine_tuned": true,
+  "train_file": "/home/mlworkstation-admin/Shuvo/Dhara/data/processed/train_retrieval_v7_negatives.jsonl",
+  "eval_file": null,
+  "seed": 42,
+  "R@1": 0.3055555555555556,
+  "R@5": 0.4166666666666667,
+  "R@10": 0.4722222222222222,
+  "R@100": 0.6388888888888888,
+  "P@1": 0.3055555555555556,
+  "P@5": 0.10000000000000003,
+  "P@10": 0.05555555555555558,
+  "P@100": 0.00916666666666667,
+  "MRR@10": 0.3489197530864197,
+  "nDCG@10": 0.3779360083792055,
+  "slices": {
+    "bengali_targets": {
+      "n": 24,
+      "R@1": 0.4166666666666667,
+      "R@5": 0.5,
+      "R@10": 0.5416666666666666,
+      "R@100": 0.75
+    },
+    "english_targets": {
+      "n": 12,
+      "R@1": 0.08333333333333333,
+      "R@5": 0.25,
+      "R@10": 0.3333333333333333,
+      "R@100": 0.4166666666666667
+    }
+  },
+  "per_query": [
+    {
+      "qid": "prot_0128_02",
+      "rank": null,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "prot_0128_03",
+      "rank": 12,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "prot_0077_05",
+      "rank": null,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "lawy_0563_01",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0012_03",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0084_06",
+      "rank": null,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0115_01",
+      "rank": 4,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "lawy_0210_01",
+      "rank": 1,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "lawy_0533_01",
+      "rank": 3,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0107_02",
+      "rank": null,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "prot_0107_06",
+      "rank": null,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "lawy_0376_01",
+      "rank": 2,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0004_04",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0104_06",
+      "rank": 9,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0056_02",
+      "rank": null,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "prot_0083_01",
+      "rank": null,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0014_02",
+      "rank": null,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "dail_0621_02",
+      "rank": 22,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "dail_0629_02",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "lawy_0386_01",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0008_03",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "lawy_0241_01",
+      "rank": null,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "ajke_0139_01",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0111_06",
+      "rank": 18,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0054_04",
+      "rank": 90,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0136_02",
+      "rank": null,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "prot_0032_01",
+      "rank": 19,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0049_04",
+      "rank": 5,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "dail_0613_02",
+      "rank": 93,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "ajke_0164_02",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "lawy_0500_01",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0109_04",
+      "rank": null,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "ajke_0207_01",
+      "rank": 6,
+      "lang_tag": "english"
+    },
+    {
+      "qid": "prot_0002_02",
+      "rank": 1,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0113_01",
+      "rank": null,
+      "lang_tag": "bengali"
+    },
+    {
+      "qid": "prot_0111_04",
+      "rank": null,
+      "lang_tag": "bengali"
+    }
+  ]
+}

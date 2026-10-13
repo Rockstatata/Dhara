@@ -1,0 +1,13 @@
+{\scriptsize
+\adjustbox{max width=\linewidth}{\begin{tabular}{lp{4.3cm}p{2.6cm}rrrll}
+\toprule
+\textbf{Run} & \textbf{What changed} & \textbf{Eval population} & \textbf{Zero-shot} & \textbf{Tuned} & \textbf{$\Delta$R@10} & \textbf{95\% CI} & \textbf{Verdict} \\
+\midrule
+Attempt 1 & First synthetic pool; embedding space collapsed (two bugs) & 552 (pre-verification labels) & 0.324 & 0.060 & -0.265 & [-0.304, -0.221] & significant \\
+Attempt 2 & Bugs fixed; homogeneous templated questions & 552 (pre-verification labels) & 0.324 & 0.330 & +0.005 & [-0.034, +0.047] & noise \\
+Attempt 3 & Hand-anchored positives, narrative questions & 552 (pre-verification labels) & 0.324 & 0.350 & +0.025 & [+0.005, +0.045] & significant \\
+Attempt 4 & Attempt 3 + Act-title document template & 480 (verified labels) & 0.335 & 0.323 & -0.013 & [-0.054, +0.029] & noise \\
+v6 (final) & Two-stage LoRA, 408 real + synthetic pool & 36 (held-out test) & 0.472 & 0.500 & +0.028 & [+0.000, +0.083] & noise \\
+\bottomrule
+\end{tabular}}
+}

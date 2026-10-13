@@ -70,9 +70,7 @@ The system does not aim to:
 The pipeline that is actually served is **dense-only**: a fine-tuned bi-encoder retrieves and
 ranks candidates directly. BM25 is measured alongside as the lexical floor, never fused in
 (equal-weight RRF measured *worse* than dense alone — see "What was tried and didn't ship"
-below). There is **no cross-encoder reranker in the served pipeline** — a trained reranker was
-built and evaluated as an ablation and it regressed Recall@10 (0.500 → 0.361); that result is
-reported honestly rather than shipped.
+below). There is no reranking stage in the served pipeline.
 
 ```mermaid
 flowchart TD
@@ -213,11 +211,6 @@ diagnosed mechanism.
 
 ### What was tried and didn't ship
 
-- **Cross-encoder reranker (trained)** — a real, still-open regression: Recall@10 dropped from
-  0.500 to 0.361 after training a `BAAI/bge-reranker-v2-m3` reranker on this project's own
-  pairs. A stage-1 chunk/provision mismatch bug was found and fixed; the regression persisted
-  at the same magnitude afterward, so a second, unidentified cause remains. Not in the served
-  pipeline. Full root-cause notes in the project report §5.4.
 - **Equal-weight BM25+dense fusion (RRF)** — scored *worse* than dense alone (R@10 0.216 vs
   0.324) because BM25 contributes 0% relevant candidates on ~60% of questions (the English-only
   slice), so half of every fused score was noise.

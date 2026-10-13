@@ -1,0 +1,12 @@
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{lrrrrrrr}
+\toprule
+\textbf{Model} & \textbf{R@1} & \textbf{R@5} & \textbf{R@10} & \textbf{R@100} & \textbf{MRR@10} & \textbf{R@10 En} & \textbf{R@10 Bn} \\
+\midrule
+Zero-shot BGE-m3 (control) & 0.278 & \textbf{0.417} & 0.472 & 0.611 & 0.333 & 0.333 & 0.542 \\
+Fine-tuned v6 (served) & \textbf{0.306} & \textbf{0.417} & \textbf{0.500} & 0.611 & \textbf{0.354} & 0.417 & 0.542 \\
+Fine-tuned v7 (smaller, filtered pool) & \textbf{0.306} & \textbf{0.417} & 0.472 & \textbf{0.639} & 0.349 & 0.333 & 0.542 \\
+v6 + dual-query + sparse/ColBERT & 0.222 & 0.361 & 0.444 & 0.611 & 0.284 & -- & -- \\
+\bottomrule
+\end{tabular}}
+}

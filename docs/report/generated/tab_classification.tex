@@ -1,0 +1,12 @@
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Training data} & \textbf{$n$ train} & \textbf{Naive Bayes} & \textbf{Logistic Reg.} & \textbf{Vanilla RNN} & \textbf{Stacked BiLSTM} \\
+\midrule
+Human questions only & 352 & 0.104 & \textbf{0.343} & 0.151 & 0.150 \\
+Human + 800 filtered synthetic & 1{,}152 & 0.088 & \textbf{0.318} & 0.085 & 0.128 \\
+Human + all synthetic & 4{,}324 & 0.101 & \textbf{0.267} & 0.141 & 0.195 \\
+All synthetic, rare domains merged & 4{,}324 & 0.102 & \textbf{0.256} & 0.068 & 0.207 \\
+\bottomrule
+\end{tabular}}
+}

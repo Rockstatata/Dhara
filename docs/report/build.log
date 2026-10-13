@@ -1,0 +1,521 @@
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2)
+ restricted system commands enabled.
+(./dhara_report.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg)
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphics.
+cfg)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/luatex.de
+f))) (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/graphics/mathcolor.ltx
+))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty)
+ (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.sty
+) (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.sty)
+ (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.sty)
+) (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty)
+ (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/caption/ltcaption.sty)
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.st
+y)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvdefin
+ekeys.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pdfescape/pdfescape.
+sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty)
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftexcmd
+s.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.
+sty)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/nameref.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty)
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/gettitlestring/getti
+tlestring.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.st
+y)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty)
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/stringenc/stringenc.
+sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcal
+c.sty)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfi
+lecheck.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/uniquecounter/unique
+counter.sty)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/tikz
+.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.sty
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfrcs.s
+ty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfuti
+l-common.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfuti
+l-latex.def)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfrcs
+.code.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/pgf.revision.tex
+)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgfcore
+.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/systemlayer/pgfsys
+.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfs
+ys.code.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkey
+s.code.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkey
+slibraryfiltered.code.tex))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgf.
+cfg)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfs
+ys-luatex.def
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfs
+ys-common-pdf.def)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfs
+yssoftpath.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfs
+ysprotocol.code.tex))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+re.code.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.cod
+e.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathutil
+.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathpars
+er.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.basic.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.trigonometric.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.random.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.comparison.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.base.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.round.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.misc.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunc
+tions.integerarithmetics.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathcalc
+.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfloa
+t.code.tex))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.code
+.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+repoints.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+repathconstruct.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+repathusage.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+rescopes.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+regraphicstate.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+retransformations.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+requick.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+reobjects.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+repathprocessing.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+rearrows.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+reshade.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+reimage.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+reexternal.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+relayers.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+retransparency.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+repatterns.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
+rerdf.code.tex)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodul
+eshapes.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodul
+eplot.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfc
+omp-version-0-65.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfc
+omp-version-1-18.sty))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgffor.s
+ty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfkeys.
+sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkey
+s.code.tex))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pgf/math/pgfmath.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.cod
+e.tex))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgffor
+.code.tex))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
+kz/tikz.code.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflib
+raryplothandlers.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodul
+ematrix.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarytopaths.code.tex)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarypositioning.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflib
+raryarrows.meta.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryshapes.geometric.code.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes
+/pgflibraryshapes.geometric.code.tex))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryfit.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarycalc.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarybackgrounds.code.tex)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcolorbox.st
+y (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/environ/environ.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.
+sty))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbraster.co
+de.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.9.0'
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbskins.cod
+e.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tikzfill/tikzfill.imag
+e.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tikzfill/tikzlibraryfi
+ll.image.code.tex))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbskinsjigs
+aw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
+))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbbreakable
+.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/pdfcol/pdfcol.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifluatex.sty))
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbhooks.cod
+e.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.9.0'
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbtheorems.
+code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbfitting.c
+ode.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.9.0'
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcblistingsu
+tf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.9.0'
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcblistings.
+code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.9.0'
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstpatch.sty)
+ (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstmisc.sty)
+ (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.cfg
+))
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcblistingsc
+ore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.9.0'
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbprocessin
+g.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.9.0'
+))))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbexternal.
+code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.9.0'
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbmagazine.
+code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.9.0'
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbvignette.
+code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.9.0'
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryfadings.code.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflib
+raryfadings.code.tex)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbposter.co
+de.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.9.0'
+))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/adjustbox/adjustbox.st
+y (C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkeyval.tex
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkvutils.tex
+)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/adjustbox/adjcalc.sty)
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/adjustbox/trimclip.sty
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/collectbox/collectbox.
+sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/adjustbox/tc-luatex.de
+f
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/adjustbox/tc-pdftex.de
+f)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/ifoddpage/ifoddpage.st
+y)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty)
+
+==> First Aid for varwidth.sty applied!
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xparse/xpar
+se.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/expl3.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lu
+atex.def)))
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec-luat
+ex.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.cfg)
+))
+luaotfload | db : Reload initiated (formats: otf,ttf,ttc); reason: Font "Kalpurush" not found. (./generated/numbers.tex) (./generated/numbers2.tex)
+(./generated/numbers3.tex) (./generated/numbers4.tex) (./generated/numbers5.tex
+) (./dhara_report.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-
+base.sty
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-sys.
+cfg)) (./dhara_report.out) (./dhara_report.out) [1{C:/Users/Sarwad/AppData/Loca
+l/MiKTeX/fonts/map/pdftex/pdftex.map}<./KUET-LOGO.png>] (./dhara_report.toc
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd)
+(C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd))
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1] [2]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 234.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 234.
+
+[3]
+Underfull \hbox (badness 7064) in paragraph at lines 280--280
+[]|\TU/lmr/m/n/9 Word2Vec skip-gram (from
+
+Underfull \hbox (badness 3568) in paragraph at lines 280--280
+\TU/lmr/m/n/9 scratch), shared em-bed-ding
+
+Underfull \hbox (badness 1320) in paragraph at lines 280--281
+[]|\TU/lmr/m/n/9 built; corpus-size
+
+Underfull \hbox (badness 1337) in paragraph at lines 281--281
+\TU/lmr/m/n/9 sion, Vanilla RNN, Stacked
+[4] (./generated/sample_chunk_bn.tex) (./generated/sample_chunk_en.tex)
+[5] (./generated/tab_corpus_domain.tex) [6] (./generated/tab_agreement.tex)
+(./generated/sample_gold.tex
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+
+Underfull \hbox (badness 5878) in paragraph at lines 9--10
+[]|\TU/NirmalaUI(0)/m/n/8 স্থাবর সম্পত্তি অধ
+িগ্রহণ ও হুকুমদখল
+
+Underfull \hbox (badness 5878) in paragraph at lines 9--10
+\TU/NirmalaUI(0)/m/n/8 স্থাবর সম্পত্তি অধি
+গ্রহণ ও হুকুমদখল
+) (./generated/tab_overlap.tex) [7
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+] (./generated/tab_pool.tex) (./generated/sample_synth.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--14
+[][]
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+) [8
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+<./figures/fig_overlap.pdf>] (./generated/tab_norm.tex
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+) (./generated/tab_w2v.tex) (./generated/tab_lm.tex) [9
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+Missing character: There is no । (U+0964) in font [lmroman8-regular]:+tlig;!
+] (./generated/tab_classification.tex) (./generated/tab_class_perclass.tex)
+[10<./figures/fig_classification.pdf>] (./generated/tab_tagger.tex) [11<./figur
+es/fig_confusion.pdf>] (./generated/tab_ft_history.tex
+Underfull \hbox (badness 1226) in paragraph at lines 6--6
+[]|\TU/lmr/m/n/7 First syn-thetic pool; em-bed-ding
+
+Underfull \hbox (badness 1983) in paragraph at lines 6--6
+[]|\TU/lmr/m/n/7 552 (pre-verification
+
+Underfull \hbox (badness 4013) in paragraph at lines 7--7
+[]|\TU/lmr/m/n/7 Bugs fixed; ho-mo-ge-neous tem-
+
+Underfull \hbox (badness 1983) in paragraph at lines 7--7
+[]|\TU/lmr/m/n/7 552 (pre-verification
+
+Underfull \hbox (badness 1983) in paragraph at lines 8--8
+[]|\TU/lmr/m/n/7 552 (pre-verification
+) [12<./figures/fig_tagger.pdf>] (./generated/tab_ft_test.tex)
+(./generated/tab_flips.tex) (./generated/tab_ladder.tex) [13]
+(./generated/tab_language.tex) [14<./figures/fig_ladder.pdf>]
+(./generated/tab_register.tex) (./generated/tab_bootstrap_v2.tex)
+(./generated/tab_bootstrap_test.tex) [15<./figures/fig_language_wall.pdf>]
+[16<./figures/fig_forest.pdf>] (./generated/c_demo_table.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+[]|\TU/lmr/bx/n/7 Out-
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+[]|\TU/NirmalaUI(0)/m/n/7 আমার স্বামী মুখে তা
+লাক
+
+Underfull \hbox (badness 4779) in paragraph at lines 7--7
+[]|\TU/NirmalaUI(0)/m/n/7 মালিক তিন মাস ধরে বে
+তন
+
+Underfull \hbox (badness 3449) in paragraph at lines 8--8
+[]|\TU/NirmalaUI(0)/m/n/7 কেউ আমার ফেসবুক আইড
+ি
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|\TU/NirmalaUI(0)/m/n/7 আজকে ঢাকার আবহাওয়
+া
+
+Underfull \hbox (badness 2384) in paragraph at lines 11--11
+[]|\TU/NirmalaUI(0)/m/n/7 আবহাওয়া আইন, ২০১৮\TU/lmr/
+m/n/7 , §\TU/NirmalaUI(0)/m/n/7 ৫ \TU/lmr/m/n/7 (\TU/NirmalaUI(0)/m/n/7 অ
+ধিদপ্তরের প্রধান
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+[]|\TU/lmr/m/n/7 not re-
+) [17<./figures/demo_search.png>] [18] [19] (./dhara_report.aux))
+(see the transcript file for additional information)
+ 1342 words of node memory still in use:
+   30 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 83 attribute, 63 glue_s
+pec, 83 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 2:2258,3:1326,4:166,5:716,6:157,7:11799,8:76,9:1057,10:23,11:75
+7
+<c:/users/sarwad/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman
+7-bold.otf><c:/users/sarwad/appdata/local/programs/miktex/fonts/opentype/public
+/lm/lmroman8-italic.otf><c:/users/sarwad/appdata/local/programs/miktex/fonts/op
+entype/public/lm/lmroman8-bold.otf><c:/users/sarwad/appdata/local/programs/mikt
+ex/fonts/opentype/public/lm/lmmonolt10-bold.otf><c:/users/sarwad/appdata/local/
+programs/miktex/fonts/opentype/public/lm/lmmono8-regular.otf><c:/users/sarwad/a
+ppdata/local/programs/miktex/fonts/opentype/public/lm/lmromandemi10-regular.otf
+><c:/users/sarwad/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono
+9-regular.otf><c:/users/sarwad/appdata/local/programs/miktex/fonts/opentype/pub
+lic/lm/lmroman7-regular.otf><c:/users/sarwad/appdata/local/programs/miktex/font
+s/opentype/public/lm/lmroman8-regular.otf><c:/users/sarwad/appdata/local/progra
+ms/miktex/fonts/opentype/public/lm/lmroman9-italic.otf><c:/users/sarwad/appdata
+/local/programs/miktex/fonts/opentype/public/lm/lmroman9-bold.otf><c:/users/sar
+wad/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman9-regular.otf
+><C:/WINDOWS/Fonts/nirmala.ttc><c:/users/sarwad/appdata/local/programs/miktex/f
+onts/opentype/public/lm/lmroman10-regular.otf><c:/users/sarwad/appdata/local/pr
+ograms/miktex/fonts/opentype/public/lm/lmroman10-bold.otf><C:/WINDOWS/Fonts/nir
+mala.ttc><c:/users/sarwad/appdata/local/programs/miktex/fonts/opentype/public/l
+m/lmroman12-regular.otf><c:/users/sarwad/appdata/local/programs/miktex/fonts/op
+entype/public/lm/lmroman12-bold.otf><C:/Users/Sarwad/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Users/Sarwad/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Sarwad/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/
+Sarwad/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+mi9.pfb><C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb><C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr7.pfb><C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb><C:/Users/Sarwad/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Sarwad/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Sarwad/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Sarwad/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Sa
+rwad/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb>
+Output written on dhara_report.pdf (20 pages, 1058986 bytes).
+Transcript written on dhara_report.log.

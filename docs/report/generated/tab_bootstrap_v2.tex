@@ -1,0 +1,20 @@
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{llrrrll}
+\toprule
+\textbf{Comparison ($n{=}480$)} & \textbf{Metric} & \textbf{A} & \textbf{B} & \textbf{A$-$B} & \textbf{95\% CI} & \textbf{Verdict} \\
+\midrule
+Zero-shot BGE-m3 vs BM25 & R@1 & 0.098 & 0.017 & +0.081 & [+0.056, +0.108] & significant \\
+ & R@5 & 0.233 & 0.033 & +0.200 & [+0.163, +0.240] & significant \\
+ & R@10 & 0.335 & 0.054 & +0.281 & [+0.240, +0.323] & significant \\
+Zero-shot BGE-m3 vs Word2Vec & R@1 & 0.098 & 0.004 & +0.094 & [+0.067, +0.121] & significant \\
+ & R@5 & 0.233 & 0.013 & +0.221 & [+0.183, +0.258] & significant \\
+ & R@10 & 0.335 & 0.029 & +0.306 & [+0.265, +0.348] & significant \\
++ Act title vs zero-shot & R@1 & 0.129 & 0.098 & +0.031 & [+0.013, +0.052] & significant \\
+ & R@5 & 0.281 & 0.233 & +0.048 & [+0.025, +0.073] & significant \\
+ & R@10 & 0.352 & 0.335 & +0.017 & [-0.010, +0.044] & within noise \\
+Fine-tuned + Act title vs zero-shot & R@1 & 0.079 & 0.098 & -0.019 & [-0.048, +0.010] & within noise \\
+ & R@5 & 0.240 & 0.233 & +0.006 & [-0.031, +0.044] & within noise \\
+ & R@10 & 0.323 & 0.335 & -0.013 & [-0.054, +0.029] & within noise \\
+\bottomrule
+\end{tabular}}
+}

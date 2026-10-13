@@ -1,0 +1,14 @@
+{\scriptsize
+\adjustbox{max width=\linewidth}{\begin{tabular}{p{3.3cm}p{5.7cm}p{1.6cm}p{2.5cm}p{1.2cm}}
+\toprule
+\textbf{Question} & \textbf{Top-1 provision; cosine score} & \textbf{Classifier} & \textbf{Tagger} & \textbf{Outcome} \\
+\midrule
+\bng{আমার স্বামী মুখে তালাক দিয়েছে, এখন কী করব}? & The Muslim Family Laws Ordinance, 1961, \S 7 (Talaq); 0.572 & family & \bng{স্বামী}:PARTY & hit \\
+\bng{মালিক তিন মাস ধরে বেতন দিচ্ছে না, আমি কী করতে পারি}? & \bng{বাংলাদেশ শ্রম আইন, ২০০৬}, \S \bng{২৬} (\bng{বরখাস্ত, ইত্যাদি ব্যতীত অন্যভাবে মালিক কতৃর্ক শ্}); 0.598 & other & \bng{মালিক}:PARTY & near miss \\
+\bng{কেউ আমার ফেসবুক আইডি হ্যাক করে আমার নামে কুৎসা ছড়াচ্ছে, কী করব}? & \bng{সাইবার সুরক্ষা আইন, ২০২৬}, \S \bng{২৬} (\bng{সাইবার স্পেসে ধর্মীয় বা জাতিগত বিষয়ে সহিংসতা, ঘৃ}); 0.562 & land & none & near miss \\
+\bng{জমির নামজারি করতে কী কী কাগজ লাগে}? & The Registration Act, 1908, \S 90 (Exemption of certain documents executed by or in); 0.583 & other & none & miss \\
+\bng{দণ্ডবিধির ৩২৩ ধারায় কী শাস্তি হয়}? & 1The Penal Code, 1860, \S 326A (untitled); 0.551 & other & none; rule: \S323 & miss \\
+\bng{আজকে ঢাকার আবহাওয়া কেমন}? & \bng{আবহাওয়া আইন, ২০১৮}, \S \bng{৫} (\bng{অধিদপ্তরের প্রধান কার্যালয়, ইত্যাদি}); 0.522 & other & none & not rejected \\
+\bottomrule
+\end{tabular}}
+}

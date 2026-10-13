@@ -1,0 +1,17 @@
+{\scriptsize
+\adjustbox{max width=\linewidth}{\begin{tabular}{lccc}
+\toprule
+\textbf{Comparison (A vs B)} & \textbf{$\Delta$R@1 [95\% CI]} & \textbf{$\Delta$R@5 [95\% CI]} & \textbf{$\Delta$R@10 [95\% CI]} \\
+\midrule
+\multicolumn{4}{l}{\emph{verified gold, $n{=}480$}} \\
+Zero-shot BGE-m3 vs BM25 & \textbf{+0.081 [+0.06,+0.11]} & \textbf{+0.200 [+0.16,+0.24]} & \textbf{+0.281 [+0.24,+0.32]} \\
+Zero-shot BGE-m3 vs Word2Vec & \textbf{+0.094 [+0.07,+0.12]} & \textbf{+0.221 [+0.18,+0.26]} & \textbf{+0.306 [+0.26,+0.35]} \\
++ Act title vs zero-shot & \textbf{+0.031 [+0.01,+0.05]} & \textbf{+0.048 [+0.03,+0.07]} & +0.017 [-0.01,+0.04] \\
+Fine-tuned + Act title vs zero-shot & -0.019 [-0.05,+0.01] & +0.006 [-0.03,+0.04] & -0.013 [-0.05,+0.03] \\
+\multicolumn{4}{l}{\emph{held-out test, $n{=}36$}} \\
+Fine-tuned v6 vs zero-shot & +0.028 [+0.00,+0.08] & +0.000 [+0.00,+0.00] & +0.028 [+0.00,+0.08] \\
+v6 vs v7 training pool & +0.000 [+0.00,+0.00] & +0.000 [+0.00,+0.00] & +0.028 [+0.00,+0.08] \\
+Dual-query + sparse/ColBERT vs v6 & -0.083 [-0.17,+0.00] & -0.056 [-0.14,+0.00] & -0.056 [-0.17,+0.06] \\
+\bottomrule
+\end{tabular}}
+}

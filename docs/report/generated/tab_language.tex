@@ -1,0 +1,15 @@
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Rung} & \textbf{R@10 En} & \textbf{R@10 Bn} & \textbf{R@10 Mixed} & \textbf{R@100 En} & \textbf{R@100 Bn} \\
+\midrule
+BM25 (default $k_1{=}1.5$, $b{=}0.75$) & 0.003 & 0.204 & 0.062 & 0.007 & 0.327 \\
+Word2Vec, mean-pooled & 0.003 & 0.102 & 0.037 & 0.003 & 0.265 \\
+BiLSTM dual-encoder & 0.007 & 0.000 & 0.025 & 0.027 & 0.092 \\
+BGE-m3 zero-shot (control) & 0.263 & 0.520 & 0.383 & 0.525 & 0.796 \\
+BGE-m3 zero-shot + Act title & 0.266 & 0.551 & 0.432 & 0.522 & 0.847 \\
+BGE-m3 fine-tuned + Act title & 0.193 & 0.561 & 0.518 & 0.462 & 0.867 \\
+BM25 (tuned $k_1{=}0.9$, $b{=}0.4$) & 0.000 & 0.184 & 0.062 & 0.007 & 0.327 \\
+\bottomrule
+\end{tabular}}
+}

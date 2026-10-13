@@ -1,0 +1,14 @@
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{lrrr}
+\toprule
+\textbf{Rung} & \textbf{Colloquial R@10 (n=444)} & \textbf{Formal R@10 (n=36)} & \textbf{Formal $-$ colloquial} \\
+\midrule
+BM25 (default $k_1{=}1.5$, $b{=}0.75$) & 0.056 & 0.028 & -0.029 \\
+Word2Vec, mean-pooled & 0.032 & 0.000 & -0.032 \\
+BiLSTM dual-encoder & 0.007 & 0.028 & +0.021 \\
+BGE-m3 zero-shot (control) & 0.347 & 0.194 & -0.152 \\
+BGE-m3 zero-shot + Act title & 0.363 & 0.222 & -0.140 \\
+BGE-m3 fine-tuned + Act title & 0.324 & 0.306 & -0.019 \\
+\bottomrule
+\end{tabular}}
+}

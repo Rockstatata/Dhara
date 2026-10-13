@@ -1,0 +1,102 @@
+\begin{tcolorbox}[colback=white,colframe=kuetblue!60,boxrule=0.5pt,left=4pt,right=4pt,top=3pt,bottom=3pt,breakable]
+\textbf{Input}\enspace \bng{আমার স্বামী মুখে তালাক দিয়েছে, এখন কী করব}?\par\smallskip
+{\footnotesize risk tier: \texttt{high}; top score 0.572 vs threshold 0.55; answered; legal-aid referral shown}\par\smallskip
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{rrp{5.6cm}p{5.0cm}l}
+\toprule
+\textbf{\#} & \textbf{Score} & \textbf{Citation} & \textbf{Provision title} & \textbf{Domain} \\
+\midrule
+1 & 0.572 & The Muslim Family Laws Ordinance, 1961, \S 7 & Talaq & family \\
+2 & 0.514 & The Muslim Family Laws Ordinance, 1961, \S 9 & Maintenance & family \\
+3 & 0.514 & The Muslim Family Laws Ordinance, 1961, \S 8 & Dissolution of marriage otherwise than by talaq & family \\
+\bottomrule
+\end{tabular}}
+}
+
+{\footnotesize Classifier: Family and inheritance (20\%). Tagger: \bng{স্বামী} $\to$ PARTY.}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=white,colframe=kuetblue!60,boxrule=0.5pt,left=4pt,right=4pt,top=3pt,bottom=3pt,breakable]
+\textbf{Input}\enspace \bng{মালিক তিন মাস ধরে বেতন দিচ্ছে না, আমি কী করতে পারি}?\par\smallskip
+{\footnotesize risk tier: \texttt{medium}; top score 0.598 vs threshold 0.48; answered}\par\smallskip
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{rrp{5.6cm}p{5.0cm}l}
+\toprule
+\textbf{\#} & \textbf{Score} & \textbf{Citation} & \textbf{Provision title} & \textbf{Domain} \\
+\midrule
+1 & 0.598 & \bng{বাংলাদেশ শ্রম আইন, ২০০৬}, \S \bng{২৬} & \bng{বরখাস্ত, ইত্যাদি ব্যতীত অন্যভাবে মালিক কতৃর্ক শ্রমিকের চাকুরীর অবসান} & labour \\
+2 & 0.598 & \bng{বাংলাদেশ ইপিজেড শ্রম আইন, ২০১৯}, \S \bng{২২} & \bng{বরখাস্ত, ইত্যাদি ব্যতীত অন্যভাবে মালিক কর্তৃক শ্রমিকের চাকরির অবসান} & labour \\
+3 & 0.579 & \bng{বাংলাদেশ শ্রম আইন, ২০০৬}, \S \bng{১৩} & \bng{প্রতিষ্ঠান বন্ধ রাখা} & labour \\
+\bottomrule
+\end{tabular}}
+}
+
+{\footnotesize Classifier: Other (outside the covered domains) (14\%). Tagger: \bng{মালিক} $\to$ PARTY.}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=white,colframe=kuetblue!60,boxrule=0.5pt,left=4pt,right=4pt,top=3pt,bottom=3pt,breakable]
+\textbf{Input}\enspace \bng{কেউ আমার ফেসবুক আইডি হ্যাক করে আমার নামে কুৎসা ছড়াচ্ছে, কী করব}?\par\smallskip
+{\footnotesize risk tier: \texttt{high}; top score 0.562 vs threshold 0.55; answered; legal-aid referral shown}\par\smallskip
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{rrp{5.6cm}p{5.0cm}l}
+\toprule
+\textbf{\#} & \textbf{Score} & \textbf{Citation} & \textbf{Provision title} & \textbf{Domain} \\
+\midrule
+1 & 0.562 & \bng{সাইবার সুরক্ষা আইন, ২০২৬}, \S \bng{২৬} & \bng{সাইবার স্পেসে ধর্মীয় বা জাতিগত বিষয়ে সহিংসতা, ঘৃণা ও বিদ্বেষমূলক তথ্য প্রকাশ ইত্} & cybercrime \\
+2 & 0.529 & \bng{জুয়া প্রতিরোধ আইন, ২০২৬}, \S \bng{১৩} & \bng{ভুয়া সিম} (SIM), \bng{ঘোস্ট সিম} (Ghost SIM), \bng{ভুয়া এমএফএস অ্যাকাউন্ট} (MFS Account) \bng{ও বা} & other \\
+3 & 0.512 & \bng{সাইবার সুরক্ষা আইন, ২০২৬}, \S \bng{১৯} & \bng{কম্পিউটার, কম্পিউটার সিস্টেম ও সাইবার স্পেসের ভৌত অবকাঠামো ইত্যাদির ক্ষতিসাধন ও} & cybercrime \\
+\bottomrule
+\end{tabular}}
+}
+
+{\footnotesize Classifier: Land and property (12\%). Tagger: no entities tagged.}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=white,colframe=kuetblue!60,boxrule=0.5pt,left=4pt,right=4pt,top=3pt,bottom=3pt,breakable]
+\textbf{Input}\enspace \bng{জমির নামজারি করতে কী কী কাগজ লাগে}?\par\smallskip
+{\footnotesize risk tier: \texttt{medium}; top score 0.583 vs threshold 0.48; answered}\par\smallskip
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{rrp{5.6cm}p{5.0cm}l}
+\toprule
+\textbf{\#} & \textbf{Score} & \textbf{Citation} & \textbf{Provision title} & \textbf{Domain} \\
+\midrule
+1 & 0.583 & The Registration Act, 1908, \S 90 & Exemption of certain documents executed by or in favour of Government & land \\
+2 & 0.565 & The Registration Act, 1908, \S 21 & Description of property and maps or plans & land \\
+3 & 0.565 & The Registration Act, 1908, \S 89 & Copies of certain orders, certificates and instruments to be sent to registering & land \\
+\bottomrule
+\end{tabular}}
+}
+
+{\footnotesize Classifier: Other (outside the covered domains) (15\%). Tagger: no entities tagged.}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=white,colframe=kuetblue!60,boxrule=0.5pt,left=4pt,right=4pt,top=3pt,bottom=3pt,breakable]
+\textbf{Input}\enspace \bng{দণ্ডবিধির ৩২৩ ধারায় কী শাস্তি হয়}?\par\smallskip
+{\footnotesize risk tier: \texttt{high}; top score 0.551 vs threshold 0.55; answered; legal-aid referral shown}\par\smallskip
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{rrp{5.6cm}p{5.0cm}l}
+\toprule
+\textbf{\#} & \textbf{Score} & \textbf{Citation} & \textbf{Provision title} & \textbf{Domain} \\
+\midrule
+1 & 0.551 & 1The Penal Code, 1860, \S 326A & (untitled) & criminal procedure \\
+2 & 0.545 & 1The Penal Code, 1860, \S 324 & Voluntarily causing hurt by dangerous weapons or means & criminal procedure \\
+3 & 0.544 & \bng{আয়কর আইন, ২০২৩}, \S \bng{৩২৩} & \bng{কোনো কোম্পানি, ফার্ম বা ব্যক্তিসংঘ কর্তৃক অপরাধ সংঘটন} & other \\
+\bottomrule
+\end{tabular}}
+}
+
+{\footnotesize Classifier: Other (outside the covered domains) (14\%). Tagger: no entities tagged; rule-based section number: 323.}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=white,colframe=kuetblue!60,boxrule=0.5pt,left=4pt,right=4pt,top=3pt,bottom=3pt,breakable]
+\textbf{Input}\enspace \bng{আজকে ঢাকার আবহাওয়া কেমন}?\par\smallskip
+{\footnotesize risk tier: \texttt{medium}; top score 0.522 vs threshold 0.48; answered}\par\smallskip
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{rrp{5.6cm}p{5.0cm}l}
+\toprule
+\textbf{\#} & \textbf{Score} & \textbf{Citation} & \textbf{Provision title} & \textbf{Domain} \\
+\midrule
+1 & 0.522 & \bng{আবহাওয়া আইন, ২০১৮}, \S \bng{৫} & \bng{অধিদপ্তরের প্রধান কার্যালয়, ইত্যাদি} & other \\
+2 & 0.508 & \bng{আবহাওয়া আইন, ২০১৮}, \S \bng{৪} & \bng{অধিদপ্তর প্রতিষ্ঠা, ইত্যাদি} & other \\
+3 & 0.503 & \bng{আবহাওয়া আইন, ২০১৮}, \S \bng{৬} & \bng{অধিদপ্তরের কার্যাবলি} & other \\
+\bottomrule
+\end{tabular}}
+}
+
+{\footnotesize Classifier: Other (outside the covered domains) (14\%). Tagger: no entities tagged.}
+\end{tcolorbox}

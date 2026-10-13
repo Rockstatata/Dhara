@@ -1,0 +1,14 @@
+{\footnotesize
+\adjustbox{max width=\linewidth}{\begin{tabular}{llrrrr}
+\toprule
+\textbf{Rung} & \textbf{Trained} & \textbf{R@1} & \textbf{R@5} & \textbf{R@10} & \textbf{MRR@10} \\
+\midrule
+BM25 (default $k_1{=}1.5$, $b{=}0.75$) & no & 0.017 & 0.033 & 0.054 & 0.024 \\
+Word2Vec, mean-pooled & self-trained & 0.004 & 0.013 & 0.029 & 0.009 \\
+BiLSTM dual-encoder & self-trained & 0.004 & 0.008 & 0.008 & 0.006 \\
+BGE-m3 zero-shot (control) & no (control) & 0.098 & 0.233 & 0.335 & 0.157 \\
+BGE-m3 zero-shot + Act title & no & \textbf{0.129} & \textbf{0.281} & \textbf{0.352} & \textbf{0.192} \\
+BGE-m3 fine-tuned + Act title & LoRA & 0.079 & 0.240 & 0.323 & 0.149 \\
+\bottomrule
+\end{tabular}}
+}

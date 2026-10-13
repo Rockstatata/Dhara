@@ -1,0 +1,625 @@
+{
+  "index": "scripts/76_build_final_demo_index.py",
+  "n_chunks": 38923,
+  "checkpoint": "models/bge_m3_finetuned_v6",
+  "thresholds": {
+    "default": 0.48,
+    "high": 0.55
+  },
+  "records": [
+    {
+      "label": "family_talaq",
+      "question": "আমার স্বামী মুখে তালাক দিয়েছে, এখন কী করব?",
+      "abstained": false,
+      "top_score": 0.5720552206039429,
+      "threshold": 0.55,
+      "risk_tier": "high",
+      "legal_aid_referral": true,
+      "hits": [
+        {
+          "score": 0.5721,
+          "act_title": "The Muslim Family Laws Ordinance, 1961",
+          "act_year": "1961",
+          "provision_kind": "section",
+          "provision_no": "7",
+          "provision_title": "Talaq",
+          "domain": "family",
+          "risk_tier": "high",
+          "text_raw": "(1) Any man who wishes to divorce his wife shall, as soon as may be after the pronouncement of talaq in any form whatsoever, give the Chairman notice in writing of his having done so, and shall supply a copy thereof to the wife.(2) Whoever contravenes the provisions of sub-section (1) shall be punishable with simple imprisonment for term which may extend to one year or with fine which may extend t",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-305.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5143,
+          "act_title": "The Muslim Family Laws Ordinance, 1961",
+          "act_year": "1961",
+          "provision_kind": "section",
+          "provision_no": "9",
+          "provision_title": "Maintenance",
+          "domain": "family",
+          "risk_tier": "high",
+          "text_raw": "(1) If any husband fails to maintain his wife adequately, or where there are more wives than one, fails to maintain them equitably, the wife, or all or any of the wives, may in addition to seeking, any other legal remedy available apply to the Chairman who shall constitute an Arbitration Council to determine the matter, and the Arbitration Council may issue a certificate specifying the amount whic",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-305.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5136,
+          "act_title": "The Muslim Family Laws Ordinance, 1961",
+          "act_year": "1961",
+          "provision_kind": "section",
+          "provision_no": "8",
+          "provision_title": "Dissolution of marriage otherwise than by talaq",
+          "domain": "family",
+          "risk_tier": "high",
+          "text_raw": "Where the right to divorce has been duly delegated to the wife and she wishes to exercise that right, or where any of the parties to a marriage wishes to dissolve the marriage otherwise than by talaq, the provisions of section 7 shall, mutatis mutandis  and so far as applicable, apply.",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-305.html",
+          "crawl_date": "2025-07-19"
+        }
+      ],
+      "classifier": [
+        {
+          "domain": "family",
+          "name_en": "Family and inheritance",
+          "p": 0.2039
+        },
+        {
+          "domain": "other",
+          "name_en": "Other (outside the covered domains)",
+          "p": 0.1212
+        },
+        {
+          "domain": "criminal_procedure",
+          "name_en": "Criminal procedure",
+          "p": 0.1081
+        }
+      ],
+      "tags": [
+        {
+          "token": "আমার",
+          "tag": "O"
+        },
+        {
+          "token": "স্বামী",
+          "tag": "PARTY"
+        },
+        {
+          "token": "মুখে",
+          "tag": "O"
+        },
+        {
+          "token": "তালাক",
+          "tag": "O"
+        },
+        {
+          "token": "দিয়েছে",
+          "tag": "O"
+        },
+        {
+          "token": "এখন",
+          "tag": "O"
+        },
+        {
+          "token": "কী",
+          "tag": "O"
+        },
+        {
+          "token": "করব",
+          "tag": "O"
+        }
+      ],
+      "rule_section_numbers": []
+    },
+    {
+      "label": "labour_wages",
+      "question": "মালিক তিন মাস ধরে বেতন দিচ্ছে না, আমি কী করতে পারি?",
+      "abstained": false,
+      "top_score": 0.5978803038597107,
+      "threshold": 0.48,
+      "risk_tier": "medium",
+      "legal_aid_referral": false,
+      "hits": [
+        {
+          "score": 0.5979,
+          "act_title": "বাংলাদেশ শ্রম আইন, ২০০৬",
+          "act_year": "2006",
+          "provision_kind": "section",
+          "provision_no": "২৬",
+          "provision_title": "বরখাস্ত, ইত্যাদি ব্যতীত অন্যভাবে মালিক কতৃর্ক শ্রমিকের চাকুরীর অবসান",
+          "domain": "labour",
+          "risk_tier": "medium",
+          "text_raw": "(১) এই অধ্যায়ের অন্যত্র বিধৃত কোন পন্থা ছাড়াও মালিক-(ক)\tমাসিক মজুরীর ভিত্তিতে নিয়োজিত শ্রমিকের তেগত্রে, একশত বিশ দিনের,(খ)\tঅন্য শ্রমিকের তেগত্রে, ষাট দিনের,লিখিত নোটিশ প্রদান করিয়া কোন স্থায়ী শ্রমিকের চাকুরীর অবসান করিতে পারিবেন৷(২)  এই অধ্যায়ের অন্যত্র বিধৃত কোন পন্থা ছাড়াও মালিক-(ক)\tমাসিক মজুরীর ভিত্তিতে নিয়োজিত শ্রমিকের ক্ষেত্রে, ত্রিশ দিনের,(খ)\tঅন্য শ্রমিকের ক্ষেত্রে, চৌদ্দ দিনের,লিখিত নোটিশ প",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-952.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5977,
+          "act_title": "বাংলাদেশ ইপিজেড শ্রম আইন, ২০১৯",
+          "act_year": "2019",
+          "provision_kind": "section",
+          "provision_no": "২২",
+          "provision_title": "বরখাস্ত, ইত্যাদি ব্যতীত অন্যভাবে মালিক কর্তৃক শ্রমিকের চাকরির অবসান",
+          "domain": "labour",
+          "risk_tier": "medium",
+          "text_raw": "(১) এই অধ্যায়ের অন্যত্র বিধৃত কোনো পন্থা ছাড়াও মালিক-(ক)   কোনো স্থায়ী শ্রমিকের ক্ষেত্রে ১২০ (একশত বিশ) দিনের,(খ)   অন্য শ্রমিকের ক্ষেত্রে ৬০ (ষাট) দিনের,লিখিত নোটিশ প্রদান করিয়া শ্রমিকের চাকরির অবসান করিতে পারিবেন।(২) যেক্ষেত্রে মালিক বিনা নোটিশে কোনো শ্রমিকের চাকরির অবসান করিতে চাহেন সেক্ষেত্রে, তিনি উপ-ধারা (১) এর অধীন, প্রদেয় নোটিশের পরিবর্তে নোটিশ মেয়াদের জন্য মজুরি প্রদান করিয়া ইহা করিতে পার",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-1285.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5794,
+          "act_title": "বাংলাদেশ শ্রম আইন, ২০০৬",
+          "act_year": "2006",
+          "provision_kind": "section",
+          "provision_no": "১৩",
+          "provision_title": "প্রতিষ্ঠান বন্ধ রাখা",
+          "domain": "labour",
+          "risk_tier": "medium",
+          "text_raw": "(১) কোন প্রতিষ্ঠানের কোন শাখা বা বিভাগে বে-আইনী ধর্মঘটের কারণে মালিক উক্ত শাখা বা প্রতিষ্ঠান আংশিক বা সম্পূর্ণ বন্ধ করিয়া দিতে পারিবেন, এবং এরূপ বন্ধের ক্ষেত্রে ধর্মঘটে অংশগ্রহণকারী শ্রমিকগণ কোন মজুরী পাইবেন না।(২) যদি উপ-ধারা (১) এর অধীন কোন শাখা বা বিভাগ বন্ধের কারণে প্রতিষ্ঠানের অন্য কোন শাখা বা বিভাগ এমনভাবে ক্ষতিগ্রস্ত হয় যে উহা চালু রাখা সম্ভব নহে, তাহা হইলে উক্ত শাখা বা বিভাগও বন্ধ করিয়া দে",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-952.html",
+          "crawl_date": "2025-07-19"
+        }
+      ],
+      "classifier": [
+        {
+          "domain": "other",
+          "name_en": "Other (outside the covered domains)",
+          "p": 0.1389
+        },
+        {
+          "domain": "land",
+          "name_en": "Land and property",
+          "p": 0.1264
+        },
+        {
+          "domain": "women_children",
+          "name_en": "Women and children protection",
+          "p": 0.1124
+        }
+      ],
+      "tags": [
+        {
+          "token": "মালিক",
+          "tag": "PARTY"
+        },
+        {
+          "token": "তিন",
+          "tag": "O"
+        },
+        {
+          "token": "মাস",
+          "tag": "O"
+        },
+        {
+          "token": "ধরে",
+          "tag": "O"
+        },
+        {
+          "token": "বেতন",
+          "tag": "O"
+        },
+        {
+          "token": "দিচ্ছে",
+          "tag": "O"
+        },
+        {
+          "token": "না",
+          "tag": "O"
+        },
+        {
+          "token": "আমি",
+          "tag": "O"
+        },
+        {
+          "token": "কী",
+          "tag": "O"
+        },
+        {
+          "token": "করতে",
+          "tag": "O"
+        },
+        {
+          "token": "পারি",
+          "tag": "O"
+        }
+      ],
+      "rule_section_numbers": []
+    },
+    {
+      "label": "cyber_hack",
+      "question": "কেউ আমার ফেসবুক আইডি হ্যাক করে আমার নামে কুৎসা ছড়াচ্ছে, কী করব?",
+      "abstained": false,
+      "top_score": 0.5616649985313416,
+      "threshold": 0.55,
+      "risk_tier": "high",
+      "legal_aid_referral": true,
+      "hits": [
+        {
+          "score": 0.5617,
+          "act_title": "সাইবার সুরক্ষা আইন, ২০২৬",
+          "act_year": "",
+          "provision_kind": "section",
+          "provision_no": "২৬",
+          "provision_title": "সাইবার স্পেসে ধর্মীয় বা জাতিগত বিষয়ে সহিংসতা, ঘৃণা ও বিদ্বেষমূলক তথ্য প্রকাশ ইত্যাদির অপরাধ ও দণ্ড",
+          "domain": "cybercrime",
+          "risk_tier": "high",
+          "text_raw": "(১) যদি কোনো ব্যক্তি ইচ্ছাকৃতভাবে বা জ্ঞাতসারে বা ছদ্ম পরিচয়ে নিজের বা অন্যের আইডিতে অবৈধ প্রবেশ করিয়া এমন কোনো কিছু সাইবার স্পেসে প্রকাশ বা প্রচার করেন বা করান, যাহা ধর্মীয় বা সাম্প্রদায়িক ঘৃণামূলক বা জাতিগত বিদ্বেষমূলক বক্তব্য এবং যাহা সহিংসতা তৈরি বা উদ্বেগ সৃষ্টি করে বা বিশৃঙ্খলা বা অপরাধমূলক কর্মকাণ্ডের নির্দেশনা করে, তাহা হইলে অনুরূপ কার্য হইবে একটি অপরাধ। (২) যদি কোনো ব্যক্তি উপ-ধারা (১) এর",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-1710/section-57967.html",
+          "crawl_date": "2026-08-25"
+        },
+        {
+          "score": 0.5291,
+          "act_title": "জুয়া প্রতিরোধ আইন, ২০২৬",
+          "act_year": "",
+          "provision_kind": "section",
+          "provision_no": "১৩",
+          "provision_title": "ভুয়া সিম (SIM), ঘোস্ট সিম (Ghost SIM), ভুয়া এমএফএস অ্যাকাউন্ট (MFS Account) ও বায়োমেট্রিক জালিয়াতির অপরাধ",
+          "domain": "other",
+          "risk_tier": "medium",
+          "text_raw": "কোনো ব্যক্তি ভুয়া সিম, ঘোস্ট সিম, ভুয়া এমএফএস অ্যাকাউন্ট বা জাল পরিচয় ব্যবহার করিয়া জুয়া বা বেটিং কার্যক্রম পরিচালনা করিলে অথবা অন্যের জাতীয় পরিচয়পত্র, আঙুলের ছাপ, মুখমণ্ডল, বায়োমেট্রিক তথ্য বা ডিজিটাল পরিচয় ব্যবহার করিয়া জুয়া বা বেটিং সংক্রান্ত অ্যাকাউন্ট খোলা বা পরিচালনা করিলে তাহা হইবে অপরাধ।",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-1727/section-58960.html",
+          "crawl_date": "2026-08-25"
+        },
+        {
+          "score": 0.5123,
+          "act_title": "সাইবার সুরক্ষা আইন, ২০২৬",
+          "act_year": "",
+          "provision_kind": "section",
+          "provision_no": "১৯",
+          "provision_title": "কম্পিউটার, কম্পিউটার সিস্টেম ও সাইবার স্পেসের ভৌত অবকাঠামো ইত্যাদির ক্ষতিসাধন ও দণ্ড",
+          "domain": "cybercrime",
+          "risk_tier": "high",
+          "text_raw": "(১) যদি কোনো ব্যক্তি — (ক) অননুমোদিতভাবে, ক্ষতি সাধনের উদ্দেশ্যে কোনো কম্পিউটার, কম্পিউটার সিস্টেম, কম্পিউটার নেটওয়ার্ক বা সাইবার স্পেস হইতে কোনো উপাত্ত, উপাত্ত-ভান্ডার, তথ্য বা উহার উদ্ধৃতাংশ সংগ্রহ করেন, বা স্থানান্তরযোগ্য জমাকৃত তথ্য-উপাত্তসহ উক্ত কম্পিউটার, কম্পিউটার সিস্টেম বা কম্পিউটার নেটওয়ার্কের তথ্য সংগ্রহ করেন বা কোনো উপাত্তের অনুলিপি বা অংশবিশেষ সংগ্রহ করেন, বা (খ) কোনো কম্পিউটার, কম্পি",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-1710/section-57960.html",
+          "crawl_date": "2026-08-25"
+        }
+      ],
+      "classifier": [
+        {
+          "domain": "land",
+          "name_en": "Land and property",
+          "p": 0.1243
+        },
+        {
+          "domain": "other",
+          "name_en": "Other (outside the covered domains)",
+          "p": 0.1143
+        },
+        {
+          "domain": "women_children",
+          "name_en": "Women and children protection",
+          "p": 0.1015
+        }
+      ],
+      "tags": [
+        {
+          "token": "কেউ",
+          "tag": "O"
+        },
+        {
+          "token": "আমার",
+          "tag": "O"
+        },
+        {
+          "token": "ফেসবুক",
+          "tag": "O"
+        },
+        {
+          "token": "আইডি",
+          "tag": "O"
+        },
+        {
+          "token": "হ্যাক",
+          "tag": "O"
+        },
+        {
+          "token": "করে",
+          "tag": "O"
+        },
+        {
+          "token": "আমার",
+          "tag": "O"
+        },
+        {
+          "token": "নামে",
+          "tag": "O"
+        },
+        {
+          "token": "কুৎসা",
+          "tag": "O"
+        },
+        {
+          "token": "ছড়াচ্ছে",
+          "tag": "O"
+        },
+        {
+          "token": "কী",
+          "tag": "O"
+        },
+        {
+          "token": "করব",
+          "tag": "O"
+        }
+      ],
+      "rule_section_numbers": []
+    },
+    {
+      "label": "land_mutation",
+      "question": "জমির নামজারি করতে কী কী কাগজ লাগে?",
+      "abstained": false,
+      "top_score": 0.5825133323669434,
+      "threshold": 0.48,
+      "risk_tier": "medium",
+      "legal_aid_referral": false,
+      "hits": [
+        {
+          "score": 0.5825,
+          "act_title": "The Registration Act, 1908",
+          "act_year": "1908",
+          "provision_kind": "section",
+          "provision_no": "90",
+          "provision_title": "Exemption of certain documents executed by or in favour of Government",
+          "domain": "land",
+          "risk_tier": "medium",
+          "text_raw": "(1) Nothing contained in this Act43[* * *] shall be deemed to require, or to have at any time required, the registration of any of the following documents or maps, namely:-(a)\tdocuments issued, received or attested by any officer engaged in making a settlement or revision of settlement of land-revenue, and which form part of the records of such settlement; or(b)\tdocuments and maps issued, received",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-90.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5654,
+          "act_title": "The Registration Act, 1908",
+          "act_year": "1908",
+          "provision_kind": "section",
+          "provision_no": "21",
+          "provision_title": "Description of property and maps or plans",
+          "domain": "land",
+          "risk_tier": "medium",
+          "text_raw": "(1) No non-testamentary document relating to immoveable property shall be accepted for registration unless it contains a description of such property sufficient to identify the same.(2) Houses in towns shall be described as situate on the north or other side of the street or road (which should be specified) to which they front, and by their existing and former occupancies, and by their numbers if ",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-90.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5645,
+          "act_title": "The Registration Act, 1908",
+          "act_year": "1908",
+          "provision_kind": "section",
+          "provision_no": "89",
+          "provision_title": "Copies of certain orders, certificates and instruments to be sent to registering officers and field",
+          "domain": "land",
+          "risk_tier": "medium",
+          "text_raw": "(1) Every officer granting a loan under theLand Improvement Loans Act, 1883, shall send a copy of his order to the registering officer within the local limits of whose jurisdiction the whole or any part of the land to be improved or of the land to be granted as collateral security, is situate, and such registering officer shall file the copy in his Book No. 1.(2) Every Court granting a certificate",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-90.html",
+          "crawl_date": "2025-07-19"
+        }
+      ],
+      "classifier": [
+        {
+          "domain": "other",
+          "name_en": "Other (outside the covered domains)",
+          "p": 0.1472
+        },
+        {
+          "domain": "land",
+          "name_en": "Land and property",
+          "p": 0.1402
+        },
+        {
+          "domain": "women_children",
+          "name_en": "Women and children protection",
+          "p": 0.1195
+        }
+      ],
+      "tags": [
+        {
+          "token": "জমির",
+          "tag": "O"
+        },
+        {
+          "token": "নামজারি",
+          "tag": "O"
+        },
+        {
+          "token": "করতে",
+          "tag": "O"
+        },
+        {
+          "token": "কী",
+          "tag": "O"
+        },
+        {
+          "token": "কী",
+          "tag": "O"
+        },
+        {
+          "token": "কাগজ",
+          "tag": "O"
+        },
+        {
+          "token": "লাগে",
+          "tag": "O"
+        }
+      ],
+      "rule_section_numbers": []
+    },
+    {
+      "label": "explicit_section",
+      "question": "দণ্ডবিধির ৩২৩ ধারায় কী শাস্তি হয়?",
+      "abstained": false,
+      "top_score": 0.5510133504867554,
+      "threshold": 0.55,
+      "risk_tier": "high",
+      "legal_aid_referral": true,
+      "hits": [
+        {
+          "score": 0.551,
+          "act_title": "1The Penal Code, 1860",
+          "act_year": "1860",
+          "provision_kind": "section",
+          "provision_no": "326A",
+          "provision_title": "",
+          "domain": "criminal_procedure",
+          "risk_tier": "high",
+          "text_raw": "Whoever, except in the case provided for by section 335, voluntarily causes grievous hurt of the kind mentioned in(a)\tclause secondly of section 320 in respect of both the eyes either by gouging out the same or by means of any corrosive substance; or(b)\tclause sixthly of section 320 by means of any corrosive substance,shall be punished with death, or109[imprisonment] for life and shall also be lia",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-11.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5455,
+          "act_title": "1The Penal Code, 1860",
+          "act_year": "1860",
+          "provision_kind": "section",
+          "provision_no": "324",
+          "provision_title": "Voluntarily causing hurt by dangerous weapons or means",
+          "domain": "criminal_procedure",
+          "risk_tier": "high",
+          "text_raw": "Whoever, except in the case provided for by section 334, voluntarily causes hurt by means of any instrument for shooting, stabbing or cutting, or any instrument which, used as a weapon of offence, is likely to cause death, or by means of fireor any heated substance, or by means of any poison or any corrosive substance, or by means of any explosive substance or by means of any substance which it is",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-11.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5441,
+          "act_title": "আয়কর আইন, ২০২৩",
+          "act_year": "2023",
+          "provision_kind": "section",
+          "provision_no": "৩২৩",
+          "provision_title": "কোনো কোম্পানি, ফার্ম বা ব্যক্তিসংঘ কর্তৃক অপরাধ সংঘটন",
+          "domain": "other",
+          "risk_tier": "medium",
+          "text_raw": "যেইক্ষেত্রে এই আইনের অধীন কোনো অপরাধ কোম্পানি, ফার্ম বা ব্যক্তিসংঘ কর্তৃক সংঘটিত হয় সেইক্ষেত্রে-(ক) উক্ত কোম্পানি, ফার্ম বা ব্যক্তিসংঘকে কেবল জরিমানা করা হইবে; এবং(খ) কোম্পানি বা এতদসংক্রান্ত ব্যবসা পরিচালনা, বা ফার্ম বা ব্যক্তিসংঘ পরিচালনার বা ক্ষমতা প্রয়োগের জন্য প্রত্যক্ষভাবে দায়িত্বপ্রাপ্ত ছিল এইরূপ প্রত্যেক ব্যক্তি অর্থদণ্ডসহ অনধিক ৬ (ছয়) বৎসর পর্যন্ত সশ্রম কারাদণ্ডে, তবে ৬ (ছয়) মাসের নিম্নে ",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-1429.html",
+          "crawl_date": "2025-07-19"
+        }
+      ],
+      "classifier": [
+        {
+          "domain": "other",
+          "name_en": "Other (outside the covered domains)",
+          "p": 0.1449
+        },
+        {
+          "domain": "criminal_procedure",
+          "name_en": "Criminal procedure",
+          "p": 0.1349
+        },
+        {
+          "domain": "women_children",
+          "name_en": "Women and children protection",
+          "p": 0.1115
+        }
+      ],
+      "tags": [
+        {
+          "token": "দণ্ডবিধির",
+          "tag": "O"
+        },
+        {
+          "token": "323",
+          "tag": "O"
+        },
+        {
+          "token": "ধারায়",
+          "tag": "O"
+        },
+        {
+          "token": "কী",
+          "tag": "O"
+        },
+        {
+          "token": "শাস্তি",
+          "tag": "O"
+        },
+        {
+          "token": "হয়",
+          "tag": "O"
+        }
+      ],
+      "rule_section_numbers": [
+        "323"
+      ]
+    },
+    {
+      "label": "out_of_scope",
+      "question": "আজকে ঢাকার আবহাওয়া কেমন?",
+      "abstained": false,
+      "top_score": 0.5220675468444824,
+      "threshold": 0.48,
+      "risk_tier": "medium",
+      "legal_aid_referral": false,
+      "hits": [
+        {
+          "score": 0.5221,
+          "act_title": "আবহাওয়া আইন, ২০১৮",
+          "act_year": "2018",
+          "provision_kind": "section",
+          "provision_no": "৫",
+          "provision_title": "অধিদপ্তরের প্রধান কার্যালয়, ইত্যাদি",
+          "domain": "other",
+          "risk_tier": "medium",
+          "text_raw": "(১) অধিদপ্তরের প্রধান কার্যালয় ঢাকায় অবস্থিত হইবে।(২) সরকার, প্রয়োজনবোধে, ঢাকার বাহিরে যে কোনো স্থানে উহার আঞ্চলিক বা শাখা কার্যালয় প্রতিষ্ঠা করিতে পারিবে।",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-1247.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5076,
+          "act_title": "আবহাওয়া আইন, ২০১৮",
+          "act_year": "2018",
+          "provision_kind": "section",
+          "provision_no": "৪",
+          "provision_title": "অধিদপ্তর প্রতিষ্ঠা, ইত্যাদি",
+          "domain": "other",
+          "risk_tier": "medium",
+          "text_raw": "(১) এই আইনের উদ্দেশ্য পূরণকল্পে, বাংলাদেশ আবহাওয়া অধিদপ্তর নামে একটি অধিদপ্তর থাকিবে।(২) এই আইন কার্যকর হইবার সঙ্গে সঙ্গে, এই আইনের বিধান অনুযায়ী, প্রতিরক্ষা মন্ত্রণালয়ের অধীনস্ত বিদ্যমান বাংলাদেশ আবহাওয়া অধিদপ্তর, উপ-ধারা (১) এর উদ্দেশ্য পূরণকল্পে, বাংলাদেশ আবহাওয়া অধিদপ্তর হিসাবে গণ্য হইবে।",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-1247.html",
+          "crawl_date": "2025-07-19"
+        },
+        {
+          "score": 0.5034,
+          "act_title": "আবহাওয়া আইন, ২০১৮",
+          "act_year": "2018",
+          "provision_kind": "section",
+          "provision_no": "৬",
+          "provision_title": "অধিদপ্তরের কার্যাবলি",
+          "domain": "other",
+          "risk_tier": "medium",
+          "text_raw": "(১) এই আইনের উদ্দেশ্য পূরণকল্পে, অধিদপ্তরের দায়িত্ব ও কার্যাবলি হইবে নিম্নরূপ, যথা :-(ক) আবহাওয়া সেবা সংক্রান্ত কার্যাবলি-(অ) আবহাওয়া ও জলবায়ু বিষয়ে মৌলিক এবং বাংলাদেশের প্রেক্ষাপটে প্রায়োগিক গবেষণা কাজ পরিচালনাসহ আবহাওয়া সেবার মান উন্নয়ন এবং সরবরাহ নিশ্চিতকরণ;(আ) বৈজ্ঞানিক পদ্ধতিতে বায়ুমণ্ডলীয়, ভূমণ্ডলীয় ও জলীয় আবহাওয়া ঘটনাবলির এবং ভূমিকম্প ও ভূ-চুম্বকীয় সার্বক্ষণিক পর্যবেক্ষণ গ্রহণ;(ই) আবহাওয়া স",
+          "source_url": "http://bdlaws.minlaw.gov.bd/act-print-1247.html",
+          "crawl_date": "2025-07-19"
+        }
+      ],
+      "classifier": [
+        {
+          "domain": "other",
+          "name_en": "Other (outside the covered domains)",
+          "p": 0.1387
+        },
+        {
+          "domain": "land",
+          "name_en": "Land and property",
+          "p": 0.1211
+        },
+        {
+          "domain": "criminal_procedure",
+          "name_en": "Criminal procedure",
+          "p": 0.112
+        }
+      ],
+      "tags": [
+        {
+          "token": "আজকে",
+          "tag": "O"
+        },
+        {
+          "token": "ঢাকার",
+          "tag": "O"
+        },
+        {
+          "token": "আবহাওয়া",
+          "tag": "O"
+        },
+        {
+          "token": "কেমন",
+          "tag": "O"
+        }
+      ],
+      "rule_section_numbers": []
+    }
+  ]
+}

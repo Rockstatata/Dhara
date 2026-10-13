@@ -23,13 +23,19 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import gradio as gr  # noqa: E402
 
+from dhara.insights import DomainClassifier, QueryTagger  # noqa: E402
 from dhara.service import Answer, Dhara, cite  # noqa: E402
 from app import browse  # noqa: E402
+from app.insights_view import InsightsView, results_markdown  # noqa: E402
 
 print("loading Dhara (index + encoder, once)...")
 dhara = Dhara.load()
 print(f"loaded. index={dhara.manifest.get('built_by', dhara.manifest.get('checkpoint'))}, "
       f"{dhara.manifest.get('n_chunks', len(dhara.chunk_ids))} chunks")
+
+print("loading classifier + tagger (side tracks, display only)...")
+insights = InsightsView(DomainClassifier.fit(), QueryTagger.load())
+print("loaded.")
 
 print("loading corpus browser (act/provision index)...")
 ACTS, ACT_CHOICES = browse.build_act_index()
@@ -136,7 +142,18 @@ def format_answer(answer: Answer) -> tuple[str, str]:
 def respond(query: str, k: int):
     answer = dhara.search(query, k=int(k), show_all=True)
     banner, results = format_answer(answer)
-    return banner, results
+    analysis = ""
+    if (query or "").strip():
+        top_domain = answer.hits[0].domain if answer.hits else None
+        analysis = insights.panel_html(query, top_domain)
+    return banner, results, analysis
+
+
+def analyse(query: str) -> str:
+    """Classifier + tagger alone, for the results tab's playground (no retrieval)."""
+    if not (query or "").strip():
+        return ""
+    return insights.panel_html(query)
 
 
 def show_act(act_id: str) -> str:
@@ -172,16 +189,35 @@ with gr.Blocks(title="ধারা (Dhara) — Bangla Legal Retrieval") as demo:
                     k_slider = gr.Slider(minimum=1, maximum=10, value=5, step=1, label="কয়টি ধারা দেখাবে")
                     submit = gr.Button("খুঁজুন", variant="primary", size="lg")
             banner_out = gr.HTML()
-            results_out = gr.HTML()
+            with gr.Row(equal_height=False):
+                with gr.Column(scale=7):
+                    results_out = gr.HTML()
+                with gr.Column(scale=3, min_width=260):
+                    analysis_out = gr.HTML()
 
-            submit.click(fn=respond, inputs=[query_box, k_slider], outputs=[banner_out, results_out])
-            query_box.submit(fn=respond, inputs=[query_box, k_slider], outputs=[banner_out, results_out])
+            submit.click(fn=respond, inputs=[query_box, k_slider], outputs=[banner_out, results_out, analysis_out])
+            query_box.submit(fn=respond, inputs=[query_box, k_slider], outputs=[banner_out, results_out, analysis_out])
 
             gr.Examples(
                 examples=[[q] for q in EXAMPLES_BN],
                 inputs=[query_box],
                 label="২০টি যাচাইকৃত উদাহরণ প্রশ্ন (Gold set থেকে, প্রকৃত সঠিক উত্তরসহ)",
             )
+
+        with gr.Tab("🧪 শ্রেণিবিন্যাস ও ট্যাগিং  ·  Classification & Tagging"):
+            gr.Markdown(
+                "Retrieval is Dhara's main task. Alongside it we built a **domain classifier** (Topic 1) and a "
+                "**sequence tagger** (Topic 2). Their measured results are below, exactly as recorded in "
+                "`results/runs/` — including where they are weak."
+            )
+            gr.Markdown(results_markdown())
+            gr.Markdown("#### Try them (no retrieval)")
+            play_box = gr.Textbox(label="একটি প্রশ্ন লিখুন", lines=2,
+                                  placeholder="যেমনঃ আমার স্বামী মুখে তালাক দিয়েছে, এখন কী করব?")
+            play_btn = gr.Button("বিশ্লেষণ করুন", variant="secondary")
+            play_out = gr.HTML()
+            play_btn.click(fn=analyse, inputs=[play_box], outputs=[play_out])
+            play_box.submit(fn=analyse, inputs=[play_box], outputs=[play_out])
 
         with gr.Tab("📚 আইন সংকলন  ·  Law Corpus"):
             gr.Markdown(

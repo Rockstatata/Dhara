@@ -1,0 +1,149 @@
+% Compile with LuaLaTeX (Bangla text needs HarfBuzz shaping):
+%   python scripts/77_capture_demo_io.py && python scripts/78_build_report_assets.py   (regenerates generated/ and figures/)
+%   lualatex dhara_report.tex   (twice, for the table of contents and cross-references)
+% Single column by design, target length ~16 pages.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,left=2.1cm,right=2.1cm,top=1.7cm,bottom=1.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage[font=small,labelfont=bf,labelsep=period]{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,calc,backgrounds}
+\usepackage[most]{tcolorbox}
+\usepackage{listings}
+\usepackage{adjustbox}
+
+\definecolor{kuetgreen}{RGB}{0,102,51}
+\definecolor{kuetblue}{RGB}{16,74,120}
+\definecolor{softgrey}{RGB}{245,246,248}
+\definecolor{warnorange}{RGB}{217,130,43}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.1pt}
+\setlength{\emergencystretch}{3em}
+\setlist{itemsep=1pt,topsep=2pt,parsep=0pt}
+\renewcommand{\arraystretch}{1.0}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+
+\titleformat{\section}{\normalfont\Large\bfseries\color{kuetblue}}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\color{kuetblue}}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalfont\bfseries\color{kuetblue}}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt}{1pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{kuetblue}\bng{ধারা} (Dhara) --- Project Report}
+\fancyhead[R]{\small\color{kuetblue}CSE 4122, NLP Laboratory}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\newtcolorbox{finding}[1][Finding]{colback=kuetgreen!5,colframe=kuetgreen,fonttitle=\bfseries,title={#1},
+  boxrule=0.6pt,arc=2pt,left=5pt,right=5pt,top=2pt,bottom=2pt,breakable}
+\newtcolorbox{caution}[1][Read this number honestly]{colback=warnorange!8,colframe=warnorange,fonttitle=\bfseries,title={#1},
+  boxrule=0.6pt,arc=2pt,left=5pt,right=5pt,top=2pt,bottom=2pt,breakable}
+\newtcolorbox{sample}[1][Sample]{colback=softgrey,colframe=kuetblue!60,fonttitle=\bfseries\small,title={#1},
+  boxrule=0.5pt,arc=2pt,left=5pt,right=5pt,top=3pt,bottom=3pt,breakable}
+
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,frame=single,
+  backgroundcolor=\color{softgrey},rulecolor=\color{kuetblue!40},showstringspaces=false,xleftmargin=2pt,xrightmargin=2pt}
+
+\tikzset{
+  box/.style={draw=kuetblue,fill=kuetblue!8,rounded corners=3pt,align=center,inner sep=5pt,font=\small,minimum height=8mm},
+  gbox/.style={draw=kuetgreen,fill=kuetgreen!8,rounded corners=3pt,align=center,inner sep=5pt,font=\small,minimum height=8mm},
+  obox/.style={draw=warnorange,fill=warnorange!12,rounded corners=3pt,align=center,inner sep=5pt,font=\small,minimum height=8mm},
+  rbox/.style={draw=red!60!black,fill=red!6,rounded corners=3pt,align=center,inner sep=5pt,font=\small,minimum height=8mm},
+  dbox/.style={draw=black!45,dashed,fill=white,rounded corners=3pt,align=center,inner sep=5pt,font=\small,minimum height=8mm},
+  arr/.style={-{Stealth[length=2.6mm]},thick,color=black!70},
+  darr/.style={-{Stealth[length=2.6mm]},thick,dashed,color=black!50},
+  lab/.style={font=\scriptsize,color=black!70,align=center},
+}
+
+\input{generated/numbers.tex}
+\input{generated/numbers2.tex}
+\input{generated/numbers3.tex}
+\input{generated/numbers4.tex}
+\input{generated/numbers5.tex}
+
+\begin{document}
+
+% =====================================================
+% COVER PAGE
+% =====================================================
+\newgeometry{top=0.9cm,bottom=0.9cm,left=1.9cm,right=1.9cm}
+\begin{titlepage}
+\centering
+\vspace*{0.2cm}
+\includegraphics[width=2.4cm]{KUET-LOGO.png}\par
+\vspace{0.4cm}
+
+{\LARGE\bfseries\color{kuetgreen} KHULNA UNIVERSITY OF ENGINEERING\\[2pt] \& TECHNOLOGY}\par
+\vspace{0.3cm}
+{\large Department of Computer Science and Engineering}\par
+\vspace{0.5cm}
+
+{\LARGE\bfseries Natural Language Processing Laboratory}\par
+\vspace{0.25cm}
+{\large\bfseries Course Code: CSE 4122}\par
+\vspace{1.0cm}
+
+{\Large\bfseries Project Report}\par
+\vspace{0.6cm}
+
+{\LARGE\bfseries\color{kuetblue} Crisis Language Detection Using Natural Language Processing}\par
+\vspace{0.5cm}
+{\large\bfseries A Comparative Study of Character-Level TF-IDF and BERT}\par
+\vspace{0.5cm}
+
+\begin{minipage}[t]{0.38\textwidth}
+\raggedright
+\textbf{\large Submitted to,}\par
+\vspace{0.45cm}
+
+\textbf{Dr. K. M. Azharul Hasan}\\
+Professor\\
+Department of Computer Science and\\ Engineering
+
+\vspace{0.4cm}
+\textbf{Md Nazirulhasan Shawon}\\
+Assistant Professor\\
+Department of Computer Science and\\ Engineering
+\end{minipage}%
+\hspace{0.05\textwidth}%
+\begin{minipage}[t]{0.32\textwidth}
+\raggedright
+\textbf{\large Submitted by,}\par
+\vspace{0.45cm}
+
+\textbf{Adiba Tahsin}\\
+Roll: 2107031
+
+\vspace{0.35cm}
+\textbf{Megha Tania}\\
+Roll: 2107057
+
+\vspace{0.4cm}
+Section: A\\
+Year: 4th\\
+Semester: 1st
+\end{minipage}
+
+\vfill
+{\large\bfseries Date of Submission: 23 September, 2026}
+\vspace*{0.5cm}
+\end{titlepage}
+\restoregeometry
+
+\end{document}
